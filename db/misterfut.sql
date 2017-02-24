@@ -9,3 +9,9 @@ create table usuarios (
     --activacion varchar(32),
     created_at timestamptz  default current_timestamp
 );
+
+create index idx_usuarios_activacion on usuarios (activacion);
+create index idx_usuarios_created_at on usuarios (created_at);
+
+    insert into usuarios(nombre, email, password)
+    values ('christian','christianhf.chf@gmail.com', crypt('christian', gen_salt('bf', 13)));
