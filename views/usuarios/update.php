@@ -6,7 +6,7 @@ use yii\helpers\Html;
 /* @var $model app\models\Usuario */
 
 $this->title = 'Update Usuario: ' . $model->id;
-$this->params['breadcrumbs'][] = ['label' => 'Usuarios', 'url' => ['index']];
+$this->params['breadcrumbs'][] = (Yii::$app->user->esAdmin) ? ['label' => 'Usuarios', 'url' => ['index']] : 'Usuarios';
 $this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = 'Update';
 ?>

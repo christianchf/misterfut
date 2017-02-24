@@ -37,21 +37,34 @@ AppAsset::register($this);
         ['label' => 'Inicio', 'url' => ['/site/index']],
         ['label' => 'Misterfut', 'url' => ['/site/about']],
         ['label' => 'Contacto', 'url' => ['/site/contact']],
-        Yii::$app->user->isGuest ? (
-            ['label' => 'Login', 'url' => ['/site/login']]
-        ) : (
-            '<li>'
-            . Html::beginForm(['/site/logout'], 'post')
-            . Html::submitButton(
-                'Logout (' . Yii::$app->user->identity->nombre . ')',
-                ['class' => 'btn btn-link logout']
-            )
-            . Html::endForm()
-            . '</li>'
-        )
+        Yii::$app->user->isGuest ?
+        [
+            'label' => 'Usuarios',
+            'items' => [
+                ['label' => 'Login', 'url' => ['/site/login']],
+                '<li class="divider"></li>',
+                ['label' => 'Registrarse', 'url' => ['usuarios/create']],
+            ]
+        ] :
+        [
+            'label' => 'Usuario (' . Yii::$app->user->identity->nombre . ')',
+            'items' => [
+                [
+                    'label' => 'Logout',
+                    'url' => ['site/logout'],
+                    'linkOptions' => ['data-method' => 'POST']
+                ],
+                '<li class="divider"></li>',
+                ['label' => 'Ver datos', 'url' => ['usuarios/view']],
+            ]
+        ]
     ];
     if (Yii::$app->user->esAdmin) {
-        array_unshift($items, ['label' => 'Usuarios', 'url' => ['usuarios/index']]);
+        end($items);
+        $items[key($items)]['items'][] = [
+            'label' => 'Gestión de usuarios',
+            'url' => ['usuarios/index']
+        ];
     }
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-right'],
