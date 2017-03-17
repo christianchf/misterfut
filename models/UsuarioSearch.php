@@ -19,7 +19,7 @@ class UsuarioSearch extends Usuario
     {
         return [
             [['id'], 'integer'],
-            [['nombre', 'password', 'email', 'token', 'created_at'], 'safe'],
+            [['nombre', 'password', 'email', 'token'], 'safe'],
         ];
     }
 
@@ -60,7 +60,6 @@ class UsuarioSearch extends Usuario
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
-            'created_at' => $this->created_at,
         ]);
 
         $query->andFilterWhere(['like', 'nombre', $this->nombre])

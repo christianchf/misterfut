@@ -72,7 +72,7 @@ class Usuario extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
             'passConfirm' => 'Confirmar contraseña',
             'email' => 'Email',
             'token' => 'Token',
-            'created_at' => 'Created At',
+            'created_at' => 'Fecha de creación',
         ];
     }
 
@@ -118,6 +118,9 @@ class Usuario extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
         return $this->token;
     }
 
+    /**
+     * Regenera los tokens de los usuarios.
+     */
     public function regenerarToken()
     {
         $this->token = Yii::$app->security->generateRandomString();
@@ -146,7 +149,6 @@ class Usuario extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
      * Comprueba si la  contraseña y la confirmación de la contraseña son iguales
      * @param  [type] $attribute [description]
      * @param  [type] $params    [description]
-     * @return [type]            [description]
      */
     public function confirmarPassword($attribute, $params)
     {
