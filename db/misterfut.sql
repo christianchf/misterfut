@@ -13,5 +13,14 @@ create table usuarios (
 create index idx_usuarios_activacion on usuarios (activacion);
 create index idx_usuarios_created_at on usuarios (created_at);
 
-    insert into usuarios(nombre, email, password)
+insert into usuarios(nombre, email, password)
     values ('christian','christianhf.chf@gmail.com', crypt('christian', gen_salt('bf', 13)));
+
+drop table if exists session;
+
+create table session
+(
+    id char(40) not null primary key,
+    expire integer,
+    data BYTEA
+);
