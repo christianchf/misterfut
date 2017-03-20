@@ -77,6 +77,14 @@ class Usuario extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
     }
 
     /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getEquipos()
+    {
+        return $this->hasMany(Equipo::className(), ['id_usuario' => 'id'])->inverseOf('usuario');
+    }
+
+    /**
      * @inheritDoc
      */
     public static function findIdentity($id)
