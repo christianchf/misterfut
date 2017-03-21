@@ -78,6 +78,10 @@ class Equipo extends \yii\db\ActiveRecord
         return $this->hasMany(Jugador::className(), ['id_equipo' => 'id'])->inverseOf('equipo');
     }
 
+    /**
+     * Devuelve el número de partidos jugados por el equipo.
+     * @return int Número de partidos jugados
+     */
     public function getPartidosJugados()
     {
         return $this->partidos_ganados + $this->partidos_empatados + $this->partidos_perdidos;

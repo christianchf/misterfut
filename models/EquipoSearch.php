@@ -21,7 +21,6 @@ class EquipoSearch extends Equipo
         return [
             [['id', 'id_usuario'], 'integer'],
             [['nombre'], 'safe'],
-            // [['partidos_ganados', 'partidos_empatados', 'partidos_perdidos', 'goles_a_favor', 'goles_en_contra'], 'number'],
         ];
     }
 
@@ -78,12 +77,6 @@ class EquipoSearch extends Equipo
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
-            // 'partidos_ganados' => $this->partidos_ganados,
-            // 'partidos_empatados' => $this->partidos_empatados,
-            // 'partidos_perdidos' => $this->partidos_perdidos,
-            // 'goles_a_favor' => $this->goles_a_favor,
-            // 'goles_en_contra' => $this->goles_en_contra,
-            // 'id_usuario' => $this->id_usuario,
         ]);
 
         $query->andFilterWhere(['ilike', 'nombre', $this->nombre]);
