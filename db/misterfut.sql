@@ -14,7 +14,8 @@ create index idx_usuarios_activacion on usuarios (activacion);
 create index idx_usuarios_created_at on usuarios (created_at);
 
 insert into usuarios(nombre, email, password)
-    values ('christian','christianhf.chf@gmail.com', crypt('christian', gen_salt('bf', 13)));
+    values  ('christian','christianhf.chf@gmail.com', crypt('christian', gen_salt('bf', 13))),
+            ('pepe','pepe@gmail.com', crypt('pepe', gen_salt('bf', 13)));
 
 drop table if exists session;
 
@@ -38,6 +39,10 @@ create table equipos (
                                              references usuarios (id)
                                              on delete cascade on update cascade
 );
+
+insert into equipos(nombre, id_usuario)
+    values  ('Real Madrid', 1),
+            ('Fruteria Pepe', 2);
 
 drop table if exists posiciones cascade;
 

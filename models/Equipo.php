@@ -52,6 +52,7 @@ class Equipo extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'nombre' => 'Equipo',
+            'partidosJugados' => 'PJ',
             'partidos_ganados' => 'PG',
             'partidos_empatados' => 'PE',
             'partidos_perdidos' => 'PP',
@@ -75,5 +76,10 @@ class Equipo extends \yii\db\ActiveRecord
     public function getPlantilla()
     {
         return $this->hasMany(Jugador::className(), ['id_equipo' => 'id'])->inverseOf('equipo');
+    }
+
+    public function getPartidosJugados()
+    {
+        return $this->partidos_ganados + $this->partidos_empatados + $this->partidos_perdidos;
     }
 }

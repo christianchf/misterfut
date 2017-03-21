@@ -25,6 +25,7 @@ AppAsset::register($this);
 <?php $this->beginBody() ?>
 
 <div class="wrap">
+
     <?php
     NavBar::begin([
         'brandLabel' => 'MisterFut',
@@ -55,7 +56,8 @@ AppAsset::register($this);
                     'linkOptions' => ['data-method' => 'POST']
                 ],
                 '<li class="divider"></li>',
-                ['label' => 'Ver datos', 'url' => ['usuarios/view']],
+                ['label' => 'Ver datos', 'url' => ['/usuarios/view']],
+                ['label' => 'Mis equipos', 'url' => ['/equipos/index']],
             ]
         ]
     ];
