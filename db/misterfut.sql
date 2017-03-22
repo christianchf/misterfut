@@ -42,6 +42,7 @@ create table equipos (
 
 insert into equipos(nombre, id_usuario)
     values  ('Real Madrid', 1),
+            ('Cadiz', 1),
             ('Fruteria Pepe', 2);
 
 drop table if exists posiciones cascade;
@@ -74,3 +75,7 @@ create table jugadores (
                                            references posiciones (id)
                                            on delete no action on update cascade
 );
+
+insert into jugadores(nombre,fecha_nac,dorsal,id_equipo,id_posicion)
+    values  ('Sergio Ramos', '1990-07-03',4,1,4),
+            ('Ortuño', '1987-05-12',8,2,13);

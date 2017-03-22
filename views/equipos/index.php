@@ -31,6 +31,17 @@ $this->params['breadcrumbs'][] = $this->title;
             'partidos_perdidos',
             'goles_a_favor',
             'goles_en_contra',
+            [
+                'label' => 'Plantilla',
+                'value' => function ($model, $key, $index, $column) {
+                    return Html::a(
+                        'Ver plantilla',
+                        ['jugadores/index', 'id_equipo' => $model->id],
+                        ['class' => 'btn-sm btn-primary']
+                    );
+                },
+                'format' => 'html',
+            ],
 
             ['class' => 'yii\grid\ActionColumn'],
         ],
