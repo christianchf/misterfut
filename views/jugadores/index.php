@@ -7,7 +7,7 @@ use yii\widgets\Pjax;
 /* @var $searchModel app\models\JugadorSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Jugadors';
+$this->title = 'Plantilla ' . $equipo;
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="jugador-index">
@@ -16,7 +16,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Jugador', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Añadir Jugador', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 <?php Pjax::begin(); ?>    <?= GridView::widget([
         'dataProvider' => $dataProvider,
@@ -24,16 +24,15 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
+            'posicion.posicion',
             'nombre',
-            'fecha_nac',
             'dorsal',
             'partidos_jugados',
-            // 'goles_marcados',
+            'goles_marcados',
             // 'goles_encajados',
-            // 'asistencias',
-            // 'id_equipo',
-            // 'id_posicion',
+            'asistencias',
+            'fecha_nac:date',
+            'equipo.nombre',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

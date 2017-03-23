@@ -6,8 +6,8 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model app\models\Jugador */
 
-$this->title = $model->id;
-$this->params['breadcrumbs'][] = ['label' => 'Jugadors', 'url' => ['index']];
+$this->title = $model->nombre;
+$this->params['breadcrumbs'][] = ['label' => 'Plantilla ' . $model->equipo->nombre, 'url' => ['index', 'id_equipo' => $model->id_equipo]];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="jugador-view">
@@ -15,11 +15,11 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Update', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Delete', ['delete', 'id' => $model->id], [
+        <?= Html::a('Modificar', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a('Borrar', ['delete', 'id' => $model->id], [
             'class' => 'btn btn-danger',
             'data' => [
-                'confirm' => 'Are you sure you want to delete this item?',
+                'confirm' => '¿Esta seguro de eliminar este jugador?',
                 'method' => 'post',
             ],
         ]) ?>
@@ -28,16 +28,15 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-            'id',
+            'posicion.posicion',
             'nombre',
-            'fecha_nac',
             'dorsal',
             'partidos_jugados',
             'goles_marcados',
             'goles_encajados',
             'asistencias',
-            'id_equipo',
-            'id_posicion',
+            'fecha_nac:date',
+            'equipo.nombre',
         ],
     ]) ?>
 
