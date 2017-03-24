@@ -61,8 +61,8 @@ class Jugador extends \yii\db\ActiveRecord
             'goles_marcados' => 'Goles Marcados',
             'goles_encajados' => 'Goles Encajados',
             'asistencias' => 'Asistencias',
-            'id_equipo' => 'Id Equipo',
-            'id_posicion' => 'Id Posicion',
+            'id_equipo' => 'Equipo',
+            'id_posicion' => 'Posición',
         ];
     }
 

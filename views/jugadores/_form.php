@@ -18,20 +18,22 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'dorsal')->textInput() ?>
 
-    <?= $form->field($model, 'partidos_jugados')->textInput() ?>
+    <?= $form->field($model, 'id_posicion')->dropDownList($posiciones) ?>
 
-    <?= $form->field($model, 'goles_marcados')->textInput() ?>
+    <?php if (!$model->isNewRecord) { ?>
 
-    <?= $form->field($model, 'goles_encajados')->textInput() ?>
+    <?= $form->field($model, 'partidos_jugados')->input('number') ?>
 
-    <?= $form->field($model, 'asistencias')->textInput() ?>
+    <?= $form->field($model, 'goles_marcados')->input('number') ?>
 
-    <?= $form->field($model, 'id_equipo')->textInput() ?>
+    <?= $form->field($model, 'goles_encajados')->input('number') ?>
 
-    <?= $form->field($model, 'id_posicion')->textInput() ?>
+    <?= $form->field($model, 'asistencias')->input('number') ?>
+
+    <?php } ?>
 
     <div class="form-group">
-        <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+        <?= Html::submitButton($model->isNewRecord ? 'Crear' : 'Modificar', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

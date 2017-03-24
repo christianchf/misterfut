@@ -5,7 +5,9 @@ namespace app\controllers;
 use Yii;
 use app\models\Equipo;
 use app\models\Jugador;
+use app\models\Posicion;
 use app\models\JugadorSearch;
+use yii\helpers\ArrayHelper;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -67,12 +69,16 @@ class JugadoresController extends Controller
     public function actionCreate()
     {
         $model = new Jugador();
+        $model->id_equipo = Yii::$app->request->get('id_equipo');
+        $posiciones = Posicion::find()->asArray()->all();
+        $posiciones = ArrayHelper::map($posiciones, 'id', 'posicion');
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('create', [
                 'model' => $model,
+                'posiciones' => $posiciones,
             ]);
         }
     }
@@ -86,12 +92,15 @@ class JugadoresController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
+        $posiciones = Posicion::find()->asArray()->all();
+        $posiciones = ArrayHelper::map($posiciones, 'id', 'posicion');
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('update', [
                 'model' => $model,
+                'posiciones' => $posiciones,
             ]);
         }
     }

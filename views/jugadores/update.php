@@ -1,14 +1,16 @@
 <?php
 
+use app\models\Equipo;
 use yii\helpers\Html;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Jugador */
 
-$this->title = 'Update Jugador: ' . $model->id;
-$this->params['breadcrumbs'][] = ['label' => 'Jugadors', 'url' => ['index']];
-$this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
-$this->params['breadcrumbs'][] = 'Update';
+$equipo = Equipo::find()->where(['id' => $model->id_equipo])->one()->nombre;
+$this->title = 'Modificar Jugador: ' . $model->nombre;
+$this->params['breadcrumbs'][] = ['label' => 'Plantilla ' . $equipo, 'url' => ['index', 'id_equipo' => $model->id_equipo]];
+$this->params['breadcrumbs'][] = ['label' => $model->nombre, 'url' => ['view', 'id' => $model->id]];
+$this->params['breadcrumbs'][] = 'Modificar';
 ?>
 <div class="jugador-update">
 
@@ -16,6 +18,7 @@ $this->params['breadcrumbs'][] = 'Update';
 
     <?= $this->render('_form', [
         'model' => $model,
+        'posiciones' => $posiciones,
     ]) ?>
 
 </div>
