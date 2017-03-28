@@ -31,6 +31,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'goles_marcados',
             // 'goles_encajados',
             'asistencias',
+            'golesPorPartido',
             'fecha_nac:date',
             // 'equipo.nombre',
 

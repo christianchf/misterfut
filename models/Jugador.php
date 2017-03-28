@@ -55,14 +55,15 @@ class Jugador extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'nombre' => 'Nombre',
-            'fecha_nac' => 'Fecha Nacimiento',
+            'fecha_nac' => 'Fecha nacimiento',
             'dorsal' => 'Dorsal',
-            'partidos_jugados' => 'PJ',
-            'goles_marcados' => 'Goles Marcados',
-            'goles_encajados' => 'Goles Encajados',
+            'partidos_jugados' => 'Partidos jugados',
+            'goles_marcados' => 'Goles marcados',
+            'goles_encajados' => 'Goles encajados',
             'asistencias' => 'Asistencias',
             'id_equipo' => 'Equipo',
             'id_posicion' => 'Posición',
+            'golesPorPartido' => 'Goles por partido',
         ];
     }
 
@@ -80,5 +81,19 @@ class Jugador extends \yii\db\ActiveRecord
     public function getPosicion()
     {
         return $this->hasOne(Posicion::className(), ['id' => 'id_posicion'])->inverseOf('jugadores');
+    }
+
+    /**
+     * Devuelve el número de goles por partido de un jugador.
+     * @return int El número de goles por partido.
+     */
+    public function getGolesPorPartido()
+    {
+        // var_dump($this->partidos_jugados);die;
+        if ($this->partidos_jugados == '0') {
+            return number_format(0, 2, ',', '.');
+        } else {
+            return number_format($this->goles_marcados / $this->partidos_jugados, 2, ',', '.');
+        }
     }
 }
