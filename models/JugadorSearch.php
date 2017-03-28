@@ -20,7 +20,7 @@ class JugadorSearch extends Jugador
         return [
             [['id', 'id_equipo', 'id_posicion'], 'integer'],
             [['nombre', 'fecha_nac'], 'safe'],
-            [['dorsal', 'partidos_jugados', 'goles_marcados', 'goles_encajados', 'asistencias'], 'number'],
+            [['dorsal'], 'number'],
         ];
     }
 
@@ -50,6 +50,28 @@ class JugadorSearch extends Jugador
             'query' => $query,
         ]);
 
+        $dataProvider->setSort([
+            'attributes' => [
+                'nombre',
+                'dorsal',
+                'partidos_jugados',
+                'goles_marcados',
+                'goles_encajados',
+                'asistencias',
+                // 'golesPorPartido' => [
+                //     'asc' => ['golesPorPartido' => SORT_ASC],
+                //     'desc' => ['golesPorPartido' => SORT_DESC],
+                //     'label' => 'Goles por partido',
+                //     'default' => SORT_ASC,
+                // ],
+                'partidos_empatados',
+                'partidos_perdidos',
+                'goles_a_favor',
+                'goles_en_contra',
+                'temporada',
+            ]
+        ]);
+
         $this->load($params);
 
         if (!$this->validate()) {
@@ -63,15 +85,11 @@ class JugadorSearch extends Jugador
             'id' => $this->id,
             'fecha_nac' => $this->fecha_nac,
             'dorsal' => $this->dorsal,
-            'partidos_jugados' => $this->partidos_jugados,
-            'goles_marcados' => $this->goles_marcados,
-            'goles_encajados' => $this->goles_encajados,
-            'asistencias' => $this->asistencias,
             'id_equipo' => $this->id_equipo,
             'id_posicion' => $this->id_posicion,
         ]);
 
-        $query->andFilterWhere(['like', 'nombre', $this->nombre]);
+        $query->andFilterWhere(['ilike', 'nombre', $this->nombre]);
 
         return $dataProvider;
     }

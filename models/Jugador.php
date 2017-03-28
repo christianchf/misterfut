@@ -89,7 +89,6 @@ class Jugador extends \yii\db\ActiveRecord
      */
     public function getGolesPorPartido()
     {
-        // var_dump($this->partidos_jugados);die;
         if ($this->partidos_jugados == '0') {
             return number_format(0, 2, ',', '.');
         } else {

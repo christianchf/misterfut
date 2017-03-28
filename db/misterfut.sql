@@ -35,15 +35,16 @@ create table equipos (
     partidos_perdidos  numeric(3)   default 0,
     goles_a_favor      numeric(3)   default 0,
     goles_en_contra    numeric(3)   default 0,
+    temporada          varchar(10)  not null,
     id_usuario         bigint       not null constraint fk_equipos_usuarios
                                              references usuarios (id)
                                              on delete cascade on update cascade
 );
 
-insert into equipos(nombre, id_usuario)
-    values  ('Real Madrid', 1),
-            ('Cadiz', 1),
-            ('Fruteria Pepe', 2);
+insert into equipos(nombre, temporada, id_usuario)
+    values  ('Real Madrid', '2016/2017', 1),
+            ('Cadiz', '2014/2015', 1),
+            ('Fruteria Pepe', '2016/2017', 2);
 
 drop table if exists posiciones cascade;
 
@@ -78,4 +79,5 @@ create table jugadores (
 
 insert into jugadores(nombre,fecha_nac,dorsal,id_equipo,id_posicion)
     values  ('Sergio Ramos', '1990-07-03',4,1,4),
+            ('Keylor Navas', '1987-11-23',1,1,1),
             ('Ortuño', '1987-05-12',8,2,13);

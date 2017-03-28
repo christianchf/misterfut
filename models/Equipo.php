@@ -14,6 +14,7 @@ use Yii;
  * @property string $partidos_perdidos
  * @property string $goles_a_favor
  * @property string $goles_en_contra
+ * @property string $temporada
  * @property integer $id_usuario
  *
  * @property Usuarios $idUsuario
@@ -35,10 +36,11 @@ class Equipo extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['nombre', 'id_usuario'], 'required'],
+            [['nombre', 'temporada', 'id_usuario'], 'required'],
             [['partidos_ganados', 'partidos_empatados', 'partidos_perdidos', 'goles_a_favor', 'goles_en_contra'], 'number'],
             [['id_usuario'], 'integer'],
             [['nombre'], 'string', 'max' => 100],
+            [['temporada'], 'string', 'max' => 10],
             [['nombre'], 'unique'],
             [['id_usuario'], 'exist', 'skipOnError' => true, 'targetClass' => Usuario::className(), 'targetAttribute' => ['id_usuario' => 'id']],
         ];
@@ -58,6 +60,7 @@ class Equipo extends \yii\db\ActiveRecord
             'partidos_perdidos' => 'PP',
             'goles_a_favor' => 'GF',
             'goles_en_contra' => 'GC',
+            'temporada' => 'Temporada',
             'id_usuario' => 'Id Usuario',
         ];
     }

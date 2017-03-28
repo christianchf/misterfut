@@ -12,7 +12,6 @@ use app\models\Equipo;
  */
 class EquipoSearch extends Equipo
 {
-    // public $partidosJugados;
     /**
      * @inheritdoc
      */
@@ -20,7 +19,7 @@ class EquipoSearch extends Equipo
     {
         return [
             [['id', 'id_usuario'], 'integer'],
-            [['nombre'], 'safe'],
+            [['nombre', 'temporada'], 'safe'],
         ];
     }
 
@@ -42,7 +41,7 @@ class EquipoSearch extends Equipo
      */
     public function search($params)
     {
-        $query = Equipo::find()->where(['id_usuario' => Yii::$app->user->id]);
+        $query = Equipo::find()->where(['id_usuario' => Yii::$app->user->id])->orderBy('temporada desc');
 
         // add conditions that should always apply here
 
@@ -52,17 +51,19 @@ class EquipoSearch extends Equipo
 
         $dataProvider->setSort([
             'attributes' => [
-                'partidosJugados' => [
-                    'asc' => ['partidos_ganados' => SORT_ASC, 'partidos_empatados' => SORT_ASC, 'partidos_perdidos' => SORT_ASC],
-                    'desc' => ['partidos_ganados' => SORT_DESC, 'partidos_empatados' => SORT_DESC, 'partidos_perdidos' => SORT_DESC],
-                    'label' => 'PJ',
-                    'default' => SORT_ASC,
-                ],
+                'nombre',
+                // 'partidosJugados' => [
+                //     'asc' => ['partidos_ganados' => SORT_ASC, 'partidos_empatados' => SORT_ASC, 'partidos_perdidos' => SORT_ASC],
+                //     'desc' => ['partidos_ganados' => SORT_DESC, 'partidos_empatados' => SORT_DESC, 'partidos_perdidos' => SORT_DESC],
+                //     'label' => 'PJ',
+                //     'default' => SORT_ASC,
+                // ],
                 'partidos_ganados',
                 'partidos_empatados',
                 'partidos_perdidos',
                 'goles_a_favor',
                 'goles_en_contra',
+                'temporada',
             ]
         ]);
 
@@ -79,7 +80,8 @@ class EquipoSearch extends Equipo
             'id' => $this->id,
         ]);
 
-        $query->andFilterWhere(['ilike', 'nombre', $this->nombre]);
+        $query->andFilterWhere(['ilike', 'nombre', $this->nombre])
+            ->andFilterWhere(['ilike', 'temporada', $this->temporada]);
 
         return $dataProvider;
     }

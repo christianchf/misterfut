@@ -53,6 +53,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'label' => 'Goles en contra',
                 'value' => $model->goles_en_contra,
             ],
+            'temporada',
         ],
     ]) ?>
 

@@ -31,6 +31,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'partidos_perdidos',
             'goles_a_favor',
             'goles_en_contra',
+            'temporada',
             [
                 'label' => 'Plantilla',
                 'value' => function ($model, $key, $index, $column) {
