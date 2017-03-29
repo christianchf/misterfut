@@ -7,6 +7,7 @@ use app\models\Equipo;
 use app\models\Jugador;
 use app\models\Posicion;
 use app\models\JugadorSearch;
+use yii\filters\AccessControl;
 use yii\helpers\ArrayHelper;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
@@ -27,6 +28,34 @@ class JugadoresController extends Controller
                 'class' => VerbFilter::className(),
                 'actions' => [
                     'delete' => ['POST'],
+                ],
+            ],
+            'access' => [
+                'class' => AccessControl::className(),
+                'rules' => [
+                    [
+                        'allow' => true,
+                        'actions' => ['index', 'create', 'delete'],
+                        'roles' => ['@'],
+                        'matchCallback' => function ($rule, $action) {
+                            $equipos = Equipo::find()->where(['id_usuario' => Yii::$app->user->id])->asArray()->all();
+                            $equipos = ArrayHelper::map($equipos, 'id', 'id');
+                            $idEquipo = Yii::$app->request->get('id_equipo');
+
+                            return in_array($idEquipo, $equipos);
+                        }
+                    ],
+                    [
+                        'allow' => true,
+                        'actions' => ['view', 'update'],
+                        'roles' => ['@'],
+                        'matchCallback' => function ($rule, $action) {
+                            $idEquipoJugador = Jugador::find()->select('id_equipo')->where(['id' => Yii::$app->request->get('id')])->one()->id_equipo;
+                            $equipos = Equipo::find()->where(['id_usuario' => Yii::$app->user->id])->asArray()->all();
+                            $equipos = ArrayHelper::map($equipos, 'id', 'id');
+                            return in_array($idEquipoJugador, $equipos);
+                        }
+                    ],
                 ],
             ],
         ];

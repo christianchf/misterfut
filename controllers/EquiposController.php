@@ -6,6 +6,7 @@ use Yii;
 use app\models\Equipo;
 use app\models\EquipoSearch;
 use yii\filters\AccessControl;
+use yii\helpers\ArrayHelper;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -40,9 +41,11 @@ class EquiposController extends Controller
                         'actions' => ['view', 'update'],
                         'roles' => ['@'],
                         'matchCallback' => function ($rule, $action) {
-                            $id = Yii::$app->request->get('id');
-                            $equipo = Equipo::find()->where(['id' => $id])->one();
-                            return Yii::$app->user->id == $equipo->id_usuario;
+                            $equipos = Equipo::find()->where(['id_usuario' => Yii::$app->user->id])->asArray()->all();
+                            $equipos = ArrayHelper::map($equipos, 'id', 'id');
+                            $idEquipo = Yii::$app->request->get('id');
+
+                            return in_array($idEquipo, $equipos);
                         },
                     ],
                 ],
