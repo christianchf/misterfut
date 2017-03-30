@@ -44,6 +44,7 @@ class Jugador extends \yii\db\ActiveRecord
             [['nombre'], 'string', 'max' => 100],
             [['id_equipo'], 'exist', 'skipOnError' => true, 'targetClass' => Equipo::className(), 'targetAttribute' => ['id_equipo' => 'id']],
             [['id_posicion'], 'exist', 'skipOnError' => true, 'targetClass' => Posicion::className(), 'targetAttribute' => ['id_posicion' => 'id']],
+            [['fecha_nac'], 'date', 'format'=>'php:Y-m-d'],
         ];
     }
 
