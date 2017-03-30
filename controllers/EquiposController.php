@@ -41,11 +41,16 @@ class EquiposController extends Controller
                         'actions' => ['view', 'update'],
                         'roles' => ['@'],
                         'matchCallback' => function ($rule, $action) {
-                            $equipos = Equipo::find()->where(['id_usuario' => Yii::$app->user->id])->asArray()->all();
-                            $equipos = ArrayHelper::map($equipos, 'id', 'id');
                             $idEquipo = Yii::$app->request->get('id');
+                            $equipo = Equipo::find()->where(['id' => $idEquipo])->one();
+                            if ($equipo !== null) {
+                                $usuarioEquipo = $equipo->id_usuario;
+                            } else {
+                                throw new \yii\web\HttpException(404, 'El equipo que busca no existe.');
+                            }
+                            $idUsuario = Yii::$app->user->id;
 
-                            return in_array($idEquipo, $equipos);
+                            return $usuarioEquipo == $idUsuario;
                         },
                     ],
                 ],

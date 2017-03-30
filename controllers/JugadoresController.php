@@ -38,11 +38,16 @@ class JugadoresController extends Controller
                         'actions' => ['index', 'create', 'delete'],
                         'roles' => ['@'],
                         'matchCallback' => function ($rule, $action) {
-                            $equipos = Equipo::find()->where(['id_usuario' => Yii::$app->user->id])->asArray()->all();
-                            $equipos = ArrayHelper::map($equipos, 'id', 'id');
                             $idEquipo = Yii::$app->request->get('id_equipo');
+                            $equipo = Equipo::find()->where(['id' => $idEquipo])->one();
+                            if ($equipo !== null) {
+                                $usuarioEquipo = $equipo->id_usuario;
+                            } else {
+                                throw new \yii\web\HttpException(404, 'El equipo que busca no existe.');
+                            }
+                            $idUsuario = Yii::$app->user->id;
 
-                            return in_array($idEquipo, $equipos);
+                            return $usuarioEquipo == $idUsuario;
                         }
                     ],
                     [
@@ -50,10 +55,17 @@ class JugadoresController extends Controller
                         'actions' => ['view', 'update'],
                         'roles' => ['@'],
                         'matchCallback' => function ($rule, $action) {
-                            $idEquipoJugador = Jugador::find()->select('id_equipo')->where(['id' => Yii::$app->request->get('id')])->one()->id_equipo;
-                            $equipos = Equipo::find()->where(['id_usuario' => Yii::$app->user->id])->asArray()->all();
-                            $equipos = ArrayHelper::map($equipos, 'id', 'id');
-                            return in_array($idEquipoJugador, $equipos);
+                            $idJugador = Yii::$app->request->get('id');
+                            $jugador = Jugador::find()->where(['id' => $idJugador])->one();
+                            if ($jugador !== null) {
+                                $equipoJugador = $jugador->id_equipo;
+                            } else {
+                                throw new \yii\web\HttpException(404, 'El jugador que busca no existe.');
+                            }
+                            $usuarioEquipo = Equipo::find()->where(['id' => $equipoJugador])->one()->id_usuario;
+                            $idUsuario = Yii::$app->user->id;
+
+                            return $usuarioEquipo == $idUsuario;
                         }
                     ],
                 ],
