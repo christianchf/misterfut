@@ -27,15 +27,16 @@ $templateNac = '{label}<div class="input-group"><span class="input-group-btn">
 
     <?= $form->field($model, 'nombre')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'fecha_nac', ['template' => $templateNac])->widget(DatePicker::classname(), [
-        'language' => 'es',
-        'dateFormat' => 'yyyy-MM-dd',
-        'options' => ['class' => 'form-control'],
-        'clientOptions' => [
-            'yearRange' => '-115:+0',
-            'changeYear' => true
-        ],
-    ]) ?>
+    <?= $form->field($model, 'fecha_nac', ['template' => $templateNac])
+        ->widget(DatePicker::classname(), [
+            'language' => 'es',
+            'dateFormat' => 'yyyy-MM-dd',
+            'options' => ['class' => 'form-control'],
+            'clientOptions' => [
+                'yearRange' => '-115:+0',
+                'changeYear' => true
+            ],
+        ]) ?>
 
     <?= $form->field($model, 'dorsal')->textInput() ?>
 

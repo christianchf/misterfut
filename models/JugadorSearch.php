@@ -12,6 +12,7 @@ use app\models\Jugador;
  */
 class JugadorSearch extends Jugador
 {
+    public $nombrePosicion;
     /**
      * @inheritdoc
      */
@@ -19,8 +20,10 @@ class JugadorSearch extends Jugador
     {
         return [
             [['id', 'id_equipo', 'id_posicion'], 'integer'],
-            [['nombre', 'fecha_nac'], 'safe'],
+            [['nombre', 'fecha_nac', 'nombrePosicion'], 'safe'],
             [['dorsal'], 'number'],
+            [['fecha_nac'], 'date', 'format'=>'php:Y-m-d'],
+            [['fecha_nac'], 'default', 'value' => null],
         ];
     }
 
@@ -52,6 +55,12 @@ class JugadorSearch extends Jugador
 
         $dataProvider->setSort([
             'attributes' => [
+                'nombrePosicion' => [
+                    'asc' => ['id_posicion' => SORT_ASC],
+                    'desc' => ['id_posicion' => SORT_DESC],
+                    'label' => 'Posición',
+                    'default' => SORT_ASC
+                ],
                 'nombre',
                 'dorsal',
                 'partidos_jugados',
@@ -64,11 +73,7 @@ class JugadorSearch extends Jugador
                 //     'label' => 'Goles por partido',
                 //     'default' => SORT_ASC,
                 // ],
-                'partidos_empatados',
-                'partidos_perdidos',
-                'goles_a_favor',
-                'goles_en_contra',
-                'temporada',
+                'fecha_nac',
             ]
         ]);
 
@@ -90,6 +95,10 @@ class JugadorSearch extends Jugador
         ]);
 
         $query->andFilterWhere(['ilike', 'nombre', $this->nombre]);
+
+        $query->joinWith(['posicion' => function ($q) {
+            $q->andFilterWhere(['ilike', 'posicion', $this->nombrePosicion]);
+        }]);
 
         return $dataProvider;
     }

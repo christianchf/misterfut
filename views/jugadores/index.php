@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\grid\GridView;
+use yii\jui\DatePicker;
 
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\JugadorSearch */
@@ -24,7 +25,12 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'posicion.posicion',
+
+            [
+                'label' => 'Posición',
+                'filter' => $posiciones,
+                'attribute' => 'nombrePosicion',
+            ],
             'nombre',
             'dorsal',
             'partidos_jugados',
@@ -32,7 +38,23 @@ $this->params['breadcrumbs'][] = $this->title;
             // 'goles_encajados',
             'asistencias',
             'golesPorPartido',
-            'fecha_nac:date',
+            [
+                'label' => 'Fecha nacimiento',
+                'value' => 'fecha_nac',
+                'filter' => DatePicker::widget([
+                    'language' => 'es',
+                    'dateFormat' => 'yyyy-MM-dd',
+                    'options' => ['class' => 'form-control'],
+                    'clientOptions' => [
+                        'yearRange' => '-115:+0',
+                        'changeYear' => true
+                    ],
+                    'model' => $searchModel,
+                    'attribute' => 'fecha_nac',
+                ]),
+                'attribute' => 'fecha_nac',
+                'format' => 'date',
+            ],
             // 'equipo.nombre',
 
             ['class' => 'yii\grid\ActionColumn'],

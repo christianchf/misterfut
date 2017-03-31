@@ -82,11 +82,14 @@ class JugadoresController extends Controller
         $searchModel = new JugadorSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
         $equipo = Equipo::find()->where(['id' => Yii::$app->request->get('id_equipo')])->one()->nombre;
+        $posiciones = Posicion::find()->asArray()->all();
+        $posiciones = ArrayHelper::map($posiciones, 'posicion', 'posicion');
 
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
             'equipo' => $equipo,
+            'posiciones' => $posiciones,
         ]);
     }
 

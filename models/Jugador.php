@@ -96,4 +96,9 @@ class Jugador extends \yii\db\ActiveRecord
             return number_format($this->goles_marcados / $this->partidos_jugados, 2, ',', '.');
         }
     }
+
+    public function getNombrePosicion()
+    {
+        return $this->posicion->posicion;
+    }
 }
