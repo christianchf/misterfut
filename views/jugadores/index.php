@@ -1,7 +1,7 @@
 <?php
 
 use yii\helpers\Html;
-use yii\grid\GridView;
+use kartik\grid\GridView;
 use yii\jui\DatePicker;
 
 /* @var $this yii\web\View */
@@ -30,6 +30,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'label' => 'Posición',
                 'filter' => $posiciones,
                 'attribute' => 'nombrePosicion',
+                'group' => true,
             ],
             'nombre',
             'dorsal',
@@ -59,5 +60,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
             ['class' => 'yii\grid\ActionColumn'],
         ],
+        'responsive'=>true,
+        'hover'=>true,
     ]); ?>
 </div>

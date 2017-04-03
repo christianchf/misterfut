@@ -45,7 +45,8 @@ class JugadorSearch extends Jugador
      */
     public function search($params)
     {
-        $query = Jugador::find()->where(['id_equipo' => Yii::$app->request->get('id_equipo')]);
+        $query = Jugador::find()->where(['id_equipo' => Yii::$app->request->get('id_equipo')])
+            ->orderBy('id_posicion');
 
         // add conditions that should always apply here
 
