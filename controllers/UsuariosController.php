@@ -41,7 +41,9 @@ class UsuariosController extends Controller
                         'roles' => ['@'],
                         'matchCallback' => function ($rule, $action) {
                             $id = Yii::$app->request->get('id');
-                            return $id === null || Yii::$app->user->id;
+                            $idLogin = Usuario::find()->where(['id' => Yii::$app->user->id])->one()->id;
+
+                            return $id === null || $id == $idLogin;
                         },
                     ],
                     [
