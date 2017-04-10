@@ -66,10 +66,15 @@ class EquiposController extends Controller
     {
         $searchModel = new EquipoSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        $temporadas = Equipo::find()
+                        ->where(['id_usuario' => Yii::$app->user->id])
+                        ->asArray()->all();
+        $temporadas = ArrayHelper::map($temporadas, 'temporada', 'temporada');
 
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
+            'temporadas' => $temporadas,
         ]);
     }
 

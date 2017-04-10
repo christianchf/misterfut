@@ -22,21 +22,35 @@ $this->params['breadcrumbs'][] = $this->title;
 <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
+        'resizableColumns' => false,
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-
             [
                 'label' => 'Posición',
-                'filter' => $posiciones,
                 'attribute' => 'nombrePosicion',
                 'group' => true,
+                'width' => '110px',
+                'filterType' => GridView::FILTER_SELECT2,
+                'filter' => $posiciones,
+                'filterWidgetOptions'=>[
+                    'pluginOptions'=>['allowClear'=>true],
+                ],
+                'filterInputOptions'=>['placeholder'=>'Posición'],
             ],
             'nombre',
-            'dorsal',
+            [
+                'attribute' => 'dorsal',
+                'filterType' => GridView::FILTER_SELECT2,
+                'filter' => $dorsales,
+                'filterWidgetOptions'=>[
+                    'pluginOptions'=>['allowClear'=>true],
+                ],
+                'filterInputOptions'=>['placeholder'=>'Dorsal'],
+            ],
             'partidos_jugados',
             'goles_marcados',
-            // 'goles_encajados',
+            'goles_encajados',
             'asistencias',
             'golesPorPartido',
             [

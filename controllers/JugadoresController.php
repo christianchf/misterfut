@@ -84,12 +84,19 @@ class JugadoresController extends Controller
         $equipo = Equipo::find()->where(['id' => Yii::$app->request->get('id_equipo')])->one()->nombre;
         $posiciones = Posicion::find()->asArray()->all();
         $posiciones = ArrayHelper::map($posiciones, 'posicion', 'posicion');
+        $dorsales = Jugador::find()
+                        ->select('dorsal')
+                        ->where(['id_equipo' => Yii::$app->request->get('id_equipo')])
+                        ->orderBy('dorsal')
+                        ->asArray()->all();
+        $dorsales = ArrayHelper::map($dorsales, 'dorsal', 'dorsal');
 
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
             'equipo' => $equipo,
             'posiciones' => $posiciones,
+            'dorsales' => $dorsales,
         ]);
     }
 

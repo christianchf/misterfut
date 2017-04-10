@@ -1,7 +1,9 @@
 <?php
 
+use app\models\Equipo;
 use yii\helpers\Html;
 use kartik\grid\GridView;
+use yii\helpers\ArrayHelper;
 
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\EquipoSearch */
@@ -21,6 +23,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
+        'resizableColumns' => false,
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
@@ -31,7 +34,17 @@ $this->params['breadcrumbs'][] = $this->title;
             'partidos_perdidos',
             'goles_a_favor',
             'goles_en_contra',
-            'temporada',
+            [
+                'attribute' => 'temporada',
+                'width' => '150px',
+                'filterType' => GridView::FILTER_SELECT2,
+                'filter' => $temporadas,
+                'filterWidgetOptions'=>[
+                    'pluginOptions'=>['allowClear'=>true],
+                ],
+                'filterInputOptions'=>['placeholder'=>'Temporada'],
+            ],
+
             [
                 'label' => 'Plantilla',
                 'value' => function ($model, $key, $index, $column) {

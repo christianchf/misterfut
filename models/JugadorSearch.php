@@ -12,6 +12,10 @@ use app\models\Jugador;
  */
 class JugadorSearch extends Jugador
 {
+    /**
+     * Descripción textual de la posición del jugador.
+     * @var string
+     */
     public $nombrePosicion;
     /**
      * @inheritdoc
@@ -46,7 +50,7 @@ class JugadorSearch extends Jugador
     public function search($params)
     {
         $query = Jugador::find()->where(['id_equipo' => Yii::$app->request->get('id_equipo')])
-            ->orderBy('id_posicion');
+            ->orderBy(['id_posicion' => SORT_ASC, 'nombre' => SORT_ASC]);
 
         // add conditions that should always apply here
 
