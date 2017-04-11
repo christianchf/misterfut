@@ -38,7 +38,7 @@ $templateNac = '{label}<div class="input-group"><span class="input-group-btn">
             ],
         ]) ?>
 
-    <?= $form->field($model, 'dorsal')->textInput() ?>
+    <?= $form->field($model, 'dorsal')->input('number') ?>
 
     <?= $form->field($model, 'id_posicion')->dropDownList($posiciones) ?>
 
