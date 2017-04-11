@@ -49,23 +49,7 @@ class EquipoSearch extends Equipo
             'query' => $query,
         ]);
 
-        $dataProvider->setSort([
-            'attributes' => [
-                'nombre',
-                // 'partidosJugados' => [
-                //     'asc' => ['partidos_ganados' => SORT_ASC, 'partidos_empatados' => SORT_ASC, 'partidos_perdidos' => SORT_ASC],
-                //     'desc' => ['partidos_ganados' => SORT_DESC, 'partidos_empatados' => SORT_DESC, 'partidos_perdidos' => SORT_DESC],
-                //     'label' => 'PJ',
-                //     'default' => SORT_ASC,
-                // ],
-                'partidos_ganados',
-                'partidos_empatados',
-                'partidos_perdidos',
-                'goles_a_favor',
-                'goles_en_contra',
-                'temporada',
-            ]
-        ]);
+        $dataProvider->setSort(false);
 
         $this->load($params);
 

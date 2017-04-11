@@ -67,18 +67,6 @@ class JugadorSearch extends Jugador
                     'default' => SORT_ASC
                 ],
                 'nombre',
-                'dorsal',
-                'partidos_jugados',
-                'goles_marcados',
-                'goles_encajados',
-                'asistencias',
-                // 'golesPorPartido' => [
-                //     'asc' => ['golesPorPartido' => SORT_ASC],
-                //     'desc' => ['golesPorPartido' => SORT_DESC],
-                //     'label' => 'Goles por partido',
-                //     'default' => SORT_ASC,
-                // ],
-                'fecha_nac',
             ]
         ]);
 
