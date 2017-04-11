@@ -6,16 +6,11 @@ create table usuarios (
     password   varchar(60)  not null,
     email      varchar(255) not null,
     token      varchar(32),
-    --activacion varchar(32),
     created_at timestamptz  default current_timestamp
 );
 
 create index idx_usuarios_activacion on usuarios (activacion);
 create index idx_usuarios_created_at on usuarios (created_at);
-
-insert into usuarios(nombre, email, password)
-    values  ('christian','christianhf.chf@gmail.com', crypt('christian', gen_salt('bf', 13))),
-            ('pepe','pepe@gmail.com', crypt('pepe', gen_salt('bf', 13)));
 
 drop table if exists session;
 
@@ -41,22 +36,12 @@ create table equipos (
                                              on delete cascade on update cascade
 );
 
-insert into equipos(nombre, temporada, id_usuario)
-    values  ('Real Madrid', '2016/2017', 1),
-            ('Cadiz', '2014/2015', 1),
-            ('Fruteria Pepe', '2016/2017', 2);
-
 drop table if exists posiciones cascade;
 
 create table posiciones (
     id       bigserial    constraint pk_posiciones primary key,
     posicion varchar(100) not null
 );
-
-insert into posiciones(posicion)
-    values  ('POR'), ('CAD'), ('LD'), ('DFC'), ('LI'), ('CAI'), ('MCD'), ('MD'),
-            ('MC'), ('MI'), ('MCO'), ('SDD'), ('SD'), ('SDI'), ('ED'), ('DC'),
-            ('EI');
 
 drop table if exists jugadores cascade;
 
@@ -76,8 +61,3 @@ create table jugadores (
                                            references posiciones (id)
                                            on delete no action on update cascade
 );
-
-insert into jugadores(nombre,fecha_nac,dorsal,id_equipo,id_posicion)
-    values  ('Sergio Ramos', '1990-07-03',4,1,4),
-            ('Keylor Navas', '1987-11-23',1,1,1),
-            ('Ortuño', '1987-05-12',8,2,13);
