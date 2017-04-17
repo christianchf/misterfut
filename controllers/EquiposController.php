@@ -4,7 +4,9 @@ namespace app\controllers;
 
 use Yii;
 use app\models\Equipo;
+use app\models\Jugador;
 use app\models\EquipoSearch;
+use yii\data\ActiveDataProvider;
 use yii\filters\AccessControl;
 use yii\helpers\ArrayHelper;
 use yii\web\Controller;
@@ -85,8 +87,15 @@ class EquiposController extends Controller
      */
     public function actionView($id)
     {
+        $jugadores = new ActiveDataProvider([
+            'query' => Jugador::find()->where(['id_equipo' => $id]),
+            'pagination' => false,
+            'sort' => false,
+        ]);
+
         return $this->render('view', [
             'model' => $this->findModel($id),
+            'jugadores' => $jugadores,
         ]);
     }
 

@@ -117,3 +117,7 @@ a.desc:after {
 .form-horizontal .control-label {
     padding-right: 0px;
 }
+
+a.glyphicon.glyphicon-eye-open:hover {
+    text-decoration: none;
+}

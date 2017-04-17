@@ -71,7 +71,6 @@ $this->params['breadcrumbs'][] = $this->title;
                 'attribute' => 'fecha_nac',
                 'format' => 'date',
             ],
-            // 'equipo.nombre',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],
