@@ -88,7 +88,8 @@ class EquiposController extends Controller
     public function actionView($id)
     {
         $jugadores = new ActiveDataProvider([
-            'query' => Jugador::find()->where(['id_equipo' => $id]),
+            'query' => Jugador::find()->where(['id_equipo' => $id])
+                    ->orderBy(['id_posicion' => SORT_ASC, 'nombre' => SORT_ASC]),
             'pagination' => false,
             'sort' => false,
         ]);
