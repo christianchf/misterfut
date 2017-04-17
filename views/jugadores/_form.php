@@ -12,12 +12,17 @@ $js = <<<EOT
 $('#calendarioNac').on('click', function(){
     $('#jugador-fecha_nac').trigger('focus');
 });
+$('#borrarFecha').on('click', function(){
+    $('#jugador-fecha_nac').val('');
+});
 EOT;
 $this->registerJs($js);
 
 $templateNac = '{label}<div class="input-group"><span class="input-group-btn">
 <button type="button" class="btn btn-default" aria-label="Left Align" id="calendarioNac">
 <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span></button>
+<button type="button" class="btn btn-default" aria-label="Left Align" id="borrarFecha">
+<span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
 </span>{input}</div>{hint}{error}';
 ?>
 
