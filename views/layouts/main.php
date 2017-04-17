@@ -38,6 +38,7 @@ AppAsset::register($this);
         ['label' => 'Inicio', 'url' => ['/site/index']],
         ['label' => 'Misterfut', 'url' => ['/site/about']],
         ['label' => 'Contacto', 'url' => ['/site/contact']],
+        Yii::$app->user->isGuest ? '' : ['label' => 'Mis equipos', 'url' => ['/equipos/index']],
         Yii::$app->user->isGuest ?
         [
             'label' => 'Usuarios',
@@ -57,7 +58,6 @@ AppAsset::register($this);
                 ],
                 '<li class="divider"></li>',
                 ['label' => 'Ver datos', 'url' => ['/usuarios/view']],
-                ['label' => 'Mis equipos', 'url' => ['/equipos/index']],
             ]
         ]
     ];

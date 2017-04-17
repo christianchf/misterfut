@@ -7,6 +7,7 @@ use yii\widgets\DetailView;
 /* @var $model app\models\Jugador */
 
 $this->title = $model->nombre;
+$this->params['breadcrumbs'][] = ['label' => 'Equipos', 'url' => ['/equipos/index']];
 $this->params['breadcrumbs'][] = ['label' => 'Plantilla ' . $model->equipo->nombre, 'url' => ['index', 'id_equipo' => $model->id_equipo]];
 $this->params['breadcrumbs'][] = $this->title;
 ?>

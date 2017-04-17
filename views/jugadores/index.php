@@ -9,6 +9,7 @@ use yii\jui\DatePicker;
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
 $this->title = 'Plantilla ' . $equipo;
+$this->params['breadcrumbs'][] = ['label' => 'Equipos', 'url' => ['/equipos/index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="jugador-index">

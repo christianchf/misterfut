@@ -8,6 +8,7 @@ use yii\helpers\Html;
 
 $equipo = Equipo::find()->where(['id' => $model->id_equipo])->one()->nombre;
 $this->title = 'Modificar Jugador: ' . $model->nombre;
+$this->params['breadcrumbs'][] = ['label' => 'Equipos', 'url' => ['/equipos/index']];
 $this->params['breadcrumbs'][] = ['label' => 'Plantilla ' . $equipo, 'url' => ['index', 'id_equipo' => $model->id_equipo]];
 $this->params['breadcrumbs'][] = ['label' => $model->nombre, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = 'Modificar';
