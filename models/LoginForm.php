@@ -14,8 +14,20 @@ use app\models\Usuario;
  */
 class LoginForm extends Model
 {
+    /**
+     * Campo del nombre del usuario.
+     * @var string
+     */
     public $username;
+    /**
+     * Campo de la contraseña del usuario.
+     * @var string
+     */
     public $password;
+    /**
+     * Campo opcional para recordar al usuario logueado.
+     * @var string
+     */
     public $rememberMe = true;
 
     /**
@@ -83,7 +95,7 @@ class LoginForm extends Model
     /**
      * Finds user by [[username]]
      *
-     * @return User|null
+     * @return Usuario|null
      */
     public function getUser()
     {

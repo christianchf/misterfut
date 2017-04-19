@@ -1,0 +1,283 @@
+Array
+(
+    [0] => Array
+        (
+            [line] => 24
+            [file] => controllers/EquiposController.php
+            [message] => Method behaviors has no parent to inherit from in app\controllers\EquiposController.
+        )
+
+    [1] => Array
+        (
+            [line] => 24
+            [file] => controllers/JugadoresController.php
+            [message] => Method behaviors has no parent to inherit from in app\controllers\JugadoresController.
+        )
+
+    [2] => Array
+        (
+            [line] => 17
+            [file] => controllers/SiteController.php
+            [message] => Method behaviors has no parent to inherit from in app\controllers\SiteController.
+        )
+
+    [3] => Array
+        (
+            [line] => 43
+            [file] => controllers/SiteController.php
+            [message] => Method actions has no parent to inherit from in app\controllers\SiteController.
+        )
+
+    [4] => Array
+        (
+            [line] => 21
+            [file] => controllers/UsuariosController.php
+            [message] => Method behaviors has no parent to inherit from in app\controllers\UsuariosController.
+        )
+
+    [5] => Array
+        (
+            [line] => 26
+            [file] => models/Equipo.php
+            [message] => Method tableName has no parent to inherit from in app\models\Equipo.
+        )
+
+    [6] => Array
+        (
+            [line] => 34
+            [file] => models/Equipo.php
+            [message] => Method rules has no parent to inherit from in app\models\Equipo.
+        )
+
+    [7] => Array
+        (
+            [line] => 50
+            [file] => models/Equipo.php
+            [message] => Method attributeLabels has no parent to inherit from in app\models\Equipo.
+        )
+
+    [8] => Array
+        (
+            [line] => 26
+            [file] => models/Equipo.php
+            [message] => Method tableName has no parent to inherit from in app\models\Equipo.
+        )
+
+    [9] => Array
+        (
+            [line] => 34
+            [file] => models/Equipo.php
+            [message] => Method rules has no parent to inherit from in app\models\Equipo.
+        )
+
+    [10] => Array
+        (
+            [line] => 50
+            [file] => models/Equipo.php
+            [message] => Method attributeLabels has no parent to inherit from in app\models\Equipo.
+        )
+
+    [11] => Array
+        (
+            [line] => 29
+            [file] => models/EquipoSearch.php
+            [message] => Method scenarios has no parent to inherit from in app\models\EquipoSearch.
+        )
+
+    [12] => Array
+        (
+            [line] => 27
+            [file] => models/Jugador.php
+            [message] => Method tableName has no parent to inherit from in app\models\Jugador.
+        )
+
+    [13] => Array
+        (
+            [line] => 35
+            [file] => models/Jugador.php
+            [message] => Method rules has no parent to inherit from in app\models\Jugador.
+        )
+
+    [14] => Array
+        (
+            [line] => 52
+            [file] => models/Jugador.php
+            [message] => Method attributeLabels has no parent to inherit from in app\models\Jugador.
+        )
+
+    [15] => Array
+        (
+            [line] => 27
+            [file] => models/Jugador.php
+            [message] => Method tableName has no parent to inherit from in app\models\Jugador.
+        )
+
+    [16] => Array
+        (
+            [line] => 35
+            [file] => models/Jugador.php
+            [message] => Method rules has no parent to inherit from in app\models\Jugador.
+        )
+
+    [17] => Array
+        (
+            [line] => 52
+            [file] => models/Jugador.php
+            [message] => Method attributeLabels has no parent to inherit from in app\models\Jugador.
+        )
+
+    [18] => Array
+        (
+            [line] => 37
+            [file] => models/JugadorSearch.php
+            [message] => Method scenarios has no parent to inherit from in app\models\JugadorSearch.
+        )
+
+    [19] => Array
+        (
+            [line] => 18
+            [file] => models/Posicion.php
+            [message] => Method tableName has no parent to inherit from in app\models\Posicion.
+        )
+
+    [20] => Array
+        (
+            [line] => 26
+            [file] => models/Posicion.php
+            [message] => Method rules has no parent to inherit from in app\models\Posicion.
+        )
+
+    [21] => Array
+        (
+            [line] => 37
+            [file] => models/Posicion.php
+            [message] => Method attributeLabels has no parent to inherit from in app\models\Posicion.
+        )
+
+    [22] => Array
+        (
+            [line] => 40
+            [file] => models/Usuario.php
+            [message] => Method tableName has no parent to inherit from in app\models\Usuario.
+        )
+
+    [23] => Array
+        (
+            [line] => 48
+            [file] => models/Usuario.php
+            [message] => Method rules has no parent to inherit from in app\models\Usuario.
+        )
+
+    [24] => Array
+        (
+            [line] => 66
+            [file] => models/Usuario.php
+            [message] => Method attributeLabels has no parent to inherit from in app\models\Usuario.
+        )
+
+    [25] => Array
+        (
+            [line] => 90
+            [file] => models/Usuario.php
+            [message] => Method findIdentity has no parent to inherit from in app\models\Usuario.
+        )
+
+    [26] => Array
+        (
+            [line] => 98
+            [file] => models/Usuario.php
+            [message] => Method findIdentityByAccessToken has no parent to inherit from in app\models\Usuario.
+        )
+
+    [27] => Array
+        (
+            [line] => 116
+            [file] => models/Usuario.php
+            [message] => Method getId has no parent to inherit from in app\models\Usuario.
+        )
+
+    [28] => Array
+        (
+            [line] => 124
+            [file] => models/Usuario.php
+            [message] => Method getAuthKey has no parent to inherit from in app\models\Usuario.
+        )
+
+    [29] => Array
+        (
+            [line] => 140
+            [file] => models/Usuario.php
+            [message] => Method validateAuthKey has no parent to inherit from in app\models\Usuario.
+        )
+
+    [30] => Array
+        (
+            [line] => 40
+            [file] => models/Usuario.php
+            [message] => Method tableName has no parent to inherit from in app\models\Usuario.
+        )
+
+    [31] => Array
+        (
+            [line] => 48
+            [file] => models/Usuario.php
+            [message] => Method rules has no parent to inherit from in app\models\Usuario.
+        )
+
+    [32] => Array
+        (
+            [line] => 66
+            [file] => models/Usuario.php
+            [message] => Method attributeLabels has no parent to inherit from in app\models\Usuario.
+        )
+
+    [33] => Array
+        (
+            [line] => 90
+            [file] => models/Usuario.php
+            [message] => Method findIdentity has no parent to inherit from in app\models\Usuario.
+        )
+
+    [34] => Array
+        (
+            [line] => 98
+            [file] => models/Usuario.php
+            [message] => Method findIdentityByAccessToken has no parent to inherit from in app\models\Usuario.
+        )
+
+    [35] => Array
+        (
+            [line] => 116
+            [file] => models/Usuario.php
+            [message] => Method getId has no parent to inherit from in app\models\Usuario.
+        )
+
+    [36] => Array
+        (
+            [line] => 124
+            [file] => models/Usuario.php
+            [message] => Method getAuthKey has no parent to inherit from in app\models\Usuario.
+        )
+
+    [37] => Array
+        (
+            [line] => 140
+            [file] => models/Usuario.php
+            [message] => Method validateAuthKey has no parent to inherit from in app\models\Usuario.
+        )
+
+    [38] => Array
+        (
+            [line] => 26
+            [file] => models/UsuarioForm.php
+            [message] => Method rules has no parent to inherit from in app\models\UsuarioForm.
+        )
+
+    [39] => Array
+        (
+            [line] => 28
+            [file] => models/UsuarioSearch.php
+            [message] => Method scenarios has no parent to inherit from in app\models\UsuarioSearch.
+        )
+
+)

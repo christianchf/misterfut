@@ -2,8 +2,6 @@
 
 namespace app\models;
 
-use Yii;
-
 /**
  * This is the model class for table "jugadores".
  *
@@ -97,6 +95,10 @@ class Jugador extends \yii\db\ActiveRecord
         }
     }
 
+    /**
+     * Devuelve el nombre de la posición del jugador.
+     * @return string El nombre de la posición
+     */
     public function getNombrePosicion()
     {
         return $this->posicion->posicion;

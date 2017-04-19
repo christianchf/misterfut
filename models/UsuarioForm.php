@@ -4,8 +4,20 @@ namespace app\models;
 
 class UsuarioForm extends \yii\base\Model
 {
+    /**
+     * Campo del nombre del usuario.
+     * @var string
+     */
     public $nombre;
+    /**
+     * Campo de la contraseña del usuario
+     * @var string
+     */
     public $password;
+    /**
+     * Campo de confirmación de la contraseña del usuario.
+     * @var string
+     */
     public $passwordConfirm;
 
     /**
