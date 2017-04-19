@@ -16,5 +16,6 @@ Por ultimo, en la aplicación también existirá la opción de gestionar a los u
 registrados por parte de un usuario administrador.
 
 [Web Oficial](http://misterfut.herokuapp.com/)
+[Documentación Oficial](https://christianchf.github.io/misterfut/)
 
 Desarrollado por: Christian Hidalgo Ferrero.
