@@ -1,0 +1,31 @@
+engines:
+  phpcodesniffer:
+    enabled: true
+    config:
+      file_extensions: "php,inc,lib"
+      standard: "PSR1,PSR2,Yii2"
+      ignore_warnings: true
+      encoding: utf-8
+  duplication:
+    enabled: true
+    config:
+      languages:
+      - javascript
+      - php
+  eslint:
+    enabled: true
+  fixme:
+    enabled: true
+  phpmd:
+    enabled: true
+    config:
+      rulesets: "codesize,design,unusedcode,phpmd_ruleset.xml"
+ratings:
+  paths:
+  - "**.js"
+  - "**.php"
+exclude_paths:
+- views/
+- tests/
+- docs/
+- requirements.php
