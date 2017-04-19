@@ -57,7 +57,7 @@ AppAsset::register($this);
                     'linkOptions' => ['data-method' => 'POST']
                 ],
                 '<li class="divider"></li>',
-                ['label' => 'Ver datos', 'url' => ['/usuarios/view']],
+                ['label' => 'Mis datos', 'url' => ['/usuarios/view']],
             ]
         ]
     ];

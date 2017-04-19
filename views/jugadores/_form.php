@@ -1,5 +1,6 @@
 <?php
 
+use kartik\select2\Select2;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use yii\jui\DatePicker;
@@ -45,7 +46,13 @@ $templateNac = '{label}<div class="input-group"><span class="input-group-btn">
 
     <?= $form->field($model, 'dorsal')->input('number') ?>
 
-    <?= $form->field($model, 'id_posicion')->dropDownList($posiciones) ?>
+    <?= $form->field($model, 'id_posicion')->widget(Select2::classname(), [
+            'data' => $posiciones,
+            'options' => ['placeholder' => 'Posición'],
+            'pluginOptions' => [
+                'allowClear' => true
+            ],
+        ]) ?>
 
     <?php if (!$model->isNewRecord) { ?>
 

@@ -37,7 +37,7 @@ class UsuariosController extends Controller
                     ],
                     [
                         'allow' => true,
-                        'actions' => ['view', 'update'],
+                        'actions' => ['view', 'update', 'delete'],
                         'roles' => ['@'],
                         'matchCallback' => function ($rule, $action) {
                             $id = Yii::$app->request->get('id');
