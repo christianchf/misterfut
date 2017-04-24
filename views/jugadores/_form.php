@@ -1,5 +1,6 @@
 <?php
 
+use app\assets\AppAsset;
 use kartik\select2\Select2;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
@@ -9,15 +10,7 @@ use yii\jui\DatePicker;
 /* @var $model app\models\Jugador */
 /* @var $form yii\widgets\ActiveForm */
 
-$js = <<<EOT
-$('#calendarioNac').on('click', function(){
-    $('#jugador-fecha_nac').trigger('focus');
-});
-$('#borrarFecha').on('click', function(){
-    $('#jugador-fecha_nac').val('');
-});
-EOT;
-$this->registerJs($js);
+AppAsset::register($this);
 
 $templateNac = '{label}<div class="input-group"><span class="input-group-btn">
 <button type="button" class="btn btn-default" aria-label="Left Align" id="calendarioNac">
