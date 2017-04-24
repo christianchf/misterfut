@@ -14,20 +14,6 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'nombre')->textInput(['maxlength' => true]) ?>
 
-    <?php if (!$model->isNewRecord) { ?>
-
-    <?= $form->field($model, 'partidos_ganados')->input('number') ?>
-
-    <?= $form->field($model, 'partidos_empatados')->input('number') ?>
-
-    <?= $form->field($model, 'partidos_perdidos')->input('number') ?>
-
-    <?= $form->field($model, 'goles_a_favor')->input('number') ?>
-
-    <?= $form->field($model, 'goles_en_contra')->input('number') ?>
-
-    <?php } ?>
-
     <?= $form->field($model, 'temporada')->textInput(['maxlength' => true]) ?>
 
     <div class="form-group">

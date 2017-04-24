@@ -30,32 +30,12 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
             'nombre',
-            [
-                'label' => 'Partidos jugados',
-                'value' => $model->partidosJugados,
-            ],
-            [
-                'label' => 'Partidos ganados',
-                'value' => $model->partidos_ganados,
-            ],
-            [
-                'label' => 'Partidos empatados',
-                'value' => $model->partidos_empatados,
-            ],
-            [
-                'label' => 'Partidos perdidos',
-                'value' => $model->partidos_perdidos,
-            ],
-            [
-                'label' => 'Goles a favor',
-                'value' => $model->goles_a_favor,
-            ],
-            [
-                'label' => 'Goles en contra',
-                'value' => $model->goles_en_contra,
-            ],
             'temporada',
         ],
+    ]) ?>
+
+    <?= $this->render('_estadisticas', [
+        'model' => $model,
     ]) ?>
 
     <p><?= Html::a('Ver detalles de plantilla', ['/jugadores/index', 'id_equipo' => $model->id], ['class' => 'btn btn-success']) ?></p>

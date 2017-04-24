@@ -1,0 +1,13 @@
+
+#statsEquipo {
+    width: 80%;
+    margin: auto;
+}
+
+#statsEquipo th, #statsEquipo td {
+    width: 16.6%;
+}
+
+#statsEquipo td {
+    text-align: center;
+}
