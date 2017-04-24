@@ -8,7 +8,8 @@ use yii\widgets\DetailView;
 
 $this->title = $model->nombre;
 $this->params['breadcrumbs'][] = ['label' => 'Equipos', 'url' => ['/equipos/index']];
-$this->params['breadcrumbs'][] = ['label' => 'Plantilla ' . $model->equipo->nombre, 'url' => ['index', 'id_equipo' => $model->id_equipo]];
+$this->params['breadcrumbs'][] = ['label' => $equipo, 'url' => ['/equipos/view', 'id' => $model->id_equipo]];
+$this->params['breadcrumbs'][] = ['label' => 'Plantilla', 'url' => ['index', 'id_equipo' => $model->id_equipo]];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="jugador-view">

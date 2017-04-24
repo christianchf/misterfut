@@ -107,8 +107,12 @@ class JugadoresController extends Controller
      */
     public function actionView($id)
     {
+        $model = $this->findModel($id);
+        $equipo = Equipo::find()->where(['id' => $model->id_equipo])->one()->nombre;
+
         return $this->render('view', [
-            'model' => $this->findModel($id),
+            'model' => $model,
+            'equipo' => $equipo,
         ]);
     }
 
@@ -145,6 +149,7 @@ class JugadoresController extends Controller
         $model = $this->findModel($id);
         $posiciones = Posicion::find()->asArray()->all();
         $posiciones = ArrayHelper::map($posiciones, 'id', 'posicion');
+        $equipo = Equipo::find()->where(['id' => $model->id_equipo])->one()->nombre;
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
@@ -152,6 +157,7 @@ class JugadoresController extends Controller
             return $this->render('update', [
                 'model' => $model,
                 'posiciones' => $posiciones,
+                'equipo' => $equipo,
             ]);
         }
     }

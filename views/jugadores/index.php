@@ -8,8 +8,9 @@ use yii\jui\DatePicker;
 /* @var $searchModel app\models\JugadorSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Plantilla ' . $equipo;
+$this->title = 'Plantilla';
 $this->params['breadcrumbs'][] = ['label' => 'Equipos', 'url' => ['/equipos/index']];
+$this->params['breadcrumbs'][] = ['label' => $equipo, 'url' => ['/equipos/view', 'id' => Yii::$app->request->get('id_equipo')]];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="jugador-index">
