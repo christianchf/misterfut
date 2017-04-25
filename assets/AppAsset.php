@@ -23,6 +23,7 @@ class AppAsset extends AssetBundle
     ];
     public $js = [
         'js/btnsCalendario.js',
+        'js/localTabs.js',
     ];
     public $depends = [
         'yii\web\YiiAsset',

@@ -1,20 +1,10 @@
 <?php
 
+use app\assets\AppAsset;
 use yii\helpers\Html;
 use kartik\grid\GridView;
 
-$js = <<<EOT
-    $(document).ready(function() {
-       $('a[data-toggle=\"tab\"]').on('show.bs.tab', function (e) {
-          localStorage.setItem('lastTab', $(this).attr('href'));
-       });
-       var lastTab = localStorage.getItem('lastTab');
-       if (lastTab) {
-          $('[href=\"' + lastTab + '\"]').tab('show');
-       }
-    });
-EOT;
-$this->registerJs($js);
+AppAsset::register($this);
 
 ?>
 
