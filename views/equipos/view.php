@@ -1,8 +1,7 @@
 <?php
 
-use kartik\grid\GridView;
 use yii\helpers\Html;
-use yii\widgets\DetailView;
+use yii\bootstrap\Tabs;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Equipo */
@@ -15,57 +14,22 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <h1><?= Html::encode($this->title) ?></h1>
 
-    <p>
-        <?= Html::a('Modificar', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Borrar', ['delete', 'id' => $model->id], [
-            'class' => 'btn btn-danger',
-            'data' => [
-                'confirm' => '¿Estas seguro de borrar este equipo?',
-                'method' => 'post',
-            ],
-        ]) ?>
-    </p>
-
-    <?= DetailView::widget([
-        'model' => $model,
-        'attributes' => [
-            'nombre',
-            'temporada',
-        ],
-    ]) ?>
-
-    <?= $this->render('_estadisticas', [
-        'model' => $model,
-    ]) ?>
-
-    <p><?= Html::a('Ver detalles de plantilla', ['/jugadores/index', 'id_equipo' => $model->id], ['class' => 'btn btn-success']) ?></p>
-
-    <?= GridView::widget([
-        'dataProvider' => $jugadores,
-        'resizableColumns' => false,
-        'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
-
+    <?= Tabs::widget([
+        'items' => [
             [
-                'label' => 'Posición',
-                'attribute' => 'nombrePosicion',
-                'group' => true,
+                'label' => 'Datos',
+                'content' => $this->render('_datos', [
+                    'model' => $model,
+                ]),
+                'active' => true
             ],
-            'nombre',
-            'dorsal',
-            'fecha_nac:date',
-
             [
-                'value' => function ($model, $key, $index, $column) {
-                    return Html::a(
-                        '',
-                        ['jugadores/view', 'id' => $model->id],
-                        ['class' => 'glyphicon glyphicon-eye-open']
-                    );
-                },
-                'format' => 'html',
+                'label' => 'Plantilla',
+                'content' => $this->render('_plantilla', [
+                    'model' => $model,
+                    'jugadores' => $jugadores,
+                ]),
             ],
-
         ],
     ]); ?>
 
