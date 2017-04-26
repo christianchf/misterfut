@@ -1,8 +1,50 @@
 <?php
-
 use app\assets\AppAsset;
+use yii\helpers\Url;
 
 AppAsset::register($this);
+
+$url = Url::to(['/equipos/actualizar', 'id' => Yii::$app->request->get('id')]);
+
+$js = <<<EOT
+    var btns = $('.btnActualizar');
+
+    $(document).on('ready', function () {
+        $.ajax({
+            url: "$url",
+            method: 'POST',
+            success: function(data, textStatus, Xhr) {
+                var datos = JSON.parse(data);
+                $('#jugados').text(datos['jugados']);
+                $('#ganados').text(datos['ganados']);
+                $('#empatados').text(datos['empatados']);
+                $('#perdidos').text(datos['perdidos']);
+                $('#golesFavor').text(datos['golesFavor']);
+                $('#golesContra').text(datos['golesContra']);
+            }
+        });
+    });
+
+    btns.on('click', function() {
+        var idBtn = $(this).attr('id');
+        $.ajax({
+            url: "$url",
+            method: 'POST',
+            data: JSON.stringify({'idBtn': idBtn}),
+            success: function(data, textStatus, Xhr) {
+                var datos = JSON.parse(data);
+                $('#jugados').text(datos['jugados']);
+                $('#ganados').text(datos['ganados']);
+                $('#empatados').text(datos['empatados']);
+                $('#perdidos').text(datos['perdidos']);
+                $('#golesFavor').text(datos['golesFavor']);
+                $('#golesContra').text(datos['golesContra']);
+            }
+        });
+    });
+
+EOT;
+$this->registerJs($js);
 
 ?>
 
@@ -24,21 +66,29 @@ AppAsset::register($this);
         <tr>
             <td></td>
             <?php for ($i = 0; $i < 5; $i++) { ?>
-                <td><button class="btn btn-xs btn-info"><span class="glyphicon glyphicon-plus"></span></button></td>
+                <td>
+                    <button id="suma<?= $i ?>" class="btn btn-xs btn-info btnMas btnActualizar">
+                        <span class="glyphicon glyphicon-plus"></span>
+                    </button>
+                </td>
             <?php } ?>
         </tr>
         <tr>
-            <td><?= $model->partidosJugados ?></td>
-            <td><?= $model->partidos_ganados ?></td>
-            <td><?= $model->partidos_empatados ?></td>
-            <td><?= $model->partidos_perdidos ?></td>
-            <td><?= $model->goles_a_favor ?></td>
-            <td><?= $model->goles_en_contra ?></td>
+            <td id="jugados"></td>
+            <td id="ganados"></td>
+            <td id="empatados"></td>
+            <td id="perdidos"></td>
+            <td id="golesFavor"></td>
+            <td id="golesContra"></td>
         </tr>
         <tr>
             <td></td>
             <?php for ($i = 0; $i < 5; $i++) { ?>
-                <td><button class="btn btn-xs btn-warning"><span class="glyphicon glyphicon-minus"></span></button></td>
+                <td>
+                    <button id="resta<?= $i ?>" class="btn btn-xs btn-warning btnMenos btnActualizar">
+                        <span class="glyphicon glyphicon-minus"></span>
+                    </button>
+                </td>
             <?php } ?>
         </tr>
     </tbody>

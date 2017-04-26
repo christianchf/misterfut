@@ -40,7 +40,7 @@ class EquiposController extends Controller
                     ],
                     [
                         'allow' => true,
-                        'actions' => ['view', 'update'],
+                        'actions' => ['view', 'update', 'actualizar'],
                         'roles' => ['@'],
                         'matchCallback' => function ($rule, $action) {
                             $idEquipo = Yii::$app->request->get('id');
@@ -98,6 +98,66 @@ class EquiposController extends Controller
             'model' => $this->findModel($id),
             'jugadores' => $jugadores,
         ]);
+    }
+
+    /**
+     * Actualiza las estadísticas del equipo recibido utilizando Ajax en el
+     * lado del cliente.
+     * @param  int $id El id del equipo que se va a actualizar.
+     * @return mixed Las estadísticas del equipo actualizadas.
+     */
+    public function actionActualizar($id)
+    {
+        $equipo = Equipo::find()->where(['id' => $id])->one();
+        $datos = json_decode(file_get_contents('php://input'));
+        if ($datos != null) {
+            $idBtn = $datos->idBtn;
+            switch ($idBtn) {
+                case 'suma0':
+                    $equipo->partidos_ganados = $equipo->partidos_ganados + 1;
+                    break;
+                case 'suma1':
+                    $equipo->partidos_empatados = $equipo->partidos_empatados + 1;
+                    break;
+                case 'suma2':
+                    $equipo->partidos_perdidos = $equipo->partidos_perdidos + 1;
+                    break;
+                case 'suma3':
+                    $equipo->goles_a_favor = $equipo->goles_a_favor + 1;
+                    break;
+                case 'suma4':
+                    $equipo->goles_en_contra = $equipo->goles_en_contra + 1;
+                    break;
+                case 'resta0':
+                    $equipo->partidos_ganados = $equipo->partidos_ganados - 1;
+                    break;
+                case 'resta1':
+                    $equipo->partidos_empatados = $equipo->partidos_empatados - 1;
+                    break;
+                case 'resta2':
+                    $equipo->partidos_perdidos = $equipo->partidos_perdidos - 1;
+                    break;
+                case 'resta3':
+                    $equipo->goles_a_favor = $equipo->goles_a_favor - 1;
+                    break;
+                case 'resta4':
+                    $equipo->goles_en_contra = $equipo->goles_en_contra - 1;
+                    break;
+            }
+            $equipo->save();
+            $equipo->refresh();
+        }
+
+        $datosActuales = [
+            'jugados' => $equipo->partidosJugados,
+            'ganados' => $equipo->partidos_ganados,
+            'empatados' => $equipo->partidos_empatados,
+            'perdidos' => $equipo->partidos_perdidos,
+            'golesFavor' => $equipo->goles_a_favor,
+            'golesContra' => $equipo->goles_en_contra,
+        ];
+
+        return json_encode($datosActuales);
     }
 
     /**
