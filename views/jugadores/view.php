@@ -33,14 +33,13 @@ $this->params['breadcrumbs'][] = $this->title;
             'posicion.posicion',
             'nombre',
             'dorsal',
-            'partidos_jugados',
-            'goles_marcados',
-            'goles_encajados',
-            'asistencias',
-            'golesPorPartido',
             'fecha_nac:date',
             'equipo.nombre',
         ],
+    ]) ?>
+
+    <?= $this->render('_estadisticas', [
+        'model' => $model,
     ]) ?>
 
 </div>

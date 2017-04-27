@@ -52,7 +52,7 @@ class JugadoresController extends Controller
                     ],
                     [
                         'allow' => true,
-                        'actions' => ['view', 'update'],
+                        'actions' => ['view', 'update', 'actualizar'],
                         'roles' => ['@'],
                         'matchCallback' => function ($rule, $action) {
                             $idJugador = Yii::$app->request->get('id');
@@ -114,6 +114,59 @@ class JugadoresController extends Controller
             'model' => $model,
             'equipo' => $equipo,
         ]);
+    }
+
+    /**
+     * Actualiza las estadísticas de un jugador recibido utilizando Ajax en el
+     * lado del cliente.
+     * @param  int $id El id del jugador que se va a actualizar.
+     * @return mixed Las estadísticas del jugador actualizadas.
+     */
+    public function actionActualizar($id)
+    {
+        $jugador = Jugador::find()->where(['id' => $id])->one();
+        $datos = json_decode(file_get_contents('php://input'));
+        if ($datos != null) {
+            $idBtn = $datos->idBtn;
+            switch ($idBtn) {
+                case 'suma0':
+                    $jugador->partidos_jugados = $jugador->partidos_jugados + 1;
+                    break;
+                case 'suma1':
+                    $jugador->goles_marcados = $jugador->goles_marcados + 1;
+                    break;
+                case 'suma2':
+                    $jugador->goles_encajados = $jugador->goles_encajados + 1;
+                    break;
+                case 'suma3':
+                    $jugador->asistencias = $jugador->asistencias + 1;
+                    break;
+                case 'resta0':
+                    $jugador->partidos_jugados = $jugador->partidos_jugados - 1;
+                    break;
+                case 'resta1':
+                    $jugador->goles_marcados = $jugador->goles_marcados - 1;
+                    break;
+                case 'resta2':
+                    $jugador->goles_encajados = $jugador->goles_encajados - 1;
+                    break;
+                case 'resta3':
+                    $jugador->asistencias = $jugador->asistencias - 1;
+                    break;
+            }
+            $jugador->save();
+            $jugador->refresh();
+        }
+
+        $datosActuales = [
+            'jugados' => $jugador->partidos_jugados,
+            'golesMarcados' => $jugador->goles_marcados,
+            'golesEncajados' => $jugador->goles_encajados,
+            'asistencias' => $jugador->asistencias,
+            'golesPartido' => $jugador->golesPorPartido,
+        ];
+
+        return json_encode($datosActuales);
     }
 
     /**

@@ -47,18 +47,6 @@ $templateNac = '{label}<div class="input-group"><span class="input-group-btn">
             ],
         ]) ?>
 
-    <?php if (!$model->isNewRecord) { ?>
-
-    <?= $form->field($model, 'partidos_jugados')->input('number') ?>
-
-    <?= $form->field($model, 'goles_marcados')->input('number') ?>
-
-    <?= $form->field($model, 'goles_encajados')->input('number') ?>
-
-    <?= $form->field($model, 'asistencias')->input('number') ?>
-
-    <?php } ?>
-
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Crear' : 'Modificar', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>
