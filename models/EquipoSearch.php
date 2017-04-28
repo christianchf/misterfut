@@ -19,7 +19,7 @@ class EquipoSearch extends Equipo
     {
         return [
             [['id', 'id_usuario'], 'integer'],
-            [['nombre', 'temporada'], 'safe'],
+            [['nombre', 'temporada', 'partidos_jugados', 'partidos_ganados', 'partidos_empatados', 'partidos_perdidos', 'goles_a_favor', 'goles_en_contra'], 'safe'],
         ];
     }
 
@@ -41,7 +41,7 @@ class EquipoSearch extends Equipo
      */
     public function search($params)
     {
-        $query = Equipo::find()->where(['id_usuario' => Yii::$app->user->id])->orderBy('temporada desc');
+        $query = Equipo::find()->where(['id_usuario' => Yii::$app->user->id]);
 
         // add conditions that should always apply here
 
@@ -49,7 +49,19 @@ class EquipoSearch extends Equipo
             'query' => $query,
         ]);
 
-        $dataProvider->setSort(false);
+        $dataProvider->setSort([
+            'defaultOrder' => ['temporada' => SORT_DESC],
+            'attributes' => [
+                'nombre',
+                'partidos_jugados',
+                'partidos_ganados',
+                'partidos_empatados',
+                'partidos_perdidos',
+                'goles_a_favor',
+                'goles_en_contra',
+                'temporada',
+            ]
+        ]);
 
         $this->load($params);
 
@@ -62,6 +74,12 @@ class EquipoSearch extends Equipo
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
+            'partidos_jugados' => $this->partidos_jugados,
+            'partidos_ganados' => $this->partidos_ganados,
+            'partidos_empatados' => $this->partidos_empatados,
+            'partidos_perdidos' => $this->partidos_perdidos,
+            'goles_a_favor' => $this->goles_a_favor,
+            'goles_en_contra' => $this->goles_en_contra,
         ]);
 
         $query->andFilterWhere(['ilike', 'nombre', $this->nombre])

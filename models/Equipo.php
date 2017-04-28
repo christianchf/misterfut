@@ -7,6 +7,7 @@ namespace app\models;
  *
  * @property integer $id
  * @property string $nombre
+ * @property string $partidos_jugados
  * @property string $partidos_ganados
  * @property string $partidos_empatados
  * @property string $partidos_perdidos
@@ -35,7 +36,7 @@ class Equipo extends \yii\db\ActiveRecord
     {
         return [
             [['nombre', 'temporada', 'id_usuario'], 'required'],
-            [['partidos_ganados', 'partidos_empatados', 'partidos_perdidos', 'goles_a_favor', 'goles_en_contra'], 'number'],
+            [['partidos_jugados', 'partidos_ganados', 'partidos_empatados', 'partidos_perdidos', 'goles_a_favor', 'goles_en_contra'], 'number'],
             [['id_usuario'], 'integer'],
             [['nombre'], 'string', 'max' => 100],
             [['temporada'], 'string', 'max' => 10],
@@ -52,7 +53,7 @@ class Equipo extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'nombre' => 'Equipo',
-            'partidosJugados' => 'PJ',
+            'partidos_jugados' => 'PJ',
             'partidos_ganados' => 'PG',
             'partidos_empatados' => 'PE',
             'partidos_perdidos' => 'PP',
@@ -80,11 +81,14 @@ class Equipo extends \yii\db\ActiveRecord
     }
 
     /**
-     * Devuelve el número de partidos jugados por el equipo.
+     * Calcula y devuelve el número de partidos jugados por el equipo.
      * @return int Número de partidos jugados
      */
     public function getPartidosJugados()
     {
-        return $this->partidos_ganados + $this->partidos_empatados + $this->partidos_perdidos;
+        $this->partidos_jugados =  ($this->partidos_ganados + $this->partidos_empatados + $this->partidos_perdidos);
+        $this->save();
+
+        return $this->partidos_jugados;
     }
 }

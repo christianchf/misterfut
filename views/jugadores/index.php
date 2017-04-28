@@ -50,11 +50,27 @@ $this->params['breadcrumbs'][] = $this->title;
                 ],
                 'filterInputOptions'=>['placeholder'=>'Dorsal'],
             ],
-            'partidos_jugados',
-            'goles_marcados',
-            'goles_encajados',
-            'asistencias',
-            'golesPorPartido',
+            [
+                'label' => 'Partidos',
+                'attribute' => 'partidos_jugados',
+                'width' => '70px',
+            ],
+            [
+                'label' => 'Goles',
+                'attribute' => 'goles_marcados',
+                'width' => '70px',
+            ],
+            [
+                'label' => 'Asistencias',
+                'attribute' => 'asistencias',
+                'width' => '70px',
+            ],
+            [
+                'label' => 'Goles/Partido',
+                'attribute' => 'goles_por_partido',
+                'width' => '70px',
+                'format' => 'percent',
+            ],
             [
                 'label' => 'Fecha nacimiento',
                 'value' => 'fecha_nac',
@@ -71,6 +87,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 ]),
                 'attribute' => 'fecha_nac',
                 'format' => 'date',
+                'width' => '100px',
             ],
 
             ['class' => 'yii\grid\ActionColumn'],

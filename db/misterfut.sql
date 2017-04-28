@@ -25,6 +25,7 @@ drop table if exists equipos cascade;
 create table equipos (
     id                 bigserial    constraint pk_equipos primary key,
     nombre             varchar(100) not null constraint uq_equipos_nombre unique,
+    partidos_jugados   numeric(3)   default 0,
     partidos_ganados   numeric(3)   default 0,
     partidos_empatados numeric(3)   default 0,
     partidos_perdidos  numeric(3)   default 0,
@@ -46,18 +47,19 @@ create table posiciones (
 drop table if exists jugadores cascade;
 
 create table jugadores (
-    id               bigserial    constraint pk_jugadores primary key,
-    nombre           varchar(100) not null,
-    fecha_nac        date         not null,
-    dorsal           numeric(2)   not null,
-    partidos_jugados numeric(3)   default 0,
-    goles_marcados   numeric(3)   default 0,
-    goles_encajados  numeric(3)   default 0,
-    asistencias      numeric(3)   default 0,
-    id_equipo        bigint       not null constraint fk_jugadores_equipos
+    id                bigserial    constraint pk_jugadores primary key,
+    nombre            varchar(100) not null,
+    fecha_nac         date         not null,
+    dorsal            numeric(2)   not null,
+    partidos_jugados  numeric(3)   default 0,
+    goles_marcados    numeric(3)   default 0,
+    goles_encajados   numeric(3)   default 0,
+    asistencias       numeric(3)   default 0,
+    goles_por_partido numeric(4,2) default 0,
+    id_equipo         bigint       not null constraint fk_jugadores_equipos
                                            references equipos (id)
                                            on delete cascade on update cascade,
-    id_posicion      bigint       not null constraint fk_jugadores_posiciones
+    id_posicion       bigint       not null constraint fk_jugadores_posiciones
                                            references posiciones (id)
                                            on delete no action on update cascade
 );

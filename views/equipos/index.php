@@ -1,9 +1,7 @@
 <?php
 
-use app\models\Equipo;
 use yii\helpers\Html;
 use kartik\grid\GridView;
-use yii\helpers\ArrayHelper;
 
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\EquipoSearch */
@@ -28,12 +26,36 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\SerialColumn'],
 
             'nombre',
-            'partidosJugados',
-            'partidos_ganados',
-            'partidos_empatados',
-            'partidos_perdidos',
-            'goles_a_favor',
-            'goles_en_contra',
+            [
+                'label' => 'PJ',
+                'attribute' => 'partidos_jugados',
+                'width' => '70px',
+            ],
+            [
+                'label' => 'PG',
+                'attribute' => 'partidos_ganados',
+                'width' => '70px',
+            ],
+            [
+                'label' => 'PE',
+                'attribute' => 'partidos_empatados',
+                'width' => '70px',
+            ],
+            [
+                'label' => 'PP',
+                'attribute' => 'partidos_perdidos',
+                'width' => '70px',
+            ],
+            [
+                'label' => 'GF',
+                'attribute' => 'goles_a_favor',
+                'width' => '70px',
+            ],
+            [
+                'label' => 'GC',
+                'attribute' => 'goles_en_contra',
+                'width' => '70px',
+            ],
             [
                 'attribute' => 'temporada',
                 'width' => '150px',
@@ -55,6 +77,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     );
                 },
                 'format' => 'html',
+                'width' => '100px',
             ],
 
             ['class' => 'yii\grid\ActionColumn'],

@@ -61,13 +61,14 @@ $this->registerJs($js);
     </thead>
     <tbody>
         <tr>
-            <?php for ($i = 0; $i < 5; $i++) { ?>
+            <?php for ($i = 0; $i < 4; $i++) { ?>
                 <td>
                     <button id="suma<?= $i ?>" class="btn btn-xs btn-info btnMas btnActualizar">
                         <span class="glyphicon glyphicon-plus"></span>
                     </button>
                 </td>
             <?php } ?>
+            <td></td>
         </tr>
         <tr>
             <td id="jugados"></td>
@@ -77,13 +78,14 @@ $this->registerJs($js);
             <td id="golesPartido"></td>
         </tr>
         <tr>
-            <?php for ($i = 0; $i < 5; $i++) { ?>
+            <?php for ($i = 0; $i < 4; $i++) { ?>
                 <td>
                     <button id="resta<?= $i ?>" class="btn btn-xs btn-warning btnMenos btnActualizar">
                         <span class="glyphicon glyphicon-minus"></span>
                     </button>
                 </td>
             <?php } ?>
+            <td></td>
         </tr>
     </tbody>
 </table>
