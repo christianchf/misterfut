@@ -5,12 +5,12 @@ namespace app\models;
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use app\models\Equipo;
+use app\models\EstadisticasEquipo;
 
 /**
- * EquipoSearch represents the model behind the search form about `app\models\Equipo`.
+ * EstadisticasEquipoSearch represents the model behind the search form about `app\models\EstadisticasEquipo`.
  */
-class EquipoSearch extends Equipo
+class EstadisticasEquipoSearch extends EstadisticasEquipo
 {
     /**
      * @inheritdoc
@@ -18,8 +18,8 @@ class EquipoSearch extends Equipo
     public function rules()
     {
         return [
-            [['id', 'id_usuario'], 'integer'],
-            [['nombre', 'created_at'], 'safe'],
+            [['id_temporada', 'id_equipo'], 'integer'],
+            [['partidos_jugados', 'partidos_ganados', 'partidos_empatados', 'partidos_perdidos', 'goles_a_favor', 'goles_en_contra'], 'number'],
         ];
     }
 
@@ -41,21 +41,12 @@ class EquipoSearch extends Equipo
      */
     public function search($params)
     {
-        $query = Equipo::find()->where(['id_usuario' => Yii::$app->user->id]);
+        $query = EstadisticasEquipo::find();
 
         // add conditions that should always apply here
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
-        ]);
-
-        $dataProvider->setSort([
-            'defaultOrder' => ['created_at' => SORT_DESC],
-            'attributes' => [
-                'nombre',
-                'created_at',
-                // 'temporada',
-            ]
         ]);
 
         $this->load($params);
@@ -68,11 +59,15 @@ class EquipoSearch extends Equipo
 
         // grid filtering conditions
         $query->andFilterWhere([
-            'id' => $this->id,
-            'created_at' => $this->created_at,
+            'id_temporada' => $this->id_temporada,
+            'id_equipo' => $this->id_equipo,
+            'partidos_jugados' => $this->partidos_jugados,
+            'partidos_ganados' => $this->partidos_ganados,
+            'partidos_empatados' => $this->partidos_empatados,
+            'partidos_perdidos' => $this->partidos_perdidos,
+            'goles_a_favor' => $this->goles_a_favor,
+            'goles_en_contra' => $this->goles_en_contra,
         ]);
-
-        $query->andFilterWhere(['ilike', 'nombre', $this->nombre]);
 
         return $dataProvider;
     }

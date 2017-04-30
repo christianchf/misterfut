@@ -26,53 +26,23 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\SerialColumn'],
 
             'nombre',
-            [
-                'label' => 'PJ',
-                'attribute' => 'partidos_jugados',
-                'width' => '70px',
-            ],
-            [
-                'label' => 'PG',
-                'attribute' => 'partidos_ganados',
-                'width' => '70px',
-            ],
-            [
-                'label' => 'PE',
-                'attribute' => 'partidos_empatados',
-                'width' => '70px',
-            ],
-            [
-                'label' => 'PP',
-                'attribute' => 'partidos_perdidos',
-                'width' => '70px',
-            ],
-            [
-                'label' => 'GF',
-                'attribute' => 'goles_a_favor',
-                'width' => '70px',
-            ],
-            [
-                'label' => 'GC',
-                'attribute' => 'goles_en_contra',
-                'width' => '70px',
-            ],
-            [
-                'attribute' => 'temporada',
-                'width' => '150px',
-                'filterType' => GridView::FILTER_SELECT2,
-                'filter' => $temporadas,
-                'filterWidgetOptions'=>[
-                    'pluginOptions'=>['allowClear'=>true],
-                ],
-                'filterInputOptions'=>['placeholder'=>'Temporada'],
-            ],
+
+            // [
+            //     'attribute' => 'temporada',
+            //     'width' => '150px',
+            //     'filterType' => GridView::FILTER_SELECT2,
+            //     'filter' => $temporadas,
+            //     'filterWidgetOptions'=>[
+            //         'pluginOptions'=>['allowClear'=>true],
+            //     ],
+            //     'filterInputOptions'=>['placeholder'=>'Temporada'],
+            // ],
 
             [
-                'label' => 'Plantilla',
                 'value' => function ($model, $key, $index, $column) {
                     return Html::a(
-                        'Ver plantilla',
-                        ['jugadores/index', 'id_equipo' => $model->id],
+                        'Entrar',
+                        ['estadisticas-equipos/index', 'id_equipo' => $model->id],
                         ['class' => 'btn-sm btn-primary']
                     );
                 },
