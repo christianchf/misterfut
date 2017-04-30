@@ -19,7 +19,7 @@ class EquipoSearch extends Equipo
     {
         return [
             [['id', 'id_usuario'], 'integer'],
-            [['nombre', 'created_at'], 'safe'],
+            [['nombre', 'temporada', 'partidos_jugados', 'partidos_ganados', 'partidos_empatados', 'partidos_perdidos', 'goles_a_favor', 'goles_en_contra'], 'safe'],
         ];
     }
 
@@ -50,11 +50,16 @@ class EquipoSearch extends Equipo
         ]);
 
         $dataProvider->setSort([
-            'defaultOrder' => ['created_at' => SORT_DESC],
+            'defaultOrder' => ['temporada' => SORT_DESC],
             'attributes' => [
                 'nombre',
-                'created_at',
-                // 'temporada',
+                'partidos_jugados',
+                'partidos_ganados',
+                'partidos_empatados',
+                'partidos_perdidos',
+                'goles_a_favor',
+                'goles_en_contra',
+                'temporada',
             ]
         ]);
 
@@ -69,10 +74,16 @@ class EquipoSearch extends Equipo
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
-            'created_at' => $this->created_at,
+            'partidos_jugados' => $this->partidos_jugados,
+            'partidos_ganados' => $this->partidos_ganados,
+            'partidos_empatados' => $this->partidos_empatados,
+            'partidos_perdidos' => $this->partidos_perdidos,
+            'goles_a_favor' => $this->goles_a_favor,
+            'goles_en_contra' => $this->goles_en_contra,
         ]);
 
-        $query->andFilterWhere(['ilike', 'nombre', $this->nombre]);
+        $query->andFilterWhere(['ilike', 'nombre', $this->nombre])
+            ->andFilterWhere(['ilike', 'temporada', $this->temporada]);
 
         return $dataProvider;
     }

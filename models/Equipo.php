@@ -7,14 +7,17 @@ namespace app\models;
  *
  * @property integer $id
  * @property string $nombre
+ * @property string $partidos_jugados
+ * @property string $partidos_ganados
+ * @property string $partidos_empatados
+ * @property string $partidos_perdidos
+ * @property string $goles_a_favor
+ * @property string $goles_en_contra
+ * @property string $temporada
  * @property integer $id_usuario
- * @property string $created_at
  *
  * @property Usuarios $idUsuario
- * @property EstadisticasEquipo[] $estadisticasEquipos
- * @property Temporadas[] $idTemporadas
- * @property EstadisticasJugador[] $estadisticasJugadors
- * @property Eventos[] $eventos
+ * @property Jugadores[] $jugadores
  */
 class Equipo extends \yii\db\ActiveRecord
 {
@@ -32,10 +35,11 @@ class Equipo extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['nombre', 'id_usuario'], 'required'],
+            [['nombre', 'temporada', 'id_usuario'], 'required'],
+            [['partidos_jugados', 'partidos_ganados', 'partidos_empatados', 'partidos_perdidos', 'goles_a_favor', 'goles_en_contra'], 'number'],
             [['id_usuario'], 'integer'],
-            [['created_at'], 'safe'],
             [['nombre'], 'string', 'max' => 100],
+            [['temporada'], 'string', 'max' => 10],
             [['nombre'], 'unique'],
             [['id_usuario'], 'exist', 'skipOnError' => true, 'targetClass' => Usuario::className(), 'targetAttribute' => ['id_usuario' => 'id']],
         ];
@@ -48,16 +52,22 @@ class Equipo extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'nombre' => 'Nombre',
-            'id_usuario' => 'Usuario',
-            'created_at' => 'Created At',
+            'nombre' => 'Equipo',
+            'partidos_jugados' => 'PJ',
+            'partidos_ganados' => 'PG',
+            'partidos_empatados' => 'PE',
+            'partidos_perdidos' => 'PP',
+            'goles_a_favor' => 'GF',
+            'goles_en_contra' => 'GC',
+            'temporada' => 'Temporada',
+            'id_usuario' => 'Id Usuario',
         ];
     }
 
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getIdUsuario()
+    public function getUsuario()
     {
         return $this->hasOne(Usuario::className(), ['id' => 'id_usuario'])->inverseOf('equipos');
     }
@@ -65,32 +75,20 @@ class Equipo extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getEstadisticasEquipos()
+    public function getPlantilla()
     {
-        return $this->hasMany(EstadisticasEquipo::className(), ['id_equipo' => 'id'])->inverseOf('idEquipo');
+        return $this->hasMany(Jugador::className(), ['id_equipo' => 'id'])->inverseOf('equipo');
     }
 
     /**
-     * @return \yii\db\ActiveQuery
+     * Calcula y devuelve el número de partidos jugados por el equipo.
+     * @return int Número de partidos jugados
      */
-    public function getIdTemporadas()
+    public function getPartidosJugados()
     {
-        return $this->hasMany(Temporada::className(), ['id' => 'id_temporada'])->viaTable('estadisticas_equipo', ['id_equipo' => 'id']);
-    }
+        $this->partidos_jugados =  ($this->partidos_ganados + $this->partidos_empatados + $this->partidos_perdidos);
+        $this->save();
 
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getEstadisticasJugadors()
-    {
-        return $this->hasMany(EstadisticasJugador::className(), ['id_equipo' => 'id'])->inverseOf('idEquipo');
-    }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getEventos()
-    {
-        return $this->hasMany(Evento::className(), ['id_equipo' => 'id'])->inverseOf('idEquipo');
+        return $this->partidos_jugados;
     }
 }
