@@ -40,7 +40,7 @@ class Equipo extends \yii\db\ActiveRecord
             [['id_usuario'], 'integer'],
             [['nombre'], 'string', 'max' => 100],
             [['temporada'], 'string', 'max' => 10],
-            [['nombre'], 'unique'],
+            [['nombre', 'temporada', 'id_usuario'], 'unique', 'targetAttribute' => ['nombre', 'temporada', 'id_usuario'], 'message' => 'La combinación de nombre y temporada ya ha sido utilizada por usted.'],
             [['id_usuario'], 'exist', 'skipOnError' => true, 'targetClass' => Usuario::className(), 'targetAttribute' => ['id_usuario' => 'id']],
         ];
     }

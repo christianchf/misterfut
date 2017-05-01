@@ -9,7 +9,6 @@ create table usuarios (
     created_at timestamptz  default current_timestamp
 );
 
-create index idx_usuarios_activacion on usuarios (activacion);
 create index idx_usuarios_created_at on usuarios (created_at);
 
 drop table if exists session;
@@ -24,7 +23,7 @@ drop table if exists equipos cascade;
 
 create table equipos (
     id                 bigserial    constraint pk_equipos primary key,
-    nombre             varchar(100) not null constraint uq_equipos_nombre unique,
+    nombre             varchar(100) not null,
     partidos_jugados   numeric(3)   default 0,
     partidos_ganados   numeric(3)   default 0,
     partidos_empatados numeric(3)   default 0,
@@ -34,7 +33,8 @@ create table equipos (
     temporada          varchar(10)  not null,
     id_usuario         bigint       not null constraint fk_equipos_usuarios
                                              references usuarios (id)
-                                             on delete cascade on update cascade
+                                             on delete cascade on update cascade,
+    constraint uq_equipos_nombre_temporada unique (nombre, temporada, id_usuario)
 );
 
 drop table if exists posiciones cascade;
@@ -62,4 +62,16 @@ create table jugadores (
     id_posicion       bigint       not null constraint fk_jugadores_posiciones
                                            references posiciones (id)
                                            on delete no action on update cascade
+);
+
+drop table if exists eventos cascade;
+
+create table eventos (
+    id          bigserial    constraint pk_eventos primary key,
+    nombre      varchar(100) not null,
+    descripcion text,
+    fecha       timestamptz  not null,
+    id_equipo   bigint       not null constraint fk_eventos_equipo
+                                      references equipos (id)
+                                      on delete cascade on update cascade
 );

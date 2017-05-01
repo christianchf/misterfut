@@ -38,7 +38,9 @@ AppAsset::register($this);
         ['label' => 'Inicio', 'url' => ['/site/index']],
         ['label' => 'Misterfut', 'url' => ['/site/about']],
         ['label' => 'Contacto', 'url' => ['/site/contact']],
-        Yii::$app->user->isGuest ? '' : ['label' => 'Mis equipos', 'url' => ['/equipos/index']],
+        Yii::$app->user->isGuest ? ['']
+            : ['label' => 'Mis equipos', 'url' => ['/equipos/index']],
+              ['label' => 'Historial de equipos', 'url' => ['/equipos/historial']],
         Yii::$app->user->isGuest ?
         [
             'label' => 'Usuarios',

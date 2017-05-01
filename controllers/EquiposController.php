@@ -6,6 +6,7 @@ use Yii;
 use app\models\Equipo;
 use app\models\Jugador;
 use app\models\EquipoSearch;
+use app\models\HistorialSearch;
 use yii\data\ActiveDataProvider;
 use yii\filters\AccessControl;
 use yii\helpers\ArrayHelper;
@@ -35,7 +36,7 @@ class EquiposController extends Controller
                 'rules' => [
                     [
                         'allow' => true,
-                        'actions' => ['index', 'create', 'delete'],
+                        'actions' => ['index', 'create', 'delete', 'historial', 'historico'],
                         'roles' => ['@'],
                     ],
                     [
@@ -79,6 +80,42 @@ class EquiposController extends Controller
             'temporadas' => $temporadas,
         ]);
     }
+
+    /**
+     * Lists all Equipo models.
+     * @return mixed
+     */
+    public function actionHistorial()
+    {
+        $equipos = new ActiveDataProvider([
+            'query' => Equipo::find()->select(['nombre'])
+                        ->where(['id_usuario' => Yii::$app->user->id])
+                        ->groupBy(['nombre']),
+            'pagination' => false,
+            'sort' => false,
+        ]);
+
+        return $this->render('historial', [
+            'equipos' => $equipos,
+        ]);
+    }
+
+    public function actionHistorico($nombre)
+    {
+        $searchModel = new HistorialSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        $temporadas = Equipo::find()
+                        ->where(['and', ['id_usuario' => Yii::$app->user->id], ['nombre' => $nombre]])
+                        ->asArray()->all();
+        $temporadas = ArrayHelper::map($temporadas, 'temporada', 'temporada');
+
+        return $this->render('historico', [
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
+            'temporadas' => $temporadas,
+        ]);
+    }
+
 
     /**
      * Displays a single Equipo model.
