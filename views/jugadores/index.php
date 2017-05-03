@@ -101,7 +101,7 @@ $this->params['breadcrumbs'][] = $this->title;
                         return Html::a('Modificar', ['jugadores/update', 'id' => $model->id,], ['class' => 'btn btn-xs btn-warning btnsAction']);
                     },
                     'delete' => function ($url, $model, $key) {
-                        return Html::a('Modificar', ['jugadores/delete', 'id' => $model->id,], ['class' => 'btn btn-xs btn-danger btnsAction']);
+                        return Html::a('Borrar', ['jugadores/delete', 'id' => $model->id,], ['class' => 'btn btn-xs btn-danger btnsAction']);
                     },
                 ],
             ],

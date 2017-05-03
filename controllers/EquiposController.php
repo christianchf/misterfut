@@ -143,7 +143,7 @@ class EquiposController extends Controller
     {
         $searchModel = new JugadorSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-        $equipo = Equipo::find()->where(['id' => $id])->one()->nombre;
+        $equipo = Equipo::find()->where(['id' => $id])->one();
         $equipos = Equipo::find()->where(['and', ['id_usuario' => Yii::$app->user->id], ['not', ['id' => $id]]])->all();
         $equiposOrigen = [];
         foreach ($equipos as $equipoActual) {
