@@ -5,7 +5,9 @@ namespace app\controllers;
 use Yii;
 use app\models\Equipo;
 use app\models\Jugador;
+use app\models\Posicion;
 use app\models\EquipoSearch;
+use app\models\JugadorSearch;
 use app\models\HistorialSearch;
 use yii\data\ActiveDataProvider;
 use yii\filters\AccessControl;
@@ -36,12 +38,12 @@ class EquiposController extends Controller
                 'rules' => [
                     [
                         'allow' => true,
-                        'actions' => ['index', 'create', 'delete', 'historial', 'historico'],
+                        'actions' => ['index', 'create', 'delete', 'historial', 'historico', 'traspasar'],
                         'roles' => ['@'],
                     ],
                     [
                         'allow' => true,
-                        'actions' => ['view', 'update', 'actualizar'],
+                        'actions' => ['view', 'update', 'actualizar', 'traspaso'],
                         'roles' => ['@'],
                         'matchCallback' => function ($rule, $action) {
                             $idEquipo = Yii::$app->request->get('id');
@@ -136,6 +138,56 @@ class EquiposController extends Controller
             'jugadores' => $jugadores,
         ]);
     }
+
+    public function actionTraspaso($id)
+    {
+        $searchModel = new JugadorSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        $equipo = Equipo::find()->where(['id' => $id])->one()->nombre;
+        $equipos = Equipo::find()->where(['and', ['id_usuario' => Yii::$app->user->id], ['not', ['id' => $id]]])->all();
+        $equiposOrigen = [];
+        foreach ($equipos as $equipoActual) {
+            $equiposOrigen[$equipoActual->id] = $equipoActual->nombre . ' (' . $equipoActual->temporada . ')';
+        }
+        $posiciones = Posicion::find()->asArray()->all();
+        $posiciones = ArrayHelper::map($posiciones, 'posicion', 'posicion');
+        $dorsales = Jugador::find()
+                        ->select('dorsal')
+                        ->where(['id_equipo' => Yii::$app->request->get('id_equipo')])
+                        ->orderBy('dorsal')
+                        ->asArray()->all();
+        $dorsales = ArrayHelper::map($dorsales, 'dorsal', 'dorsal');
+
+        return $this->render('traspaso', [
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
+            'equipo' => $equipo,
+            'equiposOrigen' => $equiposOrigen,
+            'posiciones' => $posiciones,
+            'dorsales' => $dorsales,
+        ]);
+    }
+
+    public function actionTraspasar()
+    {
+        $equipos = json_decode(file_get_contents('php://input'));
+
+        if ($equipos->origen != '' && $equipos->destino != '') {
+            $antiguos = Jugador::find()->where(['id_equipo' => $equipos->origen])->all();
+
+            foreach ($antiguos as $antiguo) {
+                $nuevo = new Jugador;
+                $nuevo->nombre = $antiguo->nombre;
+                $nuevo->fecha_nac = $antiguo->fecha_nac;
+                $nuevo->dorsal = $antiguo->dorsal;
+                $nuevo->id_equipo = $equipos->destino;
+                $nuevo->id_posicion = $antiguo->id_posicion;
+                $nuevo->save();
+            }
+            Yii::$app->session->setFlash('anadido', 'La plantilla se ha traspasado correctamente');
+        }
+    }
+
 
     /**
      * Actualiza las estadísticas del equipo recibido utilizando Ajax en el
