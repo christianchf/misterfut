@@ -28,19 +28,16 @@ AppAsset::register($this);
 
     <?php
     NavBar::begin([
-        'brandLabel' => 'MisterFut',
+        'brandLabel' => '<p><img src="/images/logo.png" alt="Logo" title="Logo" width="30" class="logo" /> MisterFut</p>',
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
-            'class' => 'navbar-inverse navbar-fixed-top',
+            'class' => 'navbar-fixed-top navbar-purple',
         ],
     ]);
     $items = [
         ['label' => 'Inicio', 'url' => ['/site/index']],
         ['label' => 'Misterfut', 'url' => ['/site/about']],
         ['label' => 'Contacto', 'url' => ['/site/contact']],
-        Yii::$app->user->isGuest ? ''
-            : ['label' => 'Mis equipos', 'url' => ['/equipos/index']],
-              ['label' => 'Historial de equipos', 'url' => ['/equipos/historial']],
         Yii::$app->user->isGuest ?
         [
             'label' => 'Usuarios',
@@ -71,9 +68,19 @@ AppAsset::register($this);
         ];
     }
     echo Nav::widget([
-        'options' => ['class' => 'navbar-nav navbar-right'],
+        'options' => ['class' => 'navbar-nav navbar-right no-hover'],
         'items' => $items,
     ]);
+    if (!Yii::$app->user->isGuest) {
+        echo Nav::widget([
+            'options' => ['class' => 'navbar-nav navbar-right no-hover menu-user'],
+            'items' => [
+                ['label' => 'Mis equipos', 'url' => ['/equipos/index']],
+                ['label' => 'Historial de equipos', 'url' => ['/equipos/historial']],
+                ['label' => 'La pizarra (proximamente)'],
+            ]
+        ]);
+    }
     NavBar::end();
     ?>
 
@@ -89,7 +96,7 @@ AppAsset::register($this);
     <div class="container">
         <p class="pull-left">&copy; Christian Hidalgo Ferrero <?= date('Y') ?></p>
 
-        <p class="pull-right"><?= Yii::powered() ?></p>
+        <p class="pull-right"><img src="/images/logo.png" alt="Logo" title="Logo" width="30" class="logo" /></p>
     </div>
 </footer>
 

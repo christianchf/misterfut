@@ -20,6 +20,7 @@ class AppAsset extends AssetBundle
     public $css = [
         'css/site.css',
         'css/estadisticas.css',
+        'css/pelota.css',
     ];
     public $js = [
         'js/btnsCalendario.js',

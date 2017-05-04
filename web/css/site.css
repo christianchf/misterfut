@@ -16,9 +16,10 @@ body {
 
 .footer {
     height: 60px;
-    background-color: #f5f5f5;
-    border-top: 1px solid #ddd;
-    padding-top: 20px;
+    background-color: #3e1776;
+    border-top: 1px solid #6a4c96;
+    padding-top: 19px;
+    color: #ffffff;
 }
 
 .jumbotron {
@@ -120,4 +121,86 @@ a.desc:after {
 
 a.glyphicon.glyphicon-eye-open:hover {
     text-decoration: none;
+}
+
+/*****Mis estilos*****/
+
+.navbar-purple {
+  background-color: #3e1776;
+  border-color: #6a4c96;
+}
+.navbar-purple .navbar-brand {
+  color: #ffffff;
+}
+.navbar-purple .navbar-brand:hover,
+.navbar-purple .navbar-brand:focus {
+  color: #ffffff;
+}
+.navbar-purple .navbar-text {
+  color: #ffffff;
+}
+.navbar-purple .navbar-nav > li > a {
+  color: #ffffff;
+}
+.navbar-purple .navbar-nav > li > a:hover,
+.navbar-purple .navbar-nav > li > a:focus {
+  color: #ffffff;
+}
+.navbar-purple .navbar-nav > .active > a,
+.navbar-purple .navbar-nav > .active > a:hover,
+.navbar-purple .navbar-nav > .active > a:focus {
+  color: #ffffff;
+  background-color: #6a4c96;
+}
+.navbar-purple .navbar-nav > .open > a,
+.navbar-purple .navbar-nav > .open > a:hover,
+.navbar-purple .navbar-nav > .open > a:focus {
+  color: #ffffff;
+  background-color: #6a4c96;
+}
+.navbar-purple .navbar-toggle {
+  border-color: #6a4c96;
+}
+.navbar-purple .navbar-toggle:hover,
+.navbar-purple .navbar-toggle:focus {
+  background-color: #6a4c96;
+}
+.navbar-purple .navbar-toggle .icon-bar {
+  background-color: #ffffff;
+}
+.navbar-purple .navbar-collapse,
+.navbar-purple .navbar-form {
+  border-color: #ffffff;
+}
+.navbar-purple .navbar-link {
+  color: #ffffff;
+}
+.navbar-purple .navbar-link:hover {
+  color: #ffffff;
+}
+
+@media (max-width: 767px) {
+  .navbar-purple .navbar-nav .open .dropdown-menu > li > a {
+    color: #ffffff;
+  }
+  .navbar-purple .navbar-nav .open .dropdown-menu > li > a:hover,
+  .navbar-purple .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #ffffff;
+  }
+  .navbar-purple .navbar-nav .open .dropdown-menu > .active > a,
+  .navbar-purple .navbar-nav .open .dropdown-menu > .active > a:hover,
+  .navbar-purple .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #ffffff;
+    background-color: #6a4c96;
+  }
+}
+
+.navbar-brand {
+    font-weight: bold;
+    font-size: 25px;
+    width: 450px;
+}
+
+.no-hover > li:hover > a {
+    background: #6a4c96;
 }

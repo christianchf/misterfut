@@ -49,6 +49,11 @@ $this->params['breadcrumbs'][] = $this->title;
                 <?php ActiveForm::end(); ?>
 
             </div>
+            <div class="col-lg-5">
+                <div class="ball-animation">
+                    <div class="ball-decoration"></div>
+                </div>
+            </div>
         </div>
 
     <?php endif; ?>

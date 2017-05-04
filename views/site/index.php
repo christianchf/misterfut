@@ -12,7 +12,5 @@ $this->title = 'MisterFut';
 
     <div class="body-content">
 
-
-
     </div>
 </div>
