@@ -71,19 +71,29 @@ AppAsset::register($this);
         'options' => ['class' => 'navbar-nav navbar-right no-hover'],
         'items' => $items,
     ]);
-    if (!Yii::$app->user->isGuest) {
-        echo Nav::widget([
-            'options' => ['class' => 'navbar-nav navbar-right no-hover menu-user'],
-            'items' => [
-                ['label' => 'Mis equipos', 'url' => ['/equipos/index']],
-                ['label' => 'Historial de equipos', 'url' => ['/equipos/historial']],
-                ['label' => 'La pizarra (proximamente)'],
-            ]
-        ]);
-    }
+    // if (!Yii::$app->user->isGuest) {
+    //     echo Nav::widget([
+    //         'options' => ['class' => 'navbar-nav navbar-right no-hover'],
+    //         'items' => [
+    //             ['label' => 'Mis equipos', 'url' => ['/equipos/index']],
+    //             ['label' => 'Historial de equipos', 'url' => ['/equipos/historial']],
+    //             ['label' => 'La pizarra (proximamente)'],
+    //         ]
+    //     ]);
+    // }
     NavBar::end();
     ?>
-
+    <?php if (!Yii::$app->user->isGuest) { ?>
+    <nav class="navbar-purple navbar">
+    <div id="submenu" class="container">
+        <ul class="navbar-nav navbar-left no-hover nav">
+            <li><?= Html::a('Mis equipos', ['/equipos/index']) ?></li>
+            <li><?= Html::a('Historial de equipos', ['/equipos/historial']) ?></li>
+            <li><?= Html::a('La Pizarra (proximante)') ?></li>
+        </ul>
+    </div>
+    </nav>
+    <?php } ?>
     <div class="container">
         <?= Breadcrumbs::widget([
             'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
