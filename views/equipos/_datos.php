@@ -7,7 +7,7 @@ use yii\widgets\DetailView;
 
 <br />
 <p>
-    <?= Html::a('Modificar', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
+    <?= Html::a('Modificar', ['update', 'id' => $model->id], ['class' => 'btn btn-warning']) ?>
     <?= Html::a('Borrar', ['delete', 'id' => $model->id], [
         'class' => 'btn btn-danger',
         'data' => [

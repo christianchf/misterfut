@@ -69,7 +69,6 @@ $this->params['breadcrumbs'][] = $this->title;
                 'label' => 'Goles/Partido',
                 'attribute' => 'goles_por_partido',
                 'width' => '70px',
-                'format' => 'percent',
             ],
             [
                 'label' => 'Fecha nacimiento',

@@ -11,7 +11,7 @@ body {
 }
 
 .wrap > .container {
-    padding: 70px 15px 20px;
+    padding: 120px 15px 20px;
 }
 
 .footer {
@@ -198,7 +198,6 @@ a.glyphicon.glyphicon-eye-open:hover {
 .navbar-brand {
     font-weight: bold;
     font-size: 25px;
-    width: 450px;
 }
 
 .no-hover > li:hover > a {
@@ -207,4 +206,25 @@ a.glyphicon.glyphicon-eye-open:hover {
 
 #submenu {
     margin-top: 50px;
+    border-top: 1px solid #6a4c96;
+}
+
+.btn-success {
+    background: #67cca0;
+    border-color: #67cca0;
+}
+
+.btn-success:hover {
+    background: #50b388;
+    border-color: #50b388;
+}
+
+.btn-primary {
+    background: #3e1776;
+    border-color: #3e1776;
+}
+
+.btn-primary:hover {
+    background: #522f85;
+    border-color: #522f85;
 }
