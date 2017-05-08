@@ -212,6 +212,7 @@ a.glyphicon.glyphicon-eye-open:hover {
 .btn-success {
     background: #67cca0;
     border-color: #67cca0;
+    transition: background 1s, border-color 1s;
 }
 
 .btn-success:hover {
@@ -220,11 +221,24 @@ a.glyphicon.glyphicon-eye-open:hover {
 }
 
 .btn-primary {
-    background: #3e1776;
-    border-color: #3e1776;
+    background: #6a4c96;
+    border-color: #6a4c96;
+    transition: background 1s, border-color 1s;
 }
 
 .btn-primary:hover {
     background: #522f85;
     border-color: #522f85;
+}
+
+.btn-info {
+    transition: background 1s, border-color 1s;
+}
+
+.btn-warning {
+    transition: background 1s, border-color 1s;
+}
+
+.btn-danger {
+    transition: background 1s, border-color 1s;
 }

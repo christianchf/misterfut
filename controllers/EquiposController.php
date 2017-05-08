@@ -141,6 +141,7 @@ class EquiposController extends Controller
 
     public function actionTraspaso($id)
     {
+        $this->layout = 'ventanaLayout.php';
         $searchModel = new JugadorSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
         $equipo = Equipo::find()->where(['id' => $id])->one();

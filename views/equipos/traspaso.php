@@ -38,9 +38,6 @@ $this->registerJs($js);
 
 
 $this->title = 'Traspasar plantilla';
-$this->params['breadcrumbs'][] = ['label' => 'Equipos', 'url' => ['/equipos/index']];
-$this->params['breadcrumbs'][] = ['label' => $equipo->nombre, 'url' => ['/equipos/view', 'id' => Yii::$app->request->get('id')]];
-$this->params['breadcrumbs'][] = $this->title;
 ?>
 
 <div class="jugador-index">

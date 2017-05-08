@@ -25,7 +25,16 @@ AppAsset::register($this);
 <?php $this->beginBody() ?>
 
 <div class="wrap">
-
+    <?php if (!Yii::$app->user->isGuest) { ?>
+    <nav id="submenu" class="navbar-purple navbar navbar-fixed-top">
+    <div class="container">
+        <ul class="navbar-nav navbar-left no-hover nav">
+            <li><?= Html::a('Mis equipos', ['/equipos/index']) ?></li>
+            <li><?= Html::a('Historial de equipos', ['/equipos/historial']) ?></li>
+        </ul>
+    </div>
+    </nav>
+    <?php } ?>
     <?php
     NavBar::begin([
         'brandLabel' => '<p><img src="/images/logo.png" alt="Logo" title="Logo" width="30" class="logo" /> MisterFut</p>',
@@ -73,16 +82,7 @@ AppAsset::register($this);
     ]);
     NavBar::end();
     ?>
-    <?php if (!Yii::$app->user->isGuest) { ?>
-    <nav id="submenu" class="navbar-purple navbar navbar-fixed-top">
-    <div class="container">
-        <ul class="navbar-nav navbar-left no-hover nav">
-            <li><?= Html::a('Mis equipos', ['/equipos/index']) ?></li>
-            <li><?= Html::a('Historial de equipos', ['/equipos/historial']) ?></li>
-        </ul>
-    </div>
-    </nav>
-    <?php } ?>
+
     <div class="container">
         <?= Breadcrumbs::widget([
             'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
