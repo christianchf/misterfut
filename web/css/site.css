@@ -11,7 +11,7 @@ body {
 }
 
 .wrap > .container {
-    padding: 120px 15px 20px;
+    padding: 70px 15px 20px;
 }
 
 .footer {
@@ -241,4 +241,8 @@ a.glyphicon.glyphicon-eye-open:hover {
 
 .btn-danger {
     transition: background 1s, border-color 1s;
+}
+
+.breadcrumb {
+    margin-top: 50px;
 }

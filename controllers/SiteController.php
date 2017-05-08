@@ -3,6 +3,8 @@
 namespace app\controllers;
 
 use Yii;
+use app\models\Usuario;
+use app\models\RecuperarForm;
 use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
@@ -112,6 +114,56 @@ class SiteController extends Controller
             'model' => $model,
         ]);
     }
+
+    public function actionRecuperar()
+    {
+        $model = new RecuperarForm;
+        if ($model->load(Yii::$app->request->post())) {
+            $usuario = Usuario::findOne(['email' => $model->email]);
+            if ($usuario !== null) {
+                $model->sendEmail();
+                Yii::$app->session->setFlash('emailEnviado');
+
+                return $this->refresh();
+            } else {
+                Yii::$app->session->setFlash('emailInvalido');
+
+                return $this->render('recuperar', [
+                    'model' => $model,
+                ]);
+            }
+        }
+        return $this->render('recuperar', [
+            'model' => $model,
+        ]);
+    }
+
+    public function actionCambiar()
+    {
+        $model = new RecuperarForm([
+            'scenario' => RecuperarForm::ESCENARIO_RECUPERAR,
+        ]);
+        if ($model->load(Yii::$app->request->post())) {
+            $usuario = Usuario::findOne(['token' => $model->token]);
+            if ($usuario !== null) {
+                $model->cambiarContrasenia();
+                Yii::$app->session->setFlash('contraseniaCambiada');
+
+                return $this->refresh();
+            } else {
+                Yii::$app->session->setFlash('tokenInvalido');
+
+                return $this->render('cambiar', [
+                    'model' => $model,
+                ]);
+            }
+        }
+        return $this->render('cambiar', [
+            'model' => $model,
+        ]);
+    }
+
+
 
     /**
      * Displays about page.
