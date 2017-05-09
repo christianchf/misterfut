@@ -136,10 +136,10 @@ class JugadoresController extends Controller
                     $jugador->goles_marcados = $jugador->goles_marcados + 1;
                     break;
                 case 'suma2':
-                    $jugador->goles_encajados = $jugador->goles_encajados + 1;
+                    $jugador->asistencias = $jugador->asistencias + 1;
                     break;
                 case 'suma3':
-                    $jugador->asistencias = $jugador->asistencias + 1;
+                    $jugador->goles_encajados = $jugador->goles_encajados + 1;
                     break;
                 case 'resta0':
                     $jugador->partidos_jugados = $jugador->partidos_jugados - 1;
@@ -148,10 +148,10 @@ class JugadoresController extends Controller
                     $jugador->goles_marcados = $jugador->goles_marcados - 1;
                     break;
                 case 'resta2':
-                    $jugador->goles_encajados = $jugador->goles_encajados - 1;
+                    $jugador->asistencias = $jugador->asistencias - 1;
                     break;
                 case 'resta3':
-                    $jugador->asistencias = $jugador->asistencias - 1;
+                    $jugador->goles_encajados = $jugador->goles_encajados - 1;
                     break;
             }
             $jugador->save();
