@@ -99,15 +99,17 @@ class EquiposController extends Controller
     }
 
     /**
-     * Lists all Equipo models.
-     * @return mixed
+     * Muestra un listado de todos los equipos que ha entrenado el usuario,
+     * independientemente de la temporada.
+     * @return mixed El listado de equipos del usuario.
      */
     public function actionHistorial()
     {
         $equipos = new ActiveDataProvider([
             'query' => Equipo::find()->select(['nombre'])
                         ->where(['id_usuario' => Yii::$app->user->id])
-                        ->groupBy(['nombre']),
+                        ->groupBy(['nombre'])
+                        ->orderBy('nombre'),
             'pagination' => false,
             'sort' => false,
         ]);
@@ -117,6 +119,11 @@ class EquiposController extends Controller
         ]);
     }
 
+    /**
+     * Muestra un resumen historico de estadísticas del equipo indicado.
+     * @param  string $nombre El nombre del equipo.
+     * @return mixed El resumen historico del equipo indicado.
+     */
     public function actionHistorico($nombre)
     {
         $searchModel = new HistorialSearch();
@@ -168,6 +175,12 @@ class EquiposController extends Controller
         ]);
     }
 
+    /**
+     * Muestra la vista para la realización de el traspaso masivo de los
+     * jugadores de un equipo indicado al equipo pasado por parametros.
+     * @param  int $id El id del equipo al que se le realizara el traspaso masivo
+     * @return mixed La vista del traspaso.
+     */
     public function actionTraspaso($id)
     {
         $this->layout = 'ventanaLayout.php';
@@ -198,6 +211,9 @@ class EquiposController extends Controller
         ]);
     }
 
+    /**
+     * Permite realizar el traspaso masivo de jugadores de un equipo a otro.
+     */
     public function actionTraspasar()
     {
         $equipos = json_decode(file_get_contents('php://input'));
