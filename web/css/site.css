@@ -246,3 +246,11 @@ a.glyphicon.glyphicon-eye-open:hover {
 .breadcrumb {
     margin-top: 50px;
 }
+
+#totales {
+    width: 695px;
+}
+
+#totalesHistorico {
+    width: 615px;
+}

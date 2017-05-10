@@ -1,5 +1,5 @@
 .item {
-    width: 50%;
+    width: 40%;
     height: 50px;
     border: 2px solid #3e1776;
     border-radius: 25px 5px;
@@ -25,4 +25,10 @@
 
 .tituloNombre:hover {
     color: #ffffff;
+}
+
+@media screen and (max-width: 767px) {
+    .item {
+        width: 90%;
+    }
 }

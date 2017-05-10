@@ -10,6 +10,7 @@ use app\models\EquipoSearch;
 use app\models\JugadorSearch;
 use app\models\HistorialSearch;
 use yii\data\ActiveDataProvider;
+use yii\db\Expression;
 use yii\filters\AccessControl;
 use yii\helpers\ArrayHelper;
 use yii\web\Controller;
@@ -75,11 +76,25 @@ class EquiposController extends Controller
                         ->where(['id_usuario' => Yii::$app->user->id])
                         ->asArray()->all();
         $temporadas = ArrayHelper::map($temporadas, 'temporada', 'temporada');
+        $totales = new ActiveDataProvider([
+            'query' => Equipo::find()->select([
+                    new Expression('sum(partidos_jugados) as partidos_jugados'),
+                    new Expression('sum(partidos_ganados) as partidos_ganados'),
+                    new Expression('sum(partidos_empatados) as partidos_empatados'),
+                    new Expression('sum(partidos_perdidos) as partidos_perdidos'),
+                    new Expression('sum(goles_a_favor) as goles_a_favor'),
+                    new Expression('sum(goles_en_contra) as goles_en_contra'),
+                ])->where(['id_usuario' => Yii::$app->user->id])
+                ->groupBy('id_usuario'),
+            'pagination' => false,
+            'sort' => false,
+        ]);
 
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
             'temporadas' => $temporadas,
+            'totales' => $totales,
         ]);
     }
 
@@ -110,11 +125,25 @@ class EquiposController extends Controller
                         ->where(['and', ['id_usuario' => Yii::$app->user->id], ['nombre' => $nombre]])
                         ->asArray()->all();
         $temporadas = ArrayHelper::map($temporadas, 'temporada', 'temporada');
+        $totales = new ActiveDataProvider([
+            'query' => Equipo::find()->select([
+                    new Expression('sum(partidos_jugados) as partidos_jugados'),
+                    new Expression('sum(partidos_ganados) as partidos_ganados'),
+                    new Expression('sum(partidos_empatados) as partidos_empatados'),
+                    new Expression('sum(partidos_perdidos) as partidos_perdidos'),
+                    new Expression('sum(goles_a_favor) as goles_a_favor'),
+                    new Expression('sum(goles_en_contra) as goles_en_contra'),
+                ])->where(['and', ['id_usuario' => Yii::$app->user->id], ['nombre' => $nombre]])
+                ->groupBy('id_usuario'),
+            'pagination' => false,
+            'sort' => false,
+        ]);
 
         return $this->render('historico', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
             'temporadas' => $temporadas,
+            'totales' => $totales,
         ]);
     }
 

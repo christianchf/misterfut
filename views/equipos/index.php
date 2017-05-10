@@ -77,7 +77,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     );
                 },
                 'format' => 'html',
-                'width' => '100px',
+                'width' => '110px',
             ],
 
             [
@@ -100,4 +100,53 @@ $this->params['breadcrumbs'][] = $this->title;
         'responsive'=>true,
         'hover'=>true,
     ]); ?>
+
+    <div id="totales">
+        <?= GridView::widget([
+            'summary' => '',
+            'dataProvider' => $totales,
+            'resizableColumns' => false,
+            'columns' => [
+                [
+                    'value' => function ($model, $key, $index, $column) {
+                        return '<b>Totales</b>';
+                    },
+                    'format' => 'html',
+                    'width' => '280px'
+                ],
+                [
+                    'label' => 'PJ',
+                    'attribute' => 'partidos_jugados',
+                    'width' => '70px',
+                ],
+                [
+                    'label' => 'PG',
+                    'attribute' => 'partidos_ganados',
+                    'width' => '70px',
+                ],
+                [
+                    'label' => 'PE',
+                    'attribute' => 'partidos_empatados',
+                    'width' => '70px',
+                ],
+                [
+                    'label' => 'PP',
+                    'attribute' => 'partidos_perdidos',
+                    'width' => '70px',
+                ],
+                [
+                    'label' => 'GF',
+                    'attribute' => 'goles_a_favor',
+                    'width' => '70px',
+                ],
+                [
+                    'label' => 'GC',
+                    'attribute' => 'goles_en_contra',
+                    'width' => '70px',
+                ],
+            ],
+            'responsive'=>true,
+            'hover'=>true,
+        ]); ?>
+    </div>
 </div>
