@@ -42,7 +42,7 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
             [
                 'attribute' => 'nombre',
-                'width' => '160px',
+                'width' => '145px',
 
             ],
             [
@@ -58,22 +58,22 @@ $this->params['breadcrumbs'][] = $this->title;
             [
                 'label' => 'Partidos',
                 'attribute' => 'partidos_jugados',
-                'width' => '70px',
+                'width' => '60px',
             ],
             [
                 'label' => 'Goles',
                 'attribute' => 'goles_marcados',
-                'width' => '70px',
+                'width' => '50px',
             ],
             [
                 'label' => 'Asistencias',
                 'attribute' => 'asistencias',
-                'width' => '70px',
+                'width' => '60px',
             ],
             [
                 'label' => 'Goles/Partido',
                 'attribute' => 'goles_por_partido',
-                'width' => '70px',
+                'width' => '60px',
             ],
             [
                 'label' => 'Fecha nacimiento',
@@ -101,7 +101,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     'pluginOptions'=>['allowClear'=>true],
                 ],
                 'filterInputOptions'=>['placeholder'=>'Lesionado'],
-                'width' => '70px',
+                'width' => '60px',
                 'format' => 'boolean',
             ],
 
