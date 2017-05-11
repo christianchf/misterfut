@@ -16,6 +16,8 @@ namespace app\models;
  * @property string $asistencias
  * @property integer $id_equipo
  * @property integer $id_posicion
+ * @property boolean $esta_lesionado
+ * @property string $tiempo_lesion
  *
  * @property Equipos $idEquipo
  * @property Posiciones $idPosicion
@@ -40,7 +42,8 @@ class Jugador extends \yii\db\ActiveRecord
             [['fecha_nac'], 'safe'],
             [['dorsal', 'partidos_jugados', 'goles_marcados', 'goles_encajados', 'asistencias', 'goles_por_partido'], 'number'],
             [['id_equipo', 'id_posicion'], 'integer'],
-            [['nombre'], 'string', 'max' => 100],
+            [['esta_lesionado'], 'boolean'],
+            [['nombre', 'tiempo_lesion'], 'string', 'max' => 100],
             [['id_equipo'], 'exist', 'skipOnError' => true, 'targetClass' => Equipo::className(), 'targetAttribute' => ['id_equipo' => 'id']],
             [['id_posicion'], 'exist', 'skipOnError' => true, 'targetClass' => Posicion::className(), 'targetAttribute' => ['id_posicion' => 'id']],
             [['fecha_nac'], 'date', 'format'=>'php:Y-m-d'],
@@ -64,6 +67,8 @@ class Jugador extends \yii\db\ActiveRecord
             'id_equipo' => 'Equipo',
             'id_posicion' => 'Posición',
             'goles_por_partido' => 'Goles por partido',
+            'esta_lesionado' => 'Lesionado',
+            'tiempo_lesion' => 'Tiempo de lesión',
         ];
     }
 

@@ -6,6 +6,18 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model app\models\Jugador */
 
+$attributes = [
+    'posicion.posicion',
+    'nombre',
+    'dorsal',
+    'fecha_nac:date',
+    'equipo.nombre',
+    'esta_lesionado:boolean',
+];
+if ($model->esta_lesionado) {
+    $attributes[] = 'tiempo_lesion';
+}
+
 $this->title = $model->nombre;
 $this->params['breadcrumbs'][] = ['label' => 'Equipos', 'url' => ['/equipos/index']];
 $this->params['breadcrumbs'][] = ['label' => $equipo, 'url' => ['/equipos/view', 'id' => $model->id_equipo]];
@@ -29,13 +41,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <?= DetailView::widget([
         'model' => $model,
-        'attributes' => [
-            'posicion.posicion',
-            'nombre',
-            'dorsal',
-            'fecha_nac:date',
-            'equipo.nombre',
-        ],
+        'attributes' => $attributes,
     ]) ?>
 
     <?= $this->render('_estadisticas', [

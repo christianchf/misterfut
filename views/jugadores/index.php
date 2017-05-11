@@ -40,7 +40,11 @@ $this->params['breadcrumbs'][] = $this->title;
                 ],
                 'filterInputOptions'=>['placeholder'=>'Posición'],
             ],
-            'nombre',
+            [
+                'attribute' => 'nombre',
+                'width' => '160px',
+
+            ],
             [
                 'attribute' => 'dorsal',
                 'filterType' => GridView::FILTER_SELECT2,
@@ -49,6 +53,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     'pluginOptions'=>['allowClear'=>true],
                 ],
                 'filterInputOptions'=>['placeholder'=>'Dorsal'],
+                'width' => '100px',
             ],
             [
                 'label' => 'Partidos',
@@ -87,6 +92,17 @@ $this->params['breadcrumbs'][] = $this->title;
                 'attribute' => 'fecha_nac',
                 'format' => 'date',
                 'width' => '100px',
+            ],
+            [
+                'attribute' => 'esta_lesionado',
+                'filterType' => GridView::FILTER_SELECT2,
+                'filter' => ['1' => 'Si', '0' => 'No'],
+                'filterWidgetOptions'=>[
+                    'pluginOptions'=>['allowClear'=>true],
+                ],
+                'filterInputOptions'=>['placeholder'=>'Lesionado'],
+                'width' => '70px',
+                'format' => 'boolean',
             ],
 
             [

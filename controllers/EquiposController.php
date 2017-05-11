@@ -163,7 +163,15 @@ class EquiposController extends Controller
     public function actionView($id)
     {
         $jugadores = new ActiveDataProvider([
-            'query' => Jugador::find()->where(['id_equipo' => $id])
+            'query' => Jugador::find()
+                    ->where(['id_equipo' => $id])
+                    ->orderBy(['id_posicion' => SORT_ASC, 'nombre' => SORT_ASC]),
+            'pagination' => false,
+            'sort' => false,
+        ]);
+        $lesionados = new ActiveDataProvider([
+            'query' => Jugador::find()
+                    ->where(['and', ['id_equipo' => $id], ['esta_lesionado' => 'true']])
                     ->orderBy(['id_posicion' => SORT_ASC, 'nombre' => SORT_ASC]),
             'pagination' => false,
             'sort' => false,
@@ -172,6 +180,7 @@ class EquiposController extends Controller
         return $this->render('view', [
             'model' => $this->findModel($id),
             'jugadores' => $jugadores,
+            'lesionados' => $lesionados,
         ]);
     }
 

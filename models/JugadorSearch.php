@@ -28,6 +28,7 @@ class JugadorSearch extends Jugador
             [['dorsal'], 'number'],
             [['fecha_nac'], 'date', 'format'=>'php:Y-m-d'],
             [['fecha_nac'], 'default', 'value' => null],
+            [['esta_lesionado'], 'boolean'],
         ];
     }
 
@@ -73,6 +74,7 @@ class JugadorSearch extends Jugador
                 'asistencias',
                 'goles_por_partido',
                 'fecha_nac',
+                'esta_lesionado',
             ]
         ]);
 
@@ -95,6 +97,7 @@ class JugadorSearch extends Jugador
             'goles_marcados' => $this->goles_marcados,
             'asistencias' => $this->asistencias,
             'goles_por_partido' =>$this->goles_por_partido,
+            'esta_lesionado' => $this->esta_lesionado,
         ]);
 
         $query->andFilterWhere(['ilike', 'nombre', $this->nombre]);

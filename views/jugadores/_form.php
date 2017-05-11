@@ -47,6 +47,12 @@ $templateNac = '{label}<div class="input-group"><span class="input-group-btn">
             ],
         ]) ?>
 
+    <?php if (!$model->isNewRecord) { ?>
+        <?= $form->field($model, 'esta_lesionado')->checkbox() ?>
+
+        <?= $form->field($model, 'tiempo_lesion')->textInput(['maxlength' => true]) ?>
+    <?php } ?>
+
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Crear' : 'Modificar', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>

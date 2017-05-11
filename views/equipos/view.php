@@ -30,6 +30,13 @@ $this->params['breadcrumbs'][] = $this->title;
                     'jugadores' => $jugadores,
                 ]),
             ],
+            [
+                'label' => 'Lesionados',
+                'content' => $this->render('_lesionados', [
+                    'model' => $model,
+                    'lesionados' => $lesionados,
+                ]),
+            ],
         ],
     ]); ?>
 
