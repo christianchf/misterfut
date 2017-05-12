@@ -11,10 +11,11 @@ use yii\widgets\DetailView;
     <?= Html::a('Borrar', ['delete', 'id' => $model->id], [
         'class' => 'btn btn-danger',
         'data' => [
-            'confirm' => '¿Estas seguro de borrar este equipo?',
+            'confirm' => '¿Estás seguro de borrar este equipo?',
             'method' => 'post',
         ],
     ]) ?>
+    <?= Html::a('Calendario', ['/eventos/index', 'id_equipo' => $model->id], ['class' => 'btn btn-success']) ?>
 </p>
 
 <?= DetailView::widget([

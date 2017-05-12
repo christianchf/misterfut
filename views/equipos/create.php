@@ -2,11 +2,10 @@
 
 use yii\helpers\Html;
 
-
 /* @var $this yii\web\View */
 /* @var $model app\models\Equipo */
 
-$this->title = 'Crear Equipo';
+$this->title = 'Añadir Equipo';
 $this->params['breadcrumbs'][] = ['label' => 'Equipos', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>

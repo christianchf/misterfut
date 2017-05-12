@@ -70,6 +70,7 @@ drop table if exists eventos cascade;
 
 create table eventos (
     id          bigserial    constraint pk_eventos primary key,
+    tipo        varchar(100) not null,
     nombre      varchar(100) not null,
     descripcion text,
     fecha       timestamptz  not null,

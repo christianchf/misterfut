@@ -2,8 +2,8 @@
 
 .ball-animation {
     font-size: .9px;
-    width: 40em;
-    height: 40em;
+    width: 38em;
+    height: 38em;
     border-radius: 50%;
     position: absolute;
     -webkit-animation: 2s linear 0s normal forwards infinite bouncing-ball;

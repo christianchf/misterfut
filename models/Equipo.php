@@ -18,6 +18,7 @@ namespace app\models;
  *
  * @property Usuarios $idUsuario
  * @property Jugadores[] $jugadores
+ * @property Eventos[] $eventos
  */
 class Equipo extends \yii\db\ActiveRecord
 {
@@ -78,6 +79,14 @@ class Equipo extends \yii\db\ActiveRecord
     public function getPlantilla()
     {
         return $this->hasMany(Jugador::className(), ['id_equipo' => 'id'])->inverseOf('equipo');
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getEventos()
+    {
+        return $this->hasMany(Evento::className(), ['id_equipo' => 'id'])->inverseOf('idEquipo');
     }
 
     /**

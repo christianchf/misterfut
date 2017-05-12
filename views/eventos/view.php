@@ -4,27 +4,24 @@ use yii\helpers\Html;
 use yii\widgets\DetailView;
 
 /* @var $this yii\web\View */
-/* @var $model app\models\Jugador */
+/* @var $model app\models\Evento */
 
 $attributes = [
-    'posicion.posicion',
+    'tipo',
     'nombre',
-    'dorsal',
-    'fecha_nac:date',
-    'equipo.nombre',
-    'esta_lesionado:boolean',
+    'fecha:datetime',
 ];
-if ($model->esta_lesionado) {
-    $attributes[] = 'tiempo_lesion';
+if ($model->descripcion != '') {
+    $attributes[] = 'descripcion:ntext';
 }
 
-$this->title = $model->nombre;
+$this->title = $model->tipo . ': ' . $model->nombre;
 $this->params['breadcrumbs'][] = ['label' => 'Equipos', 'url' => ['/equipos/index']];
 $this->params['breadcrumbs'][] = ['label' => $equipo, 'url' => ['/equipos/view', 'id' => $model->id_equipo]];
-$this->params['breadcrumbs'][] = ['label' => 'Plantilla', 'url' => ['index', 'id_equipo' => $model->id_equipo]];
+$this->params['breadcrumbs'][] = ['label' => 'Eventos', 'url' => ['index', 'id_equipo' => $model->id_equipo]];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="jugador-view">
+<div class="evento-view">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
@@ -33,7 +30,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <?= Html::a('Borrar', ['delete', 'id' => $model->id], [
             'class' => 'btn btn-danger',
             'data' => [
-                'confirm' => '¿Estás seguro de eliminar este jugador?',
+                'confirm' => '¿Estás seguro de eliminar este evento?',
                 'method' => 'post',
             ],
         ]) ?>
@@ -42,10 +39,6 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => $attributes,
-    ]) ?>
-
-    <?= $this->render('_estadisticas', [
-        'model' => $model,
     ]) ?>
 
 </div>
