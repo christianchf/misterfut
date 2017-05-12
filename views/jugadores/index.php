@@ -1,8 +1,8 @@
 <?php
 
+use kartik\date\DatePicker;
 use yii\helpers\Html;
 use kartik\grid\GridView;
-use yii\jui\DatePicker;
 
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\JugadorSearch */
@@ -79,15 +79,12 @@ $this->params['breadcrumbs'][] = $this->title;
                 'label' => 'Fecha nacimiento',
                 'value' => 'fecha_nac',
                 'filter' => DatePicker::widget([
-                    'language' => 'es',
-                    'dateFormat' => 'yyyy-MM-dd',
-                    'options' => ['class' => 'form-control'],
-                    'clientOptions' => [
-                        'yearRange' => '-115:+0',
-                        'changeYear' => true
-                    ],
                     'model' => $searchModel,
                     'attribute' => 'fecha_nac',
+                    'pluginOptions' => [
+                        'autoclose'=>true,
+                        'format' => 'yyyy-mm-dd',
+                    ]
                 ]),
                 'attribute' => 'fecha_nac',
                 'format' => 'date',

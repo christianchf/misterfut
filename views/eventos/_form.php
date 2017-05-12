@@ -17,8 +17,6 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'nombre')->textInput(['maxlength' => true]) ?>
 
-    <!-- <?= $form->field($model, 'fecha')->textInput() ?> -->
-
     <?= $form->field($model, 'fecha')->widget(DateTimePicker::classname(), [
         'options' => ['placeholder' => 'Introduzca la fecha y la hora del evento'],
         'pluginOptions' => ['autoclose' => true],
