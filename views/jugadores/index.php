@@ -107,13 +107,29 @@ $this->params['breadcrumbs'][] = $this->title;
                 'template' => '{view} {update} {delete}',
                 'buttons' => [
                     'view' => function ($url, $model, $key) {
-                        return Html::a('Ver', ['jugadores/view', 'id' => $model->id,], ['class' => 'btn btn-xs btn-info btnsAction']);
+                        return Html::a('Ver', [
+                            'jugadores/view', 'id' => $model->id,
+                        ], [
+                            'class' => 'btn btn-xs btn-info btnsAction'
+                        ]);
                     },
                     'update' => function ($url, $model, $key) {
-                        return Html::a('Modificar', ['jugadores/update', 'id' => $model->id,], ['class' => 'btn btn-xs btn-warning btnsAction']);
+                        return Html::a('Modificar', [
+                            'jugadores/update', 'id' => $model->id,
+                        ], [
+                            'class' => 'btn btn-xs btn-warning btnsAction'
+                        ]);
                     },
                     'delete' => function ($url, $model, $key) {
-                        return Html::a('Borrar', ['jugadores/delete', 'id' => $model->id,], ['class' => 'btn btn-xs btn-danger btnsAction']);
+                        return Html::a('Borrar', [
+                            'jugadores/delete', 'id' => $model->id,
+                        ], [
+                            'class' => 'btn btn-xs btn-danger btnsAction',
+                            'data' => [
+                                'confirm' => '¿Estás seguro de eliminar este evento?',
+                                'method' => 'post',
+                            ],
+                        ]);
                     },
                 ],
             ],

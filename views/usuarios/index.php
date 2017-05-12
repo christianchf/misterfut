@@ -28,7 +28,37 @@ $this->params['breadcrumbs'][] = $this->title;
             'email:email',
             'created_at:datetime',
 
-            ['class' => 'yii\grid\ActionColumn'],
+            [
+                'class' => 'yii\grid\ActionColumn',
+                'template' => '{view} {update} {delete}',
+                'buttons' => [
+                    'view' => function ($url, $model, $key) {
+                        return Html::a('Ver', [
+                            'usuarios/view', 'id' => $model->id,
+                        ], [
+                            'class' => 'btn btn-xs btn-info btnsAction'
+                        ]);
+                    },
+                    'update' => function ($url, $model, $key) {
+                        return Html::a('Modificar', [
+                            'usuarios/update', 'id' => $model->id,
+                        ], [
+                            'class' => 'btn btn-xs btn-warning btnsAction'
+                        ]);
+                    },
+                    'delete' => function ($url, $model, $key) {
+                        return Html::a('Borrar', [
+                            'usuarios/delete', 'id' => $model->id,
+                        ], [
+                            'class' => 'btn btn-xs btn-danger btnsAction',
+                            'data' => [
+                                'confirm' => '¿Estás seguro de eliminar este evento?',
+                                'method' => 'post',
+                            ],
+                        ]);
+                    },
+                ],
+            ],
         ],
     ]); ?>
 </div>

@@ -254,3 +254,8 @@ a.glyphicon.glyphicon-eye-open:hover {
 #totalesHistorico {
     width: 615px;
 }
+
+.btnsAction {
+    width: 100%;
+    margin-bottom: 2px;
+}
