@@ -11,6 +11,7 @@ $attributes = [
     'nombre',
     'dorsal',
     'fecha_nac:date',
+    'edad',
     'equipo.nombre',
     'esta_lesionado:boolean',
 ];

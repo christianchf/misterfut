@@ -45,7 +45,7 @@ $this->registerJs($js);
             'template' => '{view}',
             'buttons' => [
                 'view' => function ($url, $model, $key) {
-                    return Html::a('Ver', ['jugadores/view', 'id' => $model->id,], ['class' => 'btn btn-xs btn-info']);
+                    return Html::a('Ver', ['jugadores/view', 'id' => $model->id,], ['class' => 'btn btn-xs btn-info btnsAction']);
                 },
             ],
 

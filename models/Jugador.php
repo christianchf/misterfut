@@ -2,6 +2,8 @@
 
 namespace app\models;
 
+use DateTime;
+
 /**
  * This is the model class for table "jugadores".
  *
@@ -69,6 +71,7 @@ class Jugador extends \yii\db\ActiveRecord
             'goles_por_partido' => 'Goles por partido',
             'esta_lesionado' => 'Lesionado',
             'tiempo_lesion' => 'Tiempo de lesión',
+            'edad' => 'Edad',
         ];
     }
 
@@ -112,5 +115,17 @@ class Jugador extends \yii\db\ActiveRecord
     public function getNombrePosicion()
     {
         return $this->posicion->posicion;
+    }
+
+    /**
+     * Devuelve la edad del jugador.
+     * @return int La edad del jugador
+     */
+    public function getEdad()
+    {
+        $fechaActual = new DateTime();
+        $fechaNac = new DateTime($this->fecha_nac);
+        $edad = $fechaActual->diff($fechaNac)->y;
+        return $edad;
     }
 }
