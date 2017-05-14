@@ -24,6 +24,7 @@ AppAsset::register($this);
         ],
         'nombre',
         'dorsal',
+        'edad',
         'fecha_nac:date',
 
         [

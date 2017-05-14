@@ -259,3 +259,7 @@ a.glyphicon.glyphicon-eye-open:hover {
     width: 100%;
     margin-bottom: 2px;
 }
+
+.modal-content {
+    height: 250px;
+}

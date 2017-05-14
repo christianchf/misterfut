@@ -38,6 +38,7 @@ $this->registerJs($js);
         ],
         'nombre',
         'dorsal',
+        'edad',
         'fecha_nac:date',
 
         [
