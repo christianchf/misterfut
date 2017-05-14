@@ -39,7 +39,7 @@ class EquiposController extends Controller
                 'rules' => [
                     [
                         'allow' => true,
-                        'actions' => ['index', 'create', 'delete', 'historial', 'historico', 'traspasar'],
+                        'actions' => ['index', 'create', 'delete', 'historial', 'historico', 'traspasar', 'nueva-temp'],
                         'roles' => ['@'],
                     ],
                     [
@@ -353,6 +353,26 @@ class EquiposController extends Controller
         $this->findModel($id)->delete();
 
         return $this->redirect(['index']);
+    }
+
+    /**
+     * Crea una nueva temporada para el equipo pasado por parametro
+     * @param string $equipo El nombre del equipo
+     * @return mixed
+     */
+    public function actionNuevaTemp($equipo)
+    {
+        $model = new Equipo();
+        $model->id_usuario = Yii::$app->user->id;
+        $model->nombre = $equipo;
+
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            return $this->redirect(['view', 'id' => $model->id]);
+        } else {
+            return $this->render('nueva-temp', [
+                'model' => $model,
+            ]);
+        }
     }
 
     /**

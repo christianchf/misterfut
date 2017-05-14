@@ -16,6 +16,7 @@ use yii\widgets\DetailView;
         ],
     ]) ?>
     <?= Html::a('Calendario', ['/eventos/index', 'id_equipo' => $model->id], ['class' => 'btn btn-success']) ?>
+    <?= Html::a('Nueva temporada', ['nueva-temp', 'equipo' => $model->nombre], ['class' => 'btn btn-primary']) ?>
 </p>
 
 <?= DetailView::widget([
