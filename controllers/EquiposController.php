@@ -18,7 +18,7 @@ use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * EquiposController implements the CRUD actions for Equipo model.
+ * EquiposController implementalas acciones CRUD para el modelo de Equipo.
  */
 class EquiposController extends Controller
 {
@@ -65,7 +65,7 @@ class EquiposController extends Controller
     }
 
     /**
-     * Lists all Equipo models.
+     * Lista todos los equipos del usuario.
      * @return mixed
      */
     public function actionIndex()
@@ -156,8 +156,8 @@ class EquiposController extends Controller
 
 
     /**
-     * Displays a single Equipo model.
-     * @param int $id
+     * Muestea los datos de un solo equipo.
+     * @param int $id El id del equipo.
      * @return mixed
      */
     public function actionView($id)
@@ -222,6 +222,7 @@ class EquiposController extends Controller
 
     /**
      * Permite realizar el traspaso masivo de jugadores de un equipo a otro.
+     * @return void
      */
     public function actionTraspasar()
     {
@@ -305,8 +306,9 @@ class EquiposController extends Controller
     }
 
     /**
-     * Creates a new Equipo model.
-     * If creation is successful, the browser will be redirected to the 'view' page.
+     * Crea un nuevo equipo.
+     * Si la creación se ha realizado con exito, el navegador redireccionará a
+     * la vista del equipo creado.
      * @return mixed
      */
     public function actionCreate()
@@ -324,9 +326,10 @@ class EquiposController extends Controller
     }
 
     /**
-     * Updates an existing Equipo model.
-     * If update is successful, the browser will be redirected to the 'view' page.
-     * @param int $id
+     * Modifica los datos de un equipo existente.
+     * Si la modificación se ha realizado con exito, el navegador redireccionará
+     * a la vista del equipo modificado.
+     * @param int $id El id del equipo que se va a modificar.
      * @return mixed
      */
     public function actionUpdate($id)
@@ -343,9 +346,10 @@ class EquiposController extends Controller
     }
 
     /**
-     * Deletes an existing Equipo model.
-     * If deletion is successful, the browser will be redirected to the 'index' page.
-     * @param int $id
+     * Borra un equiop existente.
+     * Si el borrado se ha realizado con exito, el navegador redireccionará a la
+     * página índice de los equipos del usuario.
+     * @param int $id El id del equipo que se desea borrar.
      * @return mixed
      */
     public function actionDelete($id)
@@ -356,7 +360,7 @@ class EquiposController extends Controller
     }
 
     /**
-     * Crea una nueva temporada para el equipo pasado por parametro
+     * Crea una nueva temporada para el equipo pasado por parametro.
      * @param string $equipo El nombre del equipo
      * @return mixed
      */
@@ -376,18 +380,18 @@ class EquiposController extends Controller
     }
 
     /**
-     * Finds the Equipo model based on its primary key value.
-     * If the model is not found, a 404 HTTP exception will be thrown.
-     * @param int $id
-     * @return Equipo the loaded model
-     * @throws NotFoundHttpException if the model cannot be found
+     * Encuentra un equipo buscando por su clave primaria (id).
+     * Si el equipo no se encuentra, se lanzara una excepción 404 HTTP.
+     * @param int $id El id del equipo que se quiere buscar.
+     * @return Equipo El equipo cargado
+     * @throws NotFoundHttpException Si el equipo no se ha encontrado.
      */
     protected function findModel($id)
     {
         if (($model = Equipo::findOne($id)) !== null) {
             return $model;
         } else {
-            throw new NotFoundHttpException('The requested page does not exist.');
+            throw new NotFoundHttpException('La página solicitada no existe.');
         }
     }
 }

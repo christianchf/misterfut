@@ -8,7 +8,7 @@ use yii\data\ActiveDataProvider;
 use app\models\Equipo;
 
 /**
- * EquipoSearch represents the model behind the search form about `app\models\Equipo`.
+ * EquipoSearch representa el modelo para el formulario de búsqueda sobre `app\models\Equipo`.
  */
 class EquipoSearch extends Equipo
 {
@@ -28,12 +28,11 @@ class EquipoSearch extends Equipo
      */
     public function scenarios()
     {
-        // bypass scenarios() implementation in the parent class
         return Model::scenarios();
     }
 
     /**
-     * Creates data provider instance with search query applied
+     * Crea una instancia de dataprovider con la consulta de búsqueda aplicada.
      *
      * @param array $params
      *
@@ -42,8 +41,6 @@ class EquipoSearch extends Equipo
     public function search($params)
     {
         $query = Equipo::find()->where(['id_usuario' => Yii::$app->user->id]);
-
-        // add conditions that should always apply here
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
@@ -66,12 +63,9 @@ class EquipoSearch extends Equipo
         $this->load($params);
 
         if (!$this->validate()) {
-            // uncomment the following line if you do not want to return any records when validation fails
-            // $query->where('0=1');
             return $dataProvider;
         }
 
-        // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
             'partidos_jugados' => $this->partidos_jugados,

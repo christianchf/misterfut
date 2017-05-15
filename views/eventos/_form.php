@@ -1,6 +1,7 @@
 <?php
 
 use kartik\datetime\DateTimePicker;
+use kartik\select2\Select2;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
@@ -13,7 +14,13 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'tipo')->dropDownList($tipos) ?>
+    <?= $form->field($model, 'tipo')->widget(Select2::classname(), [
+            'data' => $tipos,
+            'options' => ['placeholder' => 'Tipo de evento'],
+            'pluginOptions' => [
+                'allowClear' => true
+            ],
+        ]) ?>
 
     <?= $form->field($model, 'nombre')->textInput(['maxlength' => true]) ?>
 

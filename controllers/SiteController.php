@@ -56,7 +56,7 @@ class SiteController extends Controller
     }
 
     /**
-     * Displays homepage.
+     * Muestra la página principal.
      *
      * @return string
      */
@@ -66,7 +66,7 @@ class SiteController extends Controller
     }
 
     /**
-     * Login action.
+     * Permite realizar la acción de login.
      *
      * @return string
      */
@@ -86,7 +86,7 @@ class SiteController extends Controller
     }
 
     /**
-     * Logout action.
+     * Permite realizar la acción de logout.
      *
      * @return string
      */
@@ -98,7 +98,7 @@ class SiteController extends Controller
     }
 
     /**
-     * Displays contact page.
+     * Muestra la página de contacto.
      *
      * @return string
      */
@@ -115,6 +115,11 @@ class SiteController extends Controller
         ]);
     }
 
+    /**
+     * Muestra un formulario y envia un email al correo indicado en el formulario,
+     * para que el usuario pueda recuperar su contraseña.
+     * @return mixed
+     */
     public function actionRecuperar()
     {
         $model = new RecuperarForm;
@@ -138,6 +143,10 @@ class SiteController extends Controller
         ]);
     }
 
+    /**
+     * Modifica la contraseña del usuario por una nueva.
+     * @return mixed
+     */
     public function actionCambiar()
     {
         $model = new RecuperarForm([
@@ -163,10 +172,8 @@ class SiteController extends Controller
         ]);
     }
 
-
-
     /**
-     * Displays about page.
+     * Muestra la página de about.
      *
      * @return string
      */

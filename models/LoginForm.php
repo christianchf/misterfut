@@ -7,9 +7,9 @@ use yii\base\Model;
 use app\models\Usuario;
 
 /**
- * LoginForm is the model behind the login form.
+ * LoginForm es el modelo para el formulario de login.
  *
- * @property User|null $user This property is read-only.
+ * @property User|null $user Esta propiedad es solo de lectura.
  *
  */
 class LoginForm extends Model
@@ -39,16 +39,13 @@ class LoginForm extends Model
 
 
     /**
-     * @return array the validation rules.
+     * @return array Las reglas de validación.
      */
     public function rules()
     {
         return [
-            // username and password are both required
             [['username', 'password'], 'required'],
-            // rememberMe must be a boolean value
             ['rememberMe', 'boolean'],
-            // password is validated by validatePassword()
             ['password', 'validatePassword'],
         ];
     }
@@ -63,11 +60,11 @@ class LoginForm extends Model
     }
 
     /**
-     * Validates the password.
-     * This method serves as the inline validation for password.
+     * Valida la constraseña.
+     * Este método sirve como validación en línea para la contraseña.
      *
-     * @param string $attribute the attribute currently being validated
-     * @param array $params the additional name-value pairs given in the rule
+     * @param string $attribute El atributo que se está validando actualmente.
+     * @param array $params Los pares nombre-valor adicionales dados en la regla.
      */
     public function validatePassword($attribute, $params)
     {
@@ -81,8 +78,8 @@ class LoginForm extends Model
     }
 
     /**
-     * Logs in a user using the provided username and password.
-     * @return bool whether the user is logged in successfully
+     * Loguea a un usuario utilizando el nombre de usuario y la contraseña proporcionados.
+     * @return bool True si el usuario a iniciado sesión correctamente.
      */
     public function login()
     {
@@ -93,7 +90,7 @@ class LoginForm extends Model
     }
 
     /**
-     * Finds user by [[username]]
+     * Encuentra un usuario por su [[username]]
      *
      * @return Usuario|null
      */

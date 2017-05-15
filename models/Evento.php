@@ -3,7 +3,7 @@
 namespace app\models;
 
 /**
- * This is the model class for table "eventos".
+ * Este es el modelo para la tabla "eventos".
  *
  * @property integer $id
  * @property string $tipo

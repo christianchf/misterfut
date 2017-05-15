@@ -3,7 +3,7 @@
 namespace app\models;
 
 /**
- * This is the model class for table "equipos".
+ * Este es el modelo para la tabla "equipos".
  *
  * @property integer $id
  * @property string $nombre

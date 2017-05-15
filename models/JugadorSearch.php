@@ -8,7 +8,7 @@ use yii\data\ActiveDataProvider;
 use app\models\Jugador;
 
 /**
- * JugadorSearch represents the model behind the search form about `app\models\Jugador`.
+ * JugadorSearch representa el modelo para el formulario de búsqueda de `app\models\Jugador`.
  */
 class JugadorSearch extends Jugador
 {
@@ -37,12 +37,11 @@ class JugadorSearch extends Jugador
      */
     public function scenarios()
     {
-        // bypass scenarios() implementation in the parent class
         return Model::scenarios();
     }
 
     /**
-     * Creates data provider instance with search query applied
+     * Crea una instancia de data provider con una consulta de búsqueda aplicada.
      *
      * @param array $params
      *
@@ -51,8 +50,6 @@ class JugadorSearch extends Jugador
     public function search($params)
     {
         $query = Jugador::find()->where(['id_equipo' => Yii::$app->request->get('id_equipo')]);
-
-        // add conditions that should always apply here
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
@@ -81,12 +78,9 @@ class JugadorSearch extends Jugador
         $this->load($params);
 
         if (!$this->validate()) {
-            // uncomment the following line if you do not want to return any records when validation fails
-            // $query->where('0=1');
             return $dataProvider;
         }
 
-        // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
             'fecha_nac' => $this->fecha_nac,

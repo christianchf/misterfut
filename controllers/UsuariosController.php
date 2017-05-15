@@ -11,7 +11,7 @@ use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * UsuariosController implements the CRUD actions for Usuario model.
+ * UsuariosController implementa las acciones CRUD para el modelo de usuario.
  */
 class UsuariosController extends Controller
 {
@@ -60,7 +60,7 @@ class UsuariosController extends Controller
     }
 
     /**
-     * Lists all Usuario models.
+     * Lista todos los usuarios registrados en la aplicación.
      * @return mixed
      */
     public function actionIndex()
@@ -75,8 +75,8 @@ class UsuariosController extends Controller
     }
 
     /**
-     * Displays a single Usuario model.
-     * @param int $id
+     * Muestra los datos de un usuario.
+     * @param int $id El id del usuario.
      * @return mixed
      */
     public function actionView($id = null)
@@ -87,8 +87,9 @@ class UsuariosController extends Controller
     }
 
     /**
-     * Creates a new Usuario model.
-     * If creation is successful, the browser will be redirected to the 'view' page.
+     * Crea un nuevo usuario.
+     * Si la creación se ha realizado con exito, el navegador se redireccionará
+     * a la vista del usuario creado.
      * @return mixed
      */
     public function actionCreate()
@@ -113,9 +114,10 @@ class UsuariosController extends Controller
     }
 
     /**
-     * Updates an existing Usuario model.
-     * If update is successful, the browser will be redirected to the 'view' page.
-     * @param int $id
+     * Modifica los datos de un usuario.Updates an existing Usuario model.
+     * Si la modificación se ha realizado con exito, el navegador se redireccionará
+     * a la vista del usuario modificado.
+     * @param int $id El id del usuario que se quiere modificar.
      * @return mixed
      */
     public function actionUpdate($id = null)
@@ -132,9 +134,10 @@ class UsuariosController extends Controller
     }
 
     /**
-     * Deletes an existing Usuario model.
-     * If deletion is successful, the browser will be redirected to the 'index' page.
-     * @param int $id
+     * Borrar un usuario existente.
+     * Si se ha borrado con exito, el navegador se redireccionará a la página
+     * índice de los usuarios.
+     * @param int $id El id del usuario que se quiere borrar.
      * @return mixed
      */
     public function actionDelete($id)
@@ -145,11 +148,11 @@ class UsuariosController extends Controller
     }
 
     /**
-     * Finds the Usuario model based on its primary key value.
-     * If the model is not found, a 404 HTTP exception will be thrown.
-     * @param int $id
-     * @return Usuario the loaded model
-     * @throws NotFoundHttpException if the model cannot be found
+     * Encuentra un usuario buscando por su clave primaria (id).
+     * Si el usuario no se encuentra, se lanzara una excepción 404 HTTP.
+     * @param int $id El id del usuario que se quiere buscar.
+     * @return Usuario El usuario cargado
+     * @throws NotFoundHttpException Si el usuario no se ha encontrado.
      */
     protected function findModel($id)
     {
@@ -157,7 +160,7 @@ class UsuariosController extends Controller
         if (($model = Usuario::findOne($id)) !== null) {
             return $model;
         } else {
-            throw new NotFoundHttpException('The requested page does not exist.');
+            throw new NotFoundHttpException('La página solicitada no existe.');
         }
     }
 }

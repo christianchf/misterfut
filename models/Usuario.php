@@ -5,7 +5,7 @@ namespace app\models;
 use Yii;
 
 /**
- * This is the model class for table "usuarios".
+ * Este es el modelo par ala tabla de "usuarios".
  *
  * @property integer $id
  * @property string $nombre
@@ -128,6 +128,7 @@ class Usuario extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
 
     /**
      * Regenera los tokens de los usuarios.
+     * @return void
      */
     public function regenerarToken()
     {
@@ -155,8 +156,9 @@ class Usuario extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
 
     /**
      * Comprueba si la  contraseña y la confirmación de la contraseña son iguales
-     * @param  [type] $attribute [description]
-     * @param  [type] $params    [description]
+     * @param  mixed $attribute
+     * @param  mixed $params
+     * @return void
      */
     public function confirmarPassword($attribute, $params)
     {

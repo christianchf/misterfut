@@ -5,7 +5,7 @@ namespace app\models;
 use DateTime;
 
 /**
- * This is the model class for table "jugadores".
+ * Este el el modelo para la tabla "jugadores".
  *
  * @property integer $id
  * @property string $nombre

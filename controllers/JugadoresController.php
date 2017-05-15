@@ -14,7 +14,7 @@ use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * JugadoresController implements the CRUD actions for Jugador model.
+ * JugadoresController implementa las acciones CRUD para el modelo de Jugador.
  */
 class JugadoresController extends Controller
 {
@@ -35,7 +35,7 @@ class JugadoresController extends Controller
                 'rules' => [
                     [
                         'allow' => true,
-                        'actions' => ['index', 'create', 'delete'],
+                        'actions' => ['index', 'create'],
                         'roles' => ['@'],
                         'matchCallback' => function ($rule, $action) {
                             $idEquipo = Yii::$app->request->get('id_equipo');
@@ -49,6 +49,11 @@ class JugadoresController extends Controller
 
                             return $usuarioEquipo == $idUsuario;
                         }
+                    ],
+                    [
+                        'allow' => true,
+                        'actions' => ['delete'],
+                        'roles' => ['@'],
                     ],
                     [
                         'allow' => true,
@@ -74,7 +79,7 @@ class JugadoresController extends Controller
     }
 
     /**
-     * Lists all Jugador models.
+     * Lista todos los jugadores del equipo actual.
      * @return mixed
      */
     public function actionIndex()
@@ -101,8 +106,8 @@ class JugadoresController extends Controller
     }
 
     /**
-     * Displays a single Jugador model.
-     * @param int $id
+     * Muestra los datos de un solo jugador.
+     * @param int $id El id del jugador.
      * @return mixed
      */
     public function actionView($id)
@@ -170,8 +175,9 @@ class JugadoresController extends Controller
     }
 
     /**
-     * Creates a new Jugador model.
-     * If creation is successful, the browser will be redirected to the 'view' page.
+     * Crea un nuevo jugador.
+     * Si se ha creado con exito, el navegador se redireccionará a la vista del
+     * jugador creado.
      * @return mixed
      */
     public function actionCreate()
@@ -192,9 +198,10 @@ class JugadoresController extends Controller
     }
 
     /**
-     * Updates an existing Jugador model.
-     * If update is successful, the browser will be redirected to the 'view' page.
-     * @param int $id
+     * Modificar los datos de un jugador existente.
+     * Si la modificación se ha realizado con exito, el navegador se redireccionará
+     * a la vista del jugador modificado.
+     * @param int $id El id del jugador que se quiere modificar.
      * @return mixed
      */
     public function actionUpdate($id)
@@ -216,31 +223,33 @@ class JugadoresController extends Controller
     }
 
     /**
-     * Deletes an existing Jugador model.
-     * If deletion is successful, the browser will be redirected to the 'index' page.
-     * @param int $id
+     * Borra un jugador existente.
+     * Si se ha borrado con exito, el navegador se redireccionará a la página índice
+     * de los jugadores del equipo.
+     * @param int $id El id del jugador que se quiere borrar.
      * @return mixed
      */
     public function actionDelete($id)
     {
+        $idEquipo = $this->findModel($id)->id_equipo;
         $this->findModel($id)->delete();
 
-        return $this->redirect(['index']);
+        return $this->redirect(['index', 'id_equipo' => $idEquipo]);
     }
 
     /**
-     * Finds the Jugador model based on its primary key value.
-     * If the model is not found, a 404 HTTP exception will be thrown.
-     * @param int $id
-     * @return Jugador the loaded model
-     * @throws NotFoundHttpException if the model cannot be found
-     */
+      * Encuentra un jugador buscando por su clave primaria (id).
+      * Si el jugador no se encuentra, se lanzara una excepción 404 HTTP.
+      * @param int $id El id del jugador que se quiere buscar.
+      * @return Jugador El jugador cargado
+      * @throws NotFoundHttpException Si el jugador no se ha encontrado.
+      */
     protected function findModel($id)
     {
         if (($model = Jugador::findOne($id)) !== null) {
             return $model;
         } else {
-            throw new NotFoundHttpException('The requested page does not exist.');
+            throw new NotFoundHttpException('La página solicitada no existe.');
         }
     }
 }

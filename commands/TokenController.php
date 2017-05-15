@@ -1,9 +1,4 @@
 <?php
-/**
- * @link http://www.yiiframework.com/
- * @copyright Copyright (c) 2008 Yii Software LLC
- * @license http://www.yiiframework.com/license/
- */
 
 namespace app\commands;
 
@@ -12,9 +7,6 @@ use yii\console\Controller;
 
 /**
  * Acciones relacionadas con el token de un usuario.
- *
- * @author Christian Hidalgo Ferrero
- * @since 1.0
  */
 class TokenController extends Controller
 {

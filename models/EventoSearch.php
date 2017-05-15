@@ -8,7 +8,7 @@ use yii\data\ActiveDataProvider;
 use app\models\Evento;
 
 /**
- * EventoSearch represents the model behind the search form about `app\models\Evento`.
+ * EventoSearch representa el modelo para el formulario de búsqueda sobre `app\models\Evento`.
  */
 class EventoSearch extends Evento
 {
@@ -28,12 +28,11 @@ class EventoSearch extends Evento
      */
     public function scenarios()
     {
-        // bypass scenarios() implementation in the parent class
         return Model::scenarios();
     }
 
     /**
-     * Creates data provider instance with search query applied
+     * Crea una instancia de data provider con la consulta de búsqueda aplicada.
      *
      * @param array $params
      *
@@ -43,8 +42,6 @@ class EventoSearch extends Evento
     {
         $query = Evento::find()->where(['id_equipo' => Yii::$app->request->get('id_equipo')]);
 
-        // add conditions that should always apply here
-
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
         ]);
@@ -52,12 +49,9 @@ class EventoSearch extends Evento
         $this->load($params);
 
         if (!$this->validate()) {
-            // uncomment the following line if you do not want to return any records when validation fails
-            // $query->where('0=1');
             return $dataProvider;
         }
 
-        // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
             'fecha' => $this->fecha,

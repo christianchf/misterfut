@@ -40,7 +40,7 @@ class RecuperarForm extends Model
     const ESCENARIO_RECUPERAR = 'recuperar';
 
     /**
-     * @return array the validation rules.
+     * @return array Las reglas de validación.
      */
     public function rules()
     {
