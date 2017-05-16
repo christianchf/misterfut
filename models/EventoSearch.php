@@ -19,7 +19,7 @@ class EventoSearch extends Evento
     {
         return [
             [['id', 'id_equipo'], 'integer'],
-            [['tipo', 'nombre', 'descripcion', 'fecha'], 'safe'],
+            [['tipo', 'nombre', 'descripcion', 'fecha_inicio', 'fecha_fin'], 'safe'],
         ];
     }
 
@@ -54,7 +54,8 @@ class EventoSearch extends Evento
 
         $query->andFilterWhere([
             'id' => $this->id,
-            'fecha' => $this->fecha,
+            'fecha_inicio' => $this->fecha_inicio,
+            'fecha_fin' => $this->fecha_inicio,
             'id_equipo' => $this->id_equipo,
         ]);
 

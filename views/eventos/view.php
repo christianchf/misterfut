@@ -9,8 +9,11 @@ use yii\widgets\DetailView;
 $attributes = [
     'tipo',
     'nombre',
-    'fecha:datetime',
+    'fecha_inicio:datetime',
 ];
+if ($model->fecha_fin != null) {
+    $attributes[] = 'fecha_fin:datetime';
+}
 if ($model->descripcion != '') {
     $attributes[] = 'descripcion:ntext';
 }

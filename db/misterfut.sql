@@ -69,12 +69,13 @@ create table jugadores (
 drop table if exists eventos cascade;
 
 create table eventos (
-    id          bigserial    constraint pk_eventos primary key,
-    tipo        varchar(100) not null,
-    nombre      varchar(100) not null,
-    descripcion text,
-    fecha       timestamptz  not null,
-    id_equipo   bigint       not null constraint fk_eventos_equipo
-                                      references equipos (id)
-                                      on delete cascade on update cascade
+    id           bigserial    constraint pk_eventos primary key,
+    tipo         varchar(100) not null,
+    nombre       varchar(100) not null,
+    descripcion  text,
+    fecha_inicio timestamptz  not null,
+    fecha_fin    timestamptz,
+    id_equipo    bigint       not null constraint fk_eventos_equipo
+                                       references equipos (id)
+                                       on delete cascade on update cascade
 );

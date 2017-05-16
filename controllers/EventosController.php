@@ -81,17 +81,39 @@ class EventosController extends Controller
      * Lista todos los eventos de un equipo.
      * @return mixed
      */
-    public function actionIndex()
+    public function actionIndex($id_equipo)
     {
-        $searchModel = new EventoSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-        $equipo = Equipo::find()->where(['id' => Yii::$app->request->get('id_equipo')])->one()->nombre;
+        // $searchModel = new EventoSearch();
+        // $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        // $equipo = Equipo::find()->where(['id' => Yii::$app->request->get('id_equipo')])->one()->nombre;
+        //
+        // return $this->render('index', [
+        //     'searchModel' => $searchModel,
+        //     'dataProvider' => $dataProvider,
+        //     'equipo' => $equipo,
+        // ]);
+
+        $equipo = Equipo::find()->where(['id' => $id_equipo])->one()->nombre;
+        $events = [];
+        $eventos = Evento::find()->where(['id_equipo' => $id_equipo])->all();
+        // var_dump($eventos);die;
+        foreach ($eventos as $evento) {
+            $Event = new \yii2fullcalendar\models\Event();
+            $Event->id = $evento->id;
+            // $event->nonstandard = [
+            //     'tipo' => $evento->tipo,
+            // ];
+            $Event->title = $evento->nombre;
+            $Event->start = $evento->fecha_inicio;
+            $Event->end = $evento->fecha_fin;
+            $events[] = $Event;
+        }
 
         return $this->render('index', [
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
             'equipo' => $equipo,
+            'events' => $events,
         ]);
+        // var_dump($events);die;
     }
 
     /**

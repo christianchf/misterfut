@@ -1,7 +1,7 @@
 <?php
 
 use yii\helpers\Html;
-use yii\grid\GridView;
+use yii2fullcalendar\yii2fullcalendar;
 
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\EventoSearch */
@@ -20,17 +20,12 @@ $this->params['breadcrumbs'][] = $this->title;
     <p>
         <?= Html::a('Añadir Evento', ['create', 'id_equipo' => Yii::$app->request->get('id_equipo')], ['class' => 'btn btn-success']) ?>
     </p>
-    <?= GridView::widget([
-        'dataProvider' => $dataProvider,
-        'filterModel' => $searchModel,
-        'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
 
-            'tipo',
-            'nombre',
-            'fecha:datetime',
-
-            ['class' => 'yii\grid\ActionColumn'],
+    <?= yii2fullcalendar::widget([
+        'events'=> $events,
+        'options' => [
+            'lang' => 'es',
         ],
     ]); ?>
+
 </div>

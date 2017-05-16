@@ -9,7 +9,8 @@ namespace app\models;
  * @property string $tipo
  * @property string $nombre
  * @property string $descripcion
- * @property string $fecha
+ * @property string $fecha_inicio
+ * @property string $fecha_fin
  * @property integer $id_equipo
  *
  * @property Equipos $idEquipo
@@ -30,9 +31,9 @@ class Evento extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['tipo', 'nombre', 'fecha', 'id_equipo'], 'required'],
+            [['tipo', 'nombre', 'fecha_inicio', 'id_equipo'], 'required'],
             [['descripcion'], 'string'],
-            [['fecha'], 'safe'],
+            [['fecha_fin'], 'safe'],
             [['id_equipo'], 'integer'],
             [['tipo', 'nombre'], 'string', 'max' => 100],
             [['id_equipo'], 'exist', 'skipOnError' => true, 'targetClass' => Equipo::className(), 'targetAttribute' => ['id_equipo' => 'id']],
@@ -49,7 +50,8 @@ class Evento extends \yii\db\ActiveRecord
             'tipo' => 'Tipo',
             'nombre' => 'Nombre',
             'descripcion' => 'Descripción',
-            'fecha' => 'Fecha',
+            'fecha_inicio' => 'Fecha de inicio',
+            'fecha_fin' => 'Fecha de fin',
             'id_equipo' => 'Id Equipo',
         ];
     }

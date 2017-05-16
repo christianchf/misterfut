@@ -18,7 +18,7 @@ use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * EquiposController implementalas acciones CRUD para el modelo de Equipo.
+ * EquiposController implementa las acciones CRUD para el modelo de Equipo.
  */
 class EquiposController extends Controller
 {
