@@ -33,19 +33,23 @@
 <div class="row">
     <div class="col-md-3">
                 <div id="navigation" class="list-group"><a class="list-group-item" href="#navigation-18" data-toggle="collapse" data-parent="#navigation">app\assets <b class="caret"></b></a><div id="navigation-18" class="submenu panel-collapse collapse"><a class="list-group-item" href="./app-assets-appasset.html">AppAsset</a></div>
-<a class="list-group-item" href="#navigation-19" data-toggle="collapse" data-parent="#navigation">app\commands <b class="caret"></b></a><div id="navigation-19" class="submenu panel-collapse collapse"><a class="list-group-item" href="./app-commands-hellocontroller.html">HelloController</a>
-<a class="list-group-item" href="./app-commands-tokencontroller.html">TokenController</a></div>
+<a class="list-group-item" href="#navigation-19" data-toggle="collapse" data-parent="#navigation">app\commands <b class="caret"></b></a><div id="navigation-19" class="submenu panel-collapse collapse"><a class="list-group-item" href="./app-commands-tokencontroller.html">TokenController</a></div>
 <a class="list-group-item active" href="#navigation-20" data-toggle="collapse" data-parent="#navigation">app\controllers <b class="caret"></b></a><div id="navigation-20" class="submenu panel-collapse collapse in"><a class="list-group-item active" href="./app-controllers-equiposcontroller.html">EquiposController</a>
+<a class="list-group-item" href="./app-controllers-eventoscontroller.html">EventosController</a>
 <a class="list-group-item" href="./app-controllers-jugadorescontroller.html">JugadoresController</a>
 <a class="list-group-item" href="./app-controllers-sitecontroller.html">SiteController</a>
 <a class="list-group-item" href="./app-controllers-usuarioscontroller.html">UsuariosController</a></div>
 <a class="list-group-item" href="#navigation-21" data-toggle="collapse" data-parent="#navigation">app\models <b class="caret"></b></a><div id="navigation-21" class="submenu panel-collapse collapse"><a class="list-group-item" href="./app-models-contactform.html">ContactForm</a>
 <a class="list-group-item" href="./app-models-equipo.html">Equipo</a>
 <a class="list-group-item" href="./app-models-equiposearch.html">EquipoSearch</a>
+<a class="list-group-item" href="./app-models-evento.html">Evento</a>
+<a class="list-group-item" href="./app-models-eventosearch.html">EventoSearch</a>
+<a class="list-group-item" href="./app-models-historialsearch.html">HistorialSearch</a>
 <a class="list-group-item" href="./app-models-jugador.html">Jugador</a>
 <a class="list-group-item" href="./app-models-jugadorsearch.html">JugadorSearch</a>
 <a class="list-group-item" href="./app-models-loginform.html">LoginForm</a>
 <a class="list-group-item" href="./app-models-posicion.html">Posicion</a>
+<a class="list-group-item" href="./app-models-recuperarform.html">RecuperarForm</a>
 <a class="list-group-item" href="./app-models-usuario.html">Usuario</a>
 <a class="list-group-item" href="./app-models-usuarioform.html">UsuarioForm</a>
 <a class="list-group-item" href="./app-models-usuariosearch.html">UsuarioSearch</a></div></div>    </div>
@@ -66,7 +70,7 @@ yii\web\Controller</td></tr>
                                         </table>
 
 <div class="class-description">
-    <p><strong>EquiposController implements the CRUD actions for Equipo model.</strong></p>
+    <p><strong>EquiposController implementalas acciones CRUD para el modelo de Equipo.</strong></p>
     
     </div>
 
@@ -88,34 +92,67 @@ yii\web\Controller</td></tr>
 <tr>
   <th>Method</th><th>Description</th><th>Defined By</th>
 </tr>
-        <tr id="actionCreate()">
+        <tr id="actionActualizar()">
+        <td><a href="app-controllers-equiposcontroller.html#actionActualizar()-detail">actionActualizar()</a></td>
+        <td>Actualiza las estadísticas del equipo recibido utilizando Ajax en el
+lado del cliente.</td>
+        <td><a href="app-controllers-equiposcontroller.html">app\controllers\EquiposController</a></td>
+    </tr>
+            <tr id="actionCreate()">
         <td><a href="app-controllers-equiposcontroller.html#actionCreate()-detail">actionCreate()</a></td>
-        <td>Creates a new Equipo model.</td>
+        <td>Crea un nuevo equipo.</td>
         <td><a href="app-controllers-equiposcontroller.html">app\controllers\EquiposController</a></td>
     </tr>
             <tr id="actionDelete()">
         <td><a href="app-controllers-equiposcontroller.html#actionDelete()-detail">actionDelete()</a></td>
-        <td>Deletes an existing Equipo model.</td>
+        <td>Borra un equiop existente.</td>
+        <td><a href="app-controllers-equiposcontroller.html">app\controllers\EquiposController</a></td>
+    </tr>
+            <tr id="actionHistorial()">
+        <td><a href="app-controllers-equiposcontroller.html#actionHistorial()-detail">actionHistorial()</a></td>
+        <td>Muestra un listado de todos los equipos que ha entrenado el usuario,
+independientemente de la temporada.</td>
+        <td><a href="app-controllers-equiposcontroller.html">app\controllers\EquiposController</a></td>
+    </tr>
+            <tr id="actionHistorico()">
+        <td><a href="app-controllers-equiposcontroller.html#actionHistorico()-detail">actionHistorico()</a></td>
+        <td>Muestra un resumen historico de estadísticas del equipo indicado.</td>
         <td><a href="app-controllers-equiposcontroller.html">app\controllers\EquiposController</a></td>
     </tr>
             <tr id="actionIndex()">
         <td><a href="app-controllers-equiposcontroller.html#actionIndex()-detail">actionIndex()</a></td>
-        <td>Lists all Equipo models.</td>
+        <td>Lista todos los equipos del usuario.</td>
+        <td><a href="app-controllers-equiposcontroller.html">app\controllers\EquiposController</a></td>
+    </tr>
+            <tr id="actionNuevaTemp()">
+        <td><a href="app-controllers-equiposcontroller.html#actionNuevaTemp()-detail">actionNuevaTemp()</a></td>
+        <td>Crea una nueva temporada para el equipo pasado por parametro.</td>
+        <td><a href="app-controllers-equiposcontroller.html">app\controllers\EquiposController</a></td>
+    </tr>
+            <tr id="actionTraspasar()">
+        <td><a href="app-controllers-equiposcontroller.html#actionTraspasar()-detail">actionTraspasar()</a></td>
+        <td>Permite realizar el traspaso masivo de jugadores de un equipo a otro.</td>
+        <td><a href="app-controllers-equiposcontroller.html">app\controllers\EquiposController</a></td>
+    </tr>
+            <tr id="actionTraspaso()">
+        <td><a href="app-controllers-equiposcontroller.html#actionTraspaso()-detail">actionTraspaso()</a></td>
+        <td>Muestra la vista para la realización de el traspaso masivo de los
+jugadores de un equipo indicado al equipo pasado por parametros.</td>
         <td><a href="app-controllers-equiposcontroller.html">app\controllers\EquiposController</a></td>
     </tr>
             <tr id="actionUpdate()">
         <td><a href="app-controllers-equiposcontroller.html#actionUpdate()-detail">actionUpdate()</a></td>
-        <td>Updates an existing Equipo model.</td>
+        <td>Modifica los datos de un equipo existente.</td>
         <td><a href="app-controllers-equiposcontroller.html">app\controllers\EquiposController</a></td>
     </tr>
             <tr id="actionView()">
         <td><a href="app-controllers-equiposcontroller.html#actionView()-detail">actionView()</a></td>
-        <td>Displays a single Equipo model.</td>
+        <td>Muestea los datos de un solo equipo.</td>
         <td><a href="app-controllers-equiposcontroller.html">app\controllers\EquiposController</a></td>
     </tr>
             <tr id="behaviors()">
         <td><a href="app-controllers-equiposcontroller.html#behaviors()-detail">behaviors()</a></td>
-        <td></td>
+        <td>Devuelve un listado con los comportamientos del componente.</td>
         <td><a href="app-controllers-equiposcontroller.html">app\controllers\EquiposController</a></td>
     </tr>
         </table>
@@ -135,9 +172,9 @@ yii\web\Controller</td></tr>
 <tr>
   <th>Method</th><th>Description</th><th>Defined By</th>
 </tr>
-                                <tr id="findModel()">
+                                                        <tr id="findModel()">
         <td><a href="app-controllers-equiposcontroller.html#findModel()-detail">findModel()</a></td>
-        <td>Finds the Equipo model based on its primary key value.</td>
+        <td>Encuentra un equipo buscando por su clave primaria (id).</td>
         <td><a href="app-controllers-equiposcontroller.html">app\controllers\EquiposController</a></td>
     </tr>
     </table>
@@ -151,6 +188,42 @@ yii\web\Controller</td></tr>
 
 <div class="method-doc">
 
+    <div class="detail-header h3" id="actionActualizar()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="app-controllers-equiposcontroller.html#actionActualizar()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        actionActualizar()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Actualiza las estadísticas del equipo recibido utilizando Ajax en el
+lado del cliente.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">mixed</span> <strong><a href="app-controllers-equiposcontroller.html#actionActualizar()-detail">actionActualizar</a></strong> ( <span style="color: #0000BB">$id</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$id</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.integer">integer</a></td>
+                  <td class="param-desc-col"><p>El id del equipo que se va a actualizar.</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col">mixed</td>
+                  <td class="param-desc-col"><p>Las estadísticas del equipo actualizadas.</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
     <div class="detail-header h3" id="actionCreate()-detail">
         <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
         <a class="tool-link hash" href="app-controllers-equiposcontroller.html#actionCreate()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
@@ -163,9 +236,10 @@ yii\web\Controller</td></tr>
 
     
     <div class="doc-description">
-        <p><strong>Creates a new Equipo model.</strong></p>
+        <p><strong>Crea un nuevo equipo.</strong></p>
 
-        <p>If creation is successful, the browser will be redirected to the 'view' page.</p>
+        <p>Si la creación se ha realizado con exito, el navegador redireccionará a
+la vista del equipo creado.</p>
 
             </div>
 
@@ -187,9 +261,10 @@ yii\web\Controller</td></tr>
 
     
     <div class="doc-description">
-        <p><strong>Deletes an existing Equipo model.</strong></p>
+        <p><strong>Borra un equiop existente.</strong></p>
 
-        <p>If deletion is successful, the browser will be redirected to the 'index' page.</p>
+        <p>Si el borrado se ha realizado con exito, el navegador redireccionará a la
+página índice de los equipos del usuario.</p>
 
             </div>
 
@@ -198,9 +273,75 @@ yii\web\Controller</td></tr>
                                     <tr>
                   <td class="param-name-col"><span style="color: #0000BB">$id</span></td>
                   <td class="param-type-col"><a href="http://www.php.net/language.types.integer">integer</a></td>
-                  <td class="param-desc-col"></td>
+                  <td class="param-desc-col"><p>El id del equipo que se desea borrar.</p>
+</td>
                 </tr>
                                                 </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="actionHistorial()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="app-controllers-equiposcontroller.html#actionHistorial()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        actionHistorial()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Muestra un listado de todos los equipos que ha entrenado el usuario,
+independientemente de la temporada.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">mixed</span> <strong><a href="app-controllers-equiposcontroller.html#actionHistorial()-detail">actionHistorial</a></strong> ( )</td></tr>
+                                                <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col">mixed</td>
+                  <td class="param-desc-col"><p>El listado de equipos del usuario.</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="actionHistorico()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="app-controllers-equiposcontroller.html#actionHistorico()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        actionHistorico()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Muestra un resumen historico de estadísticas del equipo indicado.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">mixed</span> <strong><a href="app-controllers-equiposcontroller.html#actionHistorico()-detail">actionHistorico</a></strong> ( <span style="color: #0000BB">$nombre</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$nombre</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-desc-col"><p>El nombre del equipo.</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col">mixed</td>
+                  <td class="param-desc-col"><p>El resumen historico del equipo indicado.</p>
+</td>
+                </tr>
+                                    </table>
 
 <!--	-->
 
@@ -216,7 +357,7 @@ yii\web\Controller</td></tr>
 
     
     <div class="doc-description">
-        <p><strong>Lists all Equipo models.</strong></p>
+        <p><strong>Lista todos los equipos del usuario.</strong></p>
 
         
             </div>
@@ -224,6 +365,94 @@ yii\web\Controller</td></tr>
     <table class="detail-table table table-striped table-bordered table-hover">
         <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">mixed</span> <strong><a href="app-controllers-equiposcontroller.html#actionIndex()-detail">actionIndex</a></strong> ( )</td></tr>
             </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="actionNuevaTemp()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="app-controllers-equiposcontroller.html#actionNuevaTemp()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        actionNuevaTemp()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Crea una nueva temporada para el equipo pasado por parametro.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">mixed</span> <strong><a href="app-controllers-equiposcontroller.html#actionNuevaTemp()-detail">actionNuevaTemp</a></strong> ( <span style="color: #0000BB">$equipo</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$equipo</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-desc-col"><p>El nombre del equipo</p>
+</td>
+                </tr>
+                                                </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="actionTraspasar()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="app-controllers-equiposcontroller.html#actionTraspasar()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        actionTraspasar()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Permite realizar el traspaso masivo de jugadores de un equipo a otro.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">void</span> <strong><a href="app-controllers-equiposcontroller.html#actionTraspasar()-detail">actionTraspasar</a></strong> ( )</td></tr>
+            </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="actionTraspaso()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="app-controllers-equiposcontroller.html#actionTraspaso()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        actionTraspaso()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Muestra la vista para la realización de el traspaso masivo de los
+jugadores de un equipo indicado al equipo pasado por parametros.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">mixed</span> <strong><a href="app-controllers-equiposcontroller.html#actionTraspaso()-detail">actionTraspaso</a></strong> ( <span style="color: #0000BB">$id</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$id</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.integer">integer</a></td>
+                  <td class="param-desc-col"><p>El id del equipo al que se le realizara el traspaso masivo</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col">mixed</td>
+                  <td class="param-desc-col"><p>La vista del traspaso.</p>
+</td>
+                </tr>
+                                    </table>
 
 <!--	-->
 
@@ -239,9 +468,10 @@ yii\web\Controller</td></tr>
 
     
     <div class="doc-description">
-        <p><strong>Updates an existing Equipo model.</strong></p>
+        <p><strong>Modifica los datos de un equipo existente.</strong></p>
 
-        <p>If update is successful, the browser will be redirected to the 'view' page.</p>
+        <p>Si la modificación se ha realizado con exito, el navegador redireccionará
+a la vista del equipo modificado.</p>
 
             </div>
 
@@ -250,7 +480,8 @@ yii\web\Controller</td></tr>
                                     <tr>
                   <td class="param-name-col"><span style="color: #0000BB">$id</span></td>
                   <td class="param-type-col"><a href="http://www.php.net/language.types.integer">integer</a></td>
-                  <td class="param-desc-col"></td>
+                  <td class="param-desc-col"><p>El id del equipo que se va a modificar.</p>
+</td>
                 </tr>
                                                 </table>
 
@@ -268,7 +499,7 @@ yii\web\Controller</td></tr>
 
     
     <div class="doc-description">
-        <p><strong>Displays a single Equipo model.</strong></p>
+        <p><strong>Muestea los datos de un solo equipo.</strong></p>
 
         
             </div>
@@ -278,7 +509,8 @@ yii\web\Controller</td></tr>
                                     <tr>
                   <td class="param-name-col"><span style="color: #0000BB">$id</span></td>
                   <td class="param-type-col"><a href="http://www.php.net/language.types.integer">integer</a></td>
-                  <td class="param-desc-col"></td>
+                  <td class="param-desc-col"><p>El id del equipo.</p>
+</td>
                 </tr>
                                                 </table>
 
@@ -296,13 +528,13 @@ yii\web\Controller</td></tr>
 
     
     <div class="doc-description">
-        <p><strong></strong></p>
+        <p><strong>Devuelve un listado con los comportamientos del componente.</strong></p>
 
         
             </div>
 
     <table class="detail-table table table-striped table-bordered table-hover">
-        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">void</span> <strong><a href="app-controllers-equiposcontroller.html#behaviors()-detail">behaviors</a></strong> ( )</td></tr>
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">mixed</span> <strong><a href="app-controllers-equiposcontroller.html#behaviors()-detail">behaviors</a></strong> ( )</td></tr>
             </table>
 
 <!--	-->
@@ -319,9 +551,9 @@ yii\web\Controller</td></tr>
 
     
     <div class="doc-description">
-        <p><strong>Finds the Equipo model based on its primary key value.</strong></p>
+        <p><strong>Encuentra un equipo buscando por su clave primaria (id).</strong></p>
 
-        <p>If the model is not found, a 404 HTTP exception will be thrown.</p>
+        <p>Si el equipo no se encuentra, se lanzara una excepción 404 HTTP.</p>
 
             </div>
 
@@ -330,18 +562,19 @@ yii\web\Controller</td></tr>
                                     <tr>
                   <td class="param-name-col"><span style="color: #0000BB">$id</span></td>
                   <td class="param-type-col"><a href="http://www.php.net/language.types.integer">integer</a></td>
-                  <td class="param-desc-col"></td>
+                  <td class="param-desc-col"><p>El id del equipo que se quiere buscar.</p>
+</td>
                 </tr>
                                         <tr>
                   <th class="param-name-col">return</th>
                   <td class="param-type-col"><a href="app-models-equipo.html">app\models\Equipo</a></td>
-                  <td class="param-desc-col"><p>The loaded model</p>
+                  <td class="param-desc-col"><p>El equipo cargado</p>
 </td>
                 </tr>
                                         <tr>
                   <th class="param-name-col">throws</th>
                   <td class="param-type-col">\yii\web\NotFoundHttpException</td>
-                  <td class="param-desc-col"><p>if the model cannot be found</p>
+                  <td class="param-desc-col"><p>Si el equipo no se ha encontrado.</p>
 </td>
                 </tr>
                         </table>
@@ -386,7 +619,7 @@ yii\web\Controller</td></tr>
 </div>
 
 <footer class="footer">
-        <p class="pull-right"><small>Page generated on Wed, 19 Apr 2017 16:59:06 +0000</small></p>
+        <p class="pull-right"><small>Page generated on Wed, 17 May 2017 17:46:47 +0000</small></p>
     Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
 
 <script type="text/javascript">jQuery(document).ready(function () {

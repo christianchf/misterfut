@@ -35,7 +35,8 @@ class Usuario extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
     public $passConfirm;
 
     /**
-     * @inheritdoc
+     * Declara el nombre de la tabla de la base de datos asociada con esta clase.
+     * @return string El nombre de la tabla.
      */
     public static function tableName()
     {
@@ -43,7 +44,8 @@ class Usuario extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
     }
 
     /**
-     * @inheritdoc
+     * Devuelve las reglas de validación de los atributos.
+     * @return array Las reglas de validación.
      */
     public function rules()
     {
@@ -61,7 +63,8 @@ class Usuario extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
     }
 
     /**
-     * @inheritdoc
+     * Devuelve las etiquetas de los atributos.
+     * @return array Las etiquetas de los atributos
      */
     public function attributeLabels()
     {
@@ -85,7 +88,9 @@ class Usuario extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
     }
 
     /**
-     * @inheritDoc
+     * Encuentra una identidad mediante el ID determinado.
+     * @param int $id El id a buscar
+     * @return yii\web\IdentityInterface El objeto que coincide con el id dado.
      */
     public static function findIdentity($id)
     {
@@ -93,8 +98,11 @@ class Usuario extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
     }
 
     /**
-    * @inheritDoc
-    */
+     * Encuentra una identidad por el token dado.
+     * @param mixed $token El token a buscar
+     * @param mixed $type  El tipo del token
+     * @return yii\web\IdentityInterface El objeto que coincide con el token dado.
+     */
     public static function findIdentityByAccessToken($token, $type = null)
     {
     }
@@ -111,16 +119,18 @@ class Usuario extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
     }
 
     /**
-    * @inheritDoc
-    */
+     * Devuelve el id del usuario
+     * @return int El id del usuario.
+     */
     public function getId()
     {
         return $this->id;
     }
 
     /**
-    * @inheritDoc
-    */
+     * Devuelve el token del usuario
+     * @return mixed El token del usuario
+     */
     public function getAuthKey()
     {
         return $this->token;
@@ -136,8 +146,10 @@ class Usuario extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
     }
 
     /**
-    * @inheritDoc
-    */
+     * Valida la clave de autenticación dada.
+     * @param  string $authKey La clave de autenticación dada.
+     * @return boolean True si la clave de autenticación dada es válida.
+     */
     public function validateAuthKey($authKey)
     {
         return $this->token == $authKey;

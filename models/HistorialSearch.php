@@ -14,7 +14,8 @@ use app\models\Equipo;
 class HistorialSearch extends Equipo
 {
     /**
-     * @inheritdoc
+     * Devuelve las reglas de validación de los atributos.
+     * @return array Las reglas de validación.
      */
     public function rules()
     {
@@ -25,7 +26,8 @@ class HistorialSearch extends Equipo
     }
 
     /**
-     * @inheritdoc
+     * Devuelve una lista de escenarios y los atributos activos correspondientes.
+     * @return mixed
      */
     public function scenarios()
     {

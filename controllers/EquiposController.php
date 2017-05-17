@@ -23,7 +23,8 @@ use yii\filters\VerbFilter;
 class EquiposController extends Controller
 {
     /**
-     * @inheritdoc
+     * Devuelve un listado con los comportamientos del componente.
+     * @return mixed
      */
     public function behaviors()
     {

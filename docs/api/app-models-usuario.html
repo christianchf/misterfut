@@ -14,10 +14,10 @@
 <body>
 
 <div class="wrap">
-    <nav id="w82" class="navbar-inverse navbar-fixed-top navbar" role="navigation"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w82-collapse"><span class="sr-only">Toggle navigation</span>
+    <nav id="w100" class="navbar-inverse navbar-fixed-top navbar" role="navigation"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w100-collapse"><span class="sr-only">Toggle navigation</span>
 <span class="icon-bar"></span>
 <span class="icon-bar"></span>
-<span class="icon-bar"></span></button><a class="navbar-brand" href="./index.html">MisterFut API</a></div><div id="w82-collapse" class="collapse navbar-collapse"><ul id="w83" class="navbar-nav nav"><li><a href="./index.html">Class reference</a></li>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="./index.html">MisterFut API</a></div><div id="w100-collapse" class="collapse navbar-collapse"><ul id="w101" class="navbar-nav nav"><li><a href="./index.html">Class reference</a></li>
 <li><a href="../README.html">Guide</a></li></ul><div class="navbar-form navbar-left" role="search">
   <div class="form-group">
     <input id="searchbox" type="text" class="form-control" placeholder="Search">
@@ -32,20 +32,24 @@
     
 <div class="row">
     <div class="col-md-3">
-                <div id="navigation" class="list-group"><a class="list-group-item" href="#navigation-78" data-toggle="collapse" data-parent="#navigation">app\assets <b class="caret"></b></a><div id="navigation-78" class="submenu panel-collapse collapse"><a class="list-group-item" href="./app-assets-appasset.html">AppAsset</a></div>
-<a class="list-group-item" href="#navigation-79" data-toggle="collapse" data-parent="#navigation">app\commands <b class="caret"></b></a><div id="navigation-79" class="submenu panel-collapse collapse"><a class="list-group-item" href="./app-commands-hellocontroller.html">HelloController</a>
-<a class="list-group-item" href="./app-commands-tokencontroller.html">TokenController</a></div>
-<a class="list-group-item" href="#navigation-80" data-toggle="collapse" data-parent="#navigation">app\controllers <b class="caret"></b></a><div id="navigation-80" class="submenu panel-collapse collapse"><a class="list-group-item" href="./app-controllers-equiposcontroller.html">EquiposController</a>
+                <div id="navigation" class="list-group"><a class="list-group-item" href="#navigation-96" data-toggle="collapse" data-parent="#navigation">app\assets <b class="caret"></b></a><div id="navigation-96" class="submenu panel-collapse collapse"><a class="list-group-item" href="./app-assets-appasset.html">AppAsset</a></div>
+<a class="list-group-item" href="#navigation-97" data-toggle="collapse" data-parent="#navigation">app\commands <b class="caret"></b></a><div id="navigation-97" class="submenu panel-collapse collapse"><a class="list-group-item" href="./app-commands-tokencontroller.html">TokenController</a></div>
+<a class="list-group-item" href="#navigation-98" data-toggle="collapse" data-parent="#navigation">app\controllers <b class="caret"></b></a><div id="navigation-98" class="submenu panel-collapse collapse"><a class="list-group-item" href="./app-controllers-equiposcontroller.html">EquiposController</a>
+<a class="list-group-item" href="./app-controllers-eventoscontroller.html">EventosController</a>
 <a class="list-group-item" href="./app-controllers-jugadorescontroller.html">JugadoresController</a>
 <a class="list-group-item" href="./app-controllers-sitecontroller.html">SiteController</a>
 <a class="list-group-item" href="./app-controllers-usuarioscontroller.html">UsuariosController</a></div>
-<a class="list-group-item active" href="#navigation-81" data-toggle="collapse" data-parent="#navigation">app\models <b class="caret"></b></a><div id="navigation-81" class="submenu panel-collapse collapse in"><a class="list-group-item" href="./app-models-contactform.html">ContactForm</a>
+<a class="list-group-item active" href="#navigation-99" data-toggle="collapse" data-parent="#navigation">app\models <b class="caret"></b></a><div id="navigation-99" class="submenu panel-collapse collapse in"><a class="list-group-item" href="./app-models-contactform.html">ContactForm</a>
 <a class="list-group-item" href="./app-models-equipo.html">Equipo</a>
 <a class="list-group-item" href="./app-models-equiposearch.html">EquipoSearch</a>
+<a class="list-group-item" href="./app-models-evento.html">Evento</a>
+<a class="list-group-item" href="./app-models-eventosearch.html">EventoSearch</a>
+<a class="list-group-item" href="./app-models-historialsearch.html">HistorialSearch</a>
 <a class="list-group-item" href="./app-models-jugador.html">Jugador</a>
 <a class="list-group-item" href="./app-models-jugadorsearch.html">JugadorSearch</a>
 <a class="list-group-item" href="./app-models-loginform.html">LoginForm</a>
 <a class="list-group-item" href="./app-models-posicion.html">Posicion</a>
+<a class="list-group-item" href="./app-models-recuperarform.html">RecuperarForm</a>
 <a class="list-group-item active" href="./app-models-usuario.html">Usuario</a>
 <a class="list-group-item" href="./app-models-usuarioform.html">UsuarioForm</a>
 <a class="list-group-item" href="./app-models-usuariosearch.html">UsuarioSearch</a></div></div>    </div>
@@ -70,7 +74,7 @@ yii\db\ActiveRecord</td></tr>
                         </table>
 
 <div class="class-description">
-    <p><strong>This is the model class for table "usuarios".</strong></p>
+    <p><strong>Este es el modelo par ala tabla de "usuarios".</strong></p>
     
     </div>
 
@@ -124,7 +128,7 @@ yii\db\ActiveRecord</td></tr>
 </tr>
         <tr id="attributeLabels()">
         <td><a href="app-models-usuario.html#attributeLabels()-detail">attributeLabels()</a></td>
-        <td></td>
+        <td>Devuelve las etiquetas de los atributos.</td>
         <td><a href="app-models-usuario.html">app\models\Usuario</a></td>
     </tr>
             <tr id="beforeSave()">
@@ -149,17 +153,17 @@ yii\db\ActiveRecord</td></tr>
     </tr>
             <tr id="findIdentity()">
         <td><a href="app-models-usuario.html#findIdentity()-detail">findIdentity()</a></td>
-        <td></td>
+        <td>Encuentra una identidad mediante el ID determinado.</td>
         <td><a href="app-models-usuario.html">app\models\Usuario</a></td>
     </tr>
             <tr id="findIdentityByAccessToken()">
         <td><a href="app-models-usuario.html#findIdentityByAccessToken()-detail">findIdentityByAccessToken()</a></td>
-        <td></td>
+        <td>Encuentra una identidad por el token dado.</td>
         <td><a href="app-models-usuario.html">app\models\Usuario</a></td>
     </tr>
             <tr id="getAuthKey()">
         <td><a href="app-models-usuario.html#getAuthKey()-detail">getAuthKey()</a></td>
-        <td></td>
+        <td>Devuelve el token del usuario</td>
         <td><a href="app-models-usuario.html">app\models\Usuario</a></td>
     </tr>
             <tr id="getEquipos()">
@@ -169,7 +173,7 @@ yii\db\ActiveRecord</td></tr>
     </tr>
             <tr id="getId()">
         <td><a href="app-models-usuario.html#getId()-detail">getId()</a></td>
-        <td></td>
+        <td>Devuelve el id del usuario</td>
         <td><a href="app-models-usuario.html">app\models\Usuario</a></td>
     </tr>
             <tr id="regenerarToken()">
@@ -179,12 +183,12 @@ yii\db\ActiveRecord</td></tr>
     </tr>
             <tr id="rules()">
         <td><a href="app-models-usuario.html#rules()-detail">rules()</a></td>
-        <td></td>
+        <td>Devuelve las reglas de validación de los atributos.</td>
         <td><a href="app-models-usuario.html">app\models\Usuario</a></td>
     </tr>
             <tr id="tableName()">
         <td><a href="app-models-usuario.html#tableName()-detail">tableName()</a></td>
-        <td></td>
+        <td>Declara el nombre de la tabla de la base de datos asociada con esta clase.</td>
         <td><a href="app-models-usuario.html">app\models\Usuario</a></td>
     </tr>
             <tr id="validarPassword()">
@@ -194,7 +198,7 @@ yii\db\ActiveRecord</td></tr>
     </tr>
             <tr id="validateAuthKey()">
         <td><a href="app-models-usuario.html#validateAuthKey()-detail">validateAuthKey()</a></td>
-        <td></td>
+        <td>Valida la clave de autenticación dada.</td>
         <td><a href="app-models-usuario.html">app\models\Usuario</a></td>
     </tr>
     </table>
@@ -282,14 +286,20 @@ yii\db\ActiveRecord</td></tr>
 
     
     <div class="doc-description">
-        <p><strong></strong></p>
+        <p><strong>Devuelve las etiquetas de los atributos.</strong></p>
 
         
             </div>
 
     <table class="detail-table table table-striped table-bordered table-hover">
-        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">void</span> <strong><a href="app-models-usuario.html#attributeLabels()-detail">attributeLabels</a></strong> ( )</td></tr>
-            </table>
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.array">array</a></span> <strong><a href="app-models-usuario.html#attributeLabels()-detail">attributeLabels</a></strong> ( )</td></tr>
+                                                <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>Las etiquetas de los atributos</p>
+</td>
+                </tr>
+                                    </table>
 
 <!--	-->
 
@@ -370,15 +380,13 @@ yii\db\ActiveRecord</td></tr>
         <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">void</span> <strong><a href="app-models-usuario.html#confirmarPassword()-detail">confirmarPassword</a></strong> ( <span style="color: #0000BB">$attribute</span>, <span style="color: #0000BB">$params</span> )</td></tr>
                                     <tr>
                   <td class="param-name-col"><span style="color: #0000BB">$attribute</span></td>
-                  <td class="param-type-col">\app\models\[type]</td>
-                  <td class="param-desc-col"><p>[description]</p>
-</td>
+                  <td class="param-type-col">mixed</td>
+                  <td class="param-desc-col"></td>
                 </tr>
                             <tr>
                   <td class="param-name-col"><span style="color: #0000BB">$params</span></td>
-                  <td class="param-type-col">\app\models\[type]</td>
-                  <td class="param-desc-col"><p>[description]</p>
-</td>
+                  <td class="param-type-col">mixed</td>
+                  <td class="param-desc-col"></td>
                 </tr>
                                                 </table>
 
@@ -425,19 +433,26 @@ yii\db\ActiveRecord</td></tr>
 
     
     <div class="doc-description">
-        <p><strong></strong></p>
+        <p><strong>Encuentra una identidad mediante el ID determinado.</strong></p>
 
         
             </div>
 
     <table class="detail-table table table-striped table-bordered table-hover">
-        <tr><td colspan="3" class="signature"><span class="signature-defs">public static</span> <span class="signature-type">void</span> <strong><a href="app-models-usuario.html#findIdentity()-detail">findIdentity</a></strong> ( <span style="color: #0000BB">$id</span> )</td></tr>
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public static</span> <span class="signature-type">\app\models\yii\web\IdentityInterface</span> <strong><a href="app-models-usuario.html#findIdentity()-detail">findIdentity</a></strong> ( <span style="color: #0000BB">$id</span> )</td></tr>
                                     <tr>
                   <td class="param-name-col"><span style="color: #0000BB">$id</span></td>
-                  <td class="param-type-col"></td>
-                  <td class="param-desc-col"></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.integer">integer</a></td>
+                  <td class="param-desc-col"><p>El id a buscar</p>
+</td>
                 </tr>
-                                                </table>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col">\app\models\yii\web\IdentityInterface</td>
+                  <td class="param-desc-col"><p>El objeto que coincide con el id dado.</p>
+</td>
+                </tr>
+                                    </table>
 
 <!--	-->
 
@@ -453,24 +468,32 @@ yii\db\ActiveRecord</td></tr>
 
     
     <div class="doc-description">
-        <p><strong></strong></p>
+        <p><strong>Encuentra una identidad por el token dado.</strong></p>
 
         
             </div>
 
     <table class="detail-table table table-striped table-bordered table-hover">
-        <tr><td colspan="3" class="signature"><span class="signature-defs">public static</span> <span class="signature-type">void</span> <strong><a href="app-models-usuario.html#findIdentityByAccessToken()-detail">findIdentityByAccessToken</a></strong> ( <span style="color: #0000BB">$token</span>, <span style="color: #0000BB">$type&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">null</span> )</td></tr>
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public static</span> <span class="signature-type">\app\models\yii\web\IdentityInterface</span> <strong><a href="app-models-usuario.html#findIdentityByAccessToken()-detail">findIdentityByAccessToken</a></strong> ( <span style="color: #0000BB">$token</span>, <span style="color: #0000BB">$type&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">null</span> )</td></tr>
                                     <tr>
                   <td class="param-name-col"><span style="color: #0000BB">$token</span></td>
-                  <td class="param-type-col"></td>
-                  <td class="param-desc-col"></td>
+                  <td class="param-type-col">mixed</td>
+                  <td class="param-desc-col"><p>El token a buscar</p>
+</td>
                 </tr>
                             <tr>
                   <td class="param-name-col"><span style="color: #0000BB">$type</span></td>
-                  <td class="param-type-col"></td>
-                  <td class="param-desc-col"></td>
+                  <td class="param-type-col">mixed</td>
+                  <td class="param-desc-col"><p>El tipo del token</p>
+</td>
                 </tr>
-                                                </table>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col">\app\models\yii\web\IdentityInterface</td>
+                  <td class="param-desc-col"><p>El objeto que coincide con el token dado.</p>
+</td>
+                </tr>
+                                    </table>
 
 <!--	-->
 
@@ -486,14 +509,20 @@ yii\db\ActiveRecord</td></tr>
 
     
     <div class="doc-description">
-        <p><strong></strong></p>
+        <p><strong>Devuelve el token del usuario</strong></p>
 
         
             </div>
 
     <table class="detail-table table table-striped table-bordered table-hover">
-        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">void</span> <strong><a href="app-models-usuario.html#getAuthKey()-detail">getAuthKey</a></strong> ( )</td></tr>
-            </table>
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">mixed</span> <strong><a href="app-models-usuario.html#getAuthKey()-detail">getAuthKey</a></strong> ( )</td></tr>
+                                                <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col">mixed</td>
+                  <td class="param-desc-col"><p>El token del usuario</p>
+</td>
+                </tr>
+                                    </table>
 
 <!--	-->
 
@@ -532,14 +561,20 @@ yii\db\ActiveRecord</td></tr>
 
     
     <div class="doc-description">
-        <p><strong></strong></p>
+        <p><strong>Devuelve el id del usuario</strong></p>
 
         
             </div>
 
     <table class="detail-table table table-striped table-bordered table-hover">
-        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">void</span> <strong><a href="app-models-usuario.html#getId()-detail">getId</a></strong> ( )</td></tr>
-            </table>
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.integer">integer</a></span> <strong><a href="app-models-usuario.html#getId()-detail">getId</a></strong> ( )</td></tr>
+                                                <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.integer">integer</a></td>
+                  <td class="param-desc-col"><p>El id del usuario.</p>
+</td>
+                </tr>
+                                    </table>
 
 <!--	-->
 
@@ -578,14 +613,20 @@ yii\db\ActiveRecord</td></tr>
 
     
     <div class="doc-description">
-        <p><strong></strong></p>
+        <p><strong>Devuelve las reglas de validación de los atributos.</strong></p>
 
         
             </div>
 
     <table class="detail-table table table-striped table-bordered table-hover">
-        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">void</span> <strong><a href="app-models-usuario.html#rules()-detail">rules</a></strong> ( )</td></tr>
-            </table>
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.array">array</a></span> <strong><a href="app-models-usuario.html#rules()-detail">rules</a></strong> ( )</td></tr>
+                                                <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>Las reglas de validación.</p>
+</td>
+                </tr>
+                                    </table>
 
 <!--	-->
 
@@ -601,14 +642,20 @@ yii\db\ActiveRecord</td></tr>
 
     
     <div class="doc-description">
-        <p><strong></strong></p>
+        <p><strong>Declara el nombre de la tabla de la base de datos asociada con esta clase.</strong></p>
 
         
             </div>
 
     <table class="detail-table table table-striped table-bordered table-hover">
-        <tr><td colspan="3" class="signature"><span class="signature-defs">public static</span> <span class="signature-type">void</span> <strong><a href="app-models-usuario.html#tableName()-detail">tableName</a></strong> ( )</td></tr>
-            </table>
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public static</span> <span class="signature-type"><a href="http://www.php.net/language.types.string">string</a></span> <strong><a href="app-models-usuario.html#tableName()-detail">tableName</a></strong> ( )</td></tr>
+                                                <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-desc-col"><p>El nombre de la tabla.</p>
+</td>
+                </tr>
+                                    </table>
 
 <!--	-->
 
@@ -659,19 +706,26 @@ yii\db\ActiveRecord</td></tr>
 
     
     <div class="doc-description">
-        <p><strong></strong></p>
+        <p><strong>Valida la clave de autenticación dada.</strong></p>
 
         
             </div>
 
     <table class="detail-table table table-striped table-bordered table-hover">
-        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">void</span> <strong><a href="app-models-usuario.html#validateAuthKey()-detail">validateAuthKey</a></strong> ( <span style="color: #0000BB">$authKey</span> )</td></tr>
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.boolean">boolean</a></span> <strong><a href="app-models-usuario.html#validateAuthKey()-detail">validateAuthKey</a></strong> ( <span style="color: #0000BB">$authKey</span> )</td></tr>
                                     <tr>
                   <td class="param-name-col"><span style="color: #0000BB">$authKey</span></td>
-                  <td class="param-type-col"></td>
-                  <td class="param-desc-col"></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-desc-col"><p>La clave de autenticación dada.</p>
+</td>
                 </tr>
-                                                </table>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.boolean">boolean</a></td>
+                  <td class="param-desc-col"><p>True si la clave de autenticación dada es válida.</p>
+</td>
+                </tr>
+                                    </table>
 
 <!--	-->
 </div>
@@ -713,7 +767,7 @@ yii\db\ActiveRecord</td></tr>
 </div>
 
 <footer class="footer">
-        <p class="pull-right"><small>Page generated on Wed, 19 Apr 2017 16:59:06 +0000</small></p>
+        <p class="pull-right"><small>Page generated on Wed, 17 May 2017 17:46:47 +0000</small></p>
     Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
 
 <script type="text/javascript">jQuery(document).ready(function () {

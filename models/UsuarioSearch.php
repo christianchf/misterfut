@@ -12,7 +12,8 @@ use app\models\Usuario;
 class UsuarioSearch extends Usuario
 {
     /**
-     * @inheritdoc
+     * Devuelve las reglas de validación de los atributos.
+     * @return array Las reglas de validación.
      */
     public function rules()
     {
@@ -23,7 +24,8 @@ class UsuarioSearch extends Usuario
     }
 
     /**
-     * @inheritdoc
+     * Devuelve una lista de escenarios y los atributos activos correspondientes.
+     * @return mixed
      */
     public function scenarios()
     {

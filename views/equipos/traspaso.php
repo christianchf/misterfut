@@ -3,38 +3,26 @@
 use kartik\select2\Select2;
 use yii\helpers\Url;
 use yii\helpers\Html;
+use yii\web\View;
 use yii\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\JugadorSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$url = Url::to(['/equipos/traspasar']);
-$idEquipo = Yii::$app->request->get('id');
-$urlDestino = Url::to(['/equipos/view', 'id' => $idEquipo]);
+$urlTraspasar = Url::to(['/equipos/traspasar']);
+$idEquipoTraspasar = Yii::$app->request->get('id');
+$urlDestinoTraspasar = Url::to(['/equipos/view', 'id' => $idEquipoTraspasar]);
 $js = <<<EOT
-    var padre = window.opener;
-    $('#traspaso').on('click', function(){
-        var origen = $('#jugadorsearch-nombre').val();
-        var destino = "$idEquipo";
-        var equipos = JSON.stringify({'origen': origen, 'destino': destino});
-
-        $.ajax({
-            url: "$url",
-            contentType: 'application/json',
-            method: 'POST',
-            data: equipos,
-            success: function(data, textStatus, Xhr) {
-                $('#indice').load("$urlDestino" + ' #w1-container');
-            }
-        });
-        setTimeout(function(){
-            padre.location.href="$urlDestino";
-            close();
-        }, 1500);
-    });
+    var urlTraspasar = "$urlTraspasar";
+    var idEquipoTraspasar = "$idEquipoTraspasar";
+    var urlDestinoTraspasar = "$urlDestinoTraspasar";
 EOT;
-$this->registerJs($js);
+$this->registerJs($js, View::POS_END);
+$this->registerJsFile(
+    '/js/traspaso.js',
+    ['depends' => [\yii\web\JqueryAsset::className()]]
+);
 
 
 $this->title = 'Traspasar plantilla';

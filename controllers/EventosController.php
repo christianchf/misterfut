@@ -18,7 +18,8 @@ use yii\filters\VerbFilter;
 class EventosController extends Controller
 {
     /**
-     * @inheritdoc
+     * Devuelve un listado con los comportamientos del componente.
+     * @return mixed
      */
     public function behaviors()
     {

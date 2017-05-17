@@ -13,7 +13,8 @@ use app\models\Evento;
 class EventoSearch extends Evento
 {
     /**
-     * @inheritdoc
+     * Devuelve las reglas de validación de los atributos.
+     * @return array Las reglas de validación.
      */
     public function rules()
     {
@@ -24,7 +25,8 @@ class EventoSearch extends Evento
     }
 
     /**
-     * @inheritdoc
+     * Devuelve una lista de escenarios y los atributos activos correspondientes.
+     * @return mixed
      */
     public function scenarios()
     {

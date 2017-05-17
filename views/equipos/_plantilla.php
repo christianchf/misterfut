@@ -7,15 +7,15 @@ use kartik\grid\GridView;
 
 AppAsset::register($this);
 
-$url = Url::to(['traspaso']);
-$idEquipo = Yii::$app->request->get('id');
+$urlVentana = Url::to(['traspaso']);
+$idEquipoVentana = Yii::$app->request->get('id');
 $js = <<<EOT
     $("#btnTraspasar").on("click", function(){
-        var ventana = open("$url" + "&id=" + "$idEquipo", "ventana", "width=1000,height=400,toolbar=0,top=100,left=250");
+        var urlVentana = urlVentana;
+        var ventana = open("$urlVentana" + "&id=" + "$idEquipoVentana", "ventana", "width=1000,height=400,toolbar=0,top=100,left=250");
     });
 EOT;
 $this->registerJs($js);
-
 ?>
 
 <br />
