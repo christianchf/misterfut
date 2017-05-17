@@ -17,6 +17,13 @@ AppAsset::register($this);
 <head>
     <meta charset="<?= Yii::$app->charset ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="MisterFut es la aplicación perfecta para
+    los entrenadores para llevar el control sobre la organización de sus equipos.
+     Ten organizadas las estadísticas de tus equipos y tus jugadores, además
+    dispone de un calendario para tener todos tus eventos al día." />
+    <meta name="keywords" content="misterfut, aplicación, entrenadores, fútbol,
+    football, soccer, mister, calendario, entrenamientos, partidos, organización,
+    gestion, equipo, jugadores, estadísticas" />
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
