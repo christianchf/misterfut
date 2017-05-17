@@ -40,6 +40,7 @@ class RecuperarForm extends Model
     const ESCENARIO_RECUPERAR = 'recuperar';
 
     /**
+     * Devuelve las reglas de validación de los atributos.
      * @return array Las reglas de validación.
      */
     public function rules()
@@ -58,6 +59,10 @@ class RecuperarForm extends Model
         ];
     }
 
+    /**
+     * Devuelve las etiquetas de los atributos.
+     * @return array Las etiquetas de los atributos
+     */
     public function attributeLabels()
     {
         return [

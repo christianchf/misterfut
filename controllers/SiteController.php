@@ -14,7 +14,8 @@ use app\models\ContactForm;
 class SiteController extends Controller
 {
     /**
-     * @inheritdoc
+     * Devuelve un listado con los comportamientos del componente.
+     * @return mixed
      */
     public function behaviors()
     {
@@ -40,7 +41,8 @@ class SiteController extends Controller
     }
 
     /**
-     * @inheritdoc
+     * Devuelve parametros de configuración
+     * @return mixed
      */
     public function actions()
     {

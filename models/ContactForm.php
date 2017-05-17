@@ -38,6 +38,7 @@ class ContactForm extends Model
 
 
     /**
+     * Devuelve las reglas de validación de los atributos.
      * @return array Las reglas de validación.
      */
     public function rules()
@@ -50,7 +51,8 @@ class ContactForm extends Model
     }
 
     /**
-     * @return array Los labels de los atributos customizados.
+     * Devuelve las etiquetas de los atributos.
+     * @return array Las etiquetas de los atributos
      */
     public function attributeLabels()
     {

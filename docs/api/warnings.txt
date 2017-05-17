@@ -2,205 +2,240 @@ Array
 (
     [0] => Array
         (
-            [line] => 18
+            [line] => 7
             [file] => assets/AppAsset.php
-            [message] => No docblock for element '$basePath'
+            [message] => No docblock for element 'app\assets\AppAsset'
         )
 
     [1] => Array
         (
-            [line] => 18
+            [line] => 9
             [file] => assets/AppAsset.php
-            [message] => No short description for element '$basePath'
+            [message] => No docblock for element '$basePath'
         )
 
     [2] => Array
         (
-            [line] => 19
+            [line] => 9
             [file] => assets/AppAsset.php
-            [message] => No docblock for element '$baseUrl'
+            [message] => No short description for element '$basePath'
         )
 
     [3] => Array
         (
-            [line] => 19
+            [line] => 10
             [file] => assets/AppAsset.php
-            [message] => No short description for element '$baseUrl'
+            [message] => No docblock for element '$baseUrl'
         )
 
     [4] => Array
         (
-            [line] => 20
+            [line] => 10
             [file] => assets/AppAsset.php
-            [message] => No docblock for element '$css'
+            [message] => No short description for element '$baseUrl'
         )
 
     [5] => Array
         (
-            [line] => 20
+            [line] => 11
             [file] => assets/AppAsset.php
-            [message] => No short description for element '$css'
+            [message] => No docblock for element '$css'
         )
 
     [6] => Array
         (
-            [line] => 23
+            [line] => 11
             [file] => assets/AppAsset.php
-            [message] => No docblock for element '$js'
+            [message] => No short description for element '$css'
         )
 
     [7] => Array
         (
-            [line] => 23
+            [line] => 17
             [file] => assets/AppAsset.php
-            [message] => No short description for element '$js'
+            [message] => No docblock for element '$js'
         )
 
     [8] => Array
         (
-            [line] => 25
+            [line] => 17
             [file] => assets/AppAsset.php
-            [message] => No docblock for element '$depends'
+            [message] => No short description for element '$js'
         )
 
     [9] => Array
         (
-            [line] => 25
+            [line] => 21
             [file] => assets/AppAsset.php
-            [message] => No short description for element '$depends'
+            [message] => No docblock for element '$depends'
         )
 
     [10] => Array
         (
-            [line] => 12
+            [line] => 21
+            [file] => assets/AppAsset.php
+            [message] => No short description for element '$depends'
+        )
+
+    [11] => Array
+        (
+            [line] => 14
             [file] => controllers/SiteController.php
             [message] => No docblock for element 'app\controllers\SiteController'
         )
 
-    [11] => Array
+    [12] => Array
         (
             [line] => 17
             [file] => models/ContactForm.php
             [message] => No short description for element '$name'
         )
 
-    [12] => Array
+    [13] => Array
         (
             [line] => 22
             [file] => models/ContactForm.php
             [message] => No short description for element '$email'
         )
 
-    [13] => Array
+    [14] => Array
         (
             [line] => 27
             [file] => models/ContactForm.php
             [message] => No short description for element '$subject'
         )
 
-    [14] => Array
+    [15] => Array
         (
             [line] => 32
             [file] => models/ContactForm.php
             [message] => No short description for element '$body'
         )
 
-    [15] => Array
+    [16] => Array
         (
             [line] => 37
             [file] => models/ContactForm.php
             [message] => No short description for element '$verifyCode'
         )
 
-    [16] => Array
+    [17] => Array
         (
             [line] => 19
             [file] => models/JugadorSearch.php
             [message] => No short description for element '$nombrePosicion'
         )
 
-    [17] => Array
+    [18] => Array
         (
             [line] => 21
             [file] => models/LoginForm.php
             [message] => No short description for element '$username'
         )
 
-    [18] => Array
+    [19] => Array
         (
             [line] => 26
             [file] => models/LoginForm.php
             [message] => No short description for element '$password'
         )
 
-    [19] => Array
+    [20] => Array
         (
             [line] => 31
             [file] => models/LoginForm.php
             [message] => No short description for element '$rememberMe'
         )
 
-    [20] => Array
+    [21] => Array
         (
-            [line] => 56
-            [file] => models/LoginForm.php
-            [message] => No docblock for element 'attributeLabels'
+            [line] => 8
+            [file] => models/RecuperarForm.php
+            [message] => No docblock for element 'app\models\RecuperarForm'
         )
 
-    [21] => Array
+    [22] => Array
+        (
+            [line] => 14
+            [file] => models/RecuperarForm.php
+            [message] => No short description for element '$email'
+        )
+
+    [23] => Array
+        (
+            [line] => 19
+            [file] => models/RecuperarForm.php
+            [message] => No short description for element '$verifyCode'
+        )
+
+    [24] => Array
+        (
+            [line] => 24
+            [file] => models/RecuperarForm.php
+            [message] => No short description for element '$pass'
+        )
+
+    [25] => Array
+        (
+            [line] => 30
+            [file] => models/RecuperarForm.php
+            [message] => No short description for element '$repeatPass'
+        )
+
+    [26] => Array
+        (
+            [line] => 35
+            [file] => models/RecuperarForm.php
+            [message] => No short description for element '$token'
+        )
+
+    [27] => Array
         (
             [line] => 29
             [file] => models/Usuario.php
             [message] => No short description for element '$pass'
         )
 
-    [22] => Array
+    [28] => Array
         (
             [line] => 35
             [file] => models/Usuario.php
             [message] => No short description for element '$passConfirm'
         )
 
-    [23] => Array
+    [29] => Array
         (
-            [line] => 177
+            [line] => 191
             [file] => models/Usuario.php
             [message] => No docblock for element 'beforeSave'
         )
 
-    [24] => Array
+    [30] => Array
         (
             [line] => 5
             [file] => models/UsuarioForm.php
             [message] => No docblock for element 'app\models\UsuarioForm'
         )
 
-    [25] => Array
+    [31] => Array
         (
             [line] => 11
             [file] => models/UsuarioForm.php
             [message] => No short description for element '$nombre'
         )
 
-    [26] => Array
+    [32] => Array
         (
             [line] => 16
             [file] => models/UsuarioForm.php
             [message] => No short description for element '$password'
         )
 
-    [27] => Array
+    [33] => Array
         (
             [line] => 21
             [file] => models/UsuarioForm.php
             [message] => No short description for element '$passwordConfirm'
-        )
-
-    [28] => Array
-        (
-            [line] => 34
-            [file] => models/UsuarioForm.php
-            [message] => No docblock for element 'attributeLabels'
         )
 
 )

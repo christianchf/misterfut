@@ -13,7 +13,8 @@ namespace app\models;
 class Posicion extends \yii\db\ActiveRecord
 {
     /**
-     * @inheritdoc
+     * Declara el nombre de la tabla de la base de datos asociada con esta clase.
+     * @return string El nombre de la tabla.
      */
     public static function tableName()
     {
@@ -21,7 +22,8 @@ class Posicion extends \yii\db\ActiveRecord
     }
 
     /**
-     * @inheritdoc
+     * Devuelve las reglas de validación de los atributos.
+     * @return array Las reglas de validación.
      */
     public function rules()
     {
@@ -32,7 +34,8 @@ class Posicion extends \yii\db\ActiveRecord
     }
 
     /**
-     * @inheritdoc
+     * Devuelve las etiquetas de los atributos.
+     * @return array Las etiquetas de los atributos
      */
     public function attributeLabels()
     {
