@@ -11,28 +11,23 @@ use yii\base\Model;
 class ContactForm extends Model
 {
     /**
-     * El nombre de la persona que envia el email.
-     * @var string
+     * @var string El nombre de la persona que envia el email.
      */
     public $name;
     /**
-     * El email de la persona que envia el email.
-     * @var string
+     * @var string El email de la persona que envia el email.
      */
     public $email;
     /**
-     * El asunto del email.
-     * @var string
+     * @var string El asunto del email.
      */
     public $subject;
     /**
-     * El cuerpo del email.
-     * @var string
+     * @var string El cuerpo del email.
      */
     public $body;
     /**
-     * Código de verificación para enviar el email.
-     * @var string
+     * @var string Código de verificación para enviar el email.
      */
     public $verifyCode;
 

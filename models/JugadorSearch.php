@@ -13,8 +13,7 @@ use app\models\Jugador;
 class JugadorSearch extends Jugador
 {
     /**
-     * Descripción textual de la posición del jugador.
-     * @var string
+     * @var string Descripción textual de la posición del jugador.
      */
     public $nombrePosicion;
 

@@ -17,20 +17,17 @@ use Yii;
 class Usuario extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
 {
     /**
-     * Escenario para cuando se crea un usuario
-     * @var string
+     * @var string Escenario para cuando se crea un usuario
      */
     const ESCENARIO_CREATE = 'create';
 
     /**
-     * Campo de contraseña en el formulario de alta y modificación de usuarios
-     * @var string
+     * @var string Campo de contraseña en el formulario de alta y modificación de usuarios
      */
     public $pass;
     /**
-     * Campo de confirmación de contraseña en el formulario de alta y
+     * @var string Campo de confirmación de contraseña en el formulario de alta y
      * modificación de usuarios
-     * @var string
      */
     public $passConfirm;
 

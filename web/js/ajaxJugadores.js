@@ -19,7 +19,7 @@ function mostrarDatos(datos) {
     $('#golesMarcados').text(datos['golesMarcados']);
     $('#golesEncajados').text(datos['golesEncajados']);
     $('#asistencias').text(datos['asistencias']);
-    $('#golesPartido').text(datos['golesPartido'] + ' %');
+    $('#golesPartido').text(datos['golesPartido']);
 }
 
 function ajaxBotones() {

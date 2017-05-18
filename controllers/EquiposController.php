@@ -275,19 +275,29 @@ class EquiposController extends Controller
                     $equipo->goles_en_contra = $equipo->goles_en_contra + 1;
                     break;
                 case 'resta0':
-                    $equipo->partidos_ganados = $equipo->partidos_ganados - 1;
+                    if ($equipo->partidos_ganados > 0) {
+                        $equipo->partidos_ganados = $equipo->partidos_ganados - 1;
+                    }
                     break;
                 case 'resta1':
-                    $equipo->partidos_empatados = $equipo->partidos_empatados - 1;
+                    if ($equipo->partidos_empatados > 0) {
+                        $equipo->partidos_empatados = $equipo->partidos_empatados - 1;
+                    }
                     break;
                 case 'resta2':
-                    $equipo->partidos_perdidos = $equipo->partidos_perdidos - 1;
+                    if ($equipo->partidos_perdidos > 0) {
+                        $equipo->partidos_perdidos = $equipo->partidos_perdidos - 1;
+                    }
                     break;
                 case 'resta3':
-                    $equipo->goles_a_favor = $equipo->goles_a_favor - 1;
+                    if ($equipo->goles_a_favor > 0) {
+                        $equipo->goles_a_favor = $equipo->goles_a_favor - 1;
+                    }
                     break;
                 case 'resta4':
-                    $equipo->goles_en_contra = $equipo->goles_en_contra - 1;
+                    if ($equipo->goles_en_contra > 0) {
+                        $equipo->goles_en_contra = $equipo->goles_en_contra - 1;
+                    }
                     break;
             }
             $equipo->save();

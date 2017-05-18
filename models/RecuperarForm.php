@@ -8,34 +8,28 @@ use yii\base\Model;
 class RecuperarForm extends Model
 {
     /**
-     * Campo de email del formulario de recuperación de contraseña.
-     * @var string
+     * @var string Campo de email del formulario de recuperación de contraseña.
      */
     public $email;
     /**
-     * Campo de código de verificación del formulario de recuperación de contraseña.
-     * @var string
+     * @var string Campo de código de verificación del formulario de recuperación de contraseña.
      */
     public $verifyCode;
     /**
-     * Campo de contraseña del formulario de recuperación de contraseña.
-     * @var string
+     * @var string Campo de contraseña del formulario de recuperación de contraseña.
      */
     public $pass;
     /**
-     * Campo de repetición de contraseña del formulario de recuperación de
+     * @var string Campo de repetición de contraseña del formulario de recuperación de
      * contraseña.
-     * @var string
      */
     public $repeatPass;
     /**
-     * Campo de token del formulario de recuperación de contraseña.
-     * @var string
+     * @var string Campo de token del formulario de recuperación de contraseña.
      */
     public $token;
     /**
-     * Escenario para la recuperación de contraseña.
-     * @var string
+     * @var string Escenario para la recuperación de contraseña.
      */
     const ESCENARIO_RECUPERAR = 'recuperar';
 

@@ -15,25 +15,21 @@ use app\models\Usuario;
 class LoginForm extends Model
 {
     /**
-     * Campo del nombre del usuario.
-     * @var string
+     * @var string Campo del nombre del usuario.
      */
     public $username;
     /**
-     * Campo de la contraseña del usuario.
-     * @var string
+     * @var string Campo de la contraseña del usuario.
      */
     public $password;
     /**
-     * Campo opcional para recordar al usuario logueado.
-     * @var string
+     * @var string Campo opcional para recordar al usuario logueado.
      */
     public $rememberMe = true;
 
     /**
-    * La instancia del usuario correspondiente, o false si no existe o todavía
-    * no se ha buscado.
-    * @var bool|Usuario
+    * @var bool|Usuario La instancia del usuario correspondiente, o false si no
+    * existe o todavía no se ha buscado.
     */
     private $_user = false;
 
