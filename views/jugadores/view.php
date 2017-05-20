@@ -14,6 +14,7 @@ $attributes = [
     'edad',
     'equipo.nombre',
     'esta_lesionado:boolean',
+    'esta_sancionado:boolean',
 ];
 if ($model->esta_lesionado) {
     $attributes[] = 'tiempo_lesion';

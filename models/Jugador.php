@@ -20,6 +20,7 @@ use DateTime;
  * @property integer $id_posicion
  * @property boolean $esta_lesionado
  * @property string $tiempo_lesion
+ * @property boolean $esta_sancionado
  *
  * @property Equipos $idEquipo
  * @property Posiciones $idPosicion
@@ -46,7 +47,7 @@ class Jugador extends \yii\db\ActiveRecord
             [['fecha_nac'], 'safe'],
             [['dorsal', 'partidos_jugados', 'goles_marcados', 'goles_encajados', 'asistencias', 'goles_por_partido'], 'number'],
             [['id_equipo', 'id_posicion'], 'integer'],
-            [['esta_lesionado'], 'boolean'],
+            [['esta_lesionado', 'esta_sancionado'], 'boolean'],
             [['nombre', 'tiempo_lesion'], 'string', 'max' => 100],
             [['id_equipo'], 'exist', 'skipOnError' => true, 'targetClass' => Equipo::className(), 'targetAttribute' => ['id_equipo' => 'id']],
             [['id_posicion'], 'exist', 'skipOnError' => true, 'targetClass' => Posicion::className(), 'targetAttribute' => ['id_posicion' => 'id']],
@@ -74,6 +75,7 @@ class Jugador extends \yii\db\ActiveRecord
             'goles_por_partido' => 'Goles por partido',
             'esta_lesionado' => 'Lesionado',
             'tiempo_lesion' => 'Tiempo de lesión',
+            'esta_sancionado' => 'Sancionado',
             'edad' => 'Edad',
         ];
     }

@@ -41,10 +41,13 @@ AppAsset::register($this);
         <?= $form->field($model, 'esta_lesionado')->checkbox() ?>
 
         <?= $form->field($model, 'tiempo_lesion')->textInput(['maxlength' => true]) ?>
+
+        <?= $form->field($model, 'esta_sancionado')->checkbox() ?>
+
     <?php } ?>
 
     <div class="form-group">
-        <?= Html::submitButton($model->isNewRecord ? 'Añadir' : 'Modificar', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+        <?= Html::submitButton($model->isNewRecord ? 'Añadir' : 'Modificar', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-warning']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

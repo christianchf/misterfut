@@ -37,6 +37,13 @@ $this->params['breadcrumbs'][] = $this->title;
                     'lesionados' => $lesionados,
                 ]),
             ],
+            [
+                'label' => 'Sancionados',
+                'content' => $this->render('_sancionados', [
+                    'model' => $model,
+                    'sancionados' => $sancionados,
+                ]),
+            ],
         ],
     ]); ?>
 

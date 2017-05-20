@@ -28,7 +28,6 @@ $this->registerJsFile(
         <tr id="cabecera">
             <th>Partidos jugados</th>
             <th>Goles marcados</th>
-            <!-- <th>Goles encajados</th> -->
             <th>Asistencias</th>
             <th>Goles por partido</th>
         </tr>
@@ -47,7 +46,6 @@ $this->registerJsFile(
         <tr id="datosJugador">
             <td id="jugados"></td>
             <td id="golesMarcados"></td>
-            <!-- <td id="golesEncajados"></td> -->
             <td id="asistencias"></td>
             <td id="golesPartido"></td>
         </tr>

@@ -177,11 +177,19 @@ class EquiposController extends Controller
             'pagination' => false,
             'sort' => false,
         ]);
+        $sancionados = new ActiveDataProvider([
+            'query' => Jugador::find()
+                    ->where(['and', ['id_equipo' => $id], ['esta_sancionado' => 'true']])
+                    ->orderBy(['id_posicion' => SORT_ASC, 'nombre' => SORT_ASC]),
+            'pagination' => false,
+            'sort' => false,
+        ]);
 
         return $this->render('view', [
             'model' => $this->findModel($id),
             'jugadores' => $jugadores,
             'lesionados' => $lesionados,
+            'sancionados' => $sancionados,
         ]);
     }
 

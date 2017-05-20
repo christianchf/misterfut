@@ -58,6 +58,7 @@ create table jugadores (
     goles_por_partido numeric(4,2) default 0,
     esta_lesionado    boolean      default false,
     tiempo_lesion     varchar(100) default('0 dias'),
+    esta_sancionado   boolean      default false,
     id_equipo         bigint       not null constraint fk_jugadores_equipos
                                            references equipos (id)
                                            on delete cascade on update cascade,
