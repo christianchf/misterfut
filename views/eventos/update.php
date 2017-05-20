@@ -8,7 +8,7 @@ use yii\helpers\Html;
 $this->title = 'Modificar Evento: ' . $model->tipo . ': ' . $model->nombre;
 $this->params['breadcrumbs'][] = ['label' => 'Equipos', 'url' => ['/equipos/index']];
 $this->params['breadcrumbs'][] = ['label' => $equipo, 'url' => ['/equipos/view', 'id' => $model->id_equipo]];
-$this->params['breadcrumbs'][] = ['label' => 'Eventos', 'url' => ['index', 'id_equipo' => $model->id_equipo]];
+$this->params['breadcrumbs'][] = ['label' => 'Calendario', 'url' => ['index', 'id_equipo' => $model->id_equipo]];
 $this->params['breadcrumbs'][] = ['label' => $model->tipo . ': ' . $model->nombre, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = 'Modificar';
 ?>

@@ -26,7 +26,8 @@
         "kartik-v/yii2-widget-select2": "@dev",
         "kartik-v/yii2-widget-datetimepicker": "@dev",
         "kartik-v/yii2-widget-datepicker": "@dev",
-        "philippfrenzel/yii2fullcalendar": "*"
+        "philippfrenzel/yii2fullcalendar": "*",
+        "kartik-v/yii2-widget-timepicker": "*"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",

@@ -2,6 +2,7 @@
 
 use kartik\datetime\DateTimePicker;
 use kartik\select2\Select2;
+use kartik\time\TimePicker;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
@@ -24,14 +25,30 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'nombre')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'fecha_inicio')->widget(DateTimePicker::classname(), [
-        'options' => ['placeholder' => 'Introduzca la fecha y la hora de inicio del evento'],
-        'pluginOptions' => ['autoclose' => true],
-    ]); ?>
+    <?php if (!$model->isNewRecord) { ?>
+        <?= $form->field($model, 'fecha_inicio')->widget(DateTimePicker::classname(), [
+            'options' => ['placeholder' => 'Introduzca la fecha y la hora de inicio del evento'],
+            'value' => $model->fecha_inicio,
+            'pluginOptions' => [
+                'autoclose' => true,
+                'todayBtn' => true,
+            ],
+        ]); ?>
+    <?php } else { ?>
+        <?= $form->field($model, 'fecha_inicio')->widget(TimePicker::classname(), [
+            'pluginOptions' => [
+                'showMeridian' => false,
+                'minuteStep' => 5,
+            ]
+        ]) ?>
+    <?php } ?>
 
     <?= $form->field($model, 'fecha_fin')->widget(DateTimePicker::classname(), [
         'options' => ['placeholder' => 'Introduzca la fecha y la hora de fin del evento'],
-        'pluginOptions' => ['autoclose' => true],
+        'pluginOptions' => [
+            'autoclose' => true,
+            'todayBtn' => true,
+        ],
     ]); ?>
 
     <?= $form->field($model, 'descripcion')->textarea(['rows' => 6]) ?>
