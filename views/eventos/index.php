@@ -12,7 +12,7 @@ use yii\helpers\Json;
 
 $eventos = Json::htmlEncode(Evento::find()->select('id')
     ->where(['id_equipo' => Yii::$app->request->get('id_equipo')])
-    ->orderBy('fecha_inicio')->column());
+    ->orderBy('fecha_inicio, hora_inicio')->column());
 
 $urlCreate = Url::to(['/eventos/create', 'id_equipo' => Yii::$app->request->get('id_equipo')]);
 $urlView = Url::to(['/eventos/view']);

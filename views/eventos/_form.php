@@ -1,5 +1,6 @@
 <?php
 
+use kartik\date\DatePicker;
 use kartik\datetime\DateTimePicker;
 use kartik\select2\Select2;
 use kartik\time\TimePicker;
@@ -26,16 +27,23 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'nombre')->textInput(['maxlength' => true]) ?>
 
     <?php if (!$model->isNewRecord) { ?>
-        <?= $form->field($model, 'fecha_inicio')->widget(DateTimePicker::classname(), [
-            'options' => ['placeholder' => 'Introduzca la fecha y la hora de inicio del evento'],
-            'value' => $model->fecha_inicio,
+        <?= $form->field($model, 'fecha_inicio')->widget(DatePicker::classname(), [
+            'options' => ['placeholder' => 'Introduzca la fecha de inicio del evento'],
             'pluginOptions' => [
                 'autoclose' => true,
                 'todayBtn' => true,
+                'format' => 'yyyy-mm-dd',
             ],
         ]); ?>
+
+        <?= $form->field($model, 'hora_inicio')->widget(TimePicker::classname(), [
+            'pluginOptions' => [
+                'showMeridian' => false,
+                'minuteStep' => 5,
+            ]
+        ]) ?>
     <?php } else { ?>
-        <?= $form->field($model, 'fecha_inicio')->widget(TimePicker::classname(), [
+        <?= $form->field($model, 'hora_inicio')->widget(TimePicker::classname(), [
             'pluginOptions' => [
                 'showMeridian' => false,
                 'minuteStep' => 5,
@@ -43,13 +51,21 @@ use yii\widgets\ActiveForm;
         ]) ?>
     <?php } ?>
 
-    <?= $form->field($model, 'fecha_fin')->widget(DateTimePicker::classname(), [
-        'options' => ['placeholder' => 'Introduzca la fecha y la hora de fin del evento'],
+    <?= $form->field($model, 'fecha_fin')->widget(DatePicker::classname(), [
+        'options' => ['placeholder' => 'Introduzca la fecha de fin del evento'],
         'pluginOptions' => [
             'autoclose' => true,
             'todayBtn' => true,
+            'format' => 'yyyy-mm-dd',
         ],
     ]); ?>
+
+    <?= $form->field($model, 'hora_fin')->widget(TimePicker::classname(), [
+        'pluginOptions' => [
+            'showMeridian' => false,
+            'minuteStep' => 5,
+        ]
+    ]) ?>
 
     <?= $form->field($model, 'descripcion')->textarea(['rows' => 6]) ?>
 

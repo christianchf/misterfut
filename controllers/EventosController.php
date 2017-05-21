@@ -91,13 +91,14 @@ class EventosController extends Controller
     {
         $equipo = Equipo::find()->where(['id' => $id_equipo])->one();
         $events = [];
-        $eventos = Evento::find()->where(['id_equipo' => $id_equipo])->all();
+        $eventos = Evento::find()->where(['id_equipo' => $id_equipo])->orderBy('fecha_inicio, hora_inicio')->all();
+        // var_dump($eventos);die;
         foreach ($eventos as $evento) {
             $Event = new \yii2fullcalendar\models\Event();
             $Event->id = $evento->id;
             $Event->title = $evento->nombre;
-            $Event->start = $evento->fecha_inicio;
-            $Event->end = $evento->fecha_fin;
+            $Event->start = $evento->fecha_inicio . ' ' . $evento->hora_inicio;
+            $Event->end = $evento->fecha_fin . ' ' . $evento->hora_fin;
             if ($evento->tipo == 'Partido') {
                 $Event->color = '#67cca0';
             } elseif ($evento->tipo == 'Entrenamiento') {
@@ -144,11 +145,13 @@ class EventosController extends Controller
         $equipo = Equipo::find()->where(['id' => Yii::$app->request->get('id_equipo')])->one()->nombre;
         $tipos = ['Partido' => 'Partido', 'Entrenamiento' => 'Entrenamiento'];
 
-        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
-            $offset = timezone_offset_get(new DateTimeZone('Europe/Madrid'), new DateTime());
-            $model->fecha_inicio = Yii::$app->request->get('fecha') . ' ' .
-                                   $model->fecha_inicio .
-                                   self::timezoneOffsetString($offset);
+        if ($model->load(Yii::$app->request->post())) {
+            $model->fecha_inicio = Yii::$app->request->get('fecha');
+            // var_dump($model->validate());die;
+            // $offset = timezone_offset_get(new DateTimeZone('Europe/Madrid'), new DateTime());
+            // $model->fecha_inicio = Yii::$app->request->get('fecha') . ' ' .
+                                //    $model->fecha_inicio .
+                                //    self::timezoneOffsetString($offset);
             $model->save();
             return $this->redirect(['index', 'id_equipo' => $model->id_equipo]);
         } else {
