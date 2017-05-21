@@ -92,7 +92,6 @@ class EventosController extends Controller
         $equipo = Equipo::find()->where(['id' => $id_equipo])->one();
         $events = [];
         $eventos = Evento::find()->where(['id_equipo' => $id_equipo])->orderBy('fecha_inicio, hora_inicio')->all();
-        // var_dump($eventos);die;
         foreach ($eventos as $evento) {
             $Event = new \yii2fullcalendar\models\Event();
             $Event->id = $evento->id;

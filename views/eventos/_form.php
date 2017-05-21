@@ -1,7 +1,6 @@
 <?php
 
 use kartik\date\DatePicker;
-use kartik\datetime\DateTimePicker;
 use kartik\select2\Select2;
 use kartik\time\TimePicker;
 use yii\helpers\Html;
@@ -26,22 +25,27 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'nombre')->textInput(['maxlength' => true]) ?>
 
-    <?php if (!$model->isNewRecord) { ?>
-        <?= $form->field($model, 'fecha_inicio')->widget(DatePicker::classname(), [
-            'options' => ['placeholder' => 'Introduzca la fecha de inicio del evento'],
-            'pluginOptions' => [
-                'autoclose' => true,
-                'todayBtn' => true,
-                'format' => 'yyyy-mm-dd',
-            ],
-        ]); ?>
-
-        <?= $form->field($model, 'hora_inicio')->widget(TimePicker::classname(), [
-            'pluginOptions' => [
-                'showMeridian' => false,
-                'minuteStep' => 5,
-            ]
-        ]) ?>
+    <?php if (!$model->isNewRecord || Yii::$app->request->get('fecha') == null) { ?>
+        <div class="row">
+            <div class="col-xs-8">
+                <?= $form->field($model, 'fecha_inicio')->widget(DatePicker::classname(), [
+                    'options' => ['placeholder' => 'Introduzca la fecha de inicio del evento'],
+                    'pluginOptions' => [
+                        'autoclose' => true,
+                        'todayBtn' => true,
+                        'format' => 'yyyy-mm-dd',
+                    ],
+                ]); ?>
+            </div>
+            <div class="col-xs-4">
+                <?= $form->field($model, 'hora_inicio')->widget(TimePicker::classname(), [
+                    'pluginOptions' => [
+                        'showMeridian' => false,
+                        'minuteStep' => 5,
+                    ]
+                ]) ?>
+            </div>
+        </div>
     <?php } else { ?>
         <?= $form->field($model, 'hora_inicio')->widget(TimePicker::classname(), [
             'pluginOptions' => [
@@ -51,21 +55,27 @@ use yii\widgets\ActiveForm;
         ]) ?>
     <?php } ?>
 
-    <?= $form->field($model, 'fecha_fin')->widget(DatePicker::classname(), [
-        'options' => ['placeholder' => 'Introduzca la fecha de fin del evento'],
-        'pluginOptions' => [
-            'autoclose' => true,
-            'todayBtn' => true,
-            'format' => 'yyyy-mm-dd',
-        ],
-    ]); ?>
+    <div class="row">
+        <div class="col-xs-8">
+            <?= $form->field($model, 'fecha_fin')->widget(DatePicker::classname(), [
+                'options' => ['placeholder' => 'Introduzca la fecha de fin del evento'],
+                'pluginOptions' => [
+                    'autoclose' => true,
+                    'todayBtn' => true,
+                    'format' => 'yyyy-mm-dd',
+                ],
+            ]); ?>
+        </div>
+        <div class="col-xs-4">
+            <?= $form->field($model, 'hora_fin')->widget(TimePicker::classname(), [
+                'pluginOptions' => [
+                    'showMeridian' => false,
+                    'minuteStep' => 5,
+                ]
+                ]) ?>
+        </div>
+    </div>
 
-    <?= $form->field($model, 'hora_fin')->widget(TimePicker::classname(), [
-        'pluginOptions' => [
-            'showMeridian' => false,
-            'minuteStep' => 5,
-        ]
-    ]) ?>
 
     <?= $form->field($model, 'descripcion')->textarea(['rows' => 6]) ?>
 
