@@ -2,6 +2,7 @@
 
 use yii\helpers\Url;
 use yii\helpers\Html;
+use yii\web\View;
 use yii2fullcalendar\yii2fullcalendar;
 
 /* @var $this yii\web\View */
@@ -11,15 +12,12 @@ use yii2fullcalendar\yii2fullcalendar;
 $urlCreate = Url::to(['/eventos/create', 'id_equipo' => Yii::$app->request->get('id_equipo')]);
 $js = <<<EOT
     var urlCreate = "$urlCreate";
-    $(document).on('ready', function () {
-
-        $('.fc-day').on('click', function() {
-            var fecha = $(this).data('date');
-            window.location.href = urlCreate + '&fecha=' + fecha;
-        });
-    });
 EOT;
-$this->registerJs($js);
+$this->registerJs($js, View::POS_END);
+$this->registerJsFile(
+    '/js/crearEvento.js',
+    ['depends' => [\yii\web\JqueryAsset::className()]]
+);
 
 $this->title = 'Calendario';
 $this->params['breadcrumbs'][] = ['label' => 'Equipos', 'url' => ['/equipos/index']];
