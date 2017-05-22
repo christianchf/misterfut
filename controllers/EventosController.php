@@ -102,6 +102,10 @@ class EventosController extends Controller
                 $Event->color = '#67cca0';
             } elseif ($evento->tipo == 'Entrenamiento') {
                 $Event->color = '#ffc34d';
+            } elseif ($evento->tipo == 'Evento publicitario') {
+                $Event->color = '#6457b0';
+            } elseif ($evento->tipo == 'Otros') {
+                $Event->color = '#ee4b4b';
             }
             $Event->editable = true;
             $Event->startEditable = true;
@@ -142,10 +146,15 @@ class EventosController extends Controller
         $model = new Evento();
         $model->id_equipo = Yii::$app->request->get('id_equipo');
         $equipo = Equipo::find()->where(['id' => Yii::$app->request->get('id_equipo')])->one()->nombre;
-        $tipos = ['Partido' => 'Partido', 'Entrenamiento' => 'Entrenamiento'];
+        $tipos = [
+            'Partido' => 'Partido',
+            'Entrenamiento' => 'Entrenamiento',
+            'Evento publicitario' => 'Evento publicitario',
+            'Otros' => 'Otros',
+        ];
 
         if ($model->load(Yii::$app->request->post())) {
-            if ($model->fecha_inicio != null) {
+            if ($model->fecha_inicio == null) {
                 $model->fecha_inicio = Yii::$app->request->get('fecha');
             }
             $model->save();
@@ -170,7 +179,12 @@ class EventosController extends Controller
     {
         $model = $this->findModel($id);
         $equipo = Equipo::find()->where(['id' => $model->id_equipo])->one()->nombre;
-        $tipos = ['Partido' => 'Partido', 'Entrenamiento' => 'Entrenamiento'];
+        $tipos = [
+            'Partido' => 'Partido',
+            'Entrenamiento' => 'Entrenamiento',
+            'Evento publicitario' => 'Evento publicitario',
+            'Otros' => 'Otros',
+        ];
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['index', 'id_equipo' => $model->id_equipo]);

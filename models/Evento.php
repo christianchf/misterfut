@@ -53,8 +53,8 @@ class Evento extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'tipo' => 'Tipo',
-            'nombre' => 'Nombre',
-            'descripcion' => 'Descripción',
+            'nombre' => 'Título',
+            'descripcion' => 'Descripción (opcional)',
             'fecha_inicio' => 'Fecha de inicio',
             'hora_inicio' => 'Hora de inicio',
             'fecha_fin' => 'Fecha de fin',
