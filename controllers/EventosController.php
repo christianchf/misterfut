@@ -3,11 +3,10 @@
 namespace app\controllers;
 
 use Yii;
-use DateTime;
-use DateTimeZone;
 use app\models\Equipo;
 use app\models\Evento;
 use yii\filters\AccessControl;
+use yii\helpers\Url;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -98,6 +97,7 @@ class EventosController extends Controller
             $Event->title = $evento->nombre;
             $Event->start = $evento->fecha_inicio . ' ' . $evento->hora_inicio;
             $Event->end = $evento->fecha_fin . ' ' . $evento->hora_fin;
+            $Event->url = Url::to(['/eventos/view', 'id' => $evento->id]);
             if ($evento->tipo == 'Partido') {
                 $Event->color = '#67cca0';
             } elseif ($evento->tipo == 'Entrenamiento') {
@@ -145,12 +145,9 @@ class EventosController extends Controller
         $tipos = ['Partido' => 'Partido', 'Entrenamiento' => 'Entrenamiento'];
 
         if ($model->load(Yii::$app->request->post())) {
-            $model->fecha_inicio = Yii::$app->request->get('fecha');
-            // var_dump($model->validate());die;
-            // $offset = timezone_offset_get(new DateTimeZone('Europe/Madrid'), new DateTime());
-            // $model->fecha_inicio = Yii::$app->request->get('fecha') . ' ' .
-                                //    $model->fecha_inicio .
-                                //    self::timezoneOffsetString($offset);
+            if ($model->fecha_inicio != null) {
+                $model->fecha_inicio = Yii::$app->request->get('fecha');
+            }
             $model->save();
             return $this->redirect(['index', 'id_equipo' => $model->id_equipo]);
         } else {
@@ -160,15 +157,6 @@ class EventosController extends Controller
                 'tipos' => $tipos,
             ]);
         }
-    }
-
-    /**
-     * Formatea la zona horaria en UTC.
-     * @param string $offset La zona horaria formateada.
-     */
-    public static function timezoneOffsetString($offset)
-    {
-        return sprintf('%s%02d:%02d', ($offset >= 0) ? '+' : '-', abs($offset / 3600), abs($offset % 3600));
     }
 
     /**
