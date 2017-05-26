@@ -51,7 +51,7 @@ class EventosController extends Controller
                     ],
                     [
                         'allow' => true,
-                        'actions' => ['delete'],
+                        'actions' => ['delete', 'actualizar'],
                         'roles' => ['@'],
                     ],
                     [
@@ -117,6 +117,23 @@ class EventosController extends Controller
             'equipo' => $equipo,
             'events' => $events,
         ]);
+    }
+
+    /**
+     * Actualiza las fechas de inicio y de fin de un evento cuando se arrastra a
+     * otra fecha.
+     * @return void
+     */
+    public function actionActualizar()
+    {
+        $datos = json_decode(file_get_contents('php://input'));
+
+        if ($datos != null) {
+            $evento = Evento::find()->where(['id' => $datos->idEvento])->one();
+            $evento->fecha_inicio = $datos->diaInicio;
+            $evento->fecha_fin = $datos->diaFin;
+            $evento->save();
+        }
     }
 
     /**

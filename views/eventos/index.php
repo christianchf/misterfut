@@ -1,23 +1,27 @@
 <?php
 
+use app\assets\CalendarioAsset;
 use yii\helpers\Url;
 use yii\helpers\Html;
+use yii\helpers\Json;
 use yii\web\View;
-use yii2fullcalendar\yii2fullcalendar;
 
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\EventoSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
+CalendarioAsset::register($this);
+
 $urlCreate = Url::to(['/eventos/create', 'id_equipo' => Yii::$app->request->get('id_equipo')]);
+$urlEventos = Url::to(['/eventos/actualizar']);
+$eventos = Json::htmlEncode($events);
+
 $js = <<<EOT
     var urlCreate = "$urlCreate";
+    var eventos = $eventos;
+    var urlEventos = "$urlEventos";
 EOT;
 $this->registerJs($js, View::POS_END);
-$this->registerJsFile(
-    '/js/crearEvento.js',
-    ['depends' => [\yii\web\JqueryAsset::className()]]
-);
 
 $this->title = 'Calendario';
 $this->params['breadcrumbs'][] = ['label' => 'Equipos', 'url' => ['/equipos/index']];
@@ -32,14 +36,6 @@ $this->params['breadcrumbs'][] = $this->title;
         <?= Html::a('Añadir Evento', ['create', 'id_equipo' => Yii::$app->request->get('id_equipo')], ['class' => 'btn btn-success']) ?>
     </p>
 
-    <?= yii2fullcalendar::widget([
-        'events'=> $events,
-        'options' => [
-            'lang' => 'es',
-        ],
-        'clientOptions' => [
-            'editable' => true,
-        ],
-    ]); ?>
+    <div id='calendar'></div>
 
 </div>
