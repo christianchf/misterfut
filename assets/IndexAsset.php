@@ -11,9 +11,11 @@ class IndexAsset extends AssetBundle
     public $css = [
         '/js/slick/slick.css',
         '/js/slick/slick-theme.css',
+        '/css/index-contenido.css',
     ];
     public $js = [
         '/js/slick/slick.min.js',
+        '/js/carrusel.js',
     ];
     public $depends = [
         'yii\web\YiiAsset',
