@@ -3,6 +3,7 @@
 namespace app\controllers;
 
 use Yii;
+use app\models\Event;
 use app\models\Equipo;
 use app\models\Evento;
 use yii\filters\AccessControl;
@@ -92,25 +93,24 @@ class EventosController extends Controller
         $events = [];
         $eventos = Evento::find()->where(['id_equipo' => $id_equipo])->orderBy('fecha_inicio, hora_inicio')->all();
         foreach ($eventos as $evento) {
-            $Event = new \yii2fullcalendar\models\Event();
-            $Event->id = $evento->id;
-            $Event->title = $evento->nombre;
-            $Event->start = $evento->fecha_inicio . ' ' . $evento->hora_inicio;
-            $Event->end = $evento->fecha_fin . ' ' . $evento->hora_fin;
-            $Event->url = Url::to(['/eventos/view', 'id' => $evento->id]);
+            $event = new Event;
+            $event->id = $evento->id;
+            $event->title = $evento->nombre;
+            $event->start = $evento->fecha_inicio . ' ' . $evento->hora_inicio;
+            $event->end = $evento->fecha_fin . ' ' . $evento->hora_fin;
+            $event->url = Url::to(['/eventos/view', 'id' => $evento->id]);
             if ($evento->tipo == 'Partido') {
-                $Event->color = '#67cca0';
+                $event->color = '#67cca0';
             } elseif ($evento->tipo == 'Entrenamiento') {
-                $Event->color = '#ffc34d';
+                $event->color = '#ffc34d';
             } elseif ($evento->tipo == 'Evento publicitario') {
-                $Event->color = '#6457b0';
+                $event->color = '#6457b0';
             } elseif ($evento->tipo == 'Otros') {
-                $Event->color = '#ee4b4b';
+                $event->color = '#ee4b4b';
             }
-            $Event->editable = true;
-            $Event->startEditable = true;
-            $Event->resourceId = $evento->id;
-            $events[] = $Event;
+            $event->editable = true;
+            $event->startEditable = true;
+            $events[] = $event;
         }
 
         return $this->render('index', [

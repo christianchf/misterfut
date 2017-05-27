@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "d7b5ab7d958b455f73b34b1f2807ab10",
-    "content-hash": "5d4a08cebb885f01d90294be728d7641",
+    "hash": "97ead21a1a0a45e614557d244ce42b16",
+    "content-hash": "ad6265a4dcda16a918fc68097e97b38a",
     "packages": [
         {
             "name": "bower-asset/bootstrap",
@@ -107,51 +107,6 @@
                 "mobile-first",
                 "responsive",
                 "web"
-            ]
-        },
-        {
-            "name": "bower-asset/fullcalendar",
-            "version": "v3.4.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/fullcalendar/fullcalendar.git",
-                "reference": "447ab267528a211b253058dfb5d898b7a2296492"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/fullcalendar/fullcalendar/zipball/447ab267528a211b253058dfb5d898b7a2296492",
-                "reference": "447ab267528a211b253058dfb5d898b7a2296492",
-                "shasum": ""
-            },
-            "require": {
-                "bower-asset/jquery": ">=2,<4.0",
-                "bower-asset/moment": ">=2.9.0,<3.0.0"
-            },
-            "type": "bower-asset-library",
-            "extra": {
-                "bower-asset-main": [
-                    "dist/fullcalendar.js",
-                    "dist/fullcalendar.css"
-                ],
-                "bower-asset-ignore": [
-                    "*",
-                    "**/.*",
-                    "!/dist/**",
-                    "!/README.*",
-                    "!/LICENSE.*",
-                    "!/CHANGELOG.*",
-                    "!/CONTRIBUTING.*"
-                ]
-            },
-            "license": [
-                "MIT"
-            ],
-            "description": "Full-sized drag & drop event calendar",
-            "keywords": [
-                "calendar",
-                "event",
-                "full-sized",
-                "jquery-plugin"
             ]
         },
         {
@@ -261,48 +216,6 @@
                 "jquery",
                 "mask",
                 "plugins"
-            ]
-        },
-        {
-            "name": "bower-asset/moment",
-            "version": "2.18.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/moment/moment.git",
-                "reference": "b8a7fc310eb3625e83fc0c8f1ea2840fa83c7378"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/moment/moment/zipball/b8a7fc310eb3625e83fc0c8f1ea2840fa83c7378",
-                "reference": "b8a7fc310eb3625e83fc0c8f1ea2840fa83c7378",
-                "shasum": ""
-            },
-            "type": "bower-asset-library",
-            "extra": {
-                "bower-asset-main": "moment.js",
-                "bower-asset-ignore": [
-                    "**/.*",
-                    "benchmarks",
-                    "bower_components",
-                    "meteor",
-                    "node_modules",
-                    "scripts",
-                    "tasks",
-                    "test",
-                    "component.json",
-                    "composer.json",
-                    "CONTRIBUTING.md",
-                    "ender.js",
-                    "Gruntfile.js",
-                    "Moment.js.nuspec",
-                    "package.js",
-                    "package.json",
-                    "ISSUE_TEMPLATE.md",
-                    "typing-tests"
-                ]
-            },
-            "license": [
-                "MIT"
             ]
         },
         {
@@ -851,55 +764,6 @@
             "time": "2017-01-08 06:36:24"
         },
         {
-            "name": "philippfrenzel/yii2fullcalendar",
-            "version": "3.0.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/philippfrenzel/yii2fullcalendar.git",
-                "reference": "4b287f2d5a5ccf6720e66b63c7f29e41f025bb6b"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/philippfrenzel/yii2fullcalendar/zipball/4b287f2d5a5ccf6720e66b63c7f29e41f025bb6b",
-                "reference": "4b287f2d5a5ccf6720e66b63c7f29e41f025bb6b",
-                "shasum": ""
-            },
-            "require": {
-                "bower-asset/fullcalendar": "3.*",
-                "php": ">=5.4.0",
-                "yiisoft/yii2": "*",
-                "yiisoft/yii2-jui": "*"
-            },
-            "require-dev": {
-                "codeception/codeception": "*"
-            },
-            "type": "yii2-extension",
-            "autoload": {
-                "psr-4": {
-                    "yii2fullcalendar\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Philipp Frenzel",
-                    "email": "philipp@frenzel.net",
-                    "homepage": "http://www.frenzel.net/",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Yii2 fullcalendar Widgets",
-            "homepage": "http://www.frenzel.net/",
-            "keywords": [
-                "fullcalendar",
-                "yii2"
-            ],
-            "time": "2016-09-23 10:20:14"
-        },
-        {
             "name": "swiftmailer/swiftmailer",
             "version": "v5.4.8",
             "source": {
@@ -1442,16 +1306,16 @@
         },
         {
             "name": "codeception/base",
-            "version": "2.3.1",
+            "version": "2.3.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Codeception/base.git",
-                "reference": "c3beb9ff7fe829e4d9b66c1fdfcc99e85cad485f"
+                "reference": "122f8f333fc449f6f213f78cce0cfa3965cbb483"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Codeception/base/zipball/c3beb9ff7fe829e4d9b66c1fdfcc99e85cad485f",
-                "reference": "c3beb9ff7fe829e4d9b66c1fdfcc99e85cad485f",
+                "url": "https://api.github.com/repos/Codeception/base/zipball/122f8f333fc449f6f213f78cce0cfa3965cbb483",
+                "reference": "122f8f333fc449f6f213f78cce0cfa3965cbb483",
                 "shasum": ""
             },
             "require": {
@@ -1508,7 +1372,11 @@
                 "psr-4": {
                     "Codeception\\": "src\\Codeception",
                     "Codeception\\Extension\\": "ext"
-                }
+                },
+                "files": [
+                    "shim.php",
+                    "phpunit5-loggers.php"
+                ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -1530,7 +1398,7 @@
                 "functional testing",
                 "unit testing"
             ],
-            "time": "2017-05-24 01:15:53"
+            "time": "2017-05-27 00:59:06"
         },
         {
             "name": "codeception/specify",

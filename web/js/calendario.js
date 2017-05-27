@@ -9,7 +9,6 @@ $(document).ready(function() {
         },
         events: eventos,
         editable: true,
-        // lang: 'es',
         eventDrop: function(event, delta, revertFunc, jsEvent, ui, view) {
             var idEvento = event.id;
             var diaInicio = event.start.format();
