@@ -23,13 +23,21 @@ $this->registerJsFile(
 
 <table id="statsEquipo" class="table table-striped table-bordered">
     <thead>
-        <tr>
+        <tr class="fila-ampliada">
             <th>Partidos jugados</th>
             <th>Partidos ganados</th>
             <th>Partidos empatados</th>
             <th>Partidos perdidos</th>
             <th>Goles a favor</th>
             <th>Goles en contra</th>
+        </tr>
+        <tr class="fila-cerrada">
+            <th>PJ</th>
+            <th>PG</th>
+            <th>PE</th>
+            <th>PP</th>
+            <th>GF</th>
+            <th>GC</th>
         </tr>
     </thead>
     <tbody>

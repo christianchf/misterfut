@@ -27,7 +27,7 @@
     color: #ffffff;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 800px) {
     .item {
         width: 90%;
     }

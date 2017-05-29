@@ -34,12 +34,20 @@ AppAsset::register($this);
 <div class="wrap">
     <?php if (!Yii::$app->user->isGuest) { ?>
     <nav id="submenu" class="navbar-purple navbar navbar-fixed-top">
-    <div class="container">
-        <ul class="navbar-nav navbar-left no-hover nav">
-            <li><?= Html::a('Mis equipos', ['/equipos/index']) ?></li>
-            <li><?= Html::a('Historial de equipos', ['/equipos/historial']) ?></li>
-        </ul>
-    </div>
+        <div class="container">
+            <ul class="navbar-nav navbar-left no-hover nav">
+                <li><?= Html::a('Mis equipos <span class="glyphicon glyphicon-list-alt"></span>', ['/equipos/index']) ?></li>
+                <li><?= Html::a('Historial de equipos <span class="glyphicon glyphicon-folder-open"></span>', ['/equipos/historial']) ?></li>
+            </ul>
+        </div>
+    </nav>
+    <nav id="submenu2" class="navbar-purple navbar navbar-fixed-top">
+        <div class="container">
+            <ul id="lista-menu2" class="navbar-nav navbar-left no-hover nav">
+                <li><?= Html::a('<span class="glyphicon glyphicon-list-alt"></span>', ['/equipos/index']) ?></li>
+                <li><?= Html::a('<span class="glyphicon glyphicon-folder-open"></span>', ['/equipos/historial']) ?></li>
+            </ul>
+        </div>
     </nav>
     <?php } ?>
     <?php

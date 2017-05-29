@@ -42,6 +42,7 @@ function generarBtnsPortero() {
     var golesEncaj = '<td id="golesEncajados"></td>';
     var restGolesEncaj = '<td><button id="resta3" class="btn btn-xs btn-warning btnMenos btnActualizar">' +
     '<span class="glyphicon glyphicon-minus"></span></button></td>';
+    var cabMini = '<th>Nº GE</th>';
 
     if (posJugador == 1) {
         $("#cabecera").append(cabGolesEncaj);
@@ -50,5 +51,6 @@ function generarBtnsPortero() {
         $("#btnsResta").append(restGolesEncaj);
         $("#suma3").on('click', ajaxBotones);
         $("#resta3").on('click', ajaxBotones);
+        $("#cabecera2").append(cabMini);
     }
 }

@@ -100,3 +100,9 @@
     93% {top: 490em;left: 800em;transform: none;}
     100% {top: 490em;left: 820em;transform: none;}
 }
+
+@media screen and (max-width: 800px) {
+    #pelota {
+        display: none;
+    }
+}

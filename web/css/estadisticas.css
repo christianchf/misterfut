@@ -11,3 +11,21 @@
 #statsEquipo td {
     text-align: center;
 }
+
+.fila-cerrada {
+    display: none;
+}
+
+@media screen and (max-width: 767px) {
+    .fila-ampliada {
+        display: none;
+    }
+
+    .fila-cerrada {
+        display: table-row;
+    }
+
+    .fila-cerrada th {
+        text-align: center;
+    }
+}

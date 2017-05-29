@@ -30,6 +30,20 @@ article {
     width: 45%;
 }
 
+article ul li {
+    list-style-image: url("/images/pelota-icono.gif");
+}
+
 video {
     width: 100%;
+}
+
+@media screen and (max-width: 800px) {
+    section div {
+        flex-direction: column;
+    }
+
+    article {
+        width: 100%;
+    }
 }

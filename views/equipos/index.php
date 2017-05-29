@@ -70,9 +70,9 @@ $this->params['breadcrumbs'][] = $this->title;
                 'label' => 'Plantilla',
                 'value' => function ($model, $key, $index, $column) {
                     return Html::a(
-                        'Ver plantilla',
+                        'Plantilla',
                         ['jugadores/index', 'id_equipo' => $model->id],
-                        ['class' => 'btn-sm btn-primary']
+                        ['class' => 'btn-sm btn-primary btnsAction']
                     );
                 },
                 'format' => 'html',

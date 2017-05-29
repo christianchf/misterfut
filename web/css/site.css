@@ -263,3 +263,22 @@ a.glyphicon.glyphicon-eye-open:hover {
 .modal-content {
     height: 250px;
 }
+
+#submenu2 {
+    display: none;
+}
+
+@media screen and (max-width: 767px) {
+    #submenu {
+        display: none;
+    }
+
+    #submenu2 {
+        display: block;
+        margin-top: 50px;
+    }
+
+    #lista-menu2 {
+        display: flex;
+    }
+}
