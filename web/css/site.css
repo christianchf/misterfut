@@ -282,3 +282,9 @@ a.glyphicon.glyphicon-eye-open:hover {
         display: flex;
     }
 }
+
+@media screen and (max-width:500px) {
+    .btnsAction {
+        width: 32%;
+    }
+}
