@@ -13,6 +13,7 @@ $this->title = 'MisterFut';
         <div class="carrusel-slick">
             <div><img src="/images/pelota-campo.jpg" alt="Pelota en campo de fútbol"></div>
             <div><img src="/images/pizarra-tactica.jpg" alt="Pizarra de tácticas"></div>
+            <div><img src="/images/estadio.jpg" alt="Estadio"></div>
         </div>
     </div>
     <div id="contenido">
