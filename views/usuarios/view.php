@@ -1,6 +1,7 @@
 <?php
 
 use yii\helpers\Html;
+use yii\widgets\ListView;
 use yii\widgets\DetailView;
 
 /* @var $this yii\web\View */
@@ -28,13 +29,19 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-            // 'id',
             'nombre',
-            // 'password',
             'email:email',
-            // 'token',
             'created_at:datetime',
         ],
+    ]) ?>
+
+    <?= ListView::widget([
+        'summary' => 'Número de equipos: <b>{count}</b>',
+        'dataProvider' => $equipos,
+        'itemOptions' => ['class' => 'item'],
+        'itemView' => function ($model, $key, $index, $widget) {
+            return Html::encode($model->nombre);
+        },
     ]) ?>
 
 </div>

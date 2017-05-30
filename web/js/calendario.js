@@ -18,6 +18,9 @@ $(document).ready(function() {
                 method: 'POST',
                 data: JSON.stringify({'idEvento': idEvento, 'diaInicio': diaInicio, 'diaFin': diaFin}),
             });
+        },
+        dayClick: function(date, jsEvent, view) {
+            window.location.href = urlCreate + '&fecha=' + date.format();
         }
     });
 });

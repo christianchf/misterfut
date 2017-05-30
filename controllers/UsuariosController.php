@@ -3,8 +3,10 @@
 namespace app\controllers;
 
 use Yii;
+use app\models\Equipo;
 use app\models\Usuario;
 use app\models\UsuarioSearch;
+use yii\data\ActiveDataProvider;
 use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
@@ -80,10 +82,20 @@ class UsuariosController extends Controller
      * @param int $id El id del usuario.
      * @return mixed
      */
-    public function actionView($id = null)
+    public function actionView($id)
     {
+        $equipos = new ActiveDataProvider([
+            'query' => Equipo::find()->select(['nombre'])
+                        ->where(['id_usuario' => $id])
+                        ->groupBy(['nombre'])
+                        ->orderBy('nombre'),
+            'pagination' => false,
+            'sort' => false,
+        ]);
+
         return $this->render('view', [
             'model' => $this->findModel($id),
+            'equipos' => $equipos,
         ]);
     }
 

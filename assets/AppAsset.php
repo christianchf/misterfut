@@ -12,7 +12,6 @@ class AppAsset extends AssetBundle
         'css/site.css',
         'css/estadisticas.css',
         'css/pelota.css',
-        'css/historial.css',
     ];
     public $js = [
         'js/localTabs.js',

@@ -251,8 +251,20 @@ a.glyphicon.glyphicon-eye-open:hover {
     width: 695px;
 }
 
+#totales td, #totalesHistorico td {
+    width: 70px;
+}
+
+#totales td:first-of-type {
+    width: 280px;
+}
+
 #totalesHistorico {
     width: 615px;
+}
+
+#totalesHistorico td:first-of-type {
+    width: 200px;
 }
 
 .btnsAction {
@@ -286,5 +298,13 @@ a.glyphicon.glyphicon-eye-open:hover {
 @media screen and (max-width:500px) {
     .btnsAction {
         width: 32%;
+    }
+
+    #totales {
+        width: 100%;
+    }
+
+    #totalesHistorico {
+        width: 100%;
     }
 }

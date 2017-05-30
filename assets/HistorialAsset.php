@@ -4,18 +4,15 @@ namespace app\assets;
 
 use yii\web\AssetBundle;
 
-class CalendarioAsset extends AssetBundle
+class HistorialAsset extends AssetBundle
 {
     public $basePath = '@webroot';
     public $baseUrl = '@web';
     public $css = [
-        'js/fullcalendar/fullcalendar.css',
+        'css/historial.css',
     ];
     public $js = [
-        'js/fullcalendar/lib/moment.min.js',
-        'js/fullcalendar/fullcalendar.js',
-        'js/fullcalendar/locale/es.js',
-        'js/calendario.js',
+
     ];
     public $depends = [
         'yii\web\YiiAsset',

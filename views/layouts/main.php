@@ -80,7 +80,7 @@ AppAsset::register($this);
                     'linkOptions' => ['data-method' => 'POST']
                 ],
                 '<li class="divider"></li>',
-                ['label' => 'Mis datos', 'url' => ['/usuarios/view']],
+                ['label' => 'Mis datos', 'url' => ['/usuarios/view', 'id' => Yii::$app->user->id]],
             ]
         ]
     ];

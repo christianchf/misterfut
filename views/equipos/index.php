@@ -126,37 +126,30 @@ $this->params['breadcrumbs'][] = $this->title;
                         return '<b>Totales</b>';
                     },
                     'format' => 'html',
-                    'width' => '280px'
                 ],
                 [
                     'label' => 'PJ',
                     'attribute' => 'partidos_jugados',
-                    'width' => '70px',
                 ],
                 [
                     'label' => 'PG',
                     'attribute' => 'partidos_ganados',
-                    'width' => '70px',
                 ],
                 [
                     'label' => 'PE',
                     'attribute' => 'partidos_empatados',
-                    'width' => '70px',
                 ],
                 [
                     'label' => 'PP',
                     'attribute' => 'partidos_perdidos',
-                    'width' => '70px',
                 ],
                 [
                     'label' => 'GF',
                     'attribute' => 'goles_a_favor',
-                    'width' => '70px',
                 ],
                 [
                     'label' => 'GC',
                     'attribute' => 'goles_en_contra',
-                    'width' => '70px',
                 ],
             ],
             'responsive'=>true,
