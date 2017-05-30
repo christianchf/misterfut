@@ -1,0 +1,37 @@
+section {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+article {
+    width: 45%;
+    margin: auto;
+    text-align: justify;
+}
+
+article img {
+    margin-left: 30%;
+    width: 70%;
+    height: 70%;
+}
+
+article img:hover {
+    animation: 5s linear infinite rotacion;
+}
+
+@keyframes rotacion {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(360deg);}
+}
+
+@media screen and (max-width: 500px) {
+    section {
+        flex-direction: column;
+    }
+
+    article {
+        width: 100%;
+    }
+}
