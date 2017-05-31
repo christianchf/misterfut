@@ -260,7 +260,6 @@ class EquiposController extends Controller
                 $nuevo->id_posicion = $antiguo->id_posicion;
                 $nuevo->save();
             }
-            Yii::$app->session->setFlash('anadido', 'La plantilla se ha traspasado correctamente');
         }
     }
 

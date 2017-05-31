@@ -11,6 +11,9 @@ $this->title = 'Login';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="site-login">
+    <?php if (Yii::$app->session->hasFlash('exito')) { ?>
+        <div class="alert alert-success">Se ha registrado correctamente. Por favor, inicie sesión para comenzar.</div>
+    <?php } ?>
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>Escriba los siguientes datos para iniciar sesión:</p>
