@@ -32,7 +32,11 @@
     
 <div class="row">
     <div class="col-md-3">
-                <div id="navigation" class="list-group"><a class="list-group-item" href="#navigation-6" data-toggle="collapse" data-parent="#navigation">app\assets <b class="caret"></b></a><div id="navigation-6" class="submenu panel-collapse collapse"><a class="list-group-item" href="./app-assets-appasset.html">AppAsset</a></div>
+                <div id="navigation" class="list-group"><a class="list-group-item" href="#navigation-6" data-toggle="collapse" data-parent="#navigation">app\assets <b class="caret"></b></a><div id="navigation-6" class="submenu panel-collapse collapse"><a class="list-group-item" href="./app-assets-aboutasset.html">AboutAsset</a>
+<a class="list-group-item" href="./app-assets-appasset.html">AppAsset</a>
+<a class="list-group-item" href="./app-assets-calendarioasset.html">CalendarioAsset</a>
+<a class="list-group-item" href="./app-assets-historialasset.html">HistorialAsset</a>
+<a class="list-group-item" href="./app-assets-indexasset.html">IndexAsset</a></div>
 <a class="list-group-item" href="#navigation-7" data-toggle="collapse" data-parent="#navigation">app\commands <b class="caret"></b></a><div id="navigation-7" class="submenu panel-collapse collapse"><a class="list-group-item" href="./app-commands-tokencontroller.html">TokenController</a></div>
 <a class="list-group-item active" href="#navigation-8" data-toggle="collapse" data-parent="#navigation">app\controllers <b class="caret"></b></a><div id="navigation-8" class="submenu panel-collapse collapse in"><a class="list-group-item" href="./app-controllers-equiposcontroller.html">EquiposController</a>
 <a class="list-group-item active" href="./app-controllers-eventoscontroller.html">EventosController</a>
@@ -42,6 +46,7 @@
 <a class="list-group-item" href="#navigation-9" data-toggle="collapse" data-parent="#navigation">app\models <b class="caret"></b></a><div id="navigation-9" class="submenu panel-collapse collapse"><a class="list-group-item" href="./app-models-contactform.html">ContactForm</a>
 <a class="list-group-item" href="./app-models-equipo.html">Equipo</a>
 <a class="list-group-item" href="./app-models-equiposearch.html">EquipoSearch</a>
+<a class="list-group-item" href="./app-models-event.html">Event</a>
 <a class="list-group-item" href="./app-models-evento.html">Evento</a>
 <a class="list-group-item" href="./app-models-eventosearch.html">EventoSearch</a>
 <a class="list-group-item" href="./app-models-historialsearch.html">HistorialSearch</a>
@@ -92,7 +97,13 @@ yii\web\Controller</td></tr>
 <tr>
   <th>Method</th><th>Description</th><th>Defined By</th>
 </tr>
-        <tr id="actionCreate()">
+        <tr id="actionActualizar()">
+        <td><a href="app-controllers-eventoscontroller.html#actionActualizar()-detail">actionActualizar()</a></td>
+        <td>Actualiza las fechas de inicio y de fin de un evento cuando se arrastra a
+otra fecha.</td>
+        <td><a href="app-controllers-eventoscontroller.html">app\controllers\EventosController</a></td>
+    </tr>
+            <tr id="actionCreate()">
         <td><a href="app-controllers-eventoscontroller.html#actionCreate()-detail">actionCreate()</a></td>
         <td>Crea un nuevo evento para el equipo actual.</td>
         <td><a href="app-controllers-eventoscontroller.html">app\controllers\EventosController</a></td>
@@ -139,7 +150,7 @@ yii\web\Controller</td></tr>
 <tr>
   <th>Method</th><th>Description</th><th>Defined By</th>
 </tr>
-                                <tr id="findModel()">
+                                    <tr id="findModel()">
         <td><a href="app-controllers-eventoscontroller.html#findModel()-detail">findModel()</a></td>
         <td>Encuentra un evento buscando por su clave primaria (id).</td>
         <td><a href="app-controllers-eventoscontroller.html">app\controllers\EventosController</a></td>
@@ -155,6 +166,30 @@ yii\web\Controller</td></tr>
 
 <div class="method-doc">
 
+    <div class="detail-header h3" id="actionActualizar()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="app-controllers-eventoscontroller.html#actionActualizar()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        actionActualizar()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Actualiza las fechas de inicio y de fin de un evento cuando se arrastra a
+otra fecha.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">void</span> <strong><a href="app-controllers-eventoscontroller.html#actionActualizar()-detail">actionActualizar</a></strong> ( )</td></tr>
+            </table>
+
+<!--	-->
+
     <div class="detail-header h3" id="actionCreate()-detail">
         <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
         <a class="tool-link hash" href="app-controllers-eventoscontroller.html#actionCreate()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
@@ -169,8 +204,8 @@ yii\web\Controller</td></tr>
     <div class="doc-description">
         <p><strong>Crea un nuevo evento para el equipo actual.</strong></p>
 
-        <p>Si el evento se ha creado con exito, el navegador se redireccionará a la
-vista del equipo creado.</p>
+        <p>Si el evento se ha creado con exito, el navegador se redireccionará al
+calendario del equipo.</p>
 
             </div>
 
@@ -229,8 +264,14 @@ vista del equipo creado.</p>
             </div>
 
     <table class="detail-table table table-striped table-bordered table-hover">
-        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">mixed</span> <strong><a href="app-controllers-eventoscontroller.html#actionIndex()-detail">actionIndex</a></strong> ( )</td></tr>
-            </table>
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">mixed</span> <strong><a href="app-controllers-eventoscontroller.html#actionIndex()-detail">actionIndex</a></strong> ( <span style="color: #0000BB">$id_equipo</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$id_equipo</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.integer">integer</a></td>
+                  <td class="param-desc-col"><p>El id del equipo.</p>
+</td>
+                </tr>
+                                                </table>
 
 <!--	-->
 
@@ -397,7 +438,7 @@ a la vista del evento modificado.</p>
 </div>
 
 <footer class="footer">
-        <p class="pull-right"><small>Page generated on Wed, 17 May 2017 17:46:47 +0000</small></p>
+        <p class="pull-right"><small>Page generated on Wed, 31 May 2017 17:19:01 +0000</small></p>
     Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
 
 <script type="text/javascript">jQuery(document).ready(function () {

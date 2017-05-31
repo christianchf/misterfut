@@ -14,10 +14,10 @@
 <body>
 
 <div class="wrap">
-    <nav id="w100" class="navbar-inverse navbar-fixed-top navbar" role="navigation"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w100-collapse"><span class="sr-only">Toggle navigation</span>
+    <nav id="w130" class="navbar-inverse navbar-fixed-top navbar" role="navigation"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w130-collapse"><span class="sr-only">Toggle navigation</span>
 <span class="icon-bar"></span>
 <span class="icon-bar"></span>
-<span class="icon-bar"></span></button><a class="navbar-brand" href="./index.html">MisterFut API</a></div><div id="w100-collapse" class="collapse navbar-collapse"><ul id="w101" class="navbar-nav nav"><li><a href="./index.html">Class reference</a></li>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="./index.html">MisterFut API</a></div><div id="w130-collapse" class="collapse navbar-collapse"><ul id="w131" class="navbar-nav nav"><li><a href="./index.html">Class reference</a></li>
 <li><a href="../README.html">Guide</a></li></ul><div class="navbar-form navbar-left" role="search">
   <div class="form-group">
     <input id="searchbox" type="text" class="form-control" placeholder="Search">
@@ -32,16 +32,21 @@
     
 <div class="row">
     <div class="col-md-3">
-                <div id="navigation" class="list-group"><a class="list-group-item" href="#navigation-96" data-toggle="collapse" data-parent="#navigation">app\assets <b class="caret"></b></a><div id="navigation-96" class="submenu panel-collapse collapse"><a class="list-group-item" href="./app-assets-appasset.html">AppAsset</a></div>
-<a class="list-group-item" href="#navigation-97" data-toggle="collapse" data-parent="#navigation">app\commands <b class="caret"></b></a><div id="navigation-97" class="submenu panel-collapse collapse"><a class="list-group-item" href="./app-commands-tokencontroller.html">TokenController</a></div>
-<a class="list-group-item" href="#navigation-98" data-toggle="collapse" data-parent="#navigation">app\controllers <b class="caret"></b></a><div id="navigation-98" class="submenu panel-collapse collapse"><a class="list-group-item" href="./app-controllers-equiposcontroller.html">EquiposController</a>
+                <div id="navigation" class="list-group"><a class="list-group-item" href="#navigation-126" data-toggle="collapse" data-parent="#navigation">app\assets <b class="caret"></b></a><div id="navigation-126" class="submenu panel-collapse collapse"><a class="list-group-item" href="./app-assets-aboutasset.html">AboutAsset</a>
+<a class="list-group-item" href="./app-assets-appasset.html">AppAsset</a>
+<a class="list-group-item" href="./app-assets-calendarioasset.html">CalendarioAsset</a>
+<a class="list-group-item" href="./app-assets-historialasset.html">HistorialAsset</a>
+<a class="list-group-item" href="./app-assets-indexasset.html">IndexAsset</a></div>
+<a class="list-group-item" href="#navigation-127" data-toggle="collapse" data-parent="#navigation">app\commands <b class="caret"></b></a><div id="navigation-127" class="submenu panel-collapse collapse"><a class="list-group-item" href="./app-commands-tokencontroller.html">TokenController</a></div>
+<a class="list-group-item" href="#navigation-128" data-toggle="collapse" data-parent="#navigation">app\controllers <b class="caret"></b></a><div id="navigation-128" class="submenu panel-collapse collapse"><a class="list-group-item" href="./app-controllers-equiposcontroller.html">EquiposController</a>
 <a class="list-group-item" href="./app-controllers-eventoscontroller.html">EventosController</a>
 <a class="list-group-item" href="./app-controllers-jugadorescontroller.html">JugadoresController</a>
 <a class="list-group-item" href="./app-controllers-sitecontroller.html">SiteController</a>
 <a class="list-group-item" href="./app-controllers-usuarioscontroller.html">UsuariosController</a></div>
-<a class="list-group-item active" href="#navigation-99" data-toggle="collapse" data-parent="#navigation">app\models <b class="caret"></b></a><div id="navigation-99" class="submenu panel-collapse collapse in"><a class="list-group-item" href="./app-models-contactform.html">ContactForm</a>
+<a class="list-group-item active" href="#navigation-129" data-toggle="collapse" data-parent="#navigation">app\models <b class="caret"></b></a><div id="navigation-129" class="submenu panel-collapse collapse in"><a class="list-group-item" href="./app-models-contactform.html">ContactForm</a>
 <a class="list-group-item" href="./app-models-equipo.html">Equipo</a>
 <a class="list-group-item" href="./app-models-equiposearch.html">EquipoSearch</a>
+<a class="list-group-item" href="./app-models-event.html">Event</a>
 <a class="list-group-item" href="./app-models-evento.html">Evento</a>
 <a class="list-group-item" href="./app-models-eventosearch.html">EventoSearch</a>
 <a class="list-group-item" href="./app-models-historialsearch.html">HistorialSearch</a>
@@ -98,13 +103,14 @@ yii\db\ActiveRecord</td></tr>
         <tr id="$pass">
         <td><a href="app-models-usuario.html#$pass-detail">$pass</a></td>
         <td><a href="http://www.php.net/language.types.string">string</a></td>
-        <td></td>
+        <td>Campo de contraseña en el formulario de alta y modificación de usuarios</td>
         <td><a href="app-models-usuario.html">app\models\Usuario</a></td>
     </tr>
             <tr id="$passConfirm">
         <td><a href="app-models-usuario.html#$passConfirm-detail">$passConfirm</a></td>
         <td><a href="http://www.php.net/language.types.string">string</a></td>
-        <td></td>
+        <td>Campo de confirmación de contraseña en el formulario de alta y
+modificación de usuarios</td>
         <td><a href="app-models-usuario.html">app\models\Usuario</a></td>
     </tr>
     </table>
@@ -225,7 +231,7 @@ yii\db\ActiveRecord</td></tr>
             <tr id="ESCENARIO_CREATE">
           <td id="ESCENARIO_CREATE-detail">ESCENARIO_CREATE</td>
           <td>'create'</td>
-          <td>Escenario para cuando se crea un usuario
+          <td>
                         </td>
           <td><a href="app-models-usuario.html">app\models\Usuario</a></td>
         </tr>
@@ -247,7 +253,8 @@ yii\db\ActiveRecord</td></tr>
 
     
     <div class="doc-description">
-        
+        <p>Campo de contraseña en el formulario de alta y modificación de usuarios</p>
+
             </div>
 
     <div class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.string">string</a></span> <a href="app-models-usuario.html#$pass-detail">$pass</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">null</span></div>
@@ -264,7 +271,9 @@ yii\db\ActiveRecord</td></tr>
 
     
     <div class="doc-description">
-        
+        <p>Campo de confirmación de contraseña en el formulario de alta y
+modificación de usuarios</p>
+
             </div>
 
     <div class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.string">string</a></span> <a href="app-models-usuario.html#$passConfirm-detail">$passConfirm</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">null</span></div>
@@ -767,7 +776,7 @@ yii\db\ActiveRecord</td></tr>
 </div>
 
 <footer class="footer">
-        <p class="pull-right"><small>Page generated on Wed, 17 May 2017 17:46:47 +0000</small></p>
+        <p class="pull-right"><small>Page generated on Wed, 31 May 2017 17:19:01 +0000</small></p>
     Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
 
 <script type="text/javascript">jQuery(document).ready(function () {

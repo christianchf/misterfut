@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="language" content="en" />
+        <link href="./assets/c741c7b4/css/bootstrap.css" rel="stylesheet">
+<link href="./assets/ab1a2c87/solarized_light.css" rel="stylesheet">
+<link href="./assets/52313b09/style.css" rel="stylesheet">
+<script src="./assets/43760c1b/jquery.js"></script>
+<script src="./assets/c741c7b4/js/bootstrap.js"></script>
+<script src="./assets/39191b4e/jssearch.js"></script>    <title>Definición detallada - Catálogo de requisitos - Guía de MisterFut</title>
+</head>
+<body>
+
+<div class="wrap">
+    <nav id="w53" class="navbar-inverse navbar-fixed-top navbar" role="navigation"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w53-collapse"><span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="./index.html">Guía de MisterFut</a></div><div id="w53-collapse" class="collapse navbar-collapse"><ul id="w54" class="navbar-nav nav"><li><a href="api/index.html">Class reference</a></li>
+<li><a href="./README.html">Guide</a></li></ul><div class="navbar-form navbar-left" role="search">
+  <div class="form-group">
+    <input id="searchbox" type="text" class="form-control" placeholder="Search">
+  </div>
+</div>
+</div></nav>
+    <div id="search-resultbox" style="display: none;" class="modal-content">
+        <ul id="search-results">
+        </ul>
+    </div>
+
+    
+<div class="row">
+    <div class="col-md-2">
+                <div id="navigation" class="list-group"><a class="list-group-item" href="#navigation-44" data-toggle="collapse" data-parent="#navigation">Descripción general del proyecto <b class="caret"></b></a><div id="navigation-44" class="submenu panel-collapse collapse"><a class="list-group-item" href="./funcionalidad.html">Funcionalidad principal de la apllicación</a>
+<a class="list-group-item" href="./objetivos.html">Objetivos generales</a>
+<a class="list-group-item" href="https://github.com/christianchf/misterfut">Url del repositorio en GitHub</a>
+<a class="list-group-item" href="https://christianchf.github.io/misterfut/">Url de la documentación en GitHub Pages</a></div>
+<a class="list-group-item" href="#navigation-45" data-toggle="collapse" data-parent="#navigation">Instrucciones de instalación y despliegue <b class="caret"></b></a><div id="navigation-45" class="submenu panel-collapse collapse"><a class="list-group-item" href="./local.html">En local</a>
+<a class="list-group-item" href="./nube.html">En la nube</a></div>
+<a class="list-group-item active" href="#navigation-46" data-toggle="collapse" data-parent="#navigation">Catálogo de requisitos <b class="caret"></b></a><div id="navigation-46" class="submenu panel-collapse collapse in"><a class="list-group-item active" href="./requisitos.html">Definición detallada</a>
+<a class="list-group-item" href="./resumen.html">Cuadro resumen</a></div>
+<a class="list-group-item" href="#navigation-47" data-toggle="collapse" data-parent="#navigation">Manual básico de usuario <b class="caret"></b></a><div id="navigation-47" class="submenu panel-collapse collapse"><a class="list-group-item" href="./manual.html">Manual</a></div>
+<a class="list-group-item" href="#navigation-48" data-toggle="collapse" data-parent="#navigation">Decisiones adoptadas y su justificación <b class="caret"></b></a><div id="navigation-48" class="submenu panel-collapse collapse"><a class="list-group-item" href="./decisiones.html">Decisiones adoptadas y su justificación</a></div>
+<a class="list-group-item" href="#navigation-49" data-toggle="collapse" data-parent="#navigation">Dificultades encontradas y soluciones aplicadas <b class="caret"></b></a><div id="navigation-49" class="submenu panel-collapse collapse"><a class="list-group-item" href="./dificultades.html">Dificultades encontradas y soluciones aplicadas</a></div>
+<a class="list-group-item" href="#navigation-50" data-toggle="collapse" data-parent="#navigation">Diagramas <b class="caret"></b></a><div id="navigation-50" class="submenu panel-collapse collapse"><a class="list-group-item" href="./clases.html">De clases</a>
+<a class="list-group-item" href="./datos.html">De estructura lógica de datos</a></div>
+<a class="list-group-item" href="#navigation-51" data-toggle="collapse" data-parent="#navigation">Glosario de términos <b class="caret"></b></a><div id="navigation-51" class="submenu panel-collapse collapse"><a class="list-group-item" href="./glosario.html">Glosario de términos</a></div>
+<a class="list-group-item" href="#navigation-52" data-toggle="collapse" data-parent="#navigation">Conclusiones <b class="caret"></b></a><div id="navigation-52" class="submenu panel-collapse collapse"><a class="list-group-item" href="./consluciones.html">Conclusiones</a></div></div>    </div>
+    <div class="col-md-9 guide-content" role="main">
+        <h1>Definición detallada <span id="definicion-detallada"></span><a href="#definicion-detallada" class="hashlink">&para;</a></h1><table class="table table-bordered table-striped">
+<thead>
+<tr><th><strong>R1:</strong> </th><th>CREAR USUARIO</th></tr>
+</thead>
+<tbody>
+<tr><td>Descripción          </td><td>La aplicación permitirá a los usuarios registrarse para poder interactuar con ella.</td></tr>
+<tr><td>Prioridad            </td><td>IMPORTANTE</td></tr>
+<tr><td>Tipo                 </td><td>Funcional</td></tr>
+<tr><td>Complejidad          </td><td>Media</td></tr>
+<tr><td>Entrega planificada  </td><td>v1</td></tr>
+<tr><td>Entrega realizada    </td><td>v1</td></tr>
+<tr><td>Nº issue             </td><td>1</td></tr>
+</tbody>
+</table>
+<hr />
+<table class="table table-bordered table-striped">
+<thead>
+<tr><th><strong>R2:</strong>              </th><th>MODIFICAR USUARIO</th></tr>
+</thead>
+<tbody>
+<tr><td>Descripción          </td><td>La aplicación permitirá a cada usuario poder modificar sus propios datos, siempre y cuando este logueado (R5).</td></tr>
+<tr><td>Prioridad            </td><td>IMPORTANTE</td></tr>
+<tr><td>Tipo                 </td><td>Funcional</td></tr>
+<tr><td>Complejidad          </td><td>Media</td></tr>
+<tr><td>Entrega planificada  </td><td>v1</td></tr>
+<tr><td>Entrega realizada    </td><td>v1</td></tr>
+<tr><td>Nº issue             </td><td>2</td></tr>
+</tbody>
+</table>
+<hr />
+<table class="table table-bordered table-striped">
+<thead>
+<tr><th><strong>R3:</strong>              </th><th>BORRAR USUARIO</th></tr>
+</thead>
+<tbody>
+<tr><td>Descripción          </td><td>La aplicación permitirá, al usuario administrador, borrar a los usuarios.</td></tr>
+<tr><td>Prioridad            </td><td>IMPORTANTE</td></tr>
+<tr><td>Tipo                 </td><td>Funcional</td></tr>
+<tr><td>Complejidad          </td><td>Media</td></tr>
+<tr><td>Entrega planificada  </td><td>v1</td></tr>
+<tr><td>Entrega realizada    </td><td>v1</td></tr>
+<tr><td>Nº issue             </td><td>3</td></tr>
+</tbody>
+</table>
+<hr />
+<table class="table table-bordered table-striped">
+<thead>
+<tr><th><strong>R4:</strong>              </th><th>VER DATOS DEL USUARIO</th></tr>
+</thead>
+<tbody>
+<tr><td>Descripción          </td><td>La aplicación permitirá a cada usuario ver sus propios datos. Además, el usuario administrador podrá ver los datos de todos los usuarios.</td></tr>
+<tr><td>Prioridad            </td><td>IMPORTANTE</td></tr>
+<tr><td>Tipo                 </td><td>Funcional</td></tr>
+<tr><td>Complejidad          </td><td>Media</td></tr>
+<tr><td>Entrega planificada  </td><td>v1</td></tr>
+<tr><td>Entrega realizada    </td><td>v1</td></tr>
+<tr><td>Nº issue             </td><td>4</td></tr>
+</tbody>
+</table>
+<hr />
+<table class="table table-bordered table-striped">
+<thead>
+<tr><th><strong>R5:</strong>              </th><th>LOGIN</th></tr>
+</thead>
+<tbody>
+<tr><td>Descripción          </td><td>La aplicación permitirá a los usuarios, previamente registrados (R1), ejercer la acción de login para acceder a su sesión.</td></tr>
+<tr><td>Prioridad            </td><td>IMPORTANTE</td></tr>
+<tr><td>Tipo                 </td><td>Funcional</td></tr>
+<tr><td>Complejidad          </td><td>Media</td></tr>
+<tr><td>Entrega planificada  </td><td>v1</td></tr>
+<tr><td>Entrega realizada    </td><td>v1</td></tr>
+<tr><td>Nº issue             </td><td>5</td></tr>
+</tbody>
+</table>
+<hr />
+<table class="table table-bordered table-striped">
+<thead>
+<tr><th><strong>R6:</strong>              </th><th>LOGOUT</th></tr>
+</thead>
+<tbody>
+<tr><td>Descripción          </td><td>La aplicación permitirá a los usuarios, previamente logueados (R5), ejercer la acción de logout para cerrar su sesión.</td></tr>
+<tr><td>Prioridad            </td><td>IMPORTANTE</td></tr>
+<tr><td>Tipo                 </td><td>Funcional</td></tr>
+<tr><td>Complejidad          </td><td>Media</td></tr>
+<tr><td>Entrega planificada  </td><td>v1</td></tr>
+<tr><td>Entrega realizada    </td><td>v1</td></tr>
+<tr><td>Nº issue             </td><td>6</td></tr>
+</tbody>
+</table>
+<hr />
+<table class="table table-bordered table-striped">
+<thead>
+<tr><th><strong>R7:</strong>              </th><th>AUTOLOGIN</th></tr>
+</thead>
+<tbody>
+<tr><td>Descripción          </td><td>La aplicación permitirá a los usuarios, previamente registrados (R1), realizar la opción de autologin en el caso de que lo deseen marcando la opción de "Recordar contraseña".</td></tr>
+<tr><td>Prioridad            </td><td>IMPORTANTE</td></tr>
+<tr><td>Tipo                 </td><td>Funcional</td></tr>
+<tr><td>Complejidad          </td><td>Media</td></tr>
+<tr><td>Entrega planificada  </td><td>v1</td></tr>
+<tr><td>Entrega realizada    </td><td>v1</td></tr>
+<tr><td>Nº issue             </td><td>7</td></tr>
+</tbody>
+</table>
+<hr />
+<table class="table table-bordered table-striped">
+<thead>
+<tr><th><strong>R8:</strong>              </th><th>CREAR EQUIPO</th></tr>
+</thead>
+<tbody>
+<tr><td>Descripción          </td><td>La aplicación permitirá, a los usuarios logueados (R5), crear un equipo asociado a su cuenta.</td></tr>
+<tr><td>Prioridad            </td><td>IMPORTANTE</td></tr>
+<tr><td>Tipo                 </td><td>Funcional</td></tr>
+<tr><td>Complejidad          </td><td>Fácil</td></tr>
+<tr><td>Entrega planificada  </td><td>v1</td></tr>
+<tr><td>Entrega realizada    </td><td>v1</td></tr>
+<tr><td>Nº issue             </td><td>8</td></tr>
+</tbody>
+</table>
+<hr />
+<table class="table table-bordered table-striped">
+<thead>
+<tr><th><strong>R9:</strong>              </th><th>MODIFICAR EQUIPO</th></tr>
+</thead>
+<tbody>
+<tr><td>Descripción          </td><td>La aplicación permitirá, a los usuarios logueados (R5), modificar los datos de los equipos asociados a su cuenta.</td></tr>
+<tr><td>Prioridad            </td><td>IMPORTANTE</td></tr>
+<tr><td>Tipo                 </td><td>Funcional</td></tr>
+<tr><td>Complejidad          </td><td>Fácil</td></tr>
+<tr><td>Entrega planificada  </td><td>v1</td></tr>
+<tr><td>Entrega realizada    </td><td>v1</td></tr>
+<tr><td>Nº issue             </td><td>9</td></tr>
+</tbody>
+</table>
+<hr />
+<table class="table table-bordered table-striped">
+<thead>
+<tr><th><strong>R10:</strong>              </th><th>BORRAR EQUIPO</th></tr>
+</thead>
+<tbody>
+<tr><td>Descripción          </td><td>La aplicación permitirá, a los usuarios logueados (R5), borrar un equipo asociado a su cuenta</td></tr>
+<tr><td>Prioridad            </td><td>IMPORTANTE</td></tr>
+<tr><td>Tipo                 </td><td>Funcional</td></tr>
+<tr><td>Complejidad          </td><td>Fácil</td></tr>
+<tr><td>Entrega planificada  </td><td>v1</td></tr>
+<tr><td>Entrega realizada    </td><td>v1</td></tr>
+<tr><td>Nº issue             </td><td>10</td></tr>
+</tbody>
+</table>
+<hr />
+<table class="table table-bordered table-striped">
+<thead>
+<tr><th><strong>R11:</strong>              </th><th>VER DATOS DEL EQUIPO</th></tr>
+</thead>
+<tbody>
+<tr><td>Descripción          </td><td>La aplicación permitirá, a los usuarios logueados (R5), ver los datos de los equipo asociados a su cuenta</td></tr>
+<tr><td>Prioridad            </td><td>IMPORTANTE</td></tr>
+<tr><td>Tipo                 </td><td>Funcional</td></tr>
+<tr><td>Complejidad          </td><td>Fácil</td></tr>
+<tr><td>Entrega planificada  </td><td>v1</td></tr>
+<tr><td>Entrega realizada    </td><td>v1</td></tr>
+<tr><td>Nº issue             </td><td>11</td></tr>
+</tbody>
+</table>
+<hr />
+<table class="table table-bordered table-striped">
+<thead>
+<tr><th><strong>R12:</strong>              </th><th>CREAR JUGADORES</th></tr>
+</thead>
+<tbody>
+<tr><td>Descripción          </td><td>La aplicación permitirá, a los usuarios logueados (R5), crear jugadores asociados al equipo previamente creado (R8).</td></tr>
+<tr><td>Prioridad            </td><td>IMPORTANTE</td></tr>
+<tr><td>Tipo                 </td><td>Funcional</td></tr>
+<tr><td>Complejidad          </td><td>Media</td></tr>
+<tr><td>Entrega planificada  </td><td>v2</td></tr>
+<tr><td>Entrega realizada    </td><td>v1</td></tr>
+<tr><td>Nº issue             </td><td>19</td></tr>
+</tbody>
+</table>
+<hr />
+<table class="table table-bordered table-striped">
+<thead>
+<tr><th><strong>R13:</strong>              </th><th>MODIFICAR JUGADORES</th></tr>
+</thead>
+<tbody>
+<tr><td>Descripción          </td><td>La aplicación permitirá, a los usuarios logueados (R5), modificar los datos de los jugadores creados con anterioridad (R12)</td></tr>
+<tr><td>Prioridad            </td><td>IMPORTANTE</td></tr>
+<tr><td>Tipo                 </td><td>Funcional</td></tr>
+<tr><td>Complejidad          </td><td>Media</td></tr>
+<tr><td>Entrega planificada  </td><td>v2</td></tr>
+<tr><td>Entrega realizada    </td><td>v1</td></tr>
+<tr><td>Nº issue             </td><td>20</td></tr>
+</tbody>
+</table>
+<hr />
+<table class="table table-bordered table-striped">
+<thead>
+<tr><th><strong>R14:</strong>              </th><th>BORRAR JUGADORES</th></tr>
+</thead>
+<tbody>
+<tr><td>Descripción          </td><td>La aplicación permitirá, a los usuarios logueados (R5), borrar jugadores que estén asociados a su equipo.</td></tr>
+<tr><td>Prioridad            </td><td>IMPORTANTE</td></tr>
+<tr><td>Tipo                 </td><td>Funcional</td></tr>
+<tr><td>Complejidad          </td><td>Media</td></tr>
+<tr><td>Entrega planificada  </td><td>v2</td></tr>
+<tr><td>Entrega realizada    </td><td>v1</td></tr>
+<tr><td>Nº issue             </td><td>21</td></tr>
+</tbody>
+</table>
+<hr />
+<table class="table table-bordered table-striped">
+<thead>
+<tr><th><strong>R15:</strong>             </th><th>VER DATOS DE LOS JUGADORES</th></tr>
+</thead>
+<tbody>
+<tr><td>Descripción          </td><td>La aplicación permitirá, a los usuarios logueados (R5), ver los datos de los jugadores, creados con anterioridad (R12), que esten asociados a su equipo.</td></tr>
+<tr><td>Prioridad            </td><td>IMPORTANTE</td></tr>
+<tr><td>Tipo                 </td><td>Funcional</td></tr>
+<tr><td>Complejidad          </td><td>Media</td></tr>
+<tr><td>Entrega planificada  </td><td>v2</td></tr>
+<tr><td>Entrega realizada    </td><td>v1</td></tr>
+<tr><td>Nº issue             </td><td>22</td></tr>
+</tbody>
+</table>
+<hr />
+<table class="table table-bordered table-striped">
+<thead>
+<tr><th><strong>R16:</strong>              </th><th>CREAR EVENTOS</th></tr>
+</thead>
+<tbody>
+<tr><td>Descripción          </td><td>La aplicación permitirá, a los usuarios logueados (R5), crear eventos con una fecha a través de un calendario interactivo.</td></tr>
+<tr><td>Prioridad            </td><td>IMPORTANTE</td></tr>
+<tr><td>Tipo                 </td><td>Funcional</td></tr>
+<tr><td>Complejidad          </td><td>Difícil</td></tr>
+<tr><td>Entrega planificada  </td><td>v3</td></tr>
+<tr><td>Entrega realizada    </td><td>v2</td></tr>
+<tr><td>Nº issue             </td><td>28</td></tr>
+</tbody>
+</table>
+<hr />
+<table class="table table-bordered table-striped">
+<thead>
+<tr><th><strong>R17:</strong>             </th><th>MODIFICAR EVENTOS</th></tr>
+</thead>
+<tbody>
+<tr><td>Descripción          </td><td>La aplicación permitirá, a los usuarios logueados (R5), modificar los datos de los eventos previamente creados (R16).</td></tr>
+<tr><td>Prioridad            </td><td>IMPORTANTE</td></tr>
+<tr><td>Tipo                 </td><td>Funcional</td></tr>
+<tr><td>Complejidad          </td><td>Difícil</td></tr>
+<tr><td>Entrega planificada  </td><td>v3</td></tr>
+<tr><td>Entrega realizada    </td><td>v2</td></tr>
+<tr><td>Nº issue             </td><td>29</td></tr>
+</tbody>
+</table>
+<hr />
+<table class="table table-bordered table-striped">
+<thead>
+<tr><th><strong>R18:</strong>             </th><th>BORRAR EVENTOS</th></tr>
+</thead>
+<tbody>
+<tr><td>Descripción          </td><td>La aplicación permitirá, a los usuarios loguados (R5), borrar los eventos creados por él.</td></tr>
+<tr><td>Prioridad            </td><td>IMPORTANTE</td></tr>
+<tr><td>Tipo                 </td><td>Funcional</td></tr>
+<tr><td>Complejidad          </td><td>Difícil</td></tr>
+<tr><td>Entrega planificada  </td><td>v3</td></tr>
+<tr><td>Entrega realizada    </td><td>v2</td></tr>
+<tr><td>Nº issue             </td><td>30</td></tr>
+</tbody>
+</table>
+<hr />
+<table class="table table-bordered table-striped">
+<thead>
+<tr><th><strong>R19:</strong>             </th><th>CALENDARIO INTERACTIVO</th></tr>
+</thead>
+<tbody>
+<tr><td>Descripción          </td><td>La aplicación permitirá, a los usuarios logueados (R5), la manipulación de todos los eventos a través de un calendario interactivo.</td></tr>
+<tr><td>Prioridad            </td><td>IMPORTANTE</td></tr>
+<tr><td>Tipo                 </td><td>Funcional</td></tr>
+<tr><td>Complejidad          </td><td>Difícil</td></tr>
+<tr><td>Entrega planificada  </td><td>v3</td></tr>
+<tr><td>Entrega realizada</td></tr>
+<tr><td>Nº issue</td></tr>
+</tbody>
+</table>
+<hr />
+<table class="table table-bordered table-striped">
+<thead>
+<tr><th><strong>R20:</strong>             </th><th>ARRASTRAR EVENTOS</th></tr>
+</thead>
+<tbody>
+<tr><td>Descripción          </td><td>La aplicación permitirá, a los usuarios logueados (R5), modificar la fecha de los eventos con solo arrastrar el evento deseado de la fecha actual a la nueva fecha.</td></tr>
+<tr><td>Prioridad            </td><td>IMPORTANTE</td></tr>
+<tr><td>Tipo                 </td><td>Funcional</td></tr>
+<tr><td>Complejidad          </td><td>Difícil</td></tr>
+<tr><td>Entrega planificada  </td><td>v3</td></tr>
+<tr><td>Entrega realizada    </td><td>v3</td></tr>
+<tr><td>Nº issue             </td><td>32</td></tr>
+</tbody>
+</table>
+<hr />
+<table class="table table-bordered table-striped">
+<thead>
+<tr><th><strong>R21:</strong>             </th><th>VER EVENTOS</th></tr>
+</thead>
+<tbody>
+<tr><td>Descripción          </td><td>La aplicación permitirá, a los usuarios logueados (R5), ver los datos de los eventos previamente creados por él (R16).</td></tr>
+<tr><td>Prioridad            </td><td>IMPORTANTE</td></tr>
+<tr><td>Tipo                 </td><td>Funcional</td></tr>
+<tr><td>Complejidad          </td><td>Difícil</td></tr>
+<tr><td>Entrega planificada  </td><td>v3</td></tr>
+<tr><td>Entrega realizada    </td><td>v2</td></tr>
+<tr><td>Nº issue             </td><td>33</td></tr>
+</tbody>
+</table>
+<hr />
+<table class="table table-bordered table-striped">
+<thead>
+<tr><th><strong>R22:</strong>             </th><th>CREAR EJERCICIOS</th></tr>
+</thead>
+<tbody>
+<tr><td>Descripción          </td><td>La aplicación permitirá, a los usuarios logueados (R5), crear ejercicios de entrenamientos y planteamientos tácticos con la descripción de dicho ejercicio.</td></tr>
+<tr><td>Prioridad            </td><td>OPCIONAL</td></tr>
+<tr><td>Tipo                 </td><td>Funcional</td></tr>
+<tr><td>Complejidad          </td><td>Fácil</td></tr>
+<tr><td>Entrega planificada  </td><td>v3</td></tr>
+<tr><td>Entrega realizada    </td><td>v3</td></tr>
+<tr><td>Nº issue             </td><td>34</td></tr>
+</tbody>
+</table>
+<hr />
+<table class="table table-bordered table-striped">
+<thead>
+<tr><th><strong>R23:</strong>             </th><th>MODIFICAR EJERCICIOS</th></tr>
+</thead>
+<tbody>
+<tr><td>Descripción          </td><td>La aplicación permitirá, a los usuarios logueados (R5), modificar los datos de los ejercicios creados con anterioridad (R20).</td></tr>
+<tr><td>Prioridad            </td><td>OPCIONAL</td></tr>
+<tr><td>Tipo                 </td><td>Funcional</td></tr>
+<tr><td>Complejidad          </td><td>Fácil</td></tr>
+<tr><td>Entrega planificada  </td><td>v3</td></tr>
+<tr><td>Entrega realizada    </td><td>v3</td></tr>
+<tr><td>Nº issue             </td><td>35</td></tr>
+</tbody>
+</table>
+<hr />
+<table class="table table-bordered table-striped">
+<thead>
+<tr><th><strong>R24:</strong>             </th><th>BORRAR EJERCICIOS</th></tr>
+</thead>
+<tbody>
+<tr><td>Descripción          </td><td>La aplicación permitirá, a los usuarios logueados (R5), borrar los ejercicios creados por él.</td></tr>
+<tr><td>Prioridad            </td><td>OPCIONAL</td></tr>
+<tr><td>Tipo                 </td><td>Funcional</td></tr>
+<tr><td>Complejidad          </td><td>Fácil</td></tr>
+<tr><td>Entrega planificada  </td><td>v3</td></tr>
+<tr><td>Entrega realizada    </td><td>v3</td></tr>
+<tr><td>Nº issue             </td><td>36</td></tr>
+</tbody>
+</table>
+<hr />
+<table class="table table-bordered table-striped">
+<thead>
+<tr><th><strong>R25:</strong>             </th><th>VER DATOS DE LOS EJERCICIOS</th></tr>
+</thead>
+<tbody>
+<tr><td>Descripción          </td><td>La aplicación permitirá, a los usuarios logueados (R5), ver los datos de los ejercicios creados por él.</td></tr>
+<tr><td>Prioridad            </td><td>OPCIONAL</td></tr>
+<tr><td>Tipo                 </td><td>Funcional</td></tr>
+<tr><td>Complejidad          </td><td>Fácil</td></tr>
+<tr><td>Entrega planificada  </td><td>v3</td></tr>
+<tr><td>Entrega realizada    </td><td>v3</td></tr>
+<tr><td>Nº issue             </td><td>37</td></tr>
+</tbody>
+</table>
+<hr />
+<table class="table table-bordered table-striped">
+<thead>
+<tr><th><strong>R26:</strong>             </th><th>GENERAR PDF DEL CALENDARIO</th></tr>
+</thead>
+<tbody>
+<tr><td>Descripción          </td><td>La aplicación permitirá, a los usuarios logueados (R5), generar un documento PDF del calendario de eventos previamente creado (R16).</td></tr>
+<tr><td>Prioridad            </td><td>OPCIONAL</td></tr>
+<tr><td>Tipo                 </td><td>Funcional</td></tr>
+<tr><td>Complejidad          </td><td>Difícil</td></tr>
+<tr><td>Entrega planificada  </td><td>v3</td></tr>
+<tr><td>Entrega realizada    </td><td>v3</td></tr>
+<tr><td>Nº issue             </td><td>38</td></tr>
+</tbody>
+</table>
+<hr />
+<table class="table table-bordered table-striped">
+<thead>
+<tr><th><strong>R27:</strong>             </th><th>ENVIAR CORREO</th></tr>
+</thead>
+<tbody>
+<tr><td>Descripción          </td><td>La aplicación permitirá, a cualquier usuario, enviar un correo sobre consultas o sugerencias, a través de un formulario de contacto.</td></tr>
+<tr><td>Prioridad            </td><td>IMPORTANTE</td></tr>
+<tr><td>Tipo                 </td><td>Funcional</td></tr>
+<tr><td>Complejidad          </td><td>Fácil</td></tr>
+<tr><td>Entrega planificada  </td><td>v2</td></tr>
+<tr><td>Entrega realizada    </td><td>v1</td></tr>
+<tr><td>Nº issue             </td><td>23</td></tr>
+</tbody>
+</table>
+<hr />
+<table class="table table-bordered table-striped">
+<thead>
+<tr><th><strong>R51:</strong>             </th><th>GUARDAR VARIABLE DE SESION EN LA BASE DE DATOS</th></tr>
+</thead>
+<tbody>
+<tr><td>Descripción          </td><td>La aplicación guardara las variables de sesión en la base de datos.</td></tr>
+<tr><td>Prioridad            </td><td>OPCIONAL</td></tr>
+<tr><td>Tipo                 </td><td>Técnico</td></tr>
+<tr><td>Complejidad          </td><td>Media</td></tr>
+<tr><td>Entrega planificada  </td><td>v1</td></tr>
+<tr><td>Entrega realizada    </td><td>v1</td></tr>
+<tr><td>Nº issue             </td><td>17</td></tr>
+</tbody>
+</table>
+<hr />
+<table class="table table-bordered table-striped">
+<thead>
+<tr><th><strong>R52:</strong>             </th><th>HISTORIAL DE EQUIPOS</th></tr>
+</thead>
+<tbody>
+<tr><td>Descripción          </td><td>La aplicación permitirá, a los usuarios logueados (R5), ver un historial de todos los equipos que ha entrenado, independientemente del número de temporadas que haya estado entrenando a cada equipo.</td></tr>
+<tr><td>Prioridad            </td><td>OPCIONAL</td></tr>
+<tr><td>Tipo                 </td><td>Funcional</td></tr>
+<tr><td>Complejidad          </td><td>Media</td></tr>
+<tr><td>Entrega planificada  </td><td>v2</td></tr>
+<tr><td>Entrega realizada    </td><td>v2</td></tr>
+<tr><td>Nº issue             </td><td>52</td></tr>
+</tbody>
+</table>
+<hr />
+<table class="table table-bordered table-striped">
+<thead>
+<tr><th><strong>R53:</strong>             </th><th>REGISTRO HISTÓRICO DE TEMPORADAS</th></tr>
+</thead>
+<tbody>
+<tr><td>Descripción          </td><td>La aplicación permitirá, a los usuarios logueados (R5), ver un registro histórico de las estadísticas por temporada de cada uno de sus equipo.</td></tr>
+<tr><td>Prioridad            </td><td>OPCIONAL</td></tr>
+<tr><td>Tipo                 </td><td>Funcional</td></tr>
+<tr><td>Complejidad          </td><td>Media</td></tr>
+<tr><td>Entrega planificada  </td><td>v2</td></tr>
+<tr><td>Entrega realizada    </td><td>v2</td></tr>
+<tr><td>Nº issue             </td><td>53</td></tr>
+</tbody>
+</table>
+<hr />
+<table class="table table-bordered table-striped">
+<thead>
+<tr><th><strong>R54:</strong>             </th><th>TRASPASAR JUGADORES</th></tr>
+</thead>
+<tbody>
+<tr><td>Descripción          </td><td>La aplicación permitirá, a los usuarios logueados (R5), realizar un traspaso masivo de toda la plantilla de uno de los equipos del usuario logueado a otro de los equipos del mismo.</td></tr>
+<tr><td>Prioridad            </td><td>OPCIONAL</td></tr>
+<tr><td>Tipo                 </td><td>Funcional</td></tr>
+<tr><td>Complejidad          </td><td>Difícil</td></tr>
+<tr><td>Entrega planificada  </td><td>v2</td></tr>
+<tr><td>Entrega realizada    </td><td>v2</td></tr>
+<tr><td>Nº issue             </td><td>54</td></tr>
+</tbody>
+</table>
+<hr />
+<table class="table table-bordered table-striped">
+<thead>
+<tr><th><strong>R55:</strong>             </th><th>RECUPERAR CONTRASEÑA</th></tr>
+</thead>
+<tbody>
+<tr><td>Descripción          </td><td>La aplicación permitirá a los usuarios que estén registrados (R1) la opción de recuperar su contraseña, mediante su correo electrónico, si la han olvidado.</td></tr>
+<tr><td>Prioridad            </td><td>OPCIONAL</td></tr>
+<tr><td>Tipo                 </td><td>Funcional</td></tr>
+<tr><td>Complejidad          </td><td>Difícil</td></tr>
+<tr><td>Entrega planificada  </td><td>v2</td></tr>
+<tr><td>Entrega realizada    </td><td>v2</td></tr>
+<tr><td>Nº issue             </td><td>55</td></tr>
+</tbody>
+</table>
+<hr />
+<table class="table table-bordered table-striped">
+<thead>
+<tr><th><strong>R56:</strong>             </th><th>LISTA DE LESIONADOS</th></tr>
+</thead>
+<tbody>
+<tr><td>Descripción          </td><td>La aplicación permitirá a los usuarios logueados (R5), ver un listado de los jugadores de su equipo que están lesionados.</td></tr>
+<tr><td>Prioridad            </td><td>OPCIONAL</td></tr>
+<tr><td>Tipo                 </td><td>Funcional</td></tr>
+<tr><td>Complejidad          </td><td>Media</td></tr>
+<tr><td>Entrega planificada  </td><td>v2</td></tr>
+<tr><td>Entrega realizada    </td><td>v2</td></tr>
+<tr><td>Nº issue             </td><td>56</td></tr>
+</tbody>
+</table>
+<hr />
+<table class="table table-bordered table-striped">
+<thead>
+<tr><th><strong>R57:</strong>             </th><th>AÑADIR NUEVA TEMPORADA A UN EQUIPO</th></tr>
+</thead>
+<tbody>
+<tr><td>Descripción          </td><td>La aplicación permitirá, a los usuarios logueados (R5), añadir una nueva temporada a un equipo para mantener los datos del equipo en cada temporada.</td></tr>
+<tr><td>Prioridad            </td><td>OPCIONAL</td></tr>
+<tr><td>Tipo                 </td><td>Funcional</td></tr>
+<tr><td>Complejidad          </td><td>Difícil</td></tr>
+<tr><td>Entrega planificada  </td><td>v2</td></tr>
+<tr><td>Entrega realizada    </td><td>v2</td></tr>
+<tr><td>Nº issue             </td><td>57</td></tr>
+</tbody>
+</table>
+<hr />
+<table class="table table-bordered table-striped">
+<thead>
+<tr><th><strong>R58:</strong>             </th><th>LISTA DE SANCIONADOS</th></tr>
+</thead>
+<tbody>
+<tr><td>Descripción          </td><td>La aplicación permitirá, a los usuarios logueados (R5), ver un listado de los jugadores de su equipo que están sancionados.</td></tr>
+<tr><td>Prioridad            </td><td>OPCIONAL</td></tr>
+<tr><td>Tipo                 </td><td>Funcional</td></tr>
+<tr><td>Complejidad          </td><td>Media</td></tr>
+<tr><td>Entrega planificada  </td><td>v3</td></tr>
+<tr><td>Entrega realizada    </td><td>v3</td></tr>
+<tr><td>Nº issue             </td><td>58</td></tr>
+</tbody>
+</table>
+        <div class="toplink"><a href="#" class="h1" title="go to top"><span class="glyphicon glyphicon-arrow-up"></a></div>
+    </div>
+</div>
+
+
+</div>
+
+<footer class="footer">
+        <p class="pull-right"><small>Page generated on Wed, 31 May 2017 17:19:01 +0000</small></p>
+    Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
+
+<script type="text/javascript">jQuery(document).ready(function () {
+    var shiftWindow = function () { scrollBy(0, -50) };
+    if (location.hash) setTimeout(shiftWindow, 1);
+    window.addEventListener("hashchange", shiftWindow);
+var element = document.createElement("script");
+element.src = "./jssearch.index.js";
+document.body.appendChild(element);
+
+var searchBox = $('#searchbox');
+
+// search when typing in search field
+searchBox.on("keyup", function(event) {
+    var query = $(this).val();
+
+    if (query == '' || event.which == 27) {
+        $('#search-resultbox').hide();
+        return;
+    } else if (event.which == 13) {
+        var selectedLink = $('#search-resultbox a.selected');
+        if (selectedLink.length != 0) {
+            document.location = selectedLink.attr('href');
+            return;
+        }
+    } else if (event.which == 38 || event.which == 40) {
+        $('#search-resultbox').show();
+
+        var selected = $('#search-resultbox a.selected');
+        if (selected.length == 0) {
+            $('#search-results').find('a').first().addClass('selected');
+        } else {
+            var next;
+            if (event.which == 40) {
+                next = selected.parent().next().find('a').first();
+            } else {
+                next = selected.parent().prev().find('a').first();
+            }
+            if (next.length != 0) {
+                var resultbox = $('#search-results');
+                var position = next.position();
+
+//              TODO scrolling is buggy and jumps around
+//                resultbox.scrollTop(Math.floor(position.top));
+//                console.log(position.top);
+
+                selected.removeClass('selected');
+                next.addClass('selected');
+            }
+        }
+
+        return;
+    }
+    $('#search-resultbox').show();
+    $('#search-results').html('<li><span class="no-results">No results</span></li>');
+
+    var result = jssearch.search(query);
+
+    if (result.length > 0) {
+        var i = 0;
+        var resHtml = '';
+
+        for (var key in result) {
+            if (i++ > 20) {
+                break;
+            }
+            resHtml = resHtml +
+            '<li><a href="' + result[key].file.u.substr(3) +'"><span class="title">' + result[key].file.t + '</span>' +
+            '<span class="description">' + result[key].file.d + '</span></a></li>';
+        }
+        $('#search-results').html(resHtml);
+    }
+});
+
+// hide the search results on ESC
+$(document).on("keyup", function(event) { if (event.which == 27) { $('#search-resultbox').hide(); } });
+// hide search results on click to document
+$(document).bind('click', function (e) { $('#search-resultbox').hide(); });
+// except the following:
+searchBox.bind('click', function(e) { e.stopPropagation(); });
+$('#search-resultbox').bind('click', function(e) { e.stopPropagation(); });
+
+});</script></body>
+</html>
