@@ -29,3 +29,5 @@ exclude_paths:
 - tests/
 - docs/
 - requirements.php
+- web/js/fullcalendar
+- web/js/slick

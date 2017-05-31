@@ -40,7 +40,13 @@ AppAsset::register($this);
     <?php if (!$model->isNewRecord) { ?>
         <?= $form->field($model, 'esta_lesionado')->checkbox() ?>
 
-        <?= $form->field($model, 'tiempo_lesion')->textInput(['maxlength' => true]) ?>
+        <?= $form->field($model, 'fecha_alta')->widget(DatePicker::classname(), [
+            'options' => ['placeholder' => 'Introduzca la fecha prevista de alta'],
+            'pluginOptions' => [
+                'autoclose'=>true,
+                'format' => 'yyyy-mm-dd',
+            ]
+        ]); ?>
 
         <?= $form->field($model, 'esta_sancionado')->checkbox() ?>
 

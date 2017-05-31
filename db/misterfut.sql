@@ -57,7 +57,7 @@ create table jugadores (
     asistencias       numeric(3)   default 0,
     goles_por_partido numeric(4,2) default 0,
     esta_lesionado    boolean      default false,
-    tiempo_lesion     varchar(100) default('0 dias'),
+    fecha_alta        date         default current_date + interval '1 day',
     esta_sancionado   boolean      default false,
     id_equipo         bigint       not null constraint fk_jugadores_equipos
                                            references equipos (id)

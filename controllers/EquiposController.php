@@ -177,6 +177,17 @@ class EquiposController extends Controller
             'pagination' => false,
             'sort' => false,
         ]);
+        $jugadoresLesionados = Jugador::find()
+                ->where(['and', ['id_equipo' => $id], ['esta_lesionado' => 'true']])
+                ->all();
+        foreach ($jugadoresLesionados as $lesionado) {
+            if ($lesionado->diasLesion == 0) {
+                $lesionado->esta_lesionado = false;
+                $lesionado->save();
+            }
+        }
+        $lesionados->refresh();
+
         $sancionados = new ActiveDataProvider([
             'query' => Jugador::find()
                     ->where(['and', ['id_equipo' => $id], ['esta_sancionado' => 'true']])

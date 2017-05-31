@@ -17,7 +17,8 @@ $attributes = [
     'esta_sancionado:boolean',
 ];
 if ($model->esta_lesionado) {
-    $attributes[] = 'tiempo_lesion';
+    $attributes[] = 'fecha_alta:date';
+    $attributes[] = 'diasLesion';
 }
 
 $this->title = $model->nombre;

@@ -21,6 +21,10 @@ article img:hover {
     animation: 5s linear infinite rotacion;
 }
 
+article ul li {
+    list-style-image: url("/images/pelota-icono.gif");
+}
+
 @keyframes rotacion {
     0% {transform: rotate(0deg);}
     100% {transform: rotate(360deg);}

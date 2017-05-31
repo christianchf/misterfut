@@ -19,7 +19,7 @@ use DateTime;
  * @property integer $id_equipo
  * @property integer $id_posicion
  * @property boolean $esta_lesionado
- * @property string $tiempo_lesion
+ * @property string $fecha_alta
  * @property boolean $esta_sancionado
  *
  * @property Equipos $idEquipo
@@ -44,14 +44,15 @@ class Jugador extends \yii\db\ActiveRecord
     {
         return [
             [['nombre', 'fecha_nac', 'dorsal', 'id_equipo', 'id_posicion'], 'required'],
-            [['fecha_nac'], 'safe'],
+            [['fecha_nac','fecha_alta'], 'safe'],
             [['dorsal', 'partidos_jugados', 'goles_marcados', 'goles_encajados', 'asistencias', 'goles_por_partido'], 'number'],
             [['id_equipo', 'id_posicion'], 'integer'],
             [['esta_lesionado', 'esta_sancionado'], 'boolean'],
-            [['nombre', 'tiempo_lesion'], 'string', 'max' => 100],
+            [['nombre'], 'string', 'max' => 100],
             [['id_equipo'], 'exist', 'skipOnError' => true, 'targetClass' => Equipo::className(), 'targetAttribute' => ['id_equipo' => 'id']],
             [['id_posicion'], 'exist', 'skipOnError' => true, 'targetClass' => Posicion::className(), 'targetAttribute' => ['id_posicion' => 'id']],
             [['fecha_nac'], 'date', 'format'=>'php:Y-m-d'],
+            [['fecha_alta'], 'date', 'format'=>'php:Y-m-d'],
         ];
     }
 
@@ -74,9 +75,10 @@ class Jugador extends \yii\db\ActiveRecord
             'id_posicion' => 'Posición',
             'goles_por_partido' => 'Goles por partido',
             'esta_lesionado' => 'Lesionado',
-            'tiempo_lesion' => 'Tiempo de lesión',
+            'fecha_alta' => 'Fecha prevista de alta médica',
             'esta_sancionado' => 'Sancionado',
             'edad' => 'Edad',
+            'diasLesion' => 'Dias restantes de lesión',
         ];
     }
 
@@ -131,6 +133,20 @@ class Jugador extends \yii\db\ActiveRecord
         $fechaActual = new DateTime();
         $fechaNac = new DateTime($this->fecha_nac);
         $edad = $fechaActual->diff($fechaNac)->y;
+
         return $edad;
+    }
+
+    /**
+     * Devuelve el numero de dias de lesión que le quedan al jugador.
+     * @return int El número de dias de lesión.
+     */
+    public function getDiasLesion()
+    {
+        $fechaActual = new DateTime();
+        $fechaAlta = new DateTime($this->fecha_alta);
+        $dias = ($fechaActual->diff($fechaAlta)->d) + 1;
+
+        return $dias;
     }
 }

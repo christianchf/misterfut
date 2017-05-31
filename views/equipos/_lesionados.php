@@ -24,8 +24,13 @@ AppAsset::register($this);
         ],
         'nombre',
         'dorsal',
-        'edad',
         'fecha_nac:date',
+        'edad',
+        'fecha_alta:date',
+        [
+            'label' => 'Dias restantes de lesión',
+            'attribute' => 'diasLesion',
+        ],
 
         [
             'class' => 'yii\grid\ActionColumn',
