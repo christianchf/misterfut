@@ -1,21 +1,43 @@
-MisterFut
-============================
+![Logo](/images/logo.png) **MisterFut**
+===========
+Descripción general del proyecto
+--------------------------------
+*   [Funcionalidad principal de la apllicación](funcionalidad.md)
+*   [Objetivos generales](objetivos.md)
+*   [Url del repositorio en GitHub](https://github.com/christianchf/misterfut)
+*   [Url de la documentación en GitHub Pages](https://christianchf.github.io/misterfut/)
 
-La principal función de la aplicación es la de llevar la gestión y la organización de un
-equipo de fútbol por parte de su entrenador.
+Instrucciones de instalación y despliegue
+-----------------------------------------
+*   [En local](local.md)
+*   [En la nube](nube.md)
 
-En la aplicación los usuarios se podrán registrar y llevar una gestión tanto de la
-temporada del equipo, como de los datos y estadísticas de los jugadores de su equipo, y,
-opcionalmente, tener organizados todos los ejercicios y planteamientos tácticos de los
-entrenamientos.
+Catálogo de requisitos
+-----------------------
+*   [Definición detallada](requisitos.md)
+*   [Cuadro resumen](resumen.md)
 
-Ademas, la aplicación dispondrá de un calendario con el que el usuario podrá interactuar
-y añadir eventos como los partidos y los entrenamientos.
+Manual básico de usuario
+------------------------
+*   [Manual](manual.md)
 
-Por ultimo, en la aplicación también existirá la opción de gestionar a los usuarios
-registrados por parte de un usuario administrador.
+Decisiones adoptadas y su justificación
+---------------------------------------
+*   [Decisiones adoptadas y su justificación](decisiones.md)
 
-[Web Oficial](http://misterfut.herokuapp.com/)
-[Documentación Oficial](https://christianchf.github.io/misterfut/)
+Dificultades encontradas y soluciones aplicadas
+-----------------------------------------------
+*   [Dificultades encontradas y soluciones aplicadas](dificultades.md)
 
-Desarrollado por: Christian Hidalgo Ferrero.
+Diagramas
+---------
+*   [De clases](clases.md)
+*   [De estructura lógica de datos](datos.md)
+
+Glosario de términos
+--------------------
+*   [Glosario de términos](glosario.md)
+
+Conclusiones
+------------
+*   [Conclusiones](consluciones.md)
