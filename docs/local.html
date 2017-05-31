@@ -46,7 +46,7 @@
 <a class="list-group-item" href="#navigation-6" data-toggle="collapse" data-parent="#navigation">Diagramas <b class="caret"></b></a><div id="navigation-6" class="submenu panel-collapse collapse"><a class="list-group-item" href="./clases.html">De clases</a>
 <a class="list-group-item" href="./datos.html">De estructura lógica de datos</a></div>
 <a class="list-group-item" href="#navigation-7" data-toggle="collapse" data-parent="#navigation">Glosario de términos <b class="caret"></b></a><div id="navigation-7" class="submenu panel-collapse collapse"><a class="list-group-item" href="./glosario.html">Glosario de términos</a></div>
-<a class="list-group-item" href="#navigation-8" data-toggle="collapse" data-parent="#navigation">Conclusiones <b class="caret"></b></a><div id="navigation-8" class="submenu panel-collapse collapse"><a class="list-group-item" href="./consluciones.html">Conclusiones</a></div></div>    </div>
+<a class="list-group-item" href="#navigation-8" data-toggle="collapse" data-parent="#navigation">Conclusiones <b class="caret"></b></a><div id="navigation-8" class="submenu panel-collapse collapse"><a class="list-group-item" href="./concluciones.html">Conclusiones</a></div></div>    </div>
     <div class="col-md-9 guide-content" role="main">
         <h1>Instrucciones de instalación en local <span id="instrucciones-de-instalacion-en-local"></span><a href="#instrucciones-de-instalacion-en-local" class="hashlink">&para;</a></h1><p>Para la instalación de la aplicación en local son necesarios una serie de requisitos:</p>
 <ul>
@@ -62,19 +62,15 @@
 <li><p>Instalar <code>composer</code>.</p>
 </li>
 <li><p>Realizar los siguientes comandos en consola:
-<code>`</code>zsh
-git clone <a href="https://github.com/christianchf/misterfut.git">https://github.com/christianchf/misterfut.git</a>
+<code>git clone https://github.com/christianchf/misterfut.git
 cd misterfut
 composer install
-composer run-script post-create-project-cmd
-<code>`</code></p>
+composer run-script post-create-project-cmd</code></p>
 </li>
 <li><p>Instalar <em>PostgreSQL</em> y ejecutar los siguientes comandos desde la raiz del proyecto:
-<code>`</code>zsh
-cd db
+<code>cd db
 ./create.sh
-./load.sh
-<code>`</code>
+./load.sh</code>
 &gt; Después de realizar estos comandos se habrá creado una base de datos llamada <code>misterfut</code> con un usuario <code>misterfut</code> y contraseña <code>misterfut</code>.</p>
 </li>
 <li><p>Cambiar la siguiente configuración dentro del proyecto:</p>
@@ -96,7 +92,7 @@ cd db
 </div>
 
 <footer class="footer">
-        <p class="pull-right"><small>Page generated on Wed, 31 May 2017 17:19:01 +0000</small></p>
+        <p class="pull-right"><small>Page generated on Wed, 31 May 2017 17:28:42 +0000</small></p>
     Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
 
 <script type="text/javascript">jQuery(document).ready(function () {
