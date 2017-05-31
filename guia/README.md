@@ -1,4 +1,4 @@
-![Logo](/images/logo.png) **MisterFut**
+![Logo](images/logo.png) **MisterFut**
 ===========
 Descripción general del proyecto
 --------------------------------
@@ -40,4 +40,4 @@ Glosario de términos
 
 Conclusiones
 ------------
-*   [Conclusiones](consluciones.md)
+*   [Conclusiones](concluciones.md)

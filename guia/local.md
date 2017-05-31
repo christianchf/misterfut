@@ -15,7 +15,7 @@ Una vez cumplidos estos requisitos deberas realizar los siguientes pasos para ll
 2.  Instalar `composer`.
 
 3.  Realizar los siguientes comandos en consola:
-```zsh
+```
 git clone https://github.com/christianchf/misterfut.git
 cd misterfut
 composer install
@@ -23,7 +23,7 @@ composer run-script post-create-project-cmd
 ```
 
 4.  Instalar *PostgreSQL* y ejecutar los siguientes comandos desde la raiz del proyecto:
-```zsh
+```
 cd db
 ./create.sh
 ./load.sh

@@ -11,7 +11,7 @@ Para la instalación de la aplicación en la nube Heroku seran necesarios realiz
 3.  Añadir el addon heroku-postgresql y crear la base de datos de la aplicación en la nube.
 
 4.  Ejecutar los siguientes comandos:
-```zsh
+```
 cd misterfut
 heroku login
 heroku git:remote -a nombre_aplicacion_heroku
