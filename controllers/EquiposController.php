@@ -375,7 +375,7 @@ class EquiposController extends Controller
     }
 
     /**
-     * Borra un equiop existente.
+     * Borra un equipo existente.
      * Si el borrado se ha realizado con exito, el navegador redireccionará a la
      * página índice de los equipos del usuario.
      * @param int $id El id del equipo que se desea borrar.

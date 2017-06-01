@@ -38,6 +38,7 @@ AppAsset::register($this);
             <ul class="navbar-nav navbar-left no-hover nav">
                 <li><?= Html::a('Mis equipos <span class="glyphicon glyphicon-list-alt"></span>', ['/equipos/index']) ?></li>
                 <li><?= Html::a('Historial de equipos <span class="glyphicon glyphicon-folder-open"></span>', ['/equipos/historial']) ?></li>
+                <li><?= Html::a('Ejercicios <span class="glyphicon glyphicon-blackboard"></span>', ['/ejercicios/index']) ?></li>
             </ul>
         </div>
     </nav>
@@ -46,6 +47,7 @@ AppAsset::register($this);
             <ul id="lista-menu2" class="navbar-nav navbar-left no-hover nav">
                 <li><?= Html::a('<span class="glyphicon glyphicon-list-alt"></span>', ['/equipos/index']) ?></li>
                 <li><?= Html::a('<span class="glyphicon glyphicon-folder-open"></span>', ['/equipos/historial']) ?></li>
+                <li><?= Html::a('<span class="glyphicon glyphicon-blackboard"></span>', ['/ejercicios/index']) ?></li>
             </ul>
         </div>
     </nav>

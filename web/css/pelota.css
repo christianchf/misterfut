@@ -1,9 +1,9 @@
 /*Animaciones para la pelota*/
 
 .ball-animation {
-    font-size: .9px;
-    width: 38em;
-    height: 38em;
+    font-size: .8px;
+    width: 35em;
+    height: 35em;
     border-radius: 50%;
     position: absolute;
     -webkit-animation: 2s linear 0s normal forwards infinite bouncing-ball;
@@ -101,7 +101,7 @@
     100% {top: 490em;left: 820em;transform: none;}
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1200px) {
     #pelota {
         display: none;
     }

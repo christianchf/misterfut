@@ -82,3 +82,18 @@ create table eventos (
                                        references equipos (id)
                                        on delete cascade on update cascade
 );
+
+drop table if exists ejercicios cascade;
+
+create table ejercicios (
+    id            bigserial   constraint pk_ejercicios primary key,
+    id_usuario    bigint      constraint fk_ejercicios_usuarios
+                              references usuarios (id)
+                              on delete cascade on update cascade,
+    nombre        varchar(100) not null,
+    tipo          varchar(100) not null,
+    descripcion   text         not null,
+    num_jugadores int,
+    material      text,
+    dimensiones   varchar(100)
+);

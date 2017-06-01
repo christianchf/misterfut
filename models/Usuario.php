@@ -85,9 +85,17 @@ class Usuario extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
     }
 
     /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getEjercicios()
+    {
+        return $this->hasMany(Ejercicio::className(), ['id_usuario' => 'id'])->inverseOf('idUsuario');
+    }
+
+    /**
      * Encuentra una identidad mediante el ID determinado.
      * @param int $id El id a buscar
-     * @return yii\web\IdentityInterface El objeto que coincide con el id dado.
+     * @return \yii\web\IdentityInterface El objeto que coincide con el id dado.
      */
     public static function findIdentity($id)
     {
@@ -98,7 +106,7 @@ class Usuario extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
      * Encuentra una identidad por el token dado.
      * @param mixed $token El token a buscar
      * @param mixed $type  El tipo del token
-     * @return yii\web\IdentityInterface El objeto que coincide con el token dado.
+     * @return \yii\web\IdentityInterface El objeto que coincide con el token dado.
      */
     public static function findIdentityByAccessToken($token, $type = null)
     {
@@ -145,7 +153,7 @@ class Usuario extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
     /**
      * Valida la clave de autenticación dada.
      * @param  string $authKey La clave de autenticación dada.
-     * @return boolean True si la clave de autenticación dada es válida.
+     * @return bool True si la clave de autenticación dada es válida.
      */
     public function validateAuthKey($authKey)
     {

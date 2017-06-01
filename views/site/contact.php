@@ -26,7 +26,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <p>Gracias.</p>
 
         <div class="row">
-            <div class="col-lg-5">
+            <div class="col-md-5">
 
                 <?php $form = ActiveForm::begin(['id' => 'contact-form']); ?>
 
@@ -49,7 +49,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 <?php ActiveForm::end(); ?>
 
             </div>
-            <div id="pelota" class="col-lg-5">
+            <div id="pelota" class="col-md-4">
                 <div class="ball-animation">
                     <div class="ball-decoration"></div>
                 </div>
