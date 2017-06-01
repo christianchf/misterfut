@@ -46,3 +46,15 @@ insert into jugadores(nombre,fecha_nac,dorsal,id_equipo,id_posicion)
             ('Juan Gutierrez', '1988-10-20',2,3,4),
             ('Isaac Perez', '1986-01-03',3,3,9),
             ('Iñigo Arrizabalaga', '1987-11-23',9,3,16);
+
+insert into eventos (tipo, nombre, fecha_inicio, hora_inicio, fecha_fin, hora_fin, id_equipo)
+    values  ('Partido', 'Real Madrid vs Malaga', '2017-06-10', '20:00', '2017-06-10', '22:00', 1),
+            ('Partido', 'Juventus vs Real Madrid', '2017-06-15', '17:30', '2017-06-15', '18:20', 1),
+            ('Entrenamiento', 'Entrenamiento físico', '2017-06-03', '09:00', '2017-06-03', '11:30', 1),
+            ('Entrenamiento', 'Entrenamiento táctico', '2017-06-04', '08:00', '2017-06-04', '10:30', 1),
+            ('Entrenamiento', 'Entrenamiento físico', '2017-06-07', '10:00', '2017-06-07', '11:30', 1),
+            ('Entrenamiento', 'Entrenamiento físico', '2017-06-14', '09:00', '2017-06-14', '10:30', 1),
+            ('Entrenamiento', 'Entrenamiento táctico', '2017-06-14', '10:30', '2017-06-14', '12:30', 1),
+            ('Evento publicitario', 'Adidas', '2017-06-25', '19:00', '2017-06-25', '21:00', 1),
+            ('Evento publicitario', 'Microsoft', '2017-06-30', '12:00', '2017-06-30', '13:30', 1),
+            ('Otros', 'Celebración Champions', '2017-06-15', '18:30', '2017-06-15', '23:00', 1);
