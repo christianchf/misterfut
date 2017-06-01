@@ -8,12 +8,13 @@ use yii\data\ActiveDataProvider;
 use app\models\Ejercicio;
 
 /**
- * EjercicioSearch represents the model behind the search form about `app\models\Ejercicio`.
+ * EjercicioSearch representa el modelo para el formulario de búsqueda sobre `app\models\Ejercicio`.
  */
 class EjercicioSearch extends Ejercicio
 {
     /**
-     * @inheritdoc
+     * Devuelve las reglas de validación de los atributos.
+     * @return array Las reglas de validación.
      */
     public function rules()
     {
@@ -24,7 +25,8 @@ class EjercicioSearch extends Ejercicio
     }
 
     /**
-     * @inheritdoc
+     * Devuelve una lista de escenarios y los atributos activos correspondientes.
+     * @return mixed
      */
     public function scenarios()
     {
@@ -33,7 +35,7 @@ class EjercicioSearch extends Ejercicio
     }
 
     /**
-     * Creates data provider instance with search query applied
+     * Crea una instancia de dataprovider con la consulta de búsqueda aplicada.
      *
      * @param array $params
      *
@@ -43,8 +45,6 @@ class EjercicioSearch extends Ejercicio
     {
         $query = Ejercicio::find()->where(['id_usuario' => Yii::$app->user->id]);
 
-        // add conditions that should always apply here
-
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
         ]);
@@ -52,12 +52,9 @@ class EjercicioSearch extends Ejercicio
         $this->load($params);
 
         if (!$this->validate()) {
-            // uncomment the following line if you do not want to return any records when validation fails
-            // $query->where('0=1');
             return $dataProvider;
         }
 
-        // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
             'id_usuario' => $this->id_usuario,
