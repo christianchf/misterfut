@@ -46,7 +46,7 @@ class Event extends Model
      */
     public $color;
     /**
-     * @var bool
+     * @var bool Indica si la duración del evento es editable.
      */
     public $durationEditable;
 
