@@ -40,4 +40,4 @@ Glosario de términos
 
 Conclusiones
 ------------
-*   [Conclusiones](concluciones.md)
+*   [Conclusiones](conclusiones.md)
