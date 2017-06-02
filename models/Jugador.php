@@ -143,9 +143,9 @@ class Jugador extends \yii\db\ActiveRecord
      */
     public function getDiasLesion()
     {
-        $fechaActual = new DateTime();
+        $fechaActual = new DateTime(date('Y-m-d'));
         $fechaAlta = new DateTime($this->fecha_alta);
-        $dias = ($fechaActual->diff($fechaAlta)->d) + 1;
+        $dias = $fechaAlta->diff($fechaActual)->days;
 
         return $dias;
     }

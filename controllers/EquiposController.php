@@ -3,6 +3,7 @@
 namespace app\controllers;
 
 use Yii;
+use DateTime;
 use app\models\Equipo;
 use app\models\Jugador;
 use app\models\Posicion;
@@ -173,7 +174,7 @@ class EquiposController extends Controller
         $lesionados = new ActiveDataProvider([
             'query' => Jugador::find()
                     ->where(['and', ['id_equipo' => $id], ['esta_lesionado' => 'true']])
-                    ->orderBy(['id_posicion' => SORT_ASC, 'nombre' => SORT_ASC]),
+                    ->orderBy(['fecha_alta' => SORT_ASC, 'id_posicion' => SORT_ASC, 'nombre' => SORT_ASC]),
             'pagination' => false,
             'sort' => false,
         ]);
@@ -181,8 +182,11 @@ class EquiposController extends Controller
                 ->where(['and', ['id_equipo' => $id], ['esta_lesionado' => 'true']])
                 ->all();
         foreach ($jugadoresLesionados as $lesionado) {
-            if ($lesionado->diasLesion == 0) {
+            $fechaActual = new DateTime(date('Y-m-d'));
+            $fechaAlta = new DateTime($lesionado->fecha_alta);
+            if ($fechaActual >= $fechaAlta) {
                 $lesionado->esta_lesionado = false;
+                $lesionado->fecha_alta = null;
                 $lesionado->save();
             }
         }
