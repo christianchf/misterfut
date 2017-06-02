@@ -53,6 +53,12 @@ class Jugador extends \yii\db\ActiveRecord
             [['id_posicion'], 'exist', 'skipOnError' => true, 'targetClass' => Posicion::className(), 'targetAttribute' => ['id_posicion' => 'id']],
             [['fecha_nac'], 'date', 'format'=>'php:Y-m-d'],
             [['fecha_alta'], 'date', 'format'=>'php:Y-m-d'],
+            [['fecha_alta'], 'required', 'when' => function () {
+                return $this->esta_lesionado;
+            }, 'whenClient' => 'function (attribute, value) {
+                return $(".field-jugador-fecha_alta").is(":visible");
+            }'],
+
         ];
     }
 

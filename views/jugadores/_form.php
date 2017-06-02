@@ -11,6 +11,11 @@ use yii\widgets\ActiveForm;
 /* @var $form yii\widgets\ActiveForm */
 
 AppAsset::register($this);
+
+$this->registerJsFile(
+    '/js/lesionado.js',
+    ['depends' => [\yii\web\JqueryAsset::className()]]
+);
 ?>
 
 <div class="jugador-form">
