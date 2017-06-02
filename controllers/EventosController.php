@@ -102,7 +102,7 @@ class EventosController extends Controller
             if ($evento->tipo == 'Partido') {
                 $event->color = '#67cca0';
             } elseif ($evento->tipo == 'Entrenamiento') {
-                $event->color = '#ffc34d';
+                $event->color = '#f1af2d';
             } elseif ($evento->tipo == 'Evento publicitario') {
                 $event->color = '#6457b0';
             } elseif ($evento->tipo == 'Otros') {
@@ -110,6 +110,7 @@ class EventosController extends Controller
             }
             $event->editable = true;
             $event->startEditable = true;
+            $event->durationEditable = true;
             $events[] = $event;
         }
 
@@ -179,7 +180,6 @@ class EventosController extends Controller
             if ($model->hora_inicio == null) {
                 $model->hora_inicio = Yii::$app->request->get('hora');
             }
-            // var_dump($model->validate(['hora_inicio']));die;
             $model->save();
             return $this->redirect(['index', 'id_equipo' => $model->id_equipo]);
         } else {

@@ -45,6 +45,10 @@ class Event extends Model
      * @var string Establece el color de fondo y el borde del evento que se muestra.
      */
     public $color;
+    /**
+     * @var bool
+     */
+    public $durationEditable;
 
     /**
      * Devuelve las reglas de validación de los atributos.
@@ -54,8 +58,8 @@ class Event extends Model
     {
         return [
             [['id'], 'integer'],
-            ['title', 'start', 'end', 'url', 'color', 'safe'],
-            ['editable, startEditable', 'boolean'],
+            [['title', 'start', 'end', 'url', 'color'], 'safe'],
+            [['editable', 'startEditable', 'durationEditable'], 'boolean'],
         ];
     }
 }
