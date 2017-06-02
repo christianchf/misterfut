@@ -2,6 +2,9 @@
 
 namespace app\models;
 
+/**
+ * UsuarioForm es el modelo para el formulario de registro de nuevos usuarios.
+ */
 class UsuarioForm extends \yii\base\Model
 {
     /**

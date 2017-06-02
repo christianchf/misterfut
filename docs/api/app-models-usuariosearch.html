@@ -9,15 +9,15 @@
 <link href="./assets/52313b09/style.css" rel="stylesheet">
 <script src="./assets/43760c1b/jquery.js"></script>
 <script src="./assets/c741c7b4/js/bootstrap.js"></script>
-<script src="./assets/39191b4e/jssearch.js"></script>    <title>UsuarioSearch, app\models\UsuarioSearch - MisterFut API</title>
+<script src="./assets/39191b4e/jssearch.js"></script>    <title>UsuarioSearch, app\models\UsuarioSearch - VideoYii API</title>
 </head>
 <body>
 
 <div class="wrap">
-    <nav id="w142" class="navbar-inverse navbar-fixed-top navbar" role="navigation"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w142-collapse"><span class="sr-only">Toggle navigation</span>
+    <nav id="w160" class="navbar-inverse navbar-fixed-top navbar" role="navigation"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w160-collapse"><span class="sr-only">Toggle navigation</span>
 <span class="icon-bar"></span>
 <span class="icon-bar"></span>
-<span class="icon-bar"></span></button><a class="navbar-brand" href="./index.html">MisterFut API</a></div><div id="w142-collapse" class="collapse navbar-collapse"><ul id="w143" class="navbar-nav nav"><li><a href="./index.html">Class reference</a></li>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="./index.html">VideoYii API</a></div><div id="w160-collapse" class="collapse navbar-collapse"><ul id="w161" class="navbar-nav nav"><li><a href="./index.html">Class reference</a></li>
 <li><a href="../README.html">Guide</a></li></ul><div class="navbar-form navbar-left" role="search">
   <div class="form-group">
     <input id="searchbox" type="text" class="form-control" placeholder="Search">
@@ -32,18 +32,21 @@
     
 <div class="row">
     <div class="col-md-3">
-                <div id="navigation" class="list-group"><a class="list-group-item" href="#navigation-138" data-toggle="collapse" data-parent="#navigation">app\assets <b class="caret"></b></a><div id="navigation-138" class="submenu panel-collapse collapse"><a class="list-group-item" href="./app-assets-aboutasset.html">AboutAsset</a>
+                <div id="navigation" class="list-group"><a class="list-group-item" href="#navigation-156" data-toggle="collapse" data-parent="#navigation">app\assets <b class="caret"></b></a><div id="navigation-156" class="submenu panel-collapse collapse"><a class="list-group-item" href="./app-assets-aboutasset.html">AboutAsset</a>
 <a class="list-group-item" href="./app-assets-appasset.html">AppAsset</a>
 <a class="list-group-item" href="./app-assets-calendarioasset.html">CalendarioAsset</a>
 <a class="list-group-item" href="./app-assets-historialasset.html">HistorialAsset</a>
 <a class="list-group-item" href="./app-assets-indexasset.html">IndexAsset</a></div>
-<a class="list-group-item" href="#navigation-139" data-toggle="collapse" data-parent="#navigation">app\commands <b class="caret"></b></a><div id="navigation-139" class="submenu panel-collapse collapse"><a class="list-group-item" href="./app-commands-tokencontroller.html">TokenController</a></div>
-<a class="list-group-item" href="#navigation-140" data-toggle="collapse" data-parent="#navigation">app\controllers <b class="caret"></b></a><div id="navigation-140" class="submenu panel-collapse collapse"><a class="list-group-item" href="./app-controllers-equiposcontroller.html">EquiposController</a>
+<a class="list-group-item" href="#navigation-157" data-toggle="collapse" data-parent="#navigation">app\commands <b class="caret"></b></a><div id="navigation-157" class="submenu panel-collapse collapse"><a class="list-group-item" href="./app-commands-tokencontroller.html">TokenController</a></div>
+<a class="list-group-item" href="#navigation-158" data-toggle="collapse" data-parent="#navigation">app\controllers <b class="caret"></b></a><div id="navigation-158" class="submenu panel-collapse collapse"><a class="list-group-item" href="./app-controllers-ejercicioscontroller.html">EjerciciosController</a>
+<a class="list-group-item" href="./app-controllers-equiposcontroller.html">EquiposController</a>
 <a class="list-group-item" href="./app-controllers-eventoscontroller.html">EventosController</a>
 <a class="list-group-item" href="./app-controllers-jugadorescontroller.html">JugadoresController</a>
 <a class="list-group-item" href="./app-controllers-sitecontroller.html">SiteController</a>
 <a class="list-group-item" href="./app-controllers-usuarioscontroller.html">UsuariosController</a></div>
-<a class="list-group-item active" href="#navigation-141" data-toggle="collapse" data-parent="#navigation">app\models <b class="caret"></b></a><div id="navigation-141" class="submenu panel-collapse collapse in"><a class="list-group-item" href="./app-models-contactform.html">ContactForm</a>
+<a class="list-group-item active" href="#navigation-159" data-toggle="collapse" data-parent="#navigation">app\models <b class="caret"></b></a><div id="navigation-159" class="submenu panel-collapse collapse in"><a class="list-group-item" href="./app-models-contactform.html">ContactForm</a>
+<a class="list-group-item" href="./app-models-ejercicio.html">Ejercicio</a>
+<a class="list-group-item" href="./app-models-ejerciciosearch.html">EjercicioSearch</a>
 <a class="list-group-item" href="./app-models-equipo.html">Equipo</a>
 <a class="list-group-item" href="./app-models-equiposearch.html">EquipoSearch</a>
 <a class="list-group-item" href="./app-models-event.html">Event</a>
@@ -139,7 +142,8 @@ modificación de usuarios</td>
     </tr>
             <tr class="inherited" id="beforeSave()">
         <td><a href="app-models-usuario.html#beforeSave()-detail">beforeSave()</a></td>
-        <td></td>
+        <td>Realiza las modificaciones necesarias antes de guardar al usuario en la
+base de datos.</td>
         <td><a href="app-models-usuario.html">app\models\Usuario</a></td>
     </tr>
             <tr class="inherited" id="buscarPorNombre()">
@@ -170,6 +174,11 @@ modificación de usuarios</td>
             <tr class="inherited" id="getAuthKey()">
         <td><a href="app-models-usuario.html#getAuthKey()-detail">getAuthKey()</a></td>
         <td>Devuelve el token del usuario</td>
+        <td><a href="app-models-usuario.html">app\models\Usuario</a></td>
+    </tr>
+            <tr class="inherited" id="getEjercicios()">
+        <td><a href="app-models-usuario.html#getEjercicios()-detail">getEjercicios()</a></td>
+        <td></td>
         <td><a href="app-models-usuario.html">app\models\Usuario</a></td>
     </tr>
             <tr class="inherited" id="getEquipos()">
@@ -370,7 +379,7 @@ modificación de usuarios</td>
 </div>
 
 <footer class="footer">
-        <p class="pull-right"><small>Page generated on Wed, 31 May 2017 17:28:42 +0000</small></p>
+        <p class="pull-right"><small>Page generated on Fri, 02 Jun 2017 15:53:19 +0000</small></p>
     Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
 
 <script type="text/javascript">jQuery(document).ready(function () {

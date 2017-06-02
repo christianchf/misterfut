@@ -23,7 +23,7 @@ class LoginForm extends Model
      */
     public $password;
     /**
-     * @var string Campo opcional para recordar al usuario logueado.
+     * @var bool Campo opcional para recordar al usuario logueado.
      */
     public $rememberMe = true;
 

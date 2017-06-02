@@ -5,6 +5,9 @@ namespace app\models;
 use Yii;
 use yii\base\Model;
 
+/**
+ * RecuperarForm es el modelo para el formulario de recuperación de la contraseña.
+ */
 class RecuperarForm extends Model
 {
     /**

@@ -193,6 +193,13 @@ class Usuario extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
         return $this->nombre === 'christian';
     }
 
+    /**
+     * Realiza las modificaciones necesarias antes de guardar al usuario en la
+     * base de datos.
+     * @param bool $insert true si se va ha realizar una inserción.
+     * @return bool true si la inserción o la modificación se ha realizado
+     * correctamente.
+     */
     public function beforeSave($insert)
     {
         if (parent::beforeSave($insert)) {

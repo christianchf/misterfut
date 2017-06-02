@@ -11,6 +11,9 @@ use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
 
+/**
+ * SiteController implementa las acciones básicas del sitio.
+ */
 class SiteController extends Controller
 {
     /**
