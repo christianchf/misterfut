@@ -11,16 +11,29 @@ $(document).ready(function() {
         editable: true,
         eventDrop: function(event, delta, revertFunc, jsEvent, ui, view) {
             var idEvento = event.id;
-            var diaInicio = event.start.format();
-            var diaFin = event.end.format();
+            var fechaInicio = event.start.format();
+            var diaInicio = fechaInicio.substr(0,10);
+            var horaInicio = fechaInicio.substr(11);
+            var fechaFin = event.end.format();
+            var diaFin = fechaFin.substr(0,10);
+            var horaFin = fechaFin.substr(11);
             $.ajax({
                 url: urlEventos,
                 method: 'POST',
-                data: JSON.stringify({'idEvento': idEvento, 'diaInicio': diaInicio, 'diaFin': diaFin}),
+                data: JSON.stringify({
+                    'idEvento': idEvento,
+                    'diaInicio': diaInicio,
+                    'horaInicio': horaInicio,
+                    'diaFin': diaFin,
+                    'horaFin': horaFin
+                }),
             });
         },
         dayClick: function(date, jsEvent, view) {
-            window.location.href = urlCreate + '&fecha=' + date.format();
+            var fecha = date.format();
+            var diaInicio = fecha.substr(0,10);
+            var horaInicio = fecha.substr(11);
+            window.location.href = urlCreate + '&dia=' + diaInicio + '&hora=' + horaInicio;
         }
     });
 });

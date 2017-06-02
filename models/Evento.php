@@ -37,7 +37,7 @@ class Evento extends \yii\db\ActiveRecord
         return [
             [['tipo', 'nombre', 'fecha_inicio', 'hora_inicio', 'fecha_fin', 'hora_fin', 'id_equipo'], 'required'],
             [['descripcion'], 'string'],
-            [['hora_inicio', 'hora_fin'], 'match', 'pattern' => '/^(0[1-9]|1\d|2[0-3]):([0-5]\d)$/'],
+            [['hora_inicio', 'hora_fin'], 'match', 'pattern' => '/^(0[1-9]|1\d|2[0-3]):([0-5]\d)(:[0-5]\d)?$/'],
             [['id_equipo'], 'integer'],
             [['tipo', 'nombre'], 'string', 'max' => 100],
             [['id_equipo'], 'exist', 'skipOnError' => true, 'targetClass' => Equipo::className(), 'targetAttribute' => ['id_equipo' => 'id']],

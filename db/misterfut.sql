@@ -75,9 +75,9 @@ create table eventos (
     nombre       varchar(100) not null,
     descripcion  text,
     fecha_inicio date         not null,
-    hora_inicio  varchar(5)   not null,
+    hora_inicio  time         not null,
     fecha_fin    date         not null,
-    hora_fin     varchar(5)   not null,
+    hora_fin     time         not null,
     id_equipo    bigint       not null constraint fk_eventos_equipo
                                        references equipos (id)
                                        on delete cascade on update cascade

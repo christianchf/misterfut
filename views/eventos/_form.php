@@ -25,7 +25,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'nombre')->textInput(['maxlength' => true]) ?>
 
-    <?php if (!$model->isNewRecord || Yii::$app->request->get('fecha') == null) { ?>
+    <?php if (!$model->isNewRecord || (Yii::$app->request->get('dia') == null && Yii::$app->request->get('hora') == null)) { ?>
         <div class="row">
             <div class="col-xs-8">
                 <?= $form->field($model, 'fecha_inicio')->widget(DatePicker::classname(), [
@@ -46,7 +46,7 @@ use yii\widgets\ActiveForm;
                 ]) ?>
             </div>
         </div>
-    <?php } else { ?>
+    <?php } elseif (Yii::$app->request->get('hora') == null) { ?>
         <?= $form->field($model, 'hora_inicio')->widget(TimePicker::classname(), [
             'pluginOptions' => [
                 'showMeridian' => false,

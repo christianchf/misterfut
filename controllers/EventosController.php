@@ -131,8 +131,10 @@ class EventosController extends Controller
         if ($datos != null) {
             $evento = Evento::find()->where(['id' => $datos->idEvento])->one();
             $evento->fecha_inicio = $datos->diaInicio;
+            $evento->hora_inicio = $datos->horaInicio;
             $evento->fecha_fin = $datos->diaFin;
-            $evento->save();
+            $evento->hora_fin = $datos->horaFin;
+            $evento->save(false);
         }
     }
 
@@ -172,8 +174,12 @@ class EventosController extends Controller
 
         if ($model->load(Yii::$app->request->post())) {
             if ($model->fecha_inicio == null) {
-                $model->fecha_inicio = Yii::$app->request->get('fecha');
+                $model->fecha_inicio = Yii::$app->request->get('dia');
             }
+            if ($model->hora_inicio == null) {
+                $model->hora_inicio = Yii::$app->request->get('hora');
+            }
+            // var_dump($model->validate(['hora_inicio']));die;
             $model->save();
             return $this->redirect(['index', 'id_equipo' => $model->id_equipo]);
         } else {
