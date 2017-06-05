@@ -17,7 +17,7 @@ use yii\widgets\DetailView;
             'method' => 'post',
         ],
     ]) ?>
-    <?= Html::a('Calendario <span class="glyphicon glyphicon-calendar"></span>', ['/eventos/index', 'id_equipo' => Html::encode($model->id)], ['class' => 'btn btn-success']) ?>
+    <?= Html::a('Calendario <span class="glyphicon glyphicon-calendar"></span>', ['/eventos/index', 'idEquipo' => Html::encode($model->id)], ['class' => 'btn btn-success']) ?>
     <?= Html::button('Nueva temporada', ['value' => Url::to(['/equipos/nueva-temp', 'equipo' => Html::encode($model->nombre)]), 'class' => 'btn btn-primary', 'id' => 'nuevaTemp']) ?>
 </p>
 

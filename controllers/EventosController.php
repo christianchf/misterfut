@@ -38,7 +38,7 @@ class EventosController extends Controller
                         'actions' => ['index', 'create'],
                         'roles' => ['@'],
                         'matchCallback' => function ($rule, $action) {
-                            $idEquipo = Yii::$app->request->get('id_equipo');
+                            $idEquipo = Yii::$app->request->get('idEquipo');
                             $equipo = Equipo::find()->where(['id' => $idEquipo])->one();
                             if ($equipo !== null) {
                                 $usuarioEquipo = $equipo->id_usuario;
@@ -84,14 +84,14 @@ class EventosController extends Controller
      */
     /**
     * Lista todos los eventos de un equipo.
-     * @param int $id_equipo El id del equipo.
+     * @param int $idEquipo El id del equipo.
      * @return mixed
      */
-    public function actionIndex($id_equipo)
+    public function actionIndex($idEquipo)
     {
-        $equipo = Equipo::find()->where(['id' => $id_equipo])->one();
+        $equipo = Equipo::find()->where(['id' => $idEquipo])->one();
         $events = [];
-        $eventos = Evento::find()->where(['id_equipo' => $id_equipo])->orderBy('fecha_inicio, hora_inicio')->all();
+        $eventos = Evento::find()->where(['id_equipo' => $idEquipo])->orderBy('fecha_inicio, hora_inicio')->all();
         foreach ($eventos as $evento) {
             $event = new Event;
             $event->id = $evento->id;
@@ -164,8 +164,8 @@ class EventosController extends Controller
     public function actionCreate()
     {
         $model = new Evento();
-        $model->id_equipo = Yii::$app->request->get('id_equipo');
-        $equipo = Equipo::find()->where(['id' => Yii::$app->request->get('id_equipo')])->one()->nombre;
+        $model->id_equipo = Yii::$app->request->get('idEquipo');
+        $equipo = Equipo::find()->where(['id' => Yii::$app->request->get('idEquipo')])->one()->nombre;
         $tipos = [
             'Partido' => 'Partido',
             'Entrenamiento' => 'Entrenamiento',
@@ -181,7 +181,7 @@ class EventosController extends Controller
                 $model->hora_inicio = Yii::$app->request->get('hora');
             }
             $model->save();
-            return $this->redirect(['index', 'id_equipo' => $model->id_equipo]);
+            return $this->redirect(['index', 'idEquipo' => $model->id_equipo]);
         } else {
             return $this->render('create', [
                 'model' => $model,
@@ -210,7 +210,7 @@ class EventosController extends Controller
         ];
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['index', 'id_equipo' => $model->id_equipo]);
+            return $this->redirect(['index', 'idEquipo' => $model->id_equipo]);
         } else {
             return $this->render('update', [
                 'model' => $model,
@@ -232,7 +232,7 @@ class EventosController extends Controller
         $idEquipo = $this->findModel($id)->id_equipo;
         $this->findModel($id)->delete();
 
-        return $this->redirect(['index', 'id_equipo' => $idEquipo]);
+        return $this->redirect(['index', 'idEquipo' => $idEquipo]);
     }
 
     /**

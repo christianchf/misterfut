@@ -8,12 +8,7 @@ $(document).on('ready', function () {
         method: 'POST',
         success: function(data, textStatus, Xhr) {
             var datos = JSON.parse(data);
-            $('#jugados').text(datos['jugados']);
-            $('#ganados').text(datos['ganados']);
-            $('#empatados').text(datos['empatados']);
-            $('#perdidos').text(datos['perdidos']);
-            $('#golesFavor').text(datos['golesFavor']);
-            $('#golesContra').text(datos['golesContra']);
+            mostrarDatos(datos);
         }
     });
 });
@@ -26,12 +21,16 @@ btns.on('click', function() {
         data: JSON.stringify({'idBtn': idBtn}),
         success: function(data, textStatus, Xhr) {
             var datos = JSON.parse(data);
-            $('#jugados').text(datos['jugados']);
-            $('#ganados').text(datos['ganados']);
-            $('#empatados').text(datos['empatados']);
-            $('#perdidos').text(datos['perdidos']);
-            $('#golesFavor').text(datos['golesFavor']);
-            $('#golesContra').text(datos['golesContra']);
+            mostrarDatos(datos);
         }
     });
 });
+
+function mostrarDatos(datos) {
+    $('#jugados').text(datos['jugados']);
+    $('#ganados').text(datos['ganados']);
+    $('#empatados').text(datos['empatados']);
+    $('#perdidos').text(datos['perdidos']);
+    $('#golesFavor').text(datos['golesFavor']);
+    $('#golesContra').text(datos['golesContra']);
+}

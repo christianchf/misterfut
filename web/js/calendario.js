@@ -41,6 +41,6 @@ function actualizarEvento(event, delta, revertFunc, jsEvent, ui, view) {
             'horaInicio': horaInicio,
             'diaFin': diaFin,
             'horaFin': horaFin
-        }),
+        })
     });
 }
