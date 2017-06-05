@@ -33,21 +33,21 @@ $this->params['breadcrumbs'][] = $this->title;
                 'buttons' => [
                     'view' => function ($url, $model, $key) {
                         return Html::a('Ver', [
-                            'usuarios/view', 'id' => $model->id,
+                            'usuarios/view', 'id' => Html::encode($model->id),
                         ], [
                             'class' => 'btn btn-xs btn-info btnsAction'
                         ]);
                     },
                     'update' => function ($url, $model, $key) {
                         return Html::a('Modificar', [
-                            'usuarios/update', 'id' => $model->id,
+                            'usuarios/update', 'id' => Html::encode($model->id),
                         ], [
                             'class' => 'btn btn-xs btn-warning btnsAction'
                         ]);
                     },
                     'delete' => function ($url, $model, $key) {
                         return Html::a('Borrar', [
-                            'usuarios/delete', 'id' => $model->id,
+                            'usuarios/delete', 'id' => Html::encode($model->id),
                         ], [
                             'class' => 'btn btn-xs btn-danger btnsAction',
                             'data' => [

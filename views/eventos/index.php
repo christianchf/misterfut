@@ -12,7 +12,7 @@ use yii\web\View;
 
 CalendarioAsset::register($this);
 
-$urlCreate = Url::to(['/eventos/create', 'id_equipo' => Yii::$app->request->get('id_equipo')]);
+$urlCreate = Url::to(['/eventos/create', 'id_equipo' => Html::encode(Yii::$app->request->get('id_equipo'))]);
 $urlEventos = Url::to(['/eventos/actualizar']);
 $eventos = Json::htmlEncode($events);
 
@@ -25,15 +25,15 @@ $this->registerJs($js, View::POS_END);
 
 $this->title = 'Calendario';
 $this->params['breadcrumbs'][] = ['label' => 'Equipos', 'url' => ['/equipos/index']];
-$this->params['breadcrumbs'][] = ['label' => $equipo->nombre, 'url' => ['/equipos/view', 'id' => Yii::$app->request->get('id_equipo')]];
+$this->params['breadcrumbs'][] = ['label' => Html::encode($equipo->nombre), 'url' => ['/equipos/view', 'id' => Html::encode(Yii::$app->request->get('id_equipo'))]];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="evento-index">
 
-    <h1><?= Html::encode($this->title . ' ' . $equipo->nombre . ' (' . $equipo->temporada . ')') ?></h1>
+    <h1><?= Html::encode($this->title . ' ' . Html::encode($equipo->nombre) . ' (' . Html::encode($equipo->temporada) . ')') ?></h1>
 
     <p>
-        <?= Html::a('Añadir Evento', ['create', 'id_equipo' => Yii::$app->request->get('id_equipo')], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Añadir Evento', ['create', 'id_equipo' => Html::encode(Yii::$app->request->get('id_equipo'))], ['class' => 'btn btn-success']) ?>
     </p>
 
     <div id='calendar'></div>

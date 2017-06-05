@@ -11,8 +11,8 @@ use yii\widgets\ActiveForm;
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
 $urlTraspasar = Url::to(['/equipos/traspasar']);
-$idEquipoTraspasar = Yii::$app->request->get('id');
-$urlDestinoTraspasar = Url::to(['/equipos/view', 'id' => $idEquipoTraspasar]);
+$idEquipoTraspasar = Html::encode(Yii::$app->request->get('id'));
+$urlDestinoTraspasar = Url::to(['/equipos/view', 'id' => Html::encode($idEquipoTraspasar)]);
 $js = <<<EOT
     var urlTraspasar = "$urlTraspasar";
     var idEquipoTraspasar = "$idEquipoTraspasar";
@@ -46,7 +46,7 @@ $this->title = 'Traspasar plantilla';
             <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
         </div>
         <div class="col-xs-3">
-            <input type="text" name="destino" class="form-control" value="<?= $equipo->nombre . '(' . $equipo->temporada . ')' ?>" disabled />
+            <input type="text" name="destino" class="form-control" value="<?= Html::encode($equipo->nombre) . '(' . Html::encode($equipo->temporada) . ')' ?>" disabled />
         </div>
         <div class="col-xs-2">
             <input type="button" id="traspaso" value="Traspasar plantilla" class="btn btn-primary">

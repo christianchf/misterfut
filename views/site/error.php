@@ -19,10 +19,10 @@ $this->title = $name;
     </div>
 
     <p>
-        The above error occurred while the Web server was processing your request.
+        El error anterior se produjo mientras el servidor Web estaba procesando su solicitud.
     </p>
     <p>
-        Please contact us if you think this is a server error. Thank you.
+        Póngase en <?= Html::a('contacto', ['site/contact']) ?> con nosotros si cree que se trata de un error de servidor. Gracias.
     </p>
 
 </div>

@@ -10,7 +10,7 @@ use kartik\grid\GridView;
 
 $this->title = 'Plantilla';
 $this->params['breadcrumbs'][] = ['label' => 'Equipos', 'url' => ['/equipos/index']];
-$this->params['breadcrumbs'][] = ['label' => $equipo, 'url' => ['/equipos/view', 'id' => Yii::$app->request->get('id_equipo')]];
+$this->params['breadcrumbs'][] = ['label' => Html::encode($equipo), 'url' => ['/equipos/view', 'id' => Html::encode(Yii::$app->request->get('id_equipo'))]];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="jugador-index">
@@ -18,7 +18,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Añadir Jugador', ['create', 'id_equipo' => Yii::$app->request->get('id_equipo')], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Añadir Jugador', ['create', 'id_equipo' => Html::encode(Yii::$app->request->get('id_equipo'))], ['class' => 'btn btn-success']) ?>
     </p>
 <?= GridView::widget([
         'dataProvider' => $dataProvider,
@@ -107,21 +107,21 @@ $this->params['breadcrumbs'][] = $this->title;
                 'buttons' => [
                     'view' => function ($url, $model, $key) {
                         return Html::a('Ver', [
-                            'jugadores/view', 'id' => $model->id,
+                            'jugadores/view', 'id' => Html::encode($model->id),
                         ], [
                             'class' => 'btn btn-xs btn-info btnsAction'
                         ]);
                     },
                     'update' => function ($url, $model, $key) {
                         return Html::a('Modificar', [
-                            'jugadores/update', 'id' => $model->id,
+                            'jugadores/update', 'id' => Html::encode($model->id),
                         ], [
                             'class' => 'btn btn-xs btn-warning btnsAction'
                         ]);
                     },
                     'delete' => function ($url, $model, $key) {
                         return Html::a('Borrar', [
-                            'jugadores/delete', 'id' => $model->id,
+                            'jugadores/delete', 'id' => Html::encode($model->id),
                         ], [
                             'class' => 'btn btn-xs btn-danger btnsAction',
                             'data' => [

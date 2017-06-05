@@ -42,21 +42,21 @@ $this->params['breadcrumbs'][] = $this->title;
                 'buttons' => [
                     'view' => function ($url, $model, $key) {
                         return Html::a('Ver', [
-                            'ejercicios/view', 'id' => $model->id,
+                            'ejercicios/view', 'id' => Html::encode($model->id),
                         ], [
                             'class' => 'btn btn-xs btn-info btnsAction'
                         ]);
                     },
                     'update' => function ($url, $model, $key) {
                         return Html::a('Modificar', [
-                            'ejercicios/update', 'id' => $model->id,
+                            'ejercicios/update', 'id' => Html::encode($model->id),
                         ], [
                             'class' => 'btn btn-xs btn-warning btnsAction'
                         ]);
                     },
                     'delete' => function ($url, $model, $key) {
                         return Html::a('Borrar', [
-                            'ejercicios/delete', 'id' => $model->id,
+                            'ejercicios/delete', 'id' => Html::encode($model->id),
                         ], [
                             'class' => 'btn btn-xs btn-danger btnsAction',
                             'data' => [

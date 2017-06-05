@@ -7,7 +7,7 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model app\models\Usuario */
 
-$this->title = $model->nombre;
+$this->title = Html::encode($model->nombre);
 $this->params['breadcrumbs'][] = (Yii::$app->user->esAdmin) ? ['label' => 'Usuarios', 'url' => ['index']] : 'Usuarios';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
@@ -16,8 +16,8 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Modificar', ['update', 'id' => $model->id], ['class' => 'btn btn-warning']) ?>
-        <?= Html::a('Borrar', ['delete', 'id' => $model->id], [
+        <?= Html::a('Modificar', ['update', 'id' => Html::encode($model->id)], ['class' => 'btn btn-warning']) ?>
+        <?= Html::a('Borrar', ['delete', 'id' => Html::encode($model->id)], [
             'class' => 'btn btn-danger',
             'data' => [
                 'confirm' => '¿Estas seguro que quieres borrar este usuario?',

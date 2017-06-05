@@ -13,9 +13,9 @@ AppAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
-<html lang="<?= Yii::$app->language ?>">
+<html lang="<?= Html::encode(Yii::$app->language) ?>">
 <head>
-    <meta charset="<?= Yii::$app->charset ?>">
+    <meta charset="<?= Html::encode(Yii::$app->charset) ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="MisterFut es la aplicación perfecta para
     los entrenadores para llevar el control sobre la organización de sus equipos.
@@ -55,7 +55,7 @@ AppAsset::register($this);
     <?php
     NavBar::begin([
         'brandLabel' => '<p><img src="/images/logo.png" alt="Logo" title="Logo" width="30" class="logo" /> MisterFut</p>',
-        'brandUrl' => Yii::$app->homeUrl,
+        'brandUrl' => Html::encode(Yii::$app->homeUrl),
         'options' => [
             'class' => 'navbar-fixed-top navbar-purple',
         ],
@@ -74,7 +74,7 @@ AppAsset::register($this);
             ]
         ] :
         [
-            'label' => 'Usuario (' . Yii::$app->user->identity->nombre . ')',
+            'label' => 'Usuario (' . Html::encode(Yii::$app->user->identity->nombre) . ')',
             'items' => [
                 [
                     'label' => 'Logout',
@@ -82,7 +82,7 @@ AppAsset::register($this);
                     'linkOptions' => ['data-method' => 'POST']
                 ],
                 '<li class="divider"></li>',
-                ['label' => 'Mis datos', 'url' => ['/usuarios/view', 'id' => Yii::$app->user->id]],
+                ['label' => 'Mis datos', 'url' => ['/usuarios/view', 'id' => Html::encode(Yii::$app->user->id)]],
             ]
         ]
     ];

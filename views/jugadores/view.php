@@ -23,8 +23,8 @@ if ($model->esta_lesionado) {
 
 $this->title = $model->nombre;
 $this->params['breadcrumbs'][] = ['label' => 'Equipos', 'url' => ['/equipos/index']];
-$this->params['breadcrumbs'][] = ['label' => $equipo, 'url' => ['/equipos/view', 'id' => $model->id_equipo]];
-$this->params['breadcrumbs'][] = ['label' => 'Plantilla', 'url' => ['index', 'id_equipo' => $model->id_equipo]];
+$this->params['breadcrumbs'][] = ['label' => Html::encode($equipo), 'url' => ['/equipos/view', 'id' => Html::encode($model->id_equipo)]];
+$this->params['breadcrumbs'][] = ['label' => 'Plantilla', 'url' => ['index', 'id_equipo' => Html::encode($model->id_equipo)]];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="jugador-view">
@@ -32,8 +32,8 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Modificar', ['update', 'id' => $model->id], ['class' => 'btn btn-warning']) ?>
-        <?= Html::a('Borrar', ['delete', 'id' => $model->id], [
+        <?= Html::a('Modificar', ['update', 'id' => Html::encode($model->id)], ['class' => 'btn btn-warning']) ?>
+        <?= Html::a('Borrar', ['delete', 'id' => Html::encode($model->id)], [
             'class' => 'btn btn-danger',
             'data' => [
                 'confirm' => '¿Estás seguro de eliminar este jugador?',

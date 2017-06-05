@@ -1,12 +1,13 @@
 <?php
 use app\assets\AppAsset;
+use yii\helpers\Html;
 use yii\web\View;
 use yii\helpers\Url;
 
 AppAsset::register($this);
 
-$posJugador = $model->id_posicion;
-$urlJugador = Url::to(['/jugadores/actualizar', 'id' => Yii::$app->request->get('id')]);
+$posJugador = Html::encode($model->id_posicion);
+$urlJugador = Url::to(['/jugadores/actualizar', 'id' => Html::encode(Yii::$app->request->get('id'))]);
 
 $js = <<<EOT
     var urlJugador = "$urlJugador";
@@ -19,7 +20,6 @@ $this->registerJsFile(
 );
 
 ?>
-
 
 <h3>Estadísticas</h3>
 

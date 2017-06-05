@@ -1,11 +1,12 @@
 <?php
 use app\assets\AppAsset;
+use yii\helpers\Html;
 use yii\web\View;
 use yii\helpers\Url;
 
 AppAsset::register($this);
 
-$urlEquipos = Url::to(['/equipos/actualizar', 'id' => Yii::$app->request->get('id')]);
+$urlEquipos = Url::to(['/equipos/actualizar', 'id' => Html::encode(Yii::$app->request->get('id'))]);
 
 $js = <<<EOT
     var urlEquipos = "$urlEquipos";

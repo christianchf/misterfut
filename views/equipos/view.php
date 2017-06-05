@@ -6,7 +6,7 @@ use yii\bootstrap\Tabs;
 /* @var $this yii\web\View */
 /* @var $model app\models\Equipo */
 
-$this->title = $model->nombre;
+$this->title = Html::encode($model->nombre);
 $this->params['breadcrumbs'][] = ['label' => 'Equipos', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>

@@ -193,6 +193,7 @@ class JugadoresController extends Controller
     {
         $model = new Jugador();
         $model->id_equipo = Yii::$app->request->get('id_equipo');
+        $equipo = Equipo::find()->where(['id' => Yii::$app->request->get('id_equipo')])->one()->nombre;
         $posiciones = Posicion::find()->asArray()->all();
         $posiciones = ArrayHelper::map($posiciones, 'id', 'posicion');
 
@@ -201,6 +202,7 @@ class JugadoresController extends Controller
         } else {
             return $this->render('create', [
                 'model' => $model,
+                'equipo' => $equipo,
                 'posiciones' => $posiciones,
             ]);
         }

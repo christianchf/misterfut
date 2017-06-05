@@ -30,8 +30,8 @@ if ($model->dimensiones != null) {
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Modificar', ['update', 'id' => $model->id], ['class' => 'btn btn-warning']) ?>
-        <?= Html::a('Borrar', ['delete', 'id' => $model->id], [
+        <?= Html::a('Modificar', ['update', 'id' => Html::encode($model->id)], ['class' => 'btn btn-warning']) ?>
+        <?= Html::a('Borrar', ['delete', 'id' => Html::encode($model->id)], [
             'class' => 'btn btn-danger',
             'data' => [
                 'confirm' => '¿Estás seguro de borrar este ejercicio?',

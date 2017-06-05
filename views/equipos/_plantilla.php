@@ -8,7 +8,7 @@ use kartik\grid\GridView;
 AppAsset::register($this);
 
 $urlVentana = Url::to(['traspaso']);
-$idEquipoVentana = Yii::$app->request->get('id');
+$idEquipoVentana = Html::encode(Yii::$app->request->get('id'));
 $js = <<<EOT
     $("#btnTraspasar").on("click", function(){
         var urlVentana = urlVentana;
@@ -20,7 +20,7 @@ $this->registerJs($js);
 
 <br />
 <p>
-    <?= Html::a('Ver detalles de plantilla', ['/jugadores/index', 'id_equipo' => $model->id], ['class' => 'btn btn-success']) ?>
+    <?= Html::a('Ver detalles de plantilla', ['/jugadores/index', 'id_equipo' => Html::encode($model->id)], ['class' => 'btn btn-success']) ?>
     <button type="button" class="btn btn-primary" id="btnTraspasar">Traspasar plantilla</button>
 </p>
 
@@ -46,7 +46,7 @@ $this->registerJs($js);
             'template' => '{view}',
             'buttons' => [
                 'view' => function ($url, $model, $key) {
-                    return Html::a('Ver', ['jugadores/view', 'id' => $model->id,], ['class' => 'btn btn-xs btn-info btnsAction']);
+                    return Html::a('Ver', ['jugadores/view', 'id' => Html::encode($model->id),], ['class' => 'btn btn-xs btn-info btnsAction']);
                 },
             ],
 

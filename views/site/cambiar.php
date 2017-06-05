@@ -12,20 +12,20 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="site-recuperar">
     <h1><?= Html::encode($this->title) ?></h1>
-    <?php if (Yii::$app->session->hasFlash('tokenInvalido')): ?>
+    <?php if (Yii::$app->session->hasFlash('tokenInvalido')) : ?>
 
         <div class="alert alert-danger">
             No se ha podido encontrar el usuario.
         </div>
 
     <?php endif; ?>
-    <?php if (Yii::$app->session->hasFlash('contraseniaCambiada')): ?>
+    <?php if (Yii::$app->session->hasFlash('contraseniaCambiada')) : ?>
 
         <div class="alert alert-success">
             La contraseña se ha cambiado correctamente.
         </div>
 
-    <?php else: ?>
+    <?php else : ?>
 
         <div class="row">
             <div class="col-lg-5">
@@ -36,7 +36,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
                     <?= $form->field($model, 'repeatPass')->passwordInput() ?>
 
-                    <?= $form->field($model, 'token')->hiddenInput(['value' => Yii::$app->request->get('token')])->label(false) ?>
+                    <?= $form->field($model, 'token')->hiddenInput(['value' => Html::encode(Yii::$app->request->get('token'))])->label(false) ?>
 
                     <div class="form-group">
                         <?= Html::submitButton('Cambiar', ['class' => 'btn btn-primary', 'name' => 'recuperar-button']) ?>

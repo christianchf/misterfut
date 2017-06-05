@@ -71,7 +71,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'value' => function ($model, $key, $index, $column) {
                     return Html::a(
                         'Plantilla',
-                        ['jugadores/index', 'id_equipo' => $model->id],
+                        ['jugadores/index', 'id_equipo' => Html::encode($model->id)],
                         ['class' => 'btn-sm btn-primary btnsAction']
                     );
                 },
@@ -85,21 +85,21 @@ $this->params['breadcrumbs'][] = $this->title;
                 'buttons' => [
                     'view' => function ($url, $model, $key) {
                         return Html::a('Ver', [
-                            'equipos/view', 'id' => $model->id,
+                            'equipos/view', 'id' => Html::encode($model->id),
                         ], [
                             'class' => 'btn btn-xs btn-info btnsAction'
                         ]);
                     },
                     'update' => function ($url, $model, $key) {
                         return Html::a('Modificar', [
-                            'equipos/update', 'id' => $model->id,
+                            'equipos/update', 'id' => Html::encode($model->id),
                         ], [
                             'class' => 'btn btn-xs btn-warning btnsAction'
                         ]);
                     },
                     'delete' => function ($url, $model, $key) {
                         return Html::a('Borrar', [
-                            'equipos/delete', 'id' => $model->id,
+                            'equipos/delete', 'id' => Html::encode($model->id),
                         ], [
                             'class' => 'btn btn-xs btn-danger btnsAction',
                             'data' => [
