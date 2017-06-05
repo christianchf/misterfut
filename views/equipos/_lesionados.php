@@ -9,7 +9,7 @@ AppAsset::register($this);
 ?>
 
 <br />
-<div id="indice">
+<div id=lesionados">
 <?= GridView::widget([
     'summary' => 'Número de jugadores lesionados: <b>{count}</b>',
     'dataProvider' => $lesionados,

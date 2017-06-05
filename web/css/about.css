@@ -2,7 +2,21 @@ section {
     width: 90%;
     margin: auto;
     display: flex;
+    flex-direction: column;
+}
+
+section div {
+    display: flex;
     justify-content: space-between;
+}
+
+h2 {
+    background: #67cca0;
+    color: #ffffff;
+    border: 2px solid #3e1776;
+    border-radius: 10px;
+    padding-left: 10px;
+    box-shadow: 5px 5px 15px #808080;
 }
 
 article {

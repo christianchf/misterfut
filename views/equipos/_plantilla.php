@@ -24,7 +24,7 @@ $this->registerJs($js);
     <button type="button" class="btn btn-primary" id="btnTraspasar">Traspasar plantilla</button>
 </p>
 
-<div id="indice">
+<div id="plantilla">
 <?= GridView::widget([
     'dataProvider' => $jugadores,
     'resizableColumns' => false,

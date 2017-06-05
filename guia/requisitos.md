@@ -8,7 +8,7 @@ Definición detallada
 | Complejidad          | Media |
 | Entrega planificada  | v1 |
 | Entrega realizada    | v1 |
-| Nº issue             | 1 |
+| Nº issue             | [1](https://github.com/christianchf/misterfut/issues/1) |
 
 
 ----------
@@ -20,7 +20,7 @@ Definición detallada
 | Complejidad          | Media |
 | Entrega planificada  | v1 |
 | Entrega realizada    | v1 |
-| Nº issue             | 2 |
+| Nº issue             | [2](https://github.com/christianchf/misterfut/issues/2) |
 
 
 ----------
@@ -32,7 +32,7 @@ Definición detallada
 | Complejidad          | Media |
 | Entrega planificada  | v1 |
 | Entrega realizada    | v1 |
-| Nº issue             | 3 |
+| Nº issue             | [3](https://github.com/christianchf/misterfut/issues3) |
 
 
 ----------
@@ -44,7 +44,7 @@ Definición detallada
 | Complejidad          | Media |
 | Entrega planificada  | v1 |
 | Entrega realizada    | v1 |
-| Nº issue             | 4 |
+| Nº issue             | [4](https://github.com/christianchf/misterfut/issues/4) |
 
 
 ----------
@@ -56,7 +56,7 @@ Definición detallada
 | Complejidad          | Media |
 | Entrega planificada  | v1 |
 | Entrega realizada    | v1 |
-| Nº issue             | 5 |
+| Nº issue             | [5](https://github.com/christianchf/misterfut/issues/5) |
 
 
 ----------
@@ -68,7 +68,7 @@ Definición detallada
 | Complejidad          | Media |
 | Entrega planificada  | v1 |
 | Entrega realizada    | v1 |
-| Nº issue             | 6 |
+| Nº issue             | [6](https://github.com/christianchf/misterfut/issues/6) |
 
 
 ----------
@@ -80,7 +80,7 @@ Definición detallada
 | Complejidad          | Media |
 | Entrega planificada  | v1 |
 | Entrega realizada    | v1 |
-| Nº issue             | 7 |
+| Nº issue             | [7](https://github.com/christianchf/misterfut/issues/7) |
 
 
 ----------
@@ -92,7 +92,7 @@ Definición detallada
 | Complejidad          | Fácil |
 | Entrega planificada  | v1 |
 | Entrega realizada    | v1 |
-| Nº issue             | 8 |
+| Nº issue             | [8](https://github.com/christianchf/misterfut/issues/8) |
 
 
 ----------
@@ -104,7 +104,7 @@ Definición detallada
 | Complejidad          | Fácil |
 | Entrega planificada  | v1 |
 | Entrega realizada    | v1 |
-| Nº issue             | 9 |
+| Nº issue             | [9](https://github.com/christianchf/misterfut/issues/9) |
 
 
 ----------
@@ -116,7 +116,7 @@ Definición detallada
 | Complejidad          | Fácil |
 | Entrega planificada  | v1 |
 | Entrega realizada    | v1 |
-| Nº issue             | 10 |
+| Nº issue             | [10](https://github.com/christianchf/misterfut/issues/10) |
 
 
 ----------
@@ -128,7 +128,7 @@ Definición detallada
 | Complejidad          | Fácil |
 | Entrega planificada  | v1 |
 | Entrega realizada    | v1 |
-| Nº issue             | 11 |
+| Nº issue             | [11](https://github.com/christianchf/misterfut/issues/11) |
 
 
 ----------
@@ -140,7 +140,7 @@ Definición detallada
 | Complejidad          | Media |
 | Entrega planificada  | v2 |
 | Entrega realizada    | v1 |
-| Nº issue             | 19 |
+| Nº issue             | [19](https://github.com/christianchf/misterfut/issues/19) |
 
 
 ----------
@@ -152,7 +152,7 @@ Definición detallada
 | Complejidad          | Media |
 | Entrega planificada  | v2 |
 | Entrega realizada    | v1 |
-| Nº issue             | 20 |
+| Nº issue             | [20](https://github.com/christianchf/misterfut/issues/20) |
 
 
 ----------
@@ -164,19 +164,19 @@ Definición detallada
 | Complejidad          | Media |
 | Entrega planificada  | v2 |
 | Entrega realizada    | v1 |
-| Nº issue             | 21 |
+| Nº issue             | [21](https://github.com/christianchf/misterfut/issues/21) |
 
 
 ----------
 | **R15:**             | VER DATOS DE LOS JUGADORES |
 | ----------           | ---------- |
-| Descripción          | La aplicación permitirá, a los usuarios logueados (R5), ver los datos de los jugadores, creados con anterioridad (R12), que esten asociados a su equipo. |
+| Descripción          | La aplicación permitirá, a los usuarios logueados (R5), ver los datos de los jugadores, creados con anterioridad (R12), que estén asociados a su equipo. |
 | Prioridad            | IMPORTANTE |
 | Tipo                 | Funcional |
 | Complejidad          | Media |
 | Entrega planificada  | v2 |
 | Entrega realizada    | v1 |
-| Nº issue             | 22 |
+| Nº issue             | [22](https://github.com/christianchf/misterfut/issues/22) |
 
 
 ----------
@@ -188,7 +188,7 @@ Definición detallada
 | Complejidad          | Difícil |
 | Entrega planificada  | v3 |
 | Entrega realizada    | v2 |
-| Nº issue             | 28 |
+| Nº issue             | [28](https://github.com/christianchf/misterfut/issues/28) |
 
 
 ----------
@@ -200,7 +200,7 @@ Definición detallada
 | Complejidad          | Difícil |
 | Entrega planificada  | v3 |
 | Entrega realizada    | v2 |
-| Nº issue             | 29 |
+| Nº issue             | [29](https://github.com/christianchf/misterfut/issues/29) |
 
 
 ----------
@@ -212,7 +212,7 @@ Definición detallada
 | Complejidad          | Difícil |
 | Entrega planificada  | v3 |
 | Entrega realizada    | v2 |
-| Nº issue             | 30 |
+| Nº issue             | [30](https://github.com/christianchf/misterfut/issues/30) |
 
 
 ----------
@@ -223,8 +223,8 @@ Definición detallada
 | Tipo                 | Funcional |
 | Complejidad          | Difícil |
 | Entrega planificada  | v3 |
-| Entrega realizada    |  |
-| Nº issue             |  |
+| Entrega realizada    | v3 |
+| Nº issue             | [31](https://github.com/christianchf/misterfut/issues/31) |
 
 
 ----------
@@ -236,7 +236,7 @@ Definición detallada
 | Complejidad          | Difícil |
 | Entrega planificada  | v3 |
 | Entrega realizada    | v3 |
-| Nº issue             | 32 |
+| Nº issue             | [32](https://github.com/christianchf/misterfut/issues/32) |
 
 
 ----------
@@ -248,7 +248,7 @@ Definición detallada
 | Complejidad          | Difícil |
 | Entrega planificada  | v3 |
 | Entrega realizada    | v2 |
-| Nº issue             | 33 |
+| Nº issue             | [33](https://github.com/christianchf/misterfut/issues/33) |
 
 
 ----------
@@ -260,7 +260,7 @@ Definición detallada
 | Complejidad          | Fácil |
 | Entrega planificada  | v3 |
 | Entrega realizada    | v3 |
-| Nº issue             | 34 |
+| Nº issue             | [34](https://github.com/christianchf/misterfut/issues/34) |
 
 
 ----------
@@ -272,7 +272,7 @@ Definición detallada
 | Complejidad          | Fácil |
 | Entrega planificada  | v3 |
 | Entrega realizada    | v3 |
-| Nº issue             | 35 |
+| Nº issue             | [35](https://github.com/christianchf/misterfut/issues/35) |
 
 
 ----------
@@ -284,7 +284,7 @@ Definición detallada
 | Complejidad          | Fácil |
 | Entrega planificada  | v3 |
 | Entrega realizada    | v3 |
-| Nº issue             | 36 |
+| Nº issue             | [36](https://github.com/christianchf/misterfut/issues/36) |
 
 
 ----------
@@ -296,7 +296,7 @@ Definición detallada
 | Complejidad          | Fácil |
 | Entrega planificada  | v3 |
 | Entrega realizada    | v3 |
-| Nº issue             | 37 |
+| Nº issue             | [37](https://github.com/christianchf/misterfut/issues/37) |
 
 
 ----------
@@ -308,7 +308,7 @@ Definición detallada
 | Complejidad          | Difícil |
 | Entrega planificada  | v3 |
 | Entrega realizada    | v3 |
-| Nº issue             | 38 |
+| Nº issue             | [38](https://github.com/christianchf/misterfut/issues/38) |
 
 
 ----------
@@ -320,11 +320,11 @@ Definición detallada
 | Complejidad          | Fácil |
 | Entrega planificada  | v2 |
 | Entrega realizada    | v1 |
-| Nº issue             | 23 |
+| Nº issue             | [23](https://github.com/christianchf/misterfut/issues/23) |
 
 
 ----------
-| **R51:**             | GUARDAR VARIABLE DE SESION EN LA BASE DE DATOS |
+| **R51:**             | GUARDAR VARIABLE DE SESIÓN EN LA BASE DE DATOS |
 | ----------           | ---------- |
 | Descripción          | La aplicación guardara las variables de sesión en la base de datos. |
 | Prioridad            | OPCIONAL |
@@ -332,7 +332,7 @@ Definición detallada
 | Complejidad          | Media |
 | Entrega planificada  | v1 |
 | Entrega realizada    | v1 |
-| Nº issue             | 17 |
+| Nº issue             | [17](https://github.com/christianchf/misterfut/issues/17) |
 
 
 ----------
@@ -344,7 +344,7 @@ Definición detallada
 | Complejidad          | Media |
 | Entrega planificada  | v2 |
 | Entrega realizada    | v2 |
-| Nº issue             | 52 |
+| Nº issue             | [52](https://github.com/christianchf/misterfut/issues/52) |
 
 
 ----------
@@ -356,7 +356,7 @@ Definición detallada
 | Complejidad          | Media |
 | Entrega planificada  | v2 |
 | Entrega realizada    | v2 |
-| Nº issue             | 53 |
+| Nº issue             | [53](https://github.com/christianchf/misterfut/issues/53) |
 
 
 ----------
@@ -368,7 +368,7 @@ Definición detallada
 | Complejidad          | Difícil |
 | Entrega planificada  | v2 |
 | Entrega realizada    | v2 |
-| Nº issue             | 54 |
+| Nº issue             | [54](https://github.com/christianchf/misterfut/issues/54) |
 
 
 ----------
@@ -380,7 +380,7 @@ Definición detallada
 | Complejidad          | Difícil |
 | Entrega planificada  | v2 |
 | Entrega realizada    | v2 |
-| Nº issue             | 55 |
+| Nº issue             | [55](https://github.com/christianchf/misterfut/issues/55) |
 
 
 ----------
@@ -392,7 +392,7 @@ Definición detallada
 | Complejidad          | Media |
 | Entrega planificada  | v2 |
 | Entrega realizada    | v2 |
-| Nº issue             | 56 |
+| Nº issue             | [56](https://github.com/christianchf/misterfut/issues/56) |
 
 
 ----------
@@ -404,7 +404,7 @@ Definición detallada
 | Complejidad          | Difícil |
 | Entrega planificada  | v2 |
 | Entrega realizada    | v2 |
-| Nº issue             | 57 |
+| Nº issue             | [57](https://github.com/christianchf/misterfut/issues/57) |
 
 
 ----------
@@ -416,4 +416,4 @@ Definición detallada
 | Complejidad          | Media |
 | Entrega planificada  | v3 |
 | Entrega realizada    | v3 |
-| Nº issue             | 58 |
+| Nº issue             | [58](https://github.com/christianchf/misterfut/issues/58) |

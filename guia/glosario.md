@@ -35,7 +35,7 @@ Glosario de términos
 > Es una lista de los jugadores sancionados que tiene cada equipo.
 
 ####**Calendario:**
-> Es un registro de los días del año ordenados por meses y por semanas, en el que apareceran los diferentes eventos que tiene el equipo.
+> Es un registro de los días del año ordenados por meses y por semanas, en el que aparecerán los diferentes eventos que tiene el equipo.
 
 ####**Traspasar plantilla:**
-> En la aplicación, la opción de traspasar plantilla consiste en que el entrenador podra escoger la plantilla de uno sus equipos y añadirla, de forma masiva, a otro de sus equipos.
+> En la aplicación, la opción de traspasar plantilla consiste en que el entrenador podrá escoger la plantilla de uno sus equipos y añadirla, de forma masiva, a otro de sus equipos.

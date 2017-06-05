@@ -72,7 +72,7 @@ $config = [
         ]
     ],
     'params' => $params,
-    'language' => 'es_ES',
+    'language' => 'es-ES',
 ];
 
 if (YII_ENV_DEV) {

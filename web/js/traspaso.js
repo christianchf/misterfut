@@ -13,7 +13,7 @@ $('#traspaso').on('click', function(){
         method: 'POST',
         data: equipos,
         success: function(data, textStatus, Xhr) {
-            $('#indice').load(urlDestinoTraspasar + ' #w1-container');
+            $('#plantilla').load(urlDestinoTraspasar + ' #w1-container');
         }
     });
     setTimeout(function(){

@@ -9,7 +9,7 @@ AppAsset::register($this);
 ?>
 
 <br />
-<div id="indice">
+<div id="sancionados">
 <?= GridView::widget([
     'summary' => 'Número de jugadores sancionados: <b>{count}</b>',
     'dataProvider' => $sancionados,

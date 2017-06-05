@@ -17,16 +17,16 @@ $this->title = 'MisterFut';
         </div>
     </div>
     <div id="contenido">
-        <h1>MisterFut</h1>
-        <p>MisterFut es la aplicación perfecta para los entrenadores para llevar
-         el control sobre la organización de sus equipos. Organiza las
-        estadísticas de los equipos y tus jugadores, además dispon de un
-        calendario para tener todos los eventos deportivos de tus equipos al
-        día.</p>
         <section>
-            <h2>Características</h2>
+            <h1>MisterFut</h1>
+            <p>MisterFut es la aplicación perfecta para los entrenadores para llevar
+             el control sobre la organización de sus equipos. Organiza las
+            estadísticas de los equipos y tus jugadores, además dispon de un
+            calendario para tener todos los eventos deportivos de tus equipos al
+            día.</p>
             <div>
                 <article>
+                    <h2>Características</h2>
                     <p>En MisterFut dispones de las siguientes características para
                     gestionar tus equipos:</p>
                     <ul>
@@ -43,6 +43,7 @@ $this->title = 'MisterFut';
                     </ul>
                 </article>
                 <article>
+                    <h2>Videotutorial de tácticas</h2>
                     <video controls>
                         <source src="/videos/tacticas.mp4" type="video/mp4">
                     </video>

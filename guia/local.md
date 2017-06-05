@@ -8,7 +8,7 @@ Para la instalación de la aplicación en local son necesarios una serie de requ
 *   composer
 *   Servidor bien configurado, por ejemplo Apache2
 
-Una vez cumplidos estos requisitos deberas realizar los siguientes pasos para llevar a cabo la instalación de la aplicación:
+Una vez cumplidos estos requisitos deberás realizar los siguientes pasos para llevar a cabo la instalación de la aplicación:
 
 1.  Tener el Apache2 (u otro servidor) configurado con un nombre de dominio creado (por ejemplo: `misterfut.local`) y enlazado a `misterfut/web/`.
 
