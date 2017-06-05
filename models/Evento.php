@@ -41,6 +41,10 @@ class Evento extends \yii\db\ActiveRecord
             [['id_equipo'], 'integer'],
             [['tipo', 'nombre'], 'string', 'max' => 100],
             [['id_equipo'], 'exist', 'skipOnError' => true, 'targetClass' => Equipo::className(), 'targetAttribute' => ['id_equipo' => 'id']],
+            // [['fecha_inicio', 'fecha_fin', 'hora_inicio', 'hora_fin'], 'validarFechas'],
+            ['fecha_inicio', 'date', 'timestampAttribute' => 'fecha_inicio'],
+            ['fecha_fin', 'date', 'timestampAttribute' => 'fecha_fin'],
+            ['fecha_inicio', 'compare', 'compareAttribute' => 'fecha_fin', 'operator' => '<=', 'enableClientValidation' => true, 'message' => 'La fecha de fin debe ser igual o posterior a la fecha de inicio.'],
         ];
     }
 
@@ -70,4 +74,9 @@ class Evento extends \yii\db\ActiveRecord
     {
         return $this->hasOne(Equipo::className(), ['id' => 'id_equipo'])->inverseOf('eventos');
     }
+
+    // public function validarFechas($attribute, $params)
+    // {
+    //     var_dump($params);die;
+    // }
 }

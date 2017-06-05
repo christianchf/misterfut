@@ -58,6 +58,7 @@ class Jugador extends \yii\db\ActiveRecord
             }, 'whenClient' => 'function (attribute, value) {
                 return $(".field-jugador-fecha_alta").is(":visible");
             }'],
+            [['fecha_nac'], 'fechaValida'],
 
         ];
     }
@@ -154,5 +155,20 @@ class Jugador extends \yii\db\ActiveRecord
         $dias = $fechaAlta->diff($fechaActual)->days;
 
         return $dias;
+    }
+
+    /**
+     * Comprueba si la fecha de nacimiento del jugador es válida.
+     * @param  mixed $attribute
+     * @param  mixed $params
+     */
+    public function fechaValida($attribute, $params)
+    {
+        $fechaNac = new DateTime($this->fecha_nac);
+        $fechaActual = new DateTime(date('Y-m-d'));
+
+        if ($fechaNac >= $fechaActual) {
+            $this->addError($attribute, 'La fecha de nacimiento debe ser anterior o igual a la fecha actual.');
+        }
     }
 }

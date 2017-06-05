@@ -7,8 +7,8 @@ use yii\helpers\Html;
 
 $this->title = 'Añadir Evento';
 $this->params['breadcrumbs'][] = ['label' => 'Equipos', 'url' => ['/equipos/index']];
-$this->params['breadcrumbs'][] = ['label' => Html::encode($equipo), 'url' => ['/equipos/view', 'id' => Html::encode(Yii::$app->request->get('id_equipo'))]];
-$this->params['breadcrumbs'][] = ['label' => 'Calendario', 'url' => ['index', 'id_equipo' => Html::encode(Yii::$app->request->get('id_equipo'))]];
+$this->params['breadcrumbs'][] = ['label' => Html::encode($equipo), 'url' => ['/equipos/view', 'id' => Html::encode(Yii::$app->request->get('idEquipo'))]];
+$this->params['breadcrumbs'][] = ['label' => 'Calendario', 'url' => ['index', 'idEquipo' => Html::encode(Yii::$app->request->get('idEquipo'))]];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="evento-create">
