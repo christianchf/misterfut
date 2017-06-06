@@ -121,6 +121,17 @@ yii\db\ActiveRecord</td></tr>
         <td>Declara el nombre de la tabla de la base de datos asociada con esta clase.</td>
         <td><a href="app-models-evento.html">app\models\Evento</a></td>
     </tr>
+            <tr id="validarFechas()">
+        <td><a href="app-models-evento.html#validarFechas()-detail">validarFechas()</a></td>
+        <td>Comprueba que la fecha de inicio sea anterior o igual a la fecha de fin.</td>
+        <td><a href="app-models-evento.html">app\models\Evento</a></td>
+    </tr>
+            <tr id="validarHoras()">
+        <td><a href="app-models-evento.html#validarHoras()-detail">validarHoras()</a></td>
+        <td>Comprueba que la hora de inicio sea anterior o igual a la hora de fin, en
+el caso de que la fecha de inicio y la fecha de fin sean iguales.</td>
+        <td><a href="app-models-evento.html">app\models\Evento</a></td>
+    </tr>
     </table>
 </div>
 
@@ -241,6 +252,73 @@ yii\db\ActiveRecord</td></tr>
                                     </table>
 
 <!--	-->
+
+    <div class="detail-header h3" id="validarFechas()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="app-models-evento.html#validarFechas()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        validarFechas()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Comprueba que la fecha de inicio sea anterior o igual a la fecha de fin.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">void</span> <strong><a href="app-models-evento.html#validarFechas()-detail">validarFechas</a></strong> ( <span style="color: #0000BB">$attribute</span>, <span style="color: #0000BB">$params</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$attribute</span></td>
+                  <td class="param-type-col">mixed</td>
+                  <td class="param-desc-col"></td>
+                </tr>
+                            <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$params</span></td>
+                  <td class="param-type-col">mixed</td>
+                  <td class="param-desc-col"></td>
+                </tr>
+                                                </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="validarHoras()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="app-models-evento.html#validarHoras()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        validarHoras()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Comprueba que la hora de inicio sea anterior o igual a la hora de fin, en
+el caso de que la fecha de inicio y la fecha de fin sean iguales.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">void</span> <strong><a href="app-models-evento.html#validarHoras()-detail">validarHoras</a></strong> ( <span style="color: #0000BB">$attribute</span>, <span style="color: #0000BB">$params</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$attribute</span></td>
+                  <td class="param-type-col">mixed</td>
+                  <td class="param-desc-col"></td>
+                </tr>
+                            <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$params</span></td>
+                  <td class="param-type-col">mixed</td>
+                  <td class="param-desc-col"></td>
+                </tr>
+                                                </table>
+
+<!--	-->
 </div>
         </div>
 </div>
@@ -280,7 +358,7 @@ yii\db\ActiveRecord</td></tr>
 </div>
 
 <footer class="footer">
-        <p class="pull-right"><small>Page generated on Mon, 05 Jun 2017 19:05:39 +0000</small></p>
+        <p class="pull-right"><small>Page generated on Tue, 06 Jun 2017 19:54:34 +0000</small></p>
     Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
 
 <script type="text/javascript">jQuery(document).ready(function () {

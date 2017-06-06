@@ -60,3 +60,4 @@ Cuadro resumen
 | **R56: LISTA DE LESIONADOS** | OPCIONAL | Funcional | Media | v2 | v2 | [56](https://github.com/christianchf/misterfut/issues/56) |
 | **R57: AÑADIR NUEVA TEMPORADA A UN EQUIPO** | OPCIONAL | Funcional | Difícil | v2 | v2 | [57](https://github.com/christianchf/misterfut/issues/57) |
 | **R58: LISTA DE SANCIONADOS** | OPCIONAL | Funcional | Media | v3 | v3 | [58](https://github.com/christianchf/misterfut/issues/58) |
+| **R59: REGISTRO DE EVENTOS** | OPCIONAL | Funcional | Media | v3 | v3 | [59](https://github.com/christianchf/misterfut/issues/59) |

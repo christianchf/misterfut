@@ -417,3 +417,14 @@ Definición detallada
 | Entrega planificada  | v3 |
 | Entrega realizada    | v3 |
 | Nº issue             | [58](https://github.com/christianchf/misterfut/issues/58) |
+
+----------
+| **R59:**             | REGISTRO DE EVENTOS |
+| ----------           | ---------- |
+| Descripción          | Todos los usuarios, que estén logueados (R5), podrán ver un registro de los eventos del equipo en el que se encuentran. |
+| Prioridad            | OPCIONAL |
+| Tipo                 | Funcional |
+| Complejidad          | Media |
+| Entrega planificada  | v3 |
+| Entrega realizada    | v3 |
+| Nº issue             | [59](https://github.com/christianchf/misterfut/issues/59) |
