@@ -2,6 +2,8 @@
 
 namespace app\models;
 
+use DateTime;
+
 /**
  * Este es el modelo para la tabla "eventos".
  *
@@ -41,10 +43,11 @@ class Evento extends \yii\db\ActiveRecord
             [['id_equipo'], 'integer'],
             [['tipo', 'nombre'], 'string', 'max' => 100],
             [['id_equipo'], 'exist', 'skipOnError' => true, 'targetClass' => Equipo::className(), 'targetAttribute' => ['id_equipo' => 'id']],
-            // [['fecha_inicio', 'fecha_fin', 'hora_inicio', 'hora_fin'], 'validarFechas'],
-            ['fecha_inicio', 'date', 'timestampAttribute' => 'fecha_inicio'],
-            ['fecha_fin', 'date', 'timestampAttribute' => 'fecha_fin'],
-            ['fecha_inicio', 'compare', 'compareAttribute' => 'fecha_fin', 'operator' => '<=', 'enableClientValidation' => true, 'message' => 'La fecha de fin debe ser igual o posterior a la fecha de inicio.'],
+            [['fecha_inicio', 'fecha_fin'], 'validarFechas'],
+            [['hora_inicio', 'hora_fin'], 'validarHoras'],
+            // ['fecha_inicio', 'date', 'timestampAttribute' => 'fecha_inicio'],
+            // ['fecha_fin', 'date', 'timestampAttribute' => 'fecha_fin'],
+            // ['fecha_inicio', 'compare', 'compareAttribute' => 'fecha_fin', 'operator' => '<=', 'enableClientValidation' => true, 'message' => 'La fecha de fin debe ser igual o posterior a la fecha de inicio.'],
         ];
     }
 
@@ -75,8 +78,38 @@ class Evento extends \yii\db\ActiveRecord
         return $this->hasOne(Equipo::className(), ['id' => 'id_equipo'])->inverseOf('eventos');
     }
 
-    // public function validarFechas($attribute, $params)
-    // {
-    //     var_dump($params);die;
-    // }
+    /**
+     * Comprueba que la fecha de inicio sea anterior o igual a la fecha de fin.
+     * @param mixed $attribute
+     * @param mixed $params
+     */
+    public function validarFechas($attribute, $params)
+    {
+        $fechaInicio = new DateTime($this->fecha_inicio);
+        $fechaFin = new DateTime($this->fecha_fin);
+
+        if ($fechaInicio > $fechaFin) {
+            $this->addError($attribute, 'La fecha de inicio debe ser anterior o igual a la fecha de fin.');
+        }
+    }
+
+    /**
+     * Comprueba que la hora de inicio sea anterior o igual a la hora de fin, en
+     * el caso de que la fecha de inicio y la fecha de fin sean iguales.
+     * @param mixed $attribute
+     * @param mixed $params
+     */
+    public function validarHoras($attribute, $params)
+    {
+        $fechaInicio = new DateTime($this->fecha_inicio);
+        $fechaFin = new DateTime($this->fecha_fin);
+        $horaInicio = new DateTime($this->hora_inicio);
+        $horaFin = new DateTime($this->hora_fin);
+
+        if ($fechaInicio == $fechaFin) {
+            if ($horaInicio > $horaFin) {
+                $this->addError($attribute, 'La hora de inicio debe ser anterior o igual a la hora de fin.');
+            }
+        }
+    }
 }

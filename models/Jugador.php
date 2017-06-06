@@ -167,7 +167,7 @@ class Jugador extends \yii\db\ActiveRecord
         $fechaNac = new DateTime($this->fecha_nac);
         $fechaActual = new DateTime(date('Y-m-d'));
 
-        if ($fechaNac >= $fechaActual) {
+        if ($fechaNac > $fechaActual) {
             $this->addError($attribute, 'La fecha de nacimiento debe ser anterior o igual a la fecha actual.');
         }
     }
