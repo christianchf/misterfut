@@ -69,6 +69,7 @@ class EjerciciosController extends Controller
         $tipos = [
             'Físico' => 'Físico',
             'Táctico' => 'Táctico',
+            'Técnico' => 'Técnico',
             'Otros' => 'Otros',
         ];
 
@@ -103,6 +104,7 @@ class EjerciciosController extends Controller
         $tipos = [
             'Físico' => 'Físico',
             'Táctico' => 'Táctico',
+            'Técnico' => 'Técnico',
             'Otros' => 'Otros',
         ];
         $model->id_usuario = Yii::$app->user->id;
@@ -130,6 +132,7 @@ class EjerciciosController extends Controller
         $tipos = [
             'Físico' => 'Físico',
             'Táctico' => 'Táctico',
+            'Técnico' => 'Técnico',
             'Otros' => 'Otros',
         ];
 

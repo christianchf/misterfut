@@ -93,7 +93,7 @@ create table ejercicios (
     nombre        varchar(100) not null,
     tipo          varchar(100) not null,
     descripcion   text         not null,
-    num_jugadores int,
+    num_jugadores varchar(100),
     material      text,
     dimensiones   varchar(100)
 );

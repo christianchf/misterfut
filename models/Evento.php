@@ -45,9 +45,6 @@ class Evento extends \yii\db\ActiveRecord
             [['id_equipo'], 'exist', 'skipOnError' => true, 'targetClass' => Equipo::className(), 'targetAttribute' => ['id_equipo' => 'id']],
             [['fecha_inicio', 'fecha_fin'], 'validarFechas'],
             [['hora_inicio', 'hora_fin'], 'validarHoras'],
-            // ['fecha_inicio', 'date', 'timestampAttribute' => 'fecha_inicio'],
-            // ['fecha_fin', 'date', 'timestampAttribute' => 'fecha_fin'],
-            // ['fecha_inicio', 'compare', 'compareAttribute' => 'fecha_fin', 'operator' => '<=', 'enableClientValidation' => true, 'message' => 'La fecha de fin debe ser igual o posterior a la fecha de inicio.'],
         ];
     }
 

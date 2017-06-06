@@ -54,9 +54,9 @@ class Ejercicio extends \yii\db\ActiveRecord
             'nombre' => 'Nombre',
             'tipo' => 'Tipo',
             'descripcion' => 'Descripción',
-            'num_jugadores' => 'Número de jugadores',
-            'material' => 'Material necesario',
-            'dimensiones' => 'Dimensiones del campo',
+            'num_jugadores' => 'Número de jugadores (opcional)',
+            'material' => 'Material necesario (opcional)',
+            'dimensiones' => 'Dimensiones del campo (opcional)',
         ];
     }
 

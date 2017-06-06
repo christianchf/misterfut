@@ -1,5 +1,5 @@
 ![Logo](images/logo.png) **MisterFut**
-===========
+==================================
 Descripción general del proyecto
 --------------------------------
 *   [Funcionalidad principal de la apllicación](funcionalidad.md)
@@ -41,3 +41,7 @@ Glosario de términos
 Conclusiones
 ------------
 *   [Conclusiones](conclusiones.md)
+
+Anexos
+------------
+*   [Anexo I: Prueba del seis](prueba-seis.md)

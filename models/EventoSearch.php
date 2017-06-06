@@ -42,7 +42,7 @@ class EventoSearch extends Evento
      */
     public function search($params)
     {
-        $query = Evento::find()->where(['id_equipo' => Yii::$app->request->get('id_equipo')]);
+        $query = Evento::find()->where(['id_equipo' => Yii::$app->request->get('idEquipo')]);
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,

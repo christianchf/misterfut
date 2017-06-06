@@ -34,6 +34,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <p>
         <?= Html::a('Añadir Evento', ['create', 'idEquipo' => Html::encode(Yii::$app->request->get('idEquipo'))], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Registro de eventos', ['registro', 'idEquipo' => Html::encode(Yii::$app->request->get('idEquipo'))], ['class' => 'btn btn-primary']) ?>
     </p>
 
     <div id='calendar'></div>

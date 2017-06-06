@@ -6,6 +6,7 @@ use Yii;
 use app\models\Event;
 use app\models\Equipo;
 use app\models\Evento;
+use app\models\EventoSearch;
 use yii\filters\AccessControl;
 use yii\helpers\Url;
 use yii\web\Controller;
@@ -35,7 +36,7 @@ class EventosController extends Controller
                 'rules' => [
                     [
                         'allow' => true,
-                        'actions' => ['index', 'create'],
+                        'actions' => ['index', 'create', 'registro'],
                         'roles' => ['@'],
                         'matchCallback' => function ($rule, $action) {
                             $idEquipo = Yii::$app->request->get('idEquipo');
@@ -79,10 +80,6 @@ class EventosController extends Controller
     }
 
     /**
-     * Lista todos los eventos de un equipo.
-     * @return mixed
-     */
-    /**
     * Lista todos los eventos de un equipo.
      * @param int $idEquipo El id del equipo.
      * @return mixed
@@ -117,6 +114,31 @@ class EventosController extends Controller
         return $this->render('index', [
             'equipo' => $equipo,
             'events' => $events,
+        ]);
+    }
+
+    /**
+     * Muestra un registro de todos los eventos del equipo actual.
+     * @param int $idEquipo El id del equipo.
+     * @return mixed
+     */
+    public function actionRegistro($idEquipo)
+    {
+        $searchModel = new EventoSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        $equipo = Equipo::find()->where(['id' => $idEquipo])->one();
+        $tipos = [
+            'Partido' => 'Partido',
+            'Entrenamiento' => 'Entrenamiento',
+            'Evento publicitario' => 'Evento publicitario',
+            'Otros' => 'Otros',
+        ];
+
+        return $this->render('registro', [
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
+            'equipo' => $equipo,
+            'tipos' => $tipos,
         ]);
     }
 
