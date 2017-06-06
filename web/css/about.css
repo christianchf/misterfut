@@ -32,7 +32,7 @@ article img {
 }
 
 article img:hover {
-    animation: 5s linear infinite rotacion;
+    animation: 2s linear infinite rotacion;
 }
 
 article ul li {
@@ -40,8 +40,9 @@ article ul li {
 }
 
 @keyframes rotacion {
-    0% {transform: rotate(0deg);}
-    100% {transform: rotate(360deg);}
+    0%  {transform:rotateZ(-5deg);}
+	50% {transform:rotateZ( 0deg) scale(.8); filter: grayscale(40%);}
+	100%{transform:rotateZ( 5deg);}
 }
 
 @media screen and (max-width: 500px) {
