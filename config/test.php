@@ -8,7 +8,14 @@ $dbParams = require(__DIR__ . '/test_db.php');
 return [
     'id' => 'basic-tests',
     'basePath' => dirname(__DIR__),
-    'language' => 'en-US',
+    'language' => 'es-ES',
+    'modules' => [
+        'gridview' =>  [
+            'class' => '\kartik\grid\Module'
+            // 'downloadAction' => 'gridview/export/download',
+            // 'i18n' => []
+        ]
+    ],
     'components' => [
         'db' => $dbParams,
         'mailer' => [
@@ -20,8 +27,15 @@ return [
         'urlManager' => [
             'showScriptName' => true,
         ],
+        'session' => [
+            'class' => 'yii\web\DbSession',
+            // 'db' => 'mydb',  // the application component ID of the DB connection. Defaults to 'db'.
+            // 'sessionTable' => 'my_session', // session table name. Defaults to 'session'.
+        ],
         'user' => [
-            'identityClass' => 'app\models\User',
+            'class' => 'app\components\User',
+            'identityClass' => 'app\models\Usuario',
+            'enableAutoLogin' => true,
         ],
         'request' => [
             'cookieValidationKey' => 'test',

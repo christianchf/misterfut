@@ -1,5 +1,6 @@
 <?php
-class ContactFormCest 
+
+class ContactFormCest
 {
     public function _before(\FunctionalTester $I)
     {
@@ -8,19 +9,19 @@ class ContactFormCest
 
     public function openContactPage(\FunctionalTester $I)
     {
-        $I->see('Contact', 'h1');        
+        $I->see('Contacto', 'h1');
     }
 
     public function submitEmptyForm(\FunctionalTester $I)
     {
         $I->submitForm('#contact-form', []);
         $I->expectTo('see validations errors');
-        $I->see('Contact', 'h1');
-        $I->see('Name cannot be blank');
-        $I->see('Email cannot be blank');
-        $I->see('Subject cannot be blank');
-        $I->see('Body cannot be blank');
-        $I->see('The verification code is incorrect');
+        $I->see('Contacto', 'h1');
+        $I->see('Nombre no puede estar vacío.');
+        $I->see('Email no puede estar vacío.');
+        $I->see('Asunto no puede estar vacío.');
+        $I->see('Cuerpo no puede estar vacío.');
+        $I->see('El código de verificación es incorrecto.');
     }
 
     public function submitFormWithIncorrectEmail(\FunctionalTester $I)
@@ -32,12 +33,12 @@ class ContactFormCest
             'ContactForm[body]' => 'test content',
             'ContactForm[verifyCode]' => 'testme',
         ]);
-        $I->expectTo('see that email address is wrong');
-        $I->dontSee('Name cannot be blank', '.help-inline');
-        $I->see('Email is not a valid email address.');
-        $I->dontSee('Subject cannot be blank', '.help-inline');
-        $I->dontSee('Body cannot be blank', '.help-inline');
-        $I->dontSee('The verification code is incorrect', '.help-inline');        
+        $I->expectTo('Email no es una dirección de correo válida.');
+        $I->dontSee('Nombre no puede estar vacío.', '.help-inline');
+        $I->see('Email no es una dirección de correo válida.');
+        $I->dontSee('Asunto no puede estar vacío.', '.help-inline');
+        $I->dontSee('Cuerpo no puede estar vacío.', '.help-inline');
+        $I->dontSee('El código de verificación es incorrecto.', '.help-inline');
     }
 
     public function submitFormSuccessfully(\FunctionalTester $I)
@@ -51,6 +52,6 @@ class ContactFormCest
         ]);
         $I->seeEmailIsSent();
         $I->dontSeeElement('#contact-form');
-        $I->see('Thank you for contacting us. We will respond to you as soon as possible.');        
+        $I->see('Gracias por contactar con nosotros. Le responderemos con la mayor brevedad posible.');
     }
 }
