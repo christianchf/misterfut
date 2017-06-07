@@ -50,9 +50,38 @@
 <a class="list-group-item active" href="#navigation-153" data-toggle="collapse" data-parent="#navigation">Anexos <b class="caret"></b></a><div id="navigation-153" class="submenu panel-collapse collapse in"><a class="list-group-item" href="./prueba-seis.html">Anexo I: Prueba del seis</a>
 <a class="list-group-item" href="./validacion-css.html">Anexo II: Validación CSS</a>
 <a class="list-group-item" href="./validacion-html.html">Anexo III: Validación HTML</a>
-<a class="list-group-item active" href="./validacion-accesibilidad.html">Anexo IV: Validación accesibilidad</a></div></div>    </div>
+<a class="list-group-item active" href="./validacion-accesibilidad.html">Anexo IV: Validación accesibilidad</a>
+<a class="list-group-item" href="./validacion-microdatos.html">Anexo V: Validación microdatos</a></div></div>    </div>
     <div class="col-md-9 guide-content" role="main">
-        <h1>Anexo IV: Validación accesibilidad <span id="anexo-iv-validacion-accesibilidad"></span><a href="#anexo-iv-validacion-accesibilidad" class="hashlink">&para;</a></h1>        <div class="toplink"><a href="#" class="h1" title="go to top"><span class="glyphicon glyphicon-arrow-up"></a></div>
+        <h1>Anexo IV: Validación accesibilidad <span id="anexo-iv-validacion-accesibilidad"></span><a href="#anexo-iv-validacion-accesibilidad" class="hashlink">&para;</a></h1>
+<div class="toc"><ol><li><a href="#index">Index</a></li>
+<li><a href="#anadir-jugador">Añadir jugador</a></li>
+<li><a href="#calendario">Calendario</a></li>
+<li><a href="#anadir-evento">Añadir evento</a></li>
+<li><a href="#historial-de-equipos">Historial de equipos</a></li>
+<li><a href="#anadir-ejercicio">Añadir ejercicio</a></li>
+<li><a href="#conclusion">Conclusión</a></li></ol></div>
+<p>La validación sobre accesibilidad se ha llevado a cabo sobre las siguientes páginas:</p>
+<h2><a href="http://misterfut.herokuapp.com/index.php">Index</a> <span id="index"></span><a href="#index" class="hashlink">&para;</a></h2><p><img src="images/validacion-accesibilidad/index.PNG" alt="Index" /></p>
+<p>La página de index cumple el nivel AA de accesibilidad, solo presenta el error de utilización de la etiqueta <code>&lt;b&gt;</code>, la cual es generada automáticamente por el framework de Yii2 y no se puede cambiar.</p>
+<hr />
+<h2><a href="http://misterfut.herokuapp.com/index.php?r=jugadores%2Fcreate&amp;id_equipo=1">Añadir jugador</a> <span id="anadir-jugador"></span><a href="#anadir-jugador" class="hashlink">&para;</a></h2><p><img src="images/validacion-accesibilidad/añadir-jugador.PNG" alt="Añadir jugador" /></p>
+<p>La página de añadir jugador cumple el nivel AA de accesibilidad, solo presenta el error de utilización de la etiqueta <code>&lt;b&gt;</code> y la etiqueta <code>&lt;i&gt;</code>, las cuales son generadas automáticamente por el framework de Yii2 y por los iconos de bootstrap y no se pueden cambiar.</p>
+<hr />
+<h2><a href="http://misterfut.herokuapp.com/index.php?r=eventos%2Findex&amp;idEquipo=1">Calendario</a> <span id="calendario"></span><a href="#calendario" class="hashlink">&para;</a></h2><p><img src="images/validacion-accesibilidad/calendario.PNG" alt="Calendario" /></p>
+<p>La página del calendario cumple el nivel AA de accesibilidad, solo presenta el error de utilización de la etiqueta <code>&lt;b&gt;</code>, la cual es generada automáticamente por el framework de Yii2 y no se puede cambiar.</p>
+<hr />
+<h2><a href="http://misterfut.herokuapp.com/index.php?r=eventos%2Fcreate&amp;idEquipo=1">Añadir evento</a> <span id="anadir-evento"></span><a href="#anadir-evento" class="hashlink">&para;</a></h2><p><img src="images/validacion-accesibilidad/añadir-evento.PNG" alt="Añadir evento" /></p>
+<p>La página de añadir evento cumple el nivel AA de accesibilidad, solo presenta el error de utilización de la etiqueta <code>&lt;b&gt;</code> y la etiqueta <code>&lt;i&gt;</code>, las cuales son generadas automáticamente por el framework de Yii2 y por los iconos de bootstrap y no se pueden cambiar.</p>
+<hr />
+<h2><a href="http://misterfut.herokuapp.com/index.php?r=equipos%2Fhistorial">Historial de equipos</a> <span id="historial-de-equipos"></span><a href="#historial-de-equipos" class="hashlink">&para;</a></h2><p><img src="images/validacion-accesibilidad/historial.PNG" alt="Historial de equipos" /></p>
+<p>La página del historial de equipos cumple el nivel AA de accesibilidad, solo presenta el error de utilización de la etiqueta <code>&lt;b&gt;</code>, la cual es generada automáticamente por el framework de Yii2 y no se puede cambiar.</p>
+<hr />
+<h2><a href="http://misterfut.herokuapp.com/index.php?r=ejercicios%2Fcreate">Añadir ejercicio</a> <span id="anadir-ejercicio"></span><a href="#anadir-ejercicio" class="hashlink">&para;</a></h2><p><img src="images/validacion-accesibilidad/añadir-ejercicio.PNG" alt="Añadir ejercicio" /></p>
+<p>La página del historial de equipos cumple el nivel AA de accesibilidad, solo presenta el error de utilización de la etiqueta <code>&lt;b&gt;</code>, la cual es generada automáticamente por el framework de Yii2 y no se puede cambiar.</p>
+<hr />
+<h2>Conclusión <span id="conclusion"></span><a href="#conclusion" class="hashlink">&para;</a></h2><p>En resumen, las páginas validadas cumplen el nivel de accesibilidad exigido perfectamente, excepto por el detalle de las etiquetas <code>&lt;b&gt;</code> e <code>&lt;i&gt;</code>, las cuales no deberían ser utilizadas según las especificaciones de HTML5 pero el framework Yii2 las genera automaticamente.</p>
+        <div class="toplink"><a href="#" class="h1" title="go to top"><span class="glyphicon glyphicon-arrow-up"></a></div>
     </div>
 </div>
 
@@ -60,7 +89,7 @@
 </div>
 
 <footer class="footer">
-        <p class="pull-right"><small>Page generated on Tue, 06 Jun 2017 19:54:35 +0000</small></p>
+        <p class="pull-right"><small>Page generated on Wed, 07 Jun 2017 17:08:34 +0000</small></p>
     Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
 
 <script type="text/javascript">jQuery(document).ready(function () {

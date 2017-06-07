@@ -11,7 +11,7 @@ AppAsset::register($this);
 <br />
 <div id="sancionados">
 <?= GridView::widget([
-    'summary' => 'Número de jugadores sancionados: <b>{count}</b>',
+    'summary' => 'Número de jugadores sancionados: <em>{count}</em>',
     'dataProvider' => $sancionados,
     'resizableColumns' => false,
     'columns' => [

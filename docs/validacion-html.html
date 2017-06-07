@@ -50,9 +50,44 @@
 <a class="list-group-item active" href="#navigation-69" data-toggle="collapse" data-parent="#navigation">Anexos <b class="caret"></b></a><div id="navigation-69" class="submenu panel-collapse collapse in"><a class="list-group-item" href="./prueba-seis.html">Anexo I: Prueba del seis</a>
 <a class="list-group-item" href="./validacion-css.html">Anexo II: Validación CSS</a>
 <a class="list-group-item active" href="./validacion-html.html">Anexo III: Validación HTML</a>
-<a class="list-group-item" href="./validacion-accesibilidad.html">Anexo IV: Validación accesibilidad</a></div></div>    </div>
+<a class="list-group-item" href="./validacion-accesibilidad.html">Anexo IV: Validación accesibilidad</a>
+<a class="list-group-item" href="./validacion-microdatos.html">Anexo V: Validación microdatos</a></div></div>    </div>
     <div class="col-md-9 guide-content" role="main">
-        <h1>Anexo III: Validación HTML <span id="anexo-iii-validacion-html"></span><a href="#anexo-iii-validacion-html" class="hashlink">&para;</a></h1>        <div class="toplink"><a href="#" class="h1" title="go to top"><span class="glyphicon glyphicon-arrow-up"></a></div>
+        <h1>Anexo III: Validación HTML <span id="anexo-iii-validacion-html"></span><a href="#anexo-iii-validacion-html" class="hashlink">&para;</a></h1>
+<div class="toc"><ol><li><a href="#index">Index</a></li>
+<li><a href="#mis-equipos">Mis equipos</a></li>
+<li><a href="#ver-equipo">Ver equipo</a></li>
+<li><a href="#plantilla">Plantilla</a></li>
+<li><a href="#anadir-jugador">Añadir jugador</a></li>
+<li><a href="#calendario">Calendario</a></li>
+<li><a href="#anadir-evento">Añadir evento</a></li>
+<li><a href="#historial-de-equipos">Historial de equipos</a></li>
+<li><a href="#ejercicios">Ejercicios</a></li>
+<li><a href="#anadir-ejercicio">Añadir ejercicio</a></li>
+<li><a href="#conclusion">Conclusión</a></li></ol></div>
+<p>La validación html se ha llevado a cabo sobre las siguientes páginas:</p>
+<h2><a href="http://misterfut.herokuapp.com/index.php">Index</a> <span id="index"></span><a href="#index" class="hashlink">&para;</a></h2><p><img src="images/validacion-html/index.PNG" alt="Index" /></p>
+<hr />
+<h2><a href="http://misterfut.herokuapp.com/index.php?r=equipos%2Findex">Mis equipos</a> <span id="mis-equipos"></span><a href="#mis-equipos" class="hashlink">&para;</a></h2><p><img src="images/validacion-html/equipos-index.PNG" alt="Equipos index" /></p>
+<hr />
+<h2><a href="http://misterfut.herokuapp.com/index.php?r=equipos%2Fview&amp;id=1">Ver equipo</a> <span id="ver-equipo"></span><a href="#ver-equipo" class="hashlink">&para;</a></h2><p><img src="images/validacion-html/equipos-view.PNG" alt="Equipos view" /></p>
+<hr />
+<h2><a href="http://misterfut.herokuapp.com/index.php?r=jugadores%2Findex&amp;id_equipo=1">Plantilla</a> <span id="plantilla"></span><a href="#plantilla" class="hashlink">&para;</a></h2><p><img src="images/validacion-html/plantilla.PNG" alt="Plantilla" /></p>
+<hr />
+<h2><a href="http://misterfut.herokuapp.com/index.php?r=jugadores%2Fcreate&amp;id_equipo=1">Añadir jugador</a> <span id="anadir-jugador"></span><a href="#anadir-jugador" class="hashlink">&para;</a></h2><p><img src="images/validacion-html/añadir-jugador.PNG" alt="Añadir jugador" /></p>
+<hr />
+<h2><a href="http://misterfut.herokuapp.com/index.php?r=eventos%2Findex&amp;idEquipo=1">Calendario</a> <span id="calendario"></span><a href="#calendario" class="hashlink">&para;</a></h2><p><img src="images/validacion-html/calendario.PNG" alt="Calendario" /></p>
+<hr />
+<h2><a href="http://misterfut.herokuapp.com/index.php?r=eventos%2Fcreate&amp;idEquipo=1">Añadir evento</a> <span id="anadir-evento"></span><a href="#anadir-evento" class="hashlink">&para;</a></h2><p><img src="images/validacion-html/añadir-evento.PNG" alt="Añadir evento" /></p>
+<hr />
+<h2><a href="http://misterfut.herokuapp.com/index.php?r=equipos%2Fhistorial">Historial de equipos</a> <span id="historial-de-equipos"></span><a href="#historial-de-equipos" class="hashlink">&para;</a></h2><p><img src="images/validacion-html/historial-equipos.PNG" alt="Historial de equipos" /></p>
+<hr />
+<h2><a href="http://misterfut.herokuapp.com/index.php?r=ejercicios%2Findex">Ejercicios</a> <span id="ejercicios"></span><a href="#ejercicios" class="hashlink">&para;</a></h2><p><img src="images/validacion-html/ejercicios.PNG" alt="Ejercicios" /></p>
+<hr />
+<h2><a href="http://misterfut.herokuapp.com/index.php?r=ejercicios%2Fcreate">Añadir ejercicio</a> <span id="anadir-ejercicio"></span><a href="#anadir-ejercicio" class="hashlink">&para;</a></h2><p><img src="images/validacion-html/añadir-ejercicio.PNG" alt="Añadir ejercicio" /></p>
+<hr />
+<h2>Conclusión <span id="conclusion"></span><a href="#conclusion" class="hashlink">&para;</a></h2><p>En resumen, todas las páginas validadas han pasado correctamente la validación, exceptuando el caso del "warning" que aparece en todas las páginas sobre el <code>role="navigation"</code> que tiene asignado la etiqueta <code>&lt;nav&gt;</code>, el cual es generado automaticamente por el framework Yii2 y no se puede eliminar.</p>
+        <div class="toplink"><a href="#" class="h1" title="go to top"><span class="glyphicon glyphicon-arrow-up"></a></div>
     </div>
 </div>
 
@@ -60,7 +95,7 @@
 </div>
 
 <footer class="footer">
-        <p class="pull-right"><small>Page generated on Tue, 06 Jun 2017 19:54:35 +0000</small></p>
+        <p class="pull-right"><small>Page generated on Wed, 07 Jun 2017 17:08:34 +0000</small></p>
     Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
 
 <script type="text/javascript">jQuery(document).ready(function () {

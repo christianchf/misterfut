@@ -18,7 +18,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <?= ListView::widget([
-        'summary' => 'Número de equipos: <b>{count}</b>',
+        'summary' => 'Número de equipos: <em>{count}</em>',
         'dataProvider' => $equipos,
         'itemOptions' => ['class' => 'item'],
         'itemView' => function ($model, $key, $index, $widget) {

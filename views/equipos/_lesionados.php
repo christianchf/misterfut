@@ -9,9 +9,9 @@ AppAsset::register($this);
 ?>
 
 <br />
-<div id=lesionados">
+<div id="lesionados">
 <?= GridView::widget([
-    'summary' => 'Número de jugadores lesionados: <b>{count}</b>',
+    'summary' => 'Número de jugadores lesionados: <em>{count}</em>',
     'dataProvider' => $lesionados,
     'resizableColumns' => false,
     'columns' => [
