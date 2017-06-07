@@ -48,6 +48,15 @@ class EventoSearch extends Evento
             'query' => $query,
         ]);
 
+        $dataProvider->setSort([
+            'defaultOrder' => ['fecha_inicio' => SORT_ASC],
+            'attributes' => [
+                'tipo',
+                'nombre',
+                'fecha_inicio',
+            ]
+        ]);
+
         $this->load($params);
 
         if (!$this->validate()) {
