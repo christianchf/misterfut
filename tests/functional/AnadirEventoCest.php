@@ -17,14 +17,14 @@ class ModificarEventoCest
     {
         $I->submitForm('#anadirEvento', [
             'Evento[tipo]' => 'Entrenamiento',
-            'Evento[titulo]' => 'Entrenamiento físico',
+            'Evento[titulo]' => '',
             'Evento[fecha_inicio]' => '2017-06-03',
             'Evento[hora_inicio]' => '09:00',
             'Evento[fecha_fin]' => '2017-06-03',
-            'Evento[hora_fin]' => '07:00',
+            'Evento[hora_fin]' => '10:00',
         ]);
         $I->expectTo('see validations errors');
-        $I->see('La hora de inicio debe ser anterior o igual a la hora de fin.');
+        $I->see('Título no puede estar vacío.');
     }
     public function enviarFormularioCorrecto(\FunctionalTester $I)
     {

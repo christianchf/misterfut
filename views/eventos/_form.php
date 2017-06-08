@@ -9,6 +9,11 @@ use yii\widgets\ActiveForm;
 /* @var $this yii\web\View */
 /* @var $model app\models\Evento */
 /* @var $form yii\widgets\ActiveForm */
+
+$this->registerJsFile(
+    '/js/validaEvento.js',
+    ['depends' => [\yii\web\JqueryAsset::className()]]
+);
 ?>
 
 <div class="evento-form">
