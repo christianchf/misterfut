@@ -11,9 +11,9 @@ $this->title = 'MisterFut';
     <div class="body-content">
         <br><br><br>
         <div class="carrusel-slick">
+            <div><img src="/images/estadio.jpg" alt="Estadio"></div>
             <div><img src="/images/pelota-campo.jpg" alt="Pelota en campo de fútbol"></div>
             <div><img src="/images/pizarra-tactica.jpg" alt="Pizarra de tácticas"></div>
-            <div><img src="/images/estadio.jpg" alt="Estadio"></div>
         </div>
     </div>
     <div id="contenido">
@@ -43,7 +43,7 @@ $this->title = 'MisterFut';
                     </ul>
                 </article>
                 <article>
-                    <h2>Videotutorial de tácticas</h2>
+                    <h2>Video de tácticas</h2>
                     <video controls>
                         <source src="/videos/tacticas.mp4" type="video/mp4">
                     </video>

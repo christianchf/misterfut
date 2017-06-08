@@ -43,7 +43,7 @@ article ul li {
     0% {transform:rotateZ(-5deg);}
 	25% {transform:rotateZ( 0deg) scale(.8); filter: grayscale(40%);}
 	50% {transform:rotateZ( 5deg);}
-    75% {transform:rotateZ( 0deg) scale(.8); filter: grayscale(40%);}
+    75% {transform:rotateZ( 0deg) scale(.8); filter: grayscale(0%);}
     100% {transform:rotateZ(-5deg);}
 }
 

@@ -13,7 +13,7 @@ use yii\widgets\ActiveForm;
 
 <div class="evento-form">
 
-    <?php $form = ActiveForm::begin(); ?>
+    <?php $form = ActiveForm::begin(['id' => 'anadirEvento']); ?>
 
     <?= $form->field($model, 'tipo')->widget(Select2::classname(), [
             'data' => $tipos,

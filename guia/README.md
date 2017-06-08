@@ -49,3 +49,5 @@ Anexos
 *   [Anexo III: Validación HTML](validacion-html.md)
 *   [Anexo IV: Validación accesibilidad](validacion-accesibilidad.md)
 *   [Anexo V: Validación microdatos](validacion-microdatos.md)
+*   [Anexo VI: Comprobación en navegadores](comprobacion.md)
+*   [Anexo VII: Ejecución de pruebas funcionales](pruebas-funcionales.md)

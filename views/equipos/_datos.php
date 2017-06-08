@@ -33,6 +33,7 @@ Modal::end(); ?>
 
 <?= DetailView::widget([
     'model' => $model,
+    'id' => 'detailEquipo',
     'attributes' => [
         'nombre',
         'temporada',
