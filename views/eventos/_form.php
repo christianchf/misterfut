@@ -40,6 +40,7 @@ $this->registerJsFile(
                         'todayBtn' => true,
                         'format' => 'yyyy-mm-dd',
                     ],
+                    'readonly' => true,
                 ]); ?>
             </div>
             <div class="col-xs-4">
@@ -69,6 +70,7 @@ $this->registerJsFile(
                     'todayBtn' => true,
                     'format' => 'yyyy-mm-dd',
                 ],
+                'readonly' => true,
             ]); ?>
         </div>
         <div class="col-xs-4">

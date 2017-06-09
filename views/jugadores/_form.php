@@ -29,7 +29,8 @@ $this->registerJsFile(
         'pluginOptions' => [
             'autoclose'=>true,
             'format' => 'yyyy-mm-dd',
-        ]
+        ],
+        'readonly' => true,
     ]); ?>
 
     <?= $form->field($model, 'dorsal')->input('number') ?>
@@ -50,7 +51,8 @@ $this->registerJsFile(
             'pluginOptions' => [
                 'autoclose'=>true,
                 'format' => 'yyyy-mm-dd',
-            ]
+            ],
+            'readonly' => true,
         ]); ?>
 
         <?= $form->field($model, 'esta_sancionado')->checkbox() ?>

@@ -12,6 +12,10 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="equipo-view">
 
+    <?php if (Yii::$app->session->hasFlash('error')) { ?>
+        <div class="alert alert-danger">Ya has creado este equipo en la temporada indicada.</div>
+    <?php } ?>
+
     <h1><?= Html::encode($this->title) ?></h1>
 
     <?= Tabs::widget([

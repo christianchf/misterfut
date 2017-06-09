@@ -73,31 +73,6 @@ $(document).on('ready', function(e) {
         }
     });
 
-
-
-    //
-    // $('#anadirEvento').yiiActiveForm('add', {
-    //     id: '#evento-fecha_fin-kvdate',
-    //     name: 'Evento[fecha_fin]',
-    //     container: '.field-evento-fecha_fin',
-    //     input: '#evento-fecha_fin-kvdate',
-    //     error: '.help-block',
-    //     validate:  function (attribute, value, messages, deferred) {
-    //         yii.validation.required(value, messages, {message:"Fecha de fin no puede estar vacío."});
-    //     }
-    // });
-    //
-    // $('#anadirEvento').yiiActiveForm('add', {
-    //     id: '#evento-fecha_inicio-kvdate',
-    //     name: 'Evento[fecha_inicio]',
-    //     container: '.field-evento-fecha_inicio',
-    //     input: '#evento-fecha_inicio-kvdate',
-    //     error: '.help-block',
-    //     validate:  function (attribute, value, messages, deferred) {
-    //         yii.validation.required(value, messages, {message:"Fecha de inicio no puede estar vacío."});
-    //     }
-    // });
-
     $('#anadirEvento').on('submit', function (e) {
         return !$('.field-evento-fecha_fin').hasClass('has-error') && !$('.field-evento-hora_fin').hasClass('has-error');
     });

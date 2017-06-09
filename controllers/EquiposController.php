@@ -397,14 +397,23 @@ class EquiposController extends Controller
      * @param string $equipo El nombre del equipo
      * @return mixed
      */
-    public function actionNuevaTemp($equipo)
+    public function actionNuevaTemp($equipo, $idEquipo)
     {
         $model = new Equipo();
         $model->id_usuario = Yii::$app->user->id;
         $model->nombre = $equipo;
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+        if ($model->load(Yii::$app->request->post())) {
+            if ($model->validate()) {
+                $model->save();
+                return $this->redirect(['view', 'id' => $model->id]);
+            } else {
+                Yii::$app->session->setFlash(
+                    'error',
+                    'Ya has creado este equipo en la temporada indicada.'
+                );
+                return $this->redirect(['view', 'id' => $idEquipo]);
+            }
         } else {
             return $this->renderAjax('nueva-temp', [
                 'model' => $model,
