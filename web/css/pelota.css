@@ -1,7 +1,7 @@
 /*Animaciones para la pelota*/
 
 .ball-animation {
-    font-size: .8px;
+    font-size: .75px;
     width: 35em;
     height: 35em;
     border-radius: 50%;
@@ -59,6 +59,12 @@
 }
 
 @media screen and (max-width: 1200px) {
+    .ball-animation {
+        font-size: .65px;
+    }
+}
+
+@media screen and (max-width: 1000px) {
     #pelota {
         display: none;
     }
