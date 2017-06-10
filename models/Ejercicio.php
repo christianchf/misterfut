@@ -10,7 +10,7 @@ namespace app\models;
  * @property string $nombre
  * @property string $tipo
  * @property string $descripcion
- * @property integer $num_jugadores
+ * @property string $num_jugadores
  * @property string $material
  * @property string $dimensiones
  *
@@ -34,10 +34,10 @@ class Ejercicio extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['id_usuario', 'num_jugadores'], 'integer'],
+            [['id_usuario'], 'integer'],
             [['nombre', 'tipo', 'descripcion'], 'required'],
             [['descripcion', 'material'], 'string'],
-            [['nombre', 'tipo', 'dimensiones'], 'string', 'max' => 100],
+            [['nombre', 'tipo', 'dimensiones', 'num_jugadores'], 'string', 'max' => 100],
             [['id_usuario'], 'exist', 'skipOnError' => true, 'targetClass' => Usuario::className(), 'targetAttribute' => ['id_usuario' => 'id']],
         ];
     }

@@ -15,6 +15,9 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php if (Yii::$app->session->hasFlash('error')) { ?>
         <div class="alert alert-danger">Ya has creado este equipo en la temporada indicada.</div>
     <?php } ?>
+    <?php if (Yii::$app->session->hasFlash('exito')) { ?>
+        <div class="alert alert-success">La nueva temporada ha sido creada correctamente.</div>
+    <?php } ?>
 
     <h1><?= Html::encode($this->title) ?></h1>
 

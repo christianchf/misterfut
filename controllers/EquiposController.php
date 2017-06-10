@@ -406,6 +406,10 @@ class EquiposController extends Controller
         if ($model->load(Yii::$app->request->post())) {
             if ($model->validate()) {
                 $model->save();
+                Yii::$app->session->setFlash(
+                    'exito',
+                    'Nueva temporada creada'
+                );
                 return $this->redirect(['view', 'id' => $model->id]);
             } else {
                 Yii::$app->session->setFlash(

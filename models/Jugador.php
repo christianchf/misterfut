@@ -46,6 +46,7 @@ class Jugador extends \yii\db\ActiveRecord
             [['nombre', 'fecha_nac', 'dorsal', 'id_equipo', 'id_posicion'], 'required'],
             [['fecha_nac','fecha_alta'], 'safe'],
             [['dorsal', 'partidos_jugados', 'goles_marcados', 'goles_encajados', 'asistencias', 'goles_por_partido'], 'number'],
+            [['dorsal'], 'match', 'pattern' => '/^(\d{1,2})$/', 'message' => 'El dorsal no puede ser de más de 2 dígitos.'],
             [['id_equipo', 'id_posicion'], 'integer'],
             [['esta_lesionado', 'esta_sancionado'], 'boolean'],
             [['nombre'], 'string', 'max' => 100],
