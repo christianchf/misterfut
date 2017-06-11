@@ -202,6 +202,12 @@ class EventosController extends Controller
             if ($model->hora_inicio == null) {
                 $model->hora_inicio = Yii::$app->request->get('hora');
             }
+            if ($model->fecha_inicio == '') {
+                $model->fecha_inicio = date('Y-m-d');
+            }
+            if ($model->fecha_fin == '') {
+                $model->fecha_fin = $model->fecha_inicio;
+            }
             $model->save();
             return $this->redirect(['index', 'idEquipo' => $model->id_equipo]);
         } else {

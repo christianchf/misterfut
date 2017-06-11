@@ -28,6 +28,7 @@ $this->registerJsFile(
         'options' => ['placeholder' => 'Introduzca la fecha de nacimiento'],
         'pluginOptions' => [
             'autoclose'=>true,
+            'todayBtn' => true,
             'format' => 'yyyy-mm-dd',
         ],
         'readonly' => true,
@@ -50,6 +51,7 @@ $this->registerJsFile(
             'options' => ['placeholder' => 'Introduzca la fecha prevista de alta'],
             'pluginOptions' => [
                 'autoclose'=>true,
+                'todayBtn' => true,
                 'format' => 'yyyy-mm-dd',
             ],
             'readonly' => true,
