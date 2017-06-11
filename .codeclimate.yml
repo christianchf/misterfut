@@ -31,3 +31,4 @@ exclude_paths:
 - requirements.php
 - web/js/fullcalendar
 - web/js/slick
+- web/js/validaEvento.js
