@@ -3,6 +3,7 @@
 namespace app\controllers;
 
 use Yii;
+use mPDF;
 use app\models\Event;
 use app\models\Equipo;
 use app\models\Evento;
@@ -10,6 +11,7 @@ use app\models\EventoSearch;
 use yii\filters\AccessControl;
 use yii\helpers\Url;
 use yii\web\Controller;
+use yii\web\HttpException;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
@@ -36,7 +38,7 @@ class EventosController extends Controller
                 'rules' => [
                     [
                         'allow' => true,
-                        'actions' => ['index', 'create', 'registro'],
+                        'actions' => ['index', 'create', 'registro', 'download'],
                         'roles' => ['@'],
                         'matchCallback' => function ($rule, $action) {
                             $idEquipo = Yii::$app->request->get('idEquipo');
@@ -140,6 +142,36 @@ class EventosController extends Controller
             'equipo' => $equipo,
             'tipos' => $tipos,
         ]);
+    }
+
+    /**
+     * Crea y descarga un pdf con todos los eventos del equipo indicado.
+     * Una vez descargado el pdf creado es eliminado.
+     * @param int $idEquipo El id del equipo.
+     * @return void
+     */
+    public function actionDownload($idEquipo)
+    {
+        $eventos = Evento::find()->where(['id_equipo' => $idEquipo])->orderBy(['fecha_inicio' => SORT_ASC])->all();
+        $equipo = Equipo::find()->where(['id' => $idEquipo])->one();
+
+        $mpdf = new mPDF();
+        $css = file_get_contents(Yii::getAlias('@app/web/css/pdf.css'));
+        $mpdf->WriteHTML($css, 1);
+        $mpdf->WriteHTML($this->renderPartial('_pdf', [
+            'eventos' => $eventos,
+            'equipo' => $equipo,
+        ]), 2);
+        $mpdf->Output(Yii::getAlias('@app/web/pdfs/eventos' . $idEquipo . '.pdf'), 'F');
+
+        $name = Yii::getAlias('@app/web/pdfs/eventos' . $idEquipo . '.pdf');
+        if (file_exists($name)) {
+            Yii::$app->response->sendFile($name);
+        } else {
+            throw new HttpException(404, 'El recurso solicitado no existe');
+        }
+
+        unlink($name);
     }
 
     /**

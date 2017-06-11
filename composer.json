@@ -25,7 +25,8 @@
         "yiisoft/yii2-jui": "^2.0",
         "kartik-v/yii2-widget-select2": "@dev",
         "kartik-v/yii2-widget-datepicker": "@dev",
-        "kartik-v/yii2-widget-timepicker": "*"
+        "kartik-v/yii2-widget-timepicker": "*",
+        "mpdf/mpdf": "^6.1"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",

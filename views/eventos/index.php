@@ -35,6 +35,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <p>
         <?= Html::a('Añadir Evento', ['create', 'idEquipo' => Html::encode(Yii::$app->request->get('idEquipo'))], ['class' => 'btn btn-success']) ?>
         <?= Html::a('Registro de eventos', ['registro', 'idEquipo' => Html::encode(Yii::$app->request->get('idEquipo'))], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a('Descargar pdf de eventos', ['download', 'idEquipo' => Html::encode(Yii::$app->request->get('idEquipo'))], ['class' => 'btn btn-info']) ?>
     </p>
 
     <div id='calendar'></div>
