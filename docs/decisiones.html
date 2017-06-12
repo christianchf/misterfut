@@ -55,10 +55,14 @@
 <a class="list-group-item" href="./comprobacion.html">Anexo VI: Comprobación en navegadores</a>
 <a class="list-group-item" href="./pruebas-funcionales.html">Anexo VII: Ejecución de pruebas funcionales</a></div></div>    </div>
     <div class="col-md-9 guide-content" role="main">
-        <h1>Decisiones adoptadas y su justificación <span id="decisiones-adoptadas-y-su-justificacion"></span><a href="#decisiones-adoptadas-y-su-justificacion" class="hashlink">&para;</a></h1><p>A la hora de realizar el requisito opcional R57: AÑADIR NUEVA TEMPORADA A UN EQUIPO, me encontré ante dos opciones.</p>
+        <h1>Decisiones adoptadas y su justificación <span id="decisiones-adoptadas-y-su-justificacion"></span><a href="#decisiones-adoptadas-y-su-justificacion" class="hashlink">&para;</a></h1>
+<div class="toc"><ol><li><a href="#r57-anadir-nueva-temporada-a-un-equipo">R57: AÑADIR NUEVA TEMPORADA A UN EQUIPO</a></li>
+<li><a href="#r26-generar-pdf-del-calendario">R26: GENERAR PDF DEL CALENDARIO</a></li></ol></div>
+<h2>R57: AÑADIR NUEVA TEMPORADA A UN EQUIPO <span id="r57-anadir-nueva-temporada-a-un-equipo"></span><a href="#r57-anadir-nueva-temporada-a-un-equipo" class="hashlink">&para;</a></h2><p>A la hora de realizar el requisito opcional R57: AÑADIR NUEVA TEMPORADA A UN EQUIPO, me encontré ante dos opciones.</p>
 <p>La primera era mas correcta pero implicaba que tenia que cambiar la base de datos por completo, con el consiguiente cambio en cadena de los modelos, los controladores, etc., ya que tenia que contemplar relaciones que no había tenido en cuenta hasta ese momento para realizar este requisito opcional, es decir, al añadir nuevas temporadas, un equipo tendría unas estadísticas en cada temporada y un jugador tendría unas estadísticas en un equipo en una temporada.</p>
 <p>La segunda opción consiste en modificar la base de datos para que la combinación de las columnas nombre, temporada e id_usuario de la tabla Equipos sean únicas, y al crear una nueva temporada, lo que realmente se hace es crear nuevamente el equipo con el mismo nombre y el mismo id_usuario pero con la nueva temporada asignada por el usuario.</p>
 <p>Debido a que este requisito es opcional, y fue añadido con posterioridad, y a la falta de tiempo para realizar la gran cantidad de modificaciones necesarias para llevar a cabo la primera opción, opté por realizar la segunda opción, que, aun siendo menos correcta, creo que es factible.</p>
+<h2>R26: GENERAR PDF DEL CALENDARIO <span id="r26-generar-pdf-del-calendario"></span><a href="#r26-generar-pdf-del-calendario" class="hashlink">&para;</a></h2><p>Para la realización del requisito opcional R26: GENERAR PDF DEL CALENDARIO, mi idea en principio era generar el PDF del calendario, pero debido a que la extensión mPDF no acepta muchos de los estilos CSS necesarios para la visualización de calendario, he optado por generar un PDF donde se muestra una tabla con todos los eventos que tiene el equipo indicado, con sus fechas y horas y ordenado de manera ascendente por la fecha de inicio.</p>
         <div class="toplink"><a href="#" class="h1" title="go to top"><span class="glyphicon glyphicon-arrow-up"></a></div>
     </div>
 </div>
@@ -67,7 +71,7 @@
 </div>
 
 <footer class="footer">
-        <p class="pull-right"><small>Page generated on Sun, 11 Jun 2017 21:28:34 +0000</small></p>
+        <p class="pull-right"><small>Page generated on Mon, 12 Jun 2017 16:19:05 +0000</small></p>
     Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
 
 <script type="text/javascript">jQuery(document).ready(function () {
