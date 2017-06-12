@@ -171,7 +171,7 @@ class EventosController extends Controller
             throw new HttpException(404, 'El recurso solicitado no existe');
         }
 
-        // unlink($name);
+        unlink($name);
     }
 
     /**
